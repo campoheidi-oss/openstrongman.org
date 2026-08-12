@@ -114,7 +114,7 @@
     outline-offset: 1px;
   }
 
-  .signup-row input {
+  .signup-row input[type="email"] {
     flex: 1;
     border: none;
     outline: none;
@@ -125,7 +125,7 @@
     font-family: inherit;
   }
 
-  .signup-row input::placeholder { color: var(--muted); }
+  .signup-row input[type="email"]::placeholder { color: var(--muted); }
 
   .signup-row button {
     border: none;
@@ -149,6 +149,28 @@
     margin-top: 0.6rem;
   }
 
+  .success-msg {
+    display: none;
+    font-size: 14px;
+    color: #1a6b3c;
+    background: #e6f4ec;
+    border: 1px solid #a8d8b9;
+    border-radius: 6px;
+    padding: 0.65rem 0.9rem;
+    margin-top: 0.5rem;
+  }
+
+  .success-msg.visible { display: block; }
+
+  .error-msg {
+    display: none;
+    font-size: 13px;
+    color: var(--red);
+    margin-top: 0.5rem;
+  }
+
+  .error-msg.visible { display: block; }
+
   footer {
     border-top: 1px solid var(--border);
     padding: 1rem 2rem;
@@ -162,11 +184,7 @@
     flex-wrap: wrap;
   }
 
-  footer a {
-    color: var(--muted);
-    text-decoration: none;
-  }
-
+  footer a { color: var(--muted); text-decoration: none; }
   footer a:hover { color: var(--text); }
 
   @media (max-width: 520px) {
@@ -193,18 +211,14 @@
       An open database of strongman competition results. Searchable, filterable, and free to download.
     </p>
 
-    <label class="signup-label" for="email-input">Get notified when we launch</label>
+    <label class="signup-label" for="bd-email">Get notified when we launch</label>
     <div class="signup-row">
-      <input
-        type="email"
-        id="email-input"
-        placeholder="your@email.com"
-        autocomplete="email"
-        aria-label="Email address"
-      >
-      <button type="button" onclick="handleSignup()">Notify me</button>
+      <input type="email" id="bd-email" placeholder="your@email.com" autocomplete="email" aria-label="Email address">
+      <button type="button" id="bd-btn">Notify me</button>
     </div>
     <p class="signup-note">No spam. One email when the database goes live.</p>
+    <div class="success-msg" id="bd-success">&#10003;&nbsp; You&rsquo;re on the list. Thanks for your interest!</div>
+    <div class="error-msg" id="bd-error">Something went wrong. Try again or visit <a href="https://buttondown.com/OpenStrongman" target="_blank">buttondown.com/OpenStrongman</a>.</div>
 
   </div>
 </main>
@@ -215,22 +229,52 @@
 </footer>
 
 <script>
-  function handleSignup() {
-    var input = document.getElementById('email-input');
+  document.getElementById('bd-btn').addEventListener('click', subscribe);
+  document.getElementById('bd-email').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') subscribe();
+  });
+
+  async function subscribe() {
+    var input = document.getElementById('bd-email');
     var email = input.value.trim();
-    var valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    if (!valid) {
+    var success = document.getElementById('bd-success');
+    var error = document.getElementById('bd-error');
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       input.style.outline = '2px solid #b03a2e';
       input.focus();
       setTimeout(function() { input.style.outline = ''; }, 1800);
       return;
     }
-    window.open('https://buttondown.com/OpenStrongman?email=' + encodeURIComponent(email), '_blank');
-  }
 
-  document.getElementById('email-input').addEventListener('keydown', function(e) {
-    if (e.key === 'Enter') handleSignup();
-  });
+    var btn = document.getElementById('bd-btn');
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+
+    var formData = new FormData();
+    formData.append('email', email);
+    formData.append('embed', '1');
+
+    try {
+      var response = await fetch('https://buttondown.com/api/emails/embed-subscribe/OpenStrongman', {
+        method: 'POST',
+        body: formData,
+        mode: 'cors'
+      });
+
+      if (response.status === 200 || response.status === 201) {
+        input.style.display = 'none';
+        btn.style.display = 'none';
+        success.classList.add('visible');
+      } else {
+        throw new Error('Bad response');
+      }
+    } catch(e) {
+      btn.disabled = false;
+      btn.textContent = 'Notify me';
+      error.classList.add('visible');
+    }
+  }
 </script>
 
 </body>

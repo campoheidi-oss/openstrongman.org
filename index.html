@@ -149,21 +149,6 @@
     margin-top: 0.6rem;
   }
 
-  .success-msg {
-    display: none;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 14px;
-    color: #1a6b3c;
-    background: #e6f4ec;
-    border: 1px solid #a8d8b9;
-    border-radius: 6px;
-    padding: 0.65rem 0.9rem;
-    margin-top: 0.5rem;
-  }
-
-  .success-msg.visible { display: flex; }
-
   footer {
     border-top: 1px solid var(--border);
     padding: 1rem 2rem;
@@ -220,9 +205,6 @@
       <button type="button" onclick="handleSignup()">Notify me</button>
     </div>
     <p class="signup-note">No spam. One email when the database goes live.</p>
-    <div class="success-msg" id="success-msg" role="status">
-      &#10003;&nbsp; You&rsquo;re on the list.
-    </div>
 
   </div>
 </main>
@@ -235,7 +217,6 @@
 <script>
   function handleSignup() {
     var input = document.getElementById('email-input');
-    var success = document.getElementById('success-msg');
     var email = input.value.trim();
     var valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     if (!valid) {
@@ -244,9 +225,7 @@
       setTimeout(function() { input.style.outline = ''; }, 1800);
       return;
     }
-    input.disabled = true;
-    document.querySelector('.signup-row button').disabled = true;
-    success.classList.add('visible');
+    window.open('https://buttondown.com/OpenStrongman?email=' + encodeURIComponent(email), '_blank');
   }
 
   document.getElementById('email-input').addEventListener('keydown', function(e) {

@@ -3,74 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OpenStrongman — Coming Soon</title>
-<meta name="description" content="An open archive of strongman competition results. Searchable, downloadable, and free.">
+<title>OpenStrongman — Open Strongman Competition Database</title>
+<meta name="description" content="An open database of strongman competition results across all major US federations. Searchable, filterable, and free to download.">
+<link rel="stylesheet" href="style.css">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  :root {
-    --bg: #f5f4f0;
-    --surface: #ffffff;
-    --text: #1a1a18;
-    --muted: #6b6b67;
-    --accent: #1f3a5f;
-    --border: #d8d6d0;
-    --red: #b03a2e;
-    --mono: 'Courier New', Courier, monospace;
-  }
-
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-  }
-
-  header {
-    border-bottom: 1px solid var(--border);
-    padding: 0 2rem;
-    height: 52px;
-    display: flex;
-    align-items: center;
+  .hero {
     background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 1.5rem;
   }
 
-  .wordmark {
-    font-size: 15px;
-    font-weight: 600;
-    letter-spacing: -0.01em;
-    color: var(--text);
-    text-decoration: none;
+  .hero-inner {
+    max-width: 700px;
+    margin: 0 auto;
   }
 
-  .wordmark span { color: var(--red); }
-
-  main {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 4rem 2rem;
-  }
-
-  .container {
-    max-width: 520px;
-    width: 100%;
-  }
-
-  .eyebrow {
+  .hero .eyebrow {
     font-family: var(--mono);
     font-size: 11px;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--red);
-    margin-bottom: 1.25rem;
+    margin-bottom: 1rem;
   }
 
-  h1 {
-    font-size: clamp(2rem, 5vw, 3rem);
+  .hero h1 {
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
     font-weight: 700;
     letter-spacing: -0.03em;
     line-height: 1.05;
@@ -78,204 +36,366 @@
     margin-bottom: 1.25rem;
   }
 
-  h1 em {
+  .hero h1 em {
     font-style: normal;
     color: var(--accent);
   }
 
-  .description {
-    font-size: 16px;
+  .hero-desc {
+    font-size: 17px;
     line-height: 1.65;
     color: var(--muted);
-    margin-bottom: 2.5rem;
-    max-width: 440px;
+    max-width: 560px;
+    margin-bottom: 2rem;
   }
 
-  .signup-label {
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--text);
-    margin-bottom: 0.6rem;
-    display: block;
-  }
-
-  .signup-row {
+  .hero-actions {
     display: flex;
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    overflow: hidden;
-    background: var(--surface);
-    transition: border-color 0.15s;
-  }
-
-  .signup-row:focus-within {
-    border-color: var(--accent);
-    outline: 2px solid #c2d3e8;
-    outline-offset: 1px;
-  }
-
-  .signup-row input[type="email"] {
-    flex: 1;
-    border: none;
-    outline: none;
-    padding: 0.65rem 0.9rem;
-    font-size: 14px;
-    background: transparent;
-    color: var(--text);
-    font-family: inherit;
-  }
-
-  .signup-row input[type="email"]::placeholder { color: var(--muted); }
-
-  .signup-row button {
-    border: none;
-    border-left: 1px solid var(--border);
-    background: var(--accent);
-    color: #fff;
-    padding: 0 1.1rem;
-    font-size: 13px;
-    font-weight: 500;
-    cursor: pointer;
-    font-family: inherit;
-    white-space: nowrap;
-    transition: background 0.15s;
-  }
-
-  .signup-row button:hover { background: #162d4a; }
-
-  .signup-note {
-    font-size: 12px;
-    color: var(--muted);
-    margin-top: 0.6rem;
-  }
-
-  .success-msg {
-    display: none;
-    font-size: 14px;
-    color: #1a6b3c;
-    background: #e6f4ec;
-    border: 1px solid #a8d8b9;
-    border-radius: 6px;
-    padding: 0.65rem 0.9rem;
-    margin-top: 0.5rem;
-  }
-
-  .success-msg.visible { display: block; }
-
-  .error-msg {
-    display: none;
-    font-size: 13px;
-    color: var(--red);
-    margin-top: 0.5rem;
-  }
-
-  .error-msg.visible { display: block; }
-
-  footer {
-    border-top: 1px solid var(--border);
-    padding: 1rem 2rem;
-    font-size: 12px;
-    color: var(--muted);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: var(--surface);
-    gap: 1rem;
+    gap: 0.75rem;
     flex-wrap: wrap;
   }
 
-  footer a { color: var(--muted); text-decoration: none; }
-  footer a:hover { color: var(--text); }
+  .btn-primary {
+    background: var(--accent);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 0.65rem 1.25rem;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.15s;
+  }
 
-  @media (max-width: 520px) {
-    header { padding: 0 1.25rem; }
-    main { padding: 2.5rem 1.25rem; align-items: flex-start; }
-    footer { flex-direction: column; align-items: flex-start; }
+  .btn-primary:hover { background: #162d4a; }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--accent);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 0.65rem 1.25rem;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    text-decoration: none;
+    transition: border-color 0.15s, background 0.15s;
+  }
+
+  .btn-secondary:hover { border-color: var(--accent); background: var(--accent-light); }
+
+  /* stats bar */
+  .stats-bar {
+    background: var(--accent);
+    color: #fff;
+    padding: 1rem 1.5rem;
+    display: flex;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+  }
+
+  .stat-item { display: flex; flex-direction: column; }
+
+  .stat-value {
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 11px;
+    font-family: var(--mono);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-top: 0.2rem;
+  }
+
+  /* how it works */
+  .section {
+    padding: 3rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+
+  .section-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 0.6rem;
+  }
+
+  .section h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 2rem;
+    color: var(--text);
+  }
+
+  .how-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .how-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem;
+  }
+
+  .how-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--faint);
+    margin-bottom: 0.6rem;
+  }
+
+  .how-card h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.4rem;
+  }
+
+  .how-card p {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+
+  /* categories */
+  .cat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 0.75rem;
+  }
+
+  .cat-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem;
+    text-decoration: none;
+    color: var(--text);
+    transition: border-color 0.15s, background 0.15s;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .cat-card:hover { border-color: var(--accent-mid); background: var(--accent-light); }
+
+  .cat-name {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .cat-example {
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  /* mission */
+  .mission-section {
+    background: var(--accent);
+    color: #fff;
+    padding: 3rem 1.5rem;
+  }
+
+  .mission-inner {
+    max-width: 620px;
+    margin: 0 auto;
+  }
+
+  .mission-section .section-label { color: rgba(255,255,255,0.5); }
+
+  .mission-section h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .mission-section p {
+    font-size: 15px;
+    line-height: 1.7;
+    opacity: 0.85;
+    margin-bottom: 1rem;
+  }
+
+  .mission-section a {
+    color: #fff;
+    font-weight: 500;
+  }
+
+  @media (max-width: 640px) {
+    .hero { padding: 2.5rem 1rem; }
+    .stats-bar { gap: 1.5rem; padding: 1rem; }
+    .section { padding: 2rem 1rem; }
   }
 </style>
 </head>
 <body>
 
-<header>
-  <a class="wordmark" href="/"><span>Open</span>Strongman</a>
-</header>
+<nav class="site-nav">
+  <a class="wordmark" href="index.html"><span>Open</span>Strongman</a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="rankings.html">Rankings</a></li>
+    <li><a href="meets.html">Meets</a></li>
+    <li><a href="athletes.html">Athletes</a></li>
+    <li><a href="records.html">Records</a></li>
+    <li><a href="data.html">Data</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+  <div class="nav-right">
+    <a class="btn-contribute" href="about.html#contribute">Contribute Data</a>
+  </div>
+</nav>
 
 <main>
-  <div class="container">
 
-    <p class="eyebrow">Coming soon</p>
-
-    <h1>Strongman results,<br><em>open to everyone.</em></h1>
-
-    <p class="description">
-      An open database of strongman competition results. Searchable, filterable, and free to download.
-    </p>
-
-    <label class="signup-label" for="bd-email">Get notified when we launch</label>
-    <div class="signup-row">
-      <input type="email" id="bd-email" placeholder="your@email.com" autocomplete="email" aria-label="Email address">
-      <button type="button" id="bd-btn">Notify me</button>
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">Open database &mdash; all federations</p>
+      <h1>Every rep.<br>Every stone.<br><em>Open to everyone.</em></h1>
+      <p class="hero-desc">
+        OpenStrongman is a free, open archive of strongman competition results across all major US federations. Raw data — weights, times, distances, reps — searchable, filterable, and free to download.
+      </p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="rankings.html">Browse Rankings</a>
+        <a class="btn-secondary" href="data.html">Download Data</a>
+      </div>
     </div>
-    <p class="signup-note">No spam. One email when the database goes live.</p>
-    <div class="success-msg" id="bd-success">&#10003;&nbsp; You&rsquo;re on the list. Thanks for your interest!</div>
-    <div class="error-msg" id="bd-error">Something went wrong. Try again or visit <a href="https://buttondown.com/OpenStrongman" target="_blank">buttondown.com/OpenStrongman</a>.</div>
+  </section>
 
+  <div class="stats-bar">
+    <div class="stat-item">
+      <span class="stat-value">—</span>
+      <span class="stat-label">Results</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-value">—</span>
+      <span class="stat-label">Athletes</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-value">—</span>
+      <span class="stat-label">Meets</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-value">—</span>
+      <span class="stat-label">Federations</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-value">10</span>
+      <span class="stat-label">Event Categories</span>
+    </div>
   </div>
+
+  <section class="section">
+    <div class="section-inner">
+      <p class="section-label">How it works</p>
+      <h2>Built for athletes, coaches, and researchers</h2>
+      <div class="how-grid">
+        <div class="how-card">
+          <p class="how-num">01</p>
+          <h3>Raw data, faithfully logged</h3>
+          <p>We record the actual result — weight lifted, time, distance, reps — exactly as competed. No forced standardization.</p>
+        </div>
+        <div class="how-card">
+          <p class="how-num">02</p>
+          <h3>Biomechanical categories</h3>
+          <p>Events are grouped by movement pattern, not implement. A log press and an axle press are both Overhead Press — filterable by implement.</p>
+        </div>
+        <div class="how-card">
+          <p class="how-num">03</p>
+          <h3>Multi-federation filters</h3>
+          <p>Filter by federation, weight class, sex, age, or year. Weight classes vary across feds — we handle that with filters, not forced normalization.</p>
+        </div>
+        <div class="how-card">
+          <p class="how-num">04</p>
+          <h3>Open &amp; downloadable</h3>
+          <p>All data is free to download as CSV. Use it for research, coaching, or building your own tools. No account required.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-inner">
+      <p class="section-label">Event categories</p>
+      <h2>10 biomechanical categories</h2>
+      <div class="cat-grid">
+        <a class="cat-card" href="rankings.html?category=overhead-press">
+          <span class="cat-name">Overhead Press</span>
+          <span class="cat-example">Log, axle, circus DB, keg</span>
+        </a>
+        <a class="cat-card" href="rankings.html?category=deadlift">
+          <span class="cat-name">Deadlift</span>
+          <span class="cat-example">Standard, car, frame, 18"</span>
+        </a>
+        <a class="cat-card" href="rankings.html?category=carry">
+          <span class="cat-name">Carry</span>
+          <span class="cat-example">Yoke, farmer's, sandbag</span>
+        </a>
+        <a class="cat-card" href="rankings.html?category=load">
+          <span class="cat-name">Load</span>
+          <span class="cat-example">Atlas stones, keg, barrel</span>
+        </a>
+        <a class="cat-card" href="rankings.html?category=pull">
+          <span class="cat-name">Pull</span>
+          <span class="cat-example">Truck pull, hand-over-hand</span>
+        </a>
+        <a class="cat-card" href="rankings.html?category=hold">
+          <span class="cat-name">Hold</span>
+          <span class="cat-example">Hercules hold, crucifix</span>
+        </a>
+        <a class="cat-card" href="rankings.html?category=flip">
+          <span class="cat-name">Flip</span>
+          <span class="cat-example">Tire flip</span>
+        </a>
+        <a class="cat-card" href="rankings.html?category=toss">
+          <span class="cat-name">Toss</span>
+          <span class="cat-example">Keg toss, shield toss</span>
+        </a>
+        <a class="cat-card" href="rankings.html?category=medley">
+          <span class="cat-name">Medley</span>
+          <span class="cat-example">Multi-implement events</span>
+        </a>
+        <a class="cat-card" href="rankings.html?category=other">
+          <span class="cat-name">Other</span>
+          <span class="cat-example">Unique one-off events</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="mission-section">
+    <div class="mission-inner">
+      <p class="section-label">Our mission</p>
+      <h2>Strongman deserves an open record.</h2>
+      <p>
+        Results from thousands of competitions — local, national, and international — exist only as PDFs, Facebook posts, and spreadsheets scattered across the internet. Athletes have no reliable way to track their history. Coaches can't benchmark athletes across federations. Researchers have no dataset to work with.
+      </p>
+      <p>
+        OpenStrongman exists to fix that. We're building a permanent, open, community-maintained archive of strongman results — free to use, free to download, and free forever.
+      </p>
+      <a href="about.html">Learn more about the project &rarr;</a>
+    </div>
+  </section>
+
 </main>
 
-<footer>
-  <span>&copy; 2026 OpenStrongman</span>
+<footer class="site-footer">
+  <span>&copy; 2026 OpenStrongman &mdash; open source, open data</span>
   <span>Looking for powerlifting results? Visit <a href="https://www.openpowerlifting.org" target="_blank" rel="noopener">OpenPowerlifting.org</a> &mdash; an unaffiliated project.</span>
 </footer>
-
-<script>
-  document.getElementById('bd-btn').addEventListener('click', subscribe);
-  document.getElementById('bd-email').addEventListener('keydown', function(e) {
-    if (e.key === 'Enter') subscribe();
-  });
-
-  async function subscribe() {
-    var input = document.getElementById('bd-email');
-    var email = input.value.trim();
-    var success = document.getElementById('bd-success');
-    var error = document.getElementById('bd-error');
-
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      input.style.outline = '2px solid #b03a2e';
-      input.focus();
-      setTimeout(function() { input.style.outline = ''; }, 1800);
-      return;
-    }
-
-    var btn = document.getElementById('bd-btn');
-    btn.disabled = true;
-    btn.textContent = 'Sending...';
-
-    var formData = new FormData();
-    formData.append('email', email);
-    formData.append('embed', '1');
-
-    try {
-      var response = await fetch('https://buttondown.com/api/emails/embed-subscribe/OpenStrongman', {
-        method: 'POST',
-        body: formData,
-        mode: 'cors'
-      });
-
-      if (response.status === 200 || response.status === 201) {
-        input.style.display = 'none';
-        btn.style.display = 'none';
-        success.classList.add('visible');
-      } else {
-        throw new Error('Bad response');
-      }
-    } catch(e) {
-      btn.disabled = false;
-      btn.textContent = 'Notify me';
-      error.classList.add('visible');
-    }
-  }
-</script>
 
 </body>
 </html>

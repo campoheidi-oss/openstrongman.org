@@ -369,7 +369,7 @@ function parseCSV(text) {
     const row = {};
     headers.forEach((h, i) => { row[h] = (vals[i]||'').trim().replace(/^"|"$/g,''); });
     return row;
-  }).filter(r => r.AthleteName && r.Event !== 'Overall' && r.Event !== '');
+  }).filter(r => r.AthleteName && r.AthleteName.trim() !== '');
 }
 
 async function loadStats() {

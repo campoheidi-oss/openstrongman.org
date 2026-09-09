@@ -6,79 +6,64 @@
 <title>OpenStrongman — Rankings</title>
 <meta name="description" content="Browse and filter strongman competition results across all federations and event categories.">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/6.6.6/css/flag-icons.min.css">
 <style>
 
   body { display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
 
-  main {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    overflow: hidden;
-    min-height: 0;
-  }
+  main { display: flex; flex-direction: column; flex: 1; overflow: hidden; min-height: 0; }
 
   /* ── PAGE HEADER ── */
   .rankings-header {
     background: var(--surface);
     border-bottom: 1px solid var(--border);
-    padding: 1rem 1.5rem 0.75rem;
+    padding: 0.85rem 1.5rem;
     flex-shrink: 0;
     display: flex;
-    align-items: baseline;
+    align-items: center;
     justify-content: space-between;
     gap: 1rem;
     flex-wrap: wrap;
   }
 
   .rankings-header h1 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 700;
     letter-spacing: -0.02em;
+    margin-bottom: 0.15rem;
   }
 
-  .rankings-header p {
-    font-size: 12px;
-    color: var(--muted);
-  }
+  .rankings-header p { font-size: 11px; color: var(--muted); }
 
   /* ── LEGEND ── */
   .legend {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 1.25rem;
     font-size: 11px;
     color: var(--muted);
     flex-wrap: wrap;
   }
 
-  .legend-item {
-    display: flex;
-    align-items: center;
-    gap: 0.35rem;
-  }
+  .legend-item { display: flex; align-items: center; gap: 0.35rem; }
 
   .tag-wr-sm {
     display: inline-block;
     font-size: 10px;
-    font-weight: 600;
+    font-weight: 700;
     padding: 1px 5px;
     border-radius: 3px;
     background: var(--red-light);
     color: var(--red);
   }
 
-  .legend-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 2px;
-  }
+  .legend-dot { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
 
   /* ── FILTER BAR ── */
   .filter-section {
     background: var(--surface);
     border-bottom: 2px solid var(--border);
-    padding: 0.6rem 1.5rem;
+    padding: 0.55rem 1.5rem;
     display: flex;
     flex-wrap: wrap;
     gap: 0.4rem;
@@ -97,26 +82,20 @@
     color: var(--text);
     outline: none;
     transition: border-color 0.15s, opacity 0.15s;
-    height: 30px;
+    height: 28px;
   }
 
-  .filter-section input[type="text"] { min-width: 160px; }
+  .filter-section input[type="text"] { min-width: 155px; }
   .filter-section select { cursor: pointer; }
-  .filter-section input[type="text"]:focus,
-  .filter-section select:focus { border-color: var(--accent); }
+  .filter-section input:focus, .filter-section select:focus { border-color: var(--accent); }
 
   .filter-section select:disabled {
-    opacity: 0.4;
+    opacity: 0.38;
     cursor: not-allowed;
     background: var(--surface-2);
   }
 
-  .filter-divider {
-    width: 1px;
-    height: 18px;
-    background: var(--border);
-    margin: 0 0.2rem;
-  }
+  .filter-divider { width: 1px; height: 16px; background: var(--border); margin: 0 0.15rem; }
 
   .btn-reset {
     font-size: 12px;
@@ -125,7 +104,7 @@
     border: 1px solid var(--border);
     border-radius: 5px;
     padding: 0 0.65rem;
-    height: 30px;
+    height: 28px;
     cursor: pointer;
     font-family: var(--sans);
     transition: color 0.15s, border-color 0.15s;
@@ -133,36 +112,19 @@
 
   .btn-reset:hover { color: var(--text); border-color: var(--accent-mid); }
 
-  .result-count {
-    margin-left: auto;
-    font-size: 12px;
-    color: var(--muted);
-    white-space: nowrap;
-  }
+  .result-count { margin-left: auto; font-size: 12px; color: var(--muted); white-space: nowrap; }
 
   /* ── TABLE WRAPPER ── */
-  .table-wrap {
-    overflow: auto;
-    flex: 1;
-    min-height: 0;
-  }
+  .table-wrap { overflow: auto; flex: 1; min-height: 0; }
 
   /* ── TABLE ── */
-  table.rankings {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 13px;
-  }
+  table.rankings { width: 100%; border-collapse: collapse; font-size: 13px; }
 
-  table.rankings thead tr {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-  }
+  table.rankings thead tr { position: sticky; top: 0; z-index: 10; }
 
   table.rankings th {
     text-align: left;
-    padding: 0.5rem 0.85rem;
+    padding: 0.45rem 0.85rem;
     font-size: 11px;
     font-weight: 600;
     color: var(--muted);
@@ -172,7 +134,6 @@
     cursor: pointer;
     user-select: none;
     transition: color 0.1s;
-    box-shadow: 0 1px 0 var(--border);
   }
 
   table.rankings th:hover { color: var(--text); }
@@ -180,75 +141,72 @@
   table.rankings th.sorted-desc::after { content: ' ↓'; color: var(--accent); }
 
   table.rankings td {
-    padding: 0.45rem 0.85rem;
+    padding: 0.4rem 0.85rem;
     border-bottom: 1px solid var(--border);
     vertical-align: middle;
     white-space: nowrap;
   }
 
-  /* Alternating rows */
   table.rankings tbody tr.data-row:nth-child(odd) td { background: var(--bg); }
   table.rankings tbody tr.data-row:nth-child(even) td { background: var(--surface); }
   table.rankings tbody tr.data-row:hover td { background: var(--accent-light) !important; cursor: pointer; }
+  table.rankings tbody tr.data-row.expanded td { background: var(--accent-light) !important; }
 
-  /* ── EXPANDED ROW ── */
+  /* ── EXPAND ROW ── */
   tr.expand-row td {
-    background: #f0f4f9 !important;
+    background: #edf2f9 !important;
     padding: 0;
-    border-bottom: 2px solid var(--accent-light);
+    border-bottom: 2px solid #c5d5ea;
   }
 
   .expand-inner {
-    padding: 0.85rem 1.25rem 0.85rem 3.5rem;
+    padding: 0.85rem 1.25rem 0.85rem 2.5rem;
     display: flex;
     flex-wrap: wrap;
-    gap: 1.5rem;
+    gap: 2rem;
     align-items: flex-start;
   }
 
-  .expand-group { display: flex; flex-direction: column; gap: 0.2rem; min-width: 100px; }
+  .expand-group { display: flex; flex-direction: column; gap: 0.15rem; min-width: 90px; }
 
   .expand-label {
     font-size: 10px;
     font-family: var(--mono);
-    letter-spacing: 0.08em;
+    letter-spacing: 0.07em;
     text-transform: uppercase;
     color: var(--faint);
   }
 
-  .expand-value {
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--text);
-  }
+  .expand-value { font-size: 13px; font-weight: 500; color: var(--text); }
 
-  .expand-notes {
-    flex: 1;
-    min-width: 200px;
-    max-width: 500px;
-  }
-
+  .expand-notes { flex: 1; min-width: 180px; max-width: 480px; }
   .expand-notes .expand-value {
     font-size: 12px;
     font-weight: 400;
     color: var(--muted);
     white-space: normal;
-    line-height: 1.5;
+    line-height: 1.55;
   }
 
-  tr.data-row.expanded td { background: var(--accent-light) !important; }
-  tr.data-row .expand-arrow { 
-    display: inline-block; 
-    font-size: 10px; 
-    color: var(--faint); 
-    margin-left: 6px;
-    transition: transform 0.15s;
-  }
-  tr.data-row.expanded .expand-arrow { transform: rotate(90deg); color: var(--accent); }
+  /* ── FLAGS ── */
+  .fi { font-size: 14px; border-radius: 2px; }
+
+  .nat-cell { display: flex; align-items: center; gap: 5px; }
+  .nat-code { font-size: 11px; font-family: var(--mono); color: var(--muted); }
 
   /* ── CELL STYLES ── */
   .col-athlete { font-weight: 500; color: var(--text); }
-  .col-nat { font-size: 13px; }
+
+  .expand-arrow {
+    display: inline-block;
+    font-size: 9px;
+    color: var(--faint);
+    margin-left: 5px;
+    transition: transform 0.15s;
+    vertical-align: middle;
+  }
+
+  tr.data-row.expanded .expand-arrow { transform: rotate(90deg); color: var(--accent); }
 
   .col-result {
     font-weight: 600;
@@ -260,7 +218,7 @@
   .col-place {
     font-family: var(--mono);
     font-size: 12px;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--muted);
     text-align: center;
   }
@@ -282,7 +240,7 @@
   .tag-wr {
     display: inline-block;
     font-size: 10px;
-    font-weight: 600;
+    font-weight: 700;
     padding: 2px 5px;
     border-radius: 3px;
     background: var(--red-light);
@@ -297,18 +255,14 @@
     color: var(--muted);
     font-size: 13px;
     background: var(--bg) !important;
+    white-space: normal;
   }
 
-  .no-results-hint {
-    font-size: 12px;
-    color: var(--faint);
-    margin-top: 0.5rem;
-  }
+  .no-results-hint { font-size: 12px; color: var(--faint); margin-top: 0.5rem; display: block; }
 
   .loading-spinner {
     display: inline-block;
-    width: 14px;
-    height: 14px;
+    width: 14px; height: 14px;
     border: 2px solid var(--border);
     border-top-color: var(--accent);
     border-radius: 50%;
@@ -328,7 +282,8 @@
     .filter-section { padding: 0.6rem 1rem; }
     .filter-divider { display: none; }
     .result-count { margin-left: 0; width: 100%; }
-    .expand-inner { padding-left: 1rem; }
+    .expand-inner { padding-left: 1rem; gap: 1rem; }
+    .legend { display: none; }
   }
 </style>
 </head>
@@ -355,24 +310,27 @@
   <div class="rankings-header">
     <div>
       <h1>Rankings</h1>
-      <p>Click any row to see full event details. Each dropdown only shows options available in your current selection.</p>
+      <p>Click any row to expand full event details. Dropdowns only show options available in your current selection.</p>
     </div>
     <div class="legend">
       <div class="legend-item">
         <span class="tag-wr-sm">WR</span>
-        <span>World Record set</span>
+        <span>World Record</span>
       </div>
       <div class="legend-item">
         <span class="legend-dot" style="background:#b8860b"></span>
-        <span>1st place</span>
+        <span>1st overall</span>
       </div>
       <div class="legend-item">
         <span class="legend-dot" style="background:#808080"></span>
-        <span>2nd place</span>
+        <span>2nd overall</span>
       </div>
       <div class="legend-item">
         <span class="legend-dot" style="background:#8b5e3c"></span>
-        <span>3rd place</span>
+        <span>3rd overall</span>
+      </div>
+      <div class="legend-item" style="color:var(--faint)">
+        ▶ click row for details
       </div>
     </div>
   </div>
@@ -392,7 +350,7 @@
   </div>
 
   <div class="table-wrap">
-    <table class="rankings" id="rankings-table">
+    <table class="rankings">
       <thead>
         <tr>
           <th onclick="sortBy('OverallPlace')" id="th-OverallPlace">Place</th>
@@ -425,30 +383,31 @@
 </footer>
 
 <script>
-// ── CONFIG ──
+// ── CONFIG: add new CSV paths here as data grows ──
 const CSV_FILES = [
   'https://raw.githubusercontent.com/campoheidi-oss/openstrongman.org/dev/data/wsm_results.csv',
   'https://raw.githubusercontent.com/campoheidi-oss/openstrongman.org/dev/data/wsm_2023_finals.csv',
   'https://raw.githubusercontent.com/campoheidi-oss/openstrongman.org/dev/data/wsm_2024_finals.csv',
 ];
 
+// IOC 3-letter code → ISO 2-letter code for flag-icons library
+const ISO = {
+  USA:'us',GBR:'gb',CAN:'ca',ISL:'is',FIN:'fi',NOR:'no',SWE:'se',
+  POL:'pl',LTU:'lt',UKR:'ua',AUT:'at',RSA:'za',NED:'nl',DEN:'dk',
+  RUS:'ru',NZL:'nz',LAT:'lv',MEX:'mx',AUS:'au',BEL:'be',FRA:'fr',
+  GER:'de',BRA:'br',EST:'ee',GEO:'ge',IRL:'ie',LEB:'lb',
+};
+
+function flagHTML(code) {
+  const iso = ISO[code];
+  if (!iso) return '';
+  return `<span class="fi fi-${iso}"></span>`;
+}
+
 let allRows = [];
 let sortCol = 'MeetDate';
 let sortDir = 'desc';
 let expandedIdx = null;
-
-// ── FLAG CONVERTER ──
-// Converts IOC 3-letter code to flag emoji via intermediate lookup
-const flagMap = {
-  USA:'🇺🇸',GBR:'🇬🇧',CAN:'🇨🇦',ISL:'🇮🇸',FIN:'🇫🇮',NOR:'🇳🇴',SWE:'🇸🇪',
-  POL:'🇵🇱',LTU:'🇱🇹',UKR:'🇺🇦',AUT:'🇦🇹',RSA:'🇿🇦',NED:'🇳🇱',DEN:'🇩🇰',
-  RUS:'🇷🇺',NZL:'🇳🇿',LAT:'🇱🇻',MEX:'🇲🇽',AUS:'🇦🇺',BEL:'🇧🇪',FRA:'🇫🇷',
-  GER:'🇩🇪',BRA:'🇧🇷',EST:'🇪🇪',GEO:'🇬🇪',IRL:'🇮🇪',LEB:'🇱🇧',
-};
-
-function flag(code) {
-  return flagMap[code] || '';
-}
 
 // ── CSV PARSER ──
 function parseCSV(text) {
@@ -466,13 +425,10 @@ function parseCSV(text) {
 }
 
 function splitCSVLine(line) {
-  const result = [];
-  let cur = '';
-  let inQuotes = false;
-  for (let i = 0; i < line.length; i++) {
-    const ch = line[i];
-    if (ch === '"') { inQuotes = !inQuotes; }
-    else if (ch === ',' && !inQuotes) { result.push(cur); cur = ''; }
+  const result = []; let cur = ''; let inQ = false;
+  for (const ch of line) {
+    if (ch === '"') { inQ = !inQ; }
+    else if (ch === ',' && !inQ) { result.push(cur); cur = ''; }
     else { cur += ch; }
   }
   result.push(cur);
@@ -481,11 +437,10 @@ function splitCSVLine(line) {
 
 // ── LOAD ──
 async function loadData() {
-  const fetches = CSV_FILES.map(url =>
-    fetch(url).then(r => r.text()).then(parseCSV).catch(() => [])
+  const results = await Promise.all(
+    CSV_FILES.map(url => fetch(url).then(r => r.text()).then(parseCSV).catch(() => []))
   );
-  const results = await Promise.all(fetches);
-  allRows = results.flat().filter(r => r.AthleteName && r.Event !== 'Overall' && r.Event !== '');
+  allRows = results.flat().filter(r => r.AthleteName && r.Event && r.Event !== 'Overall');
   populateFilters();
   renderTable();
 }
@@ -502,12 +457,12 @@ function getFilteredExcept(except = []) {
 
   return allRows.filter(r => {
     if (!except.includes('athlete') && athlete && !(r.AthleteName||'').toLowerCase().includes(athlete)) return false;
-    if (!except.includes('fed')     && fed     && r.MeetFederation !== fed) return false;
-    if (!except.includes('year')    && year    && !(r.MeetDate||'').startsWith(year)) return false;
-    if (!except.includes('sex')     && sex     && r.Sex !== sex) return false;
-    if (!except.includes('cat')     && cat     && r.EventCategory !== cat) return false;
-    if (!except.includes('impl')    && impl    && r.Implement !== impl) return false;
-    if (!except.includes('scored')  && scored  && r.ScoredBy !== scored) return false;
+    if (!except.includes('fed')    && fed    && r.MeetFederation !== fed) return false;
+    if (!except.includes('year')   && year   && !(r.MeetDate||'').startsWith(year)) return false;
+    if (!except.includes('sex')    && sex    && r.Sex !== sex) return false;
+    if (!except.includes('cat')    && cat    && r.EventCategory !== cat) return false;
+    if (!except.includes('impl')   && impl   && r.Implement !== impl) return false;
+    if (!except.includes('scored') && scored && r.ScoredBy !== scored) return false;
     return true;
   });
 }
@@ -517,7 +472,7 @@ function unique(rows, key) {
 }
 
 function uniqueYears(rows) {
-  return [...new Set(rows.map(r => (r.MeetDate||'').slice(0,4)).filter(y => y && y > '1900'))].sort((a,b) => b-a);
+  return [...new Set(rows.map(r => (r.MeetDate||'').slice(0,4)).filter(y => y > '1900'))].sort((a,b)=>b-a);
 }
 
 function populateFilters() {
@@ -535,12 +490,8 @@ function populateFilters() {
     scoredEl.disabled = false;
     refill('f-scored', unique(getFilteredExcept(['scored']), 'ScoredBy'), 'Scored By');
   } else {
-    implEl.disabled = true;
-    refill('f-implement', [], 'All Implements');
-    implEl.value = '';
-    scoredEl.disabled = true;
-    refill('f-scored', [], 'Scored By');
-    scoredEl.value = '';
+    implEl.disabled = true; implEl.innerHTML = '<option value="">All Implements</option>'; implEl.value = '';
+    scoredEl.disabled = true; scoredEl.innerHTML = '<option value="">Scored By</option>'; scoredEl.value = '';
   }
 }
 
@@ -549,10 +500,10 @@ function refill(id, values, placeholder) {
   const cur = sel.value;
   sel.innerHTML = `<option value="">${placeholder}</option>`;
   values.forEach(v => {
-    const opt = document.createElement('option');
-    opt.value = v; opt.textContent = v;
-    if (v === cur) opt.selected = true;
-    sel.appendChild(opt);
+    const o = document.createElement('option');
+    o.value = v; o.textContent = v;
+    if (v === cur) o.selected = true;
+    sel.appendChild(o);
   });
   if (cur && !values.includes(cur)) sel.value = '';
 }
@@ -562,17 +513,17 @@ function refillYears(id, values) {
   const cur = sel.value;
   sel.innerHTML = '<option value="">All Years</option>';
   values.forEach(v => {
-    const opt = document.createElement('option');
-    opt.value = v; opt.textContent = v;
-    if (v === cur) opt.selected = true;
-    sel.appendChild(opt);
+    const o = document.createElement('option');
+    o.value = v; o.textContent = v;
+    if (v === cur) o.selected = true;
+    sel.appendChild(o);
   });
   if (cur && !values.includes(cur)) sel.value = '';
 }
 
 // ── SORT ──
 function sortBy(col) {
-  if (sortCol === col) { sortDir = sortDir === 'asc' ? 'desc' : 'asc'; }
+  if (sortCol === col) sortDir = sortDir === 'asc' ? 'desc' : 'asc';
   else { sortCol = col; sortDir = 'asc'; }
   expandedIdx = null;
   renderTable();
@@ -580,56 +531,40 @@ function sortBy(col) {
 
 function getSorted(rows) {
   return [...rows].sort((a, b) => {
-    let va = a[sortCol] || '', vb = b[sortCol] || '';
+    const va = a[sortCol]||'', vb = b[sortCol]||'';
     const na = parseFloat(va), nb = parseFloat(vb);
-    if (!isNaN(na) && !isNaN(nb)) return sortDir === 'asc' ? na - nb : nb - na;
+    if (!isNaN(na) && !isNaN(nb)) return sortDir === 'asc' ? na-nb : nb-na;
     return sortDir === 'asc' ? va.localeCompare(vb) : vb.localeCompare(va);
   });
 }
 
-// ── EXPAND ROW ──
-function toggleExpand(idx, row) {
-  if (expandedIdx === idx) {
-    expandedIdx = null;
-  } else {
-    expandedIdx = idx;
-  }
+// ── EXPAND ──
+function toggleExpand(idx) {
+  expandedIdx = expandedIdx === idx ? null : idx;
   renderTable();
 }
 
 function buildExpandRow(r) {
   const details = [];
+  if (r.ImplementWeightKg) details.push(['Implement Weight', r.ImplementWeightKg + ' kg']);
+  if (r.StonesCompleted)   details.push(['Stones Completed', r.StonesCompleted]);
+  if (r.CourseDistanceM)   details.push(['Course Distance',  r.CourseDistanceM + ' m']);
+  if (r.TimeLimitSec)      details.push(['Time Limit',       r.TimeLimitSec + ' sec']);
+  if (r.ScoredBy)          details.push(['Scored By',        r.ScoredBy]);
+  if (r.Points)            details.push(['Points Earned',    r.Points]);
+  if (r.MeetLocation)      details.push(['Location',         r.MeetLocation]);
+  if (r.Division)          details.push(['Division',         r.Division]);
 
-  if (r.ImplementWeightKg) details.push({ label: 'Implement Weight', value: r.ImplementWeightKg + ' kg' });
-  if (r.StonesCompleted)   details.push({ label: 'Stones Completed', value: r.StonesCompleted });
-  if (r.CourseDistanceM)   details.push({ label: 'Course Distance', value: r.CourseDistanceM + ' m' });
-  if (r.TimeLimitSec)      details.push({ label: 'Time Limit', value: r.TimeLimitSec + ' sec' });
-  if (r.ScoredBy)          details.push({ label: 'Scored By', value: r.ScoredBy });
-  if (r.Points)            details.push({ label: 'Points Earned', value: r.Points });
-  if (r.MeetLocation)      details.push({ label: 'Location', value: r.MeetLocation });
-  if (r.Division)          details.push({ label: 'Division', value: r.Division });
+  const dHTML = details.map(([l,v]) =>
+    `<div class="expand-group"><span class="expand-label">${l}</span><span class="expand-value">${esc(v)}</span></div>`
+  ).join('');
 
-  const detailHTML = details.map(d => `
-    <div class="expand-group">
-      <span class="expand-label">${d.label}</span>
-      <span class="expand-value">${esc(d.value)}</span>
-    </div>`).join('');
+  const nHTML = r.Notes ? `<div class="expand-group expand-notes"><span class="expand-label">Notes</span><span class="expand-value">${esc(r.Notes)}</span></div>` : '';
 
-  const notesHTML = r.Notes ? `
-    <div class="expand-group expand-notes">
-      <span class="expand-label">Notes</span>
-      <span class="expand-value">${esc(r.Notes)}</span>
-    </div>` : '';
+  const empty = details.length === 0 && !r.Notes
+    ? `<span style="color:var(--faint);font-size:12px;">No additional detail recorded for this result.</span>` : '';
 
-  return `<tr class="expand-row">
-    <td colspan="12">
-      <div class="expand-inner">
-        ${detailHTML}
-        ${notesHTML}
-        ${details.length === 0 && !r.Notes ? '<span style="color:var(--faint);font-size:12px;">No additional detail available for this result.</span>' : ''}
-      </div>
-    </td>
-  </tr>`;
+  return `<tr class="expand-row"><td colspan="12"><div class="expand-inner">${dHTML}${nHTML}${empty}</div></td></tr>`;
 }
 
 // ── RENDER ──
@@ -640,8 +575,8 @@ function renderTable() {
   const sorted = getSorted(filtered);
 
   document.querySelectorAll('table.rankings th').forEach(th => th.classList.remove('sorted-asc','sorted-desc'));
-  const activeTh = document.getElementById('th-' + sortCol);
-  if (activeTh) activeTh.classList.add(sortDir === 'asc' ? 'sorted-asc' : 'sorted-desc');
+  const aTh = document.getElementById('th-'+sortCol);
+  if (aTh) aTh.classList.add(sortDir === 'asc' ? 'sorted-asc' : 'sorted-desc');
 
   document.getElementById('result-count').textContent =
     sorted.length.toLocaleString() + ' result' + (sorted.length !== 1 ? 's' : '');
@@ -650,31 +585,29 @@ function renderTable() {
 
   if (sorted.length === 0) {
     tbody.innerHTML = `<tr class="state-row"><td colspan="12">
-      No results match your current filters.<br>
+      No results match your current filters.
       <span class="no-results-hint">Try removing a filter or clicking Reset to start over.</span>
     </td></tr>`;
     return;
   }
 
   const MAX = 500;
-  const rows = sorted.slice(0, MAX);
   let html = '';
 
-  rows.forEach((r, idx) => {
+  sorted.slice(0, MAX).forEach((r, idx) => {
     const year = (r.MeetDate||'').slice(0,4) || '—';
     const op = parseInt(r.OverallPlace) || 0;
-    const placeClass = op === 1 ? 'gold' : op === 2 ? 'silver' : op === 3 ? 'bronze' : '';
+    const pc = op===1?'gold':op===2?'silver':op===3?'bronze':'';
     const result = r.ResultValue ? `${r.ResultValue} ${r.ResultUnit||''}`.trim() : '—';
     const wr = r.WorldRecord === 'Y' ? '<span class="tag-wr">WR</span>' : '';
     const cat = r.EventCategory ? `<span class="tag-cat">${esc(r.EventCategory)}</span>` : '—';
     const nat = r.AthleteNationality || '';
-    const fl = flag(nat);
-    const isExpanded = expandedIdx === idx;
+    const expanded = expandedIdx === idx;
 
-    html += `<tr class="data-row${isExpanded ? ' expanded' : ''}" onclick="toggleExpand(${idx})">
-      <td class="col-place ${placeClass}">${op||'—'}</td>
+    html += `<tr class="data-row${expanded?' expanded':''}" onclick="toggleExpand(${idx})">
+      <td class="col-place ${pc}">${op||'—'}</td>
       <td class="col-athlete">${esc(r.AthleteName)}<span class="expand-arrow">▶</span></td>
-      <td class="col-nat">${fl ? fl + ' ' : ''}${esc(nat||'—')}</td>
+      <td><div class="nat-cell">${flagHTML(nat)}<span class="nat-code">${esc(nat||'—')}</span></div></td>
       <td>${esc(r.MeetName||'—')}</td>
       <td>${year}</td>
       <td>${esc(r.MeetFederation||'—')}</td>
@@ -686,9 +619,7 @@ function renderTable() {
       <td class="col-place">${r.Place||'—'}</td>
     </tr>`;
 
-    if (isExpanded) {
-      html += buildExpandRow(r);
-    }
+    if (expanded) html += buildExpandRow(r);
   });
 
   if (sorted.length > MAX) {
@@ -700,23 +631,21 @@ function renderTable() {
   tbody.innerHTML = html;
 }
 
-function esc(str) {
-  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+function esc(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 }
 
 function resetFilters() {
   document.getElementById('f-athlete').value = '';
-  ['f-federation','f-year','f-sex','f-category','f-implement','f-scored'].forEach(id => {
-    document.getElementById(id).selectedIndex = 0;
-  });
+  ['f-federation','f-year','f-sex','f-category','f-implement','f-scored']
+    .forEach(id => { document.getElementById(id).selectedIndex = 0; });
   expandedIdx = null;
   renderTable();
 }
 
-// ── EVENT LISTENERS ──
-document.getElementById('f-athlete').addEventListener('input', () => { expandedIdx = null; renderTable(); });
+document.getElementById('f-athlete').addEventListener('input', () => { expandedIdx=null; renderTable(); });
 ['f-federation','f-year','f-sex','f-category','f-implement','f-scored'].forEach(id => {
-  document.getElementById(id).addEventListener('change', () => { expandedIdx = null; renderTable(); });
+  document.getElementById(id).addEventListener('change', () => { expandedIdx=null; renderTable(); });
 });
 
 loadData();

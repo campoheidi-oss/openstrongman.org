@@ -6,6 +6,87 @@
 <title>OpenStrongman — About</title>
 <meta name="description" content="What OpenStrongman is, how we collect data, and how to contribute.">
 <link rel="stylesheet" href="style.css">
+<style>
+  .about-body { max-width: 700px; margin: 0 auto; padding: 2rem 1.5rem; }
+
+  .about-section { margin-bottom: 2.5rem; }
+
+  .about-section h2 {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.75rem;
+    color: var(--text);
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .about-section p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.75;
+    margin-bottom: 0.75rem;
+  }
+
+  .about-section p strong { color: var(--text); }
+
+  .about-section a { color: var(--accent-mid); }
+
+  /* Coffee box */
+  .coffee-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .coffee-icon { font-size: 1.75rem; flex-shrink: 0; line-height: 1; }
+
+  .coffee-text h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.35rem;
+  }
+
+  .coffee-text p { font-size: 13px; color: var(--muted); line-height: 1.6; margin: 0; }
+
+  .coffee-text a {
+    color: var(--accent-mid);
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  .coffee-text a:hover { text-decoration: underline; }
+
+  /* Contribute section */
+  .contribute-box {
+    background: var(--accent-light);
+    border: 1px solid #c5d5ea;
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .contribute-box h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+  }
+
+  .contribute-box p { font-size: 13px; color: var(--accent); opacity: 0.85; line-height: 1.6; margin-bottom: 0.5rem; }
+  .contribute-box a { color: var(--accent); font-weight: 600; }
+
+  @media (max-width: 580px) {
+    .about-body { padding: 1.5rem 1rem; }
+    .coffee-box { flex-direction: column; gap: 0.75rem; }
+  }
+</style>
 </head>
 <body>
 
@@ -13,15 +94,15 @@
   <a class="wordmark" href="index.html"><span>Open</span>Strongman</a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
-    <li><a href="rankings.html" >Rankings</a></li>
-    <li><a href="meets.html" >Meets</a></li>
-    <li><a href="athletes.html" >Athletes</a></li>
-    <li><a href="records.html" >Records</a></li>
-    <li><a href="data.html" >Data</a></li>
+    <li><a href="rankings.html">Rankings</a></li>
+    <li><a href="meets.html">Meets</a></li>
+    <li><a href="athletes.html">Athletes</a></li>
+    <li><a href="records.html">Records</a></li>
+    <li><a href="data.html">Data</a></li>
     <li><a href="about.html" class="active">About</a></li>
   </ul>
   <div class="nav-right">
-    <a class="btn-contribute" href="about.html#contribute">Contribute Data</a>
+    <a class="btn-contribute" href="#contribute">Contribute Data</a>
   </div>
 </nav>
 
@@ -29,15 +110,70 @@
   <div class="page-header">
     <p class="eyebrow">OpenStrongman</p>
     <h1>About</h1>
-    <p>What OpenStrongman is, how we collect data, and how to contribute.</p>
+    <p>What this project is, why it exists, and how to get involved.</p>
   </div>
 
-  <div class="placeholder-body">
-    <div class="placeholder-inner">
-      <div class="placeholder-icon">ℹ️</div>
-      <h2>Coming soon</h2>
-      <p>Information about the project mission, data sources, how to submit competition results, and how to get involved as a contributor.</p>
+  <div class="about-body">
+
+    <div class="about-section">
+      <h2>What is OpenStrongman?</h2>
+      <p>
+        OpenStrongman is a free, open archive of strongman competition results across all major US federations. Results are logged exactly as competed — weights, times, distances, reps — and organized using a consistent biomechanical event category system so data is useful across different federations and formats.
+      </p>
+      <p>
+        The project is built in the spirit of open data. All results are downloadable as CSV, freely usable for research, coaching analysis, or building your own tools — no account, no paywall, no ads, ever.
+      </p>
     </div>
+
+    <div class="about-section">
+      <h2>Why does this exist?</h2>
+      <p>
+        Results from thousands of strongman competitions exist only as PDFs, Facebook posts, and scattered spreadsheets. Athletes have no reliable way to track their history across federations. Coaches can't benchmark athletes objectively. Researchers have no dataset to work with.
+      </p>
+      <p>
+        <strong>OpenStrongman exists to fix that.</strong> We're building a permanent, community-maintained record of the sport — not affiliated with any federation, not trying to replace any federation, just making the historical record accessible.
+      </p>
+    </div>
+
+    <div class="about-section">
+      <h2>How is data collected?</h2>
+      <p>
+        Data is researched from publicly available sources — official results pages, federation websites, and competition records — and entered manually following our open schema. We prioritize accuracy over speed: every result is verified before it's published.
+      </p>
+      <p>
+        We are actively working toward data partnerships with federations and platforms to make collection more efficient over time. Results are stored as open CSV files in a public GitHub repository, giving the data a permanent home and full version history.
+      </p>
+    </div>
+
+    <!-- Keep it free + coffee -->
+    <div class="coffee-box">
+      <div class="coffee-icon">☕</div>
+      <div class="coffee-text">
+        <h3>OpenStrongman is free, and will stay free.</h3>
+        <p>
+          No subscriptions, no ads, no paywalls — ever. The data belongs to the community. If you find this project useful and want to support the work that goes into maintaining it, you're welcome to <a href="https://www.buymeacoffee.com" target="_blank" rel="noopener">buy us a coffee</a>. It's entirely optional and always appreciated.
+        </p>
+      </div>
+    </div>
+
+    <!-- Contribute -->
+    <div class="contribute-box" id="contribute">
+      <h3>Contribute data</h3>
+      <p>
+        Have results we're missing? Know a federation or meet that should be included? We'd love your help. OpenStrongman grows through community contributions — whether that's submitting a single meet result or helping us build a partnership with a federation.
+      </p>
+      <p>
+        Reach out at <a href="mailto:hello@openstrongman.org">hello@openstrongman.org</a> or open an issue on our <a href="https://github.com/campoheidi-oss/openstrongman.org" target="_blank" rel="noopener">GitHub repository</a>.
+      </p>
+    </div>
+
+    <div class="about-section">
+      <h2>Affiliations</h2>
+      <p>
+        OpenStrongman is an independent project and is not affiliated with any strongman federation, organization, or platform. We are not affiliated with <a href="https://www.openpowerlifting.org" target="_blank" rel="noopener">OpenPowerlifting.org</a> or <a href="https://www.openweightlifting.org" target="_blank" rel="noopener">OpenWeightlifting.org</a>, though we share their belief that sports data should be open and freely accessible.
+      </p>
+    </div>
+
   </div>
 </main>
 

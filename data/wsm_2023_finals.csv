@@ -1,61 +1,61 @@
 MeetName,MeetFederation,MeetDate,MeetLocation,Division,Sex,BodyweightKg,WeightClassKg,AthleteName,AthleteNationality,Event,EventCategory,Implement,ResultValue,ResultUnit,StonesCompleted,ImplementWeightKg,CourseDistanceM,TimeLimitSec,ScoredBy,WorldRecord,Place,OverallPlace,Points,Notes
-2023 World's Strongest Man,WSM,2023-04-22,"Myrtle Beach, South Carolina",Open,M,,,Mitchell Hooper,CAN,Reign Shield Carry,Carry,Shield,64.8,m,,,,,distance,,1,1,53.5,196kg shield; max distance; no time limit
-2023 World's Strongest Man,WSM,2023-04-22,"Myrtle Beach, South Carolina",Open,M,,,Tom Stoltman,GBR,Reign Shield Carry,Carry,Shield,63.15,m,,,,,distance,,2,2,49,196kg shield
-2023 World's Strongest Man,WSM,2023-04-22,"Myrtle Beach, South Carolina",Open,M,,,Oleksii Novikov,UKR,Reign Shield Carry,Carry,Shield,55.87,m,,,,,distance,,3,3,41,196kg shield
-2023 World's Strongest Man,WSM,2023-04-22,"Myrtle Beach, South Carolina",Open,M,,,Trey Mitchell,USA,Reign Shield Carry,Carry,Shield,50.83,m,,,,,distance,,4,4,39.5,196kg shield
-2023 World's Strongest Man,WSM,2023-04-22,"Myrtle Beach, South Carolina",Open,M,,,Evan Singleton,USA,Reign Shield Carry,Carry,Shield,48.3,m,,,,,distance,,5,5,39.5,196kg shield
-2023 World's Strongest Man,WSM,2023-04-22,"Myrtle Beach, South Carolina",Open,M,,,Pavlo Kordiyaka,UKR,Reign Shield Carry,Carry,Shield,46.59,m,,,,,distance,,6,6,31.5,196kg; original score ~66m; 19.8m penalty for out of bounds
-2023 World's Strongest Man,WSM,2023-04-22,"Myrtle Beach, South Carolina",Open,M,,,Brian Shaw,USA,Reign Shield Carry,Carry,Shield,39.1,m,,,,,distance,,7,7,27.5,196kg shield
-2023 World's Strongest Man,WSM,2023-04-22,"Myrtle Beach, South Carolina",Open,M,,,Luke Stoltman,GBR,Reign Shield Carry,Carry,Shield,44.62,m,,,,,distance,,8,8,21.5,196kg shield
-2023 World's Strongest Man,WSM,2023-04-22,"Myrtle Beach, South Carolina",Open,M,,,Mathew Ragg,NZL,Reign Shield Carry,Carry,Shield,37.65,m,,,,,distance,,9,9,18.5,196kg shield
-2023 World's Strongest Man,WSM,2023-04-22,"Myrtle Beach, South Carolina",Open,M,,,Jaco Schoonwinkel,RSA,Reign Shield Carry,Carry,Shield,15.92,m,,,,,distance,,10,10,5.5,196kg shield
-2023 World's Strongest Man,WSM,2023-04-22,"Myrtle Beach, South Carolina",Open,M,,,Mitchell Hooper,CAN,KNAACK Deadlift,Deadlift,Barbell,8,reps,,355,,60,reps,,1,1,53.5,355kg barbell deadlift; 60 sec
-2023 World's Strongest Man,WSM,2023-04-22,"Myrtle Beach, South Carolina",Open,M,,,Tom Stoltman,GBR,KNAACK Deadlift,Deadlift,Barbell,6,reps,,355,,60,reps,,6,2,49,355kg
-2023 World's Strongest Man,WSM,2023-04-22,"Myrtle Beach, South Carolina",Open,M,,,Oleksii Novikov,UKR,KNAACK Deadlift,Deadlift,Barbell,7,reps,,355,,60,reps,,2,3,41,355kg; tied 2nd
-2023 World's Strongest Man,WSM,2023-04-22,"Myrtle Beach, South Carolina",Open,M,,,Trey Mitchell,USA,KNAACK Deadlift,Deadlift,Barbell,7,reps,,355,,60,reps,,2,4,39.5,355kg; tied 2nd
-2023 World's Strongest Man,WSM,2023-04-22,"Myrtle Beach, South Carolina",Open,M,,,Evan Singleton,USA,KNAACK Deadlift,Deadlift,Barbell,5,reps,,355,,60,reps,,7,5,39.5,355kg; tied 7th
-2023 World's Strongest Man,WSM,2023-04-22,"Myrtle Beach, South Carolina",Open,M,,,Pavlo Kordiyaka,UKR,KNAACK Deadlift,Deadlift,Barbell,4,reps,,355,,60,reps,,9,6,31.5,355kg
-2023 World's Strongest Man,WSM,2023-04-22,"Myrtle Beach, South Carolina",Open,M,,,Brian Shaw,USA,KNAACK Deadlift,Deadlift,Barbell,7,reps,,355,,60,reps,,2,7,27.5,355kg; tied 2nd
-2023 World's Strongest Man,WSM,2023-04-22,"Myrtle Beach, South Carolina",Open,M,,,Luke Stoltman,GBR,KNAACK Deadlift,Deadlift,Barbell,3,reps,,355,,60,reps,,10,8,21.5,355kg
-2023 World's Strongest Man,WSM,2023-04-22,"Myrtle Beach, South Carolina",Open,M,,,Mathew Ragg,NZL,KNAACK Deadlift,Deadlift,Barbell,7,reps,,355,,60,reps,,2,9,18.5,355kg; tied 2nd
-2023 World's Strongest Man,WSM,2023-04-22,"Myrtle Beach, South Carolina",Open,M,,,Jaco Schoonwinkel,RSA,KNAACK Deadlift,Deadlift,Barbell,5,reps,,355,,60,reps,,7,10,5.5,355kg; tied 7th
-2023 World's Strongest Man,WSM,2023-04-22,"Myrtle Beach, South Carolina",Open,M,,,Mitchell Hooper,CAN,Fingal's Fingers,Flip,Fingal's Fingers,49.89,sec,5,145-172,,60,time,,6,1,53.5,5 fingers; 145-172kg; 60 sec
-2023 World's Strongest Man,WSM,2023-04-22,"Myrtle Beach, South Carolina",Open,M,,,Tom Stoltman,GBR,Fingal's Fingers,Flip,Fingal's Fingers,39.36,sec,5,145-172,,60,time,,1,2,49,5 fingers
-2023 World's Strongest Man,WSM,2023-04-22,"Myrtle Beach, South Carolina",Open,M,,,Oleksii Novikov,UKR,Fingal's Fingers,Flip,Fingal's Fingers,42.26,sec,5,145-172,,60,time,,2,3,41,5 fingers
-2023 World's Strongest Man,WSM,2023-04-22,"Myrtle Beach, South Carolina",Open,M,,,Trey Mitchell,USA,Fingal's Fingers,Flip,Fingal's Fingers,48.46,sec,5,145-172,,60,time,,5,4,39.5,5 fingers
-2023 World's Strongest Man,WSM,2023-04-22,"Myrtle Beach, South Carolina",Open,M,,,Evan Singleton,USA,Fingal's Fingers,Flip,Fingal's Fingers,45.89,sec,5,145-172,,60,time,,4,5,39.5,5 fingers
-2023 World's Strongest Man,WSM,2023-04-22,"Myrtle Beach, South Carolina",Open,M,,,Pavlo Kordiyaka,UKR,Fingal's Fingers,Flip,Fingal's Fingers,48.69,sec,5,145-172,,60,time,,3,6,31.5,5 fingers
-2023 World's Strongest Man,WSM,2023-04-22,"Myrtle Beach, South Carolina",Open,M,,,Brian Shaw,USA,Fingal's Fingers,Flip,Fingal's Fingers,26.61,sec,4,145-172,,60,time,,7,7,27.5,4 fingers
-2023 World's Strongest Man,WSM,2023-04-22,"Myrtle Beach, South Carolina",Open,M,,,Luke Stoltman,GBR,Fingal's Fingers,Flip,Fingal's Fingers,32.54,sec,4,145-172,,60,time,,8,8,21.5,4 fingers
-2023 World's Strongest Man,WSM,2023-04-22,"Myrtle Beach, South Carolina",Open,M,,,Mathew Ragg,NZL,Fingal's Fingers,Flip,Fingal's Fingers,35.03,sec,4,145-172,,60,time,,10,9,18.5,4 fingers
-2023 World's Strongest Man,WSM,2023-04-22,"Myrtle Beach, South Carolina",Open,M,,,Jaco Schoonwinkel,RSA,Fingal's Fingers,Flip,Fingal's Fingers,40.76,sec,4,145-172,,60,time,,9,10,5.5,4 fingers
-2023 World's Strongest Man,WSM,2023-04-23,"Myrtle Beach, South Carolina",Open,M,,,Mitchell Hooper,CAN,Max Dumbbell,Overhead Press,Dumbbell,145,kg,,,,,weight,,1,1,53.5,4 reps; tied 1st; weights 115-155kg progressive
-2023 World's Strongest Man,WSM,2023-04-23,"Myrtle Beach, South Carolina",Open,M,,,Tom Stoltman,GBR,Max Dumbbell,Overhead Press,Dumbbell,132.5,kg,,,,,weight,,3,2,49,3 reps; tied 3rd
-2023 World's Strongest Man,WSM,2023-04-23,"Myrtle Beach, South Carolina",Open,M,,,Oleksii Novikov,UKR,Max Dumbbell,Overhead Press,Dumbbell,140,kg,,,,,weight,,2,3,41,3 reps
-2023 World's Strongest Man,WSM,2023-04-23,"Myrtle Beach, South Carolina",Open,M,,,Trey Mitchell,USA,Max Dumbbell,Overhead Press,Dumbbell,125,kg,,,,,weight,,4,4,39.5,2 reps; tied 4th
-2023 World's Strongest Man,WSM,2023-04-23,"Myrtle Beach, South Carolina",Open,M,,,Evan Singleton,USA,Max Dumbbell,Overhead Press,Dumbbell,145,kg,,,,,weight,,1,5,39.5,4 reps; tied 1st
-2023 World's Strongest Man,WSM,2023-04-23,"Myrtle Beach, South Carolina",Open,M,,,Pavlo Kordiyaka,UKR,Max Dumbbell,Overhead Press,Dumbbell,132.5,kg,,,,,weight,,3,6,31.5,3 reps; tied 3rd
-2023 World's Strongest Man,WSM,2023-04-23,"Myrtle Beach, South Carolina",Open,M,,,Brian Shaw,USA,Max Dumbbell,Overhead Press,Dumbbell,125,kg,,,,,weight,,4,7,27.5,2 reps; tied 4th
-2023 World's Strongest Man,WSM,2023-04-23,"Myrtle Beach, South Carolina",Open,M,,,Luke Stoltman,GBR,Max Dumbbell,Overhead Press,Dumbbell,132.5,kg,,,,,weight,,3,8,21.5,3 reps; tied 3rd
-2023 World's Strongest Man,WSM,2023-04-23,"Myrtle Beach, South Carolina",Open,M,,,Mathew Ragg,NZL,Max Dumbbell,Overhead Press,Dumbbell,125,kg,,,,,weight,,4,9,18.5,2 reps; tied 4th
+2023 World's Strongest Man,WSM,2023-04-22,"Myrtle Beach, South Carolina",Open,M,,,Mitchell Hooper,CAN,Reign Shield Carry,Carry,Shield,64.8,m,,196,,,distance,,1,1,53.5,
+2023 World's Strongest Man,WSM,2023-04-22,"Myrtle Beach, South Carolina",Open,M,,,Tom Stoltman,GBR,Reign Shield Carry,Carry,Shield,63.15,m,,196,,,distance,,2,2,49,
+2023 World's Strongest Man,WSM,2023-04-22,"Myrtle Beach, South Carolina",Open,M,,,Oleksii Novikov,UKR,Reign Shield Carry,Carry,Shield,55.87,m,,196,,,distance,,3,3,41,
+2023 World's Strongest Man,WSM,2023-04-22,"Myrtle Beach, South Carolina",Open,M,,,Trey Mitchell,USA,Reign Shield Carry,Carry,Shield,50.83,m,,196,,,distance,,4,4,39.5,
+2023 World's Strongest Man,WSM,2023-04-22,"Myrtle Beach, South Carolina",Open,M,,,Evan Singleton,USA,Reign Shield Carry,Carry,Shield,48.3,m,,196,,,distance,,5,5,39.5,
+2023 World's Strongest Man,WSM,2023-04-22,"Myrtle Beach, South Carolina",Open,M,,,Pavlo Kordiyaka,UKR,Reign Shield Carry,Carry,Shield,46.59,m,,196,,,distance,,6,6,31.5,19.8m penalty for stepping out of bounds
+2023 World's Strongest Man,WSM,2023-04-22,"Myrtle Beach, South Carolina",Open,M,,,Brian Shaw,USA,Reign Shield Carry,Carry,Shield,39.1,m,,196,,,distance,,7,7,27.5,
+2023 World's Strongest Man,WSM,2023-04-22,"Myrtle Beach, South Carolina",Open,M,,,Luke Stoltman,GBR,Reign Shield Carry,Carry,Shield,44.62,m,,196,,,distance,,8,8,21.5,
+2023 World's Strongest Man,WSM,2023-04-22,"Myrtle Beach, South Carolina",Open,M,,,Mathew Ragg,NZL,Reign Shield Carry,Carry,Shield,37.65,m,,196,,,distance,,9,9,18.5,
+2023 World's Strongest Man,WSM,2023-04-22,"Myrtle Beach, South Carolina",Open,M,,,Jaco Schoonwinkel,RSA,Reign Shield Carry,Carry,Shield,15.92,m,,196,,,distance,,10,10,5.5,
+2023 World's Strongest Man,WSM,2023-04-22,"Myrtle Beach, South Carolina",Open,M,,,Mitchell Hooper,CAN,KNAACK Deadlift,Deadlift,Barbell,8,reps,,355,,60,reps,,1,1,53.5,
+2023 World's Strongest Man,WSM,2023-04-22,"Myrtle Beach, South Carolina",Open,M,,,Tom Stoltman,GBR,KNAACK Deadlift,Deadlift,Barbell,6,reps,,355,,60,reps,,6,2,49,
+2023 World's Strongest Man,WSM,2023-04-22,"Myrtle Beach, South Carolina",Open,M,,,Oleksii Novikov,UKR,KNAACK Deadlift,Deadlift,Barbell,7,reps,,355,,60,reps,,2,3,41,
+2023 World's Strongest Man,WSM,2023-04-22,"Myrtle Beach, South Carolina",Open,M,,,Trey Mitchell,USA,KNAACK Deadlift,Deadlift,Barbell,7,reps,,355,,60,reps,,2,4,39.5,
+2023 World's Strongest Man,WSM,2023-04-22,"Myrtle Beach, South Carolina",Open,M,,,Evan Singleton,USA,KNAACK Deadlift,Deadlift,Barbell,5,reps,,355,,60,reps,,7,5,39.5,
+2023 World's Strongest Man,WSM,2023-04-22,"Myrtle Beach, South Carolina",Open,M,,,Pavlo Kordiyaka,UKR,KNAACK Deadlift,Deadlift,Barbell,4,reps,,355,,60,reps,,9,6,31.5,
+2023 World's Strongest Man,WSM,2023-04-22,"Myrtle Beach, South Carolina",Open,M,,,Brian Shaw,USA,KNAACK Deadlift,Deadlift,Barbell,7,reps,,355,,60,reps,,2,7,27.5,
+2023 World's Strongest Man,WSM,2023-04-22,"Myrtle Beach, South Carolina",Open,M,,,Luke Stoltman,GBR,KNAACK Deadlift,Deadlift,Barbell,3,reps,,355,,60,reps,,10,8,21.5,
+2023 World's Strongest Man,WSM,2023-04-22,"Myrtle Beach, South Carolina",Open,M,,,Mathew Ragg,NZL,KNAACK Deadlift,Deadlift,Barbell,7,reps,,355,,60,reps,,2,9,18.5,
+2023 World's Strongest Man,WSM,2023-04-22,"Myrtle Beach, South Carolina",Open,M,,,Jaco Schoonwinkel,RSA,KNAACK Deadlift,Deadlift,Barbell,5,reps,,355,,60,reps,,7,10,5.5,
+2023 World's Strongest Man,WSM,2023-04-22,"Myrtle Beach, South Carolina",Open,M,,,Mitchell Hooper,CAN,Fingal's Fingers,Flip,Fingal's Fingers,49.89,sec,5,145-172,,60,time,,6,1,53.5,
+2023 World's Strongest Man,WSM,2023-04-22,"Myrtle Beach, South Carolina",Open,M,,,Tom Stoltman,GBR,Fingal's Fingers,Flip,Fingal's Fingers,39.36,sec,5,145-172,,60,time,,1,2,49,
+2023 World's Strongest Man,WSM,2023-04-22,"Myrtle Beach, South Carolina",Open,M,,,Oleksii Novikov,UKR,Fingal's Fingers,Flip,Fingal's Fingers,42.26,sec,5,145-172,,60,time,,2,3,41,
+2023 World's Strongest Man,WSM,2023-04-22,"Myrtle Beach, South Carolina",Open,M,,,Trey Mitchell,USA,Fingal's Fingers,Flip,Fingal's Fingers,48.46,sec,5,145-172,,60,time,,5,4,39.5,
+2023 World's Strongest Man,WSM,2023-04-22,"Myrtle Beach, South Carolina",Open,M,,,Evan Singleton,USA,Fingal's Fingers,Flip,Fingal's Fingers,45.89,sec,5,145-172,,60,time,,4,5,39.5,
+2023 World's Strongest Man,WSM,2023-04-22,"Myrtle Beach, South Carolina",Open,M,,,Pavlo Kordiyaka,UKR,Fingal's Fingers,Flip,Fingal's Fingers,48.69,sec,5,145-172,,60,time,,3,6,31.5,
+2023 World's Strongest Man,WSM,2023-04-22,"Myrtle Beach, South Carolina",Open,M,,,Brian Shaw,USA,Fingal's Fingers,Flip,Fingal's Fingers,26.61,sec,4,145-172,,60,time,,7,7,27.5,
+2023 World's Strongest Man,WSM,2023-04-22,"Myrtle Beach, South Carolina",Open,M,,,Luke Stoltman,GBR,Fingal's Fingers,Flip,Fingal's Fingers,32.54,sec,4,145-172,,60,time,,8,8,21.5,
+2023 World's Strongest Man,WSM,2023-04-22,"Myrtle Beach, South Carolina",Open,M,,,Mathew Ragg,NZL,Fingal's Fingers,Flip,Fingal's Fingers,35.03,sec,4,145-172,,60,time,,10,9,18.5,
+2023 World's Strongest Man,WSM,2023-04-22,"Myrtle Beach, South Carolina",Open,M,,,Jaco Schoonwinkel,RSA,Fingal's Fingers,Flip,Fingal's Fingers,40.76,sec,4,145-172,,60,time,,9,10,5.5,
+2023 World's Strongest Man,WSM,2023-04-23,"Myrtle Beach, South Carolina",Open,M,,,Mitchell Hooper,CAN,Max Dumbbell,Overhead Press,Dumbbell,145,kg,,,,,weight,,1,1,53.5,
+2023 World's Strongest Man,WSM,2023-04-23,"Myrtle Beach, South Carolina",Open,M,,,Tom Stoltman,GBR,Max Dumbbell,Overhead Press,Dumbbell,132.5,kg,,,,,weight,,3,2,49,
+2023 World's Strongest Man,WSM,2023-04-23,"Myrtle Beach, South Carolina",Open,M,,,Oleksii Novikov,UKR,Max Dumbbell,Overhead Press,Dumbbell,140,kg,,,,,weight,,2,3,41,
+2023 World's Strongest Man,WSM,2023-04-23,"Myrtle Beach, South Carolina",Open,M,,,Trey Mitchell,USA,Max Dumbbell,Overhead Press,Dumbbell,125,kg,,,,,weight,,4,4,39.5,
+2023 World's Strongest Man,WSM,2023-04-23,"Myrtle Beach, South Carolina",Open,M,,,Evan Singleton,USA,Max Dumbbell,Overhead Press,Dumbbell,145,kg,,,,,weight,,1,5,39.5,
+2023 World's Strongest Man,WSM,2023-04-23,"Myrtle Beach, South Carolina",Open,M,,,Pavlo Kordiyaka,UKR,Max Dumbbell,Overhead Press,Dumbbell,132.5,kg,,,,,weight,,3,6,31.5,
+2023 World's Strongest Man,WSM,2023-04-23,"Myrtle Beach, South Carolina",Open,M,,,Brian Shaw,USA,Max Dumbbell,Overhead Press,Dumbbell,125,kg,,,,,weight,,4,7,27.5,
+2023 World's Strongest Man,WSM,2023-04-23,"Myrtle Beach, South Carolina",Open,M,,,Luke Stoltman,GBR,Max Dumbbell,Overhead Press,Dumbbell,132.5,kg,,,,,weight,,3,8,21.5,
+2023 World's Strongest Man,WSM,2023-04-23,"Myrtle Beach, South Carolina",Open,M,,,Mathew Ragg,NZL,Max Dumbbell,Overhead Press,Dumbbell,125,kg,,,,,weight,,4,9,18.5,
 2023 World's Strongest Man,WSM,2023-04-23,"Myrtle Beach, South Carolina",Open,M,,,Jaco Schoonwinkel,RSA,Max Dumbbell,Overhead Press,Dumbbell,0,kg,,,,,weight,,10,10,5.5,Withdrawn during event
-2023 World's Strongest Man,WSM,2023-04-23,"Myrtle Beach, South Carolina",Open,M,,,Mitchell Hooper,CAN,Bus Pull,Pull,Bus,30.24,sec,,,25,75,time,,1,1,53.5,Bus 23132kg; 25m course; 75 sec cap
-2023 World's Strongest Man,WSM,2023-04-23,"Myrtle Beach, South Carolina",Open,M,,,Tom Stoltman,GBR,Bus Pull,Pull,Bus,32.27,sec,,,25,75,time,,2,2,49,tied 2nd
-2023 World's Strongest Man,WSM,2023-04-23,"Myrtle Beach, South Carolina",Open,M,,,Oleksii Novikov,UKR,Bus Pull,Pull,Bus,33.35,sec,,,25,75,time,,8,3,41,
-2023 World's Strongest Man,WSM,2023-04-23,"Myrtle Beach, South Carolina",Open,M,,,Trey Mitchell,USA,Bus Pull,Pull,Bus,32.49,sec,,,25,75,time,,5,4,39.5,
-2023 World's Strongest Man,WSM,2023-04-23,"Myrtle Beach, South Carolina",Open,M,,,Evan Singleton,USA,Bus Pull,Pull,Bus,32.27,sec,,,25,75,time,,2,5,39.5,tied 2nd
-2023 World's Strongest Man,WSM,2023-04-23,"Myrtle Beach, South Carolina",Open,M,,,Pavlo Kordiyaka,UKR,Bus Pull,Pull,Bus,32.46,sec,,,25,75,time,,4,6,31.5,
-2023 World's Strongest Man,WSM,2023-04-23,"Myrtle Beach, South Carolina",Open,M,,,Brian Shaw,USA,Bus Pull,Pull,Bus,32.65,sec,,,25,75,time,,6,7,27.5,Final WSM event for Brian Shaw
-2023 World's Strongest Man,WSM,2023-04-23,"Myrtle Beach, South Carolina",Open,M,,,Luke Stoltman,GBR,Bus Pull,Pull,Bus,32.83,sec,,,25,75,time,,7,8,21.5,
-2023 World's Strongest Man,WSM,2023-04-23,"Myrtle Beach, South Carolina",Open,M,,,Mathew Ragg,NZL,Bus Pull,Pull,Bus,36.29,sec,,,25,75,time,,9,9,18.5,
-2023 World's Strongest Man,WSM,2023-04-23,"Myrtle Beach, South Carolina",Open,M,,,Jaco Schoonwinkel,RSA,Bus Pull,Pull,Bus,0,sec,,,25,75,time,,10,10,5.5,Withdrawn
-2023 World's Strongest Man,WSM,2023-04-23,"Myrtle Beach, South Carolina",Open,M,,,Mitchell Hooper,CAN,Atlas Stones,Load,Atlas Stone,36.96,sec,5,150-210,,60,time,,2,1,53.5,5 stones 150-210kg; 60 sec
-2023 World's Strongest Man,WSM,2023-04-23,"Myrtle Beach, South Carolina",Open,M,,,Tom Stoltman,GBR,Atlas Stones,Load,Atlas Stone,33.26,sec,5,150-210,,60,time,,1,2,49,5 stones
-2023 World's Strongest Man,WSM,2023-04-23,"Myrtle Beach, South Carolina",Open,M,,,Oleksii Novikov,UKR,Atlas Stones,Load,Atlas Stone,27.43,sec,4,150-210,,60,time,,4,3,41,4 stones
-2023 World's Strongest Man,WSM,2023-04-23,"Myrtle Beach, South Carolina",Open,M,,,Trey Mitchell,USA,Atlas Stones,Load,Atlas Stone,45.72,sec,5,150-210,,60,time,,3,4,39.5,5 stones
-2023 World's Strongest Man,WSM,2023-04-23,"Myrtle Beach, South Carolina",Open,M,,,Evan Singleton,USA,Atlas Stones,Load,Atlas Stone,28.16,sec,4,150-210,,60,time,,5,5,39.5,4 stones
-2023 World's Strongest Man,WSM,2023-04-23,"Myrtle Beach, South Carolina",Open,M,,,Pavlo Kordiyaka,UKR,Atlas Stones,Load,Atlas Stone,45.86,sec,4,150-210,,60,time,,7,6,31.5,4 stones
-2023 World's Strongest Man,WSM,2023-04-23,"Myrtle Beach, South Carolina",Open,M,,,Brian Shaw,USA,Atlas Stones,Load,Atlas Stone,35.88,sec,4,150-210,,60,time,,6,7,27.5,4 stones; Brian Shaw's final WSM event
-2023 World's Strongest Man,WSM,2023-04-23,"Myrtle Beach, South Carolina",Open,M,,,Luke Stoltman,GBR,Atlas Stones,Load,Atlas Stone,48.49,sec,4,150-210,,60,time,,8,8,21.5,4 stones
-2023 World's Strongest Man,WSM,2023-04-23,"Myrtle Beach, South Carolina",Open,M,,,Mathew Ragg,NZL,Atlas Stones,Load,Atlas Stone,49.5,sec,4,150-210,,60,time,,9,9,18.5,4 stones
-2023 World's Strongest Man,WSM,2023-04-23,"Myrtle Beach, South Carolina",Open,M,,,Jaco Schoonwinkel,RSA,Atlas Stones,Load,Atlas Stone,0,sec,0,150-210,,60,time,,10,10,5.5,Withdrawn
+2023 World's Strongest Man,WSM,2023-04-23,"Myrtle Beach, South Carolina",Open,M,,,Mitchell Hooper,CAN,Bus Pull,Pull,Bus,30.24,sec,,23132,25,75,time,,1,1,53.5,
+2023 World's Strongest Man,WSM,2023-04-23,"Myrtle Beach, South Carolina",Open,M,,,Tom Stoltman,GBR,Bus Pull,Pull,Bus,32.27,sec,,23132,25,75,time,,2,2,49,
+2023 World's Strongest Man,WSM,2023-04-23,"Myrtle Beach, South Carolina",Open,M,,,Oleksii Novikov,UKR,Bus Pull,Pull,Bus,33.35,sec,,23132,25,75,time,,8,3,41,
+2023 World's Strongest Man,WSM,2023-04-23,"Myrtle Beach, South Carolina",Open,M,,,Trey Mitchell,USA,Bus Pull,Pull,Bus,32.49,sec,,23132,25,75,time,,5,4,39.5,
+2023 World's Strongest Man,WSM,2023-04-23,"Myrtle Beach, South Carolina",Open,M,,,Evan Singleton,USA,Bus Pull,Pull,Bus,32.27,sec,,23132,25,75,time,,2,5,39.5,
+2023 World's Strongest Man,WSM,2023-04-23,"Myrtle Beach, South Carolina",Open,M,,,Pavlo Kordiyaka,UKR,Bus Pull,Pull,Bus,32.46,sec,,23132,25,75,time,,4,6,31.5,
+2023 World's Strongest Man,WSM,2023-04-23,"Myrtle Beach, South Carolina",Open,M,,,Brian Shaw,USA,Bus Pull,Pull,Bus,32.65,sec,,23132,25,75,time,,6,7,27.5,Brian Shaw's final WSM competition
+2023 World's Strongest Man,WSM,2023-04-23,"Myrtle Beach, South Carolina",Open,M,,,Luke Stoltman,GBR,Bus Pull,Pull,Bus,32.83,sec,,23132,25,75,time,,7,8,21.5,
+2023 World's Strongest Man,WSM,2023-04-23,"Myrtle Beach, South Carolina",Open,M,,,Mathew Ragg,NZL,Bus Pull,Pull,Bus,36.29,sec,,23132,25,75,time,,9,9,18.5,
+2023 World's Strongest Man,WSM,2023-04-23,"Myrtle Beach, South Carolina",Open,M,,,Jaco Schoonwinkel,RSA,Bus Pull,Pull,Bus,0,sec,,23132,25,75,time,,10,10,5.5,Withdrawn
+2023 World's Strongest Man,WSM,2023-04-23,"Myrtle Beach, South Carolina",Open,M,,,Mitchell Hooper,CAN,Atlas Stones,Load,Atlas Stone,36.96,sec,5,150-210,,60,time,,2,1,53.5,
+2023 World's Strongest Man,WSM,2023-04-23,"Myrtle Beach, South Carolina",Open,M,,,Tom Stoltman,GBR,Atlas Stones,Load,Atlas Stone,33.26,sec,5,150-210,,60,time,,1,2,49,
+2023 World's Strongest Man,WSM,2023-04-23,"Myrtle Beach, South Carolina",Open,M,,,Oleksii Novikov,UKR,Atlas Stones,Load,Atlas Stone,27.43,sec,4,150-210,,60,time,,4,3,41,
+2023 World's Strongest Man,WSM,2023-04-23,"Myrtle Beach, South Carolina",Open,M,,,Trey Mitchell,USA,Atlas Stones,Load,Atlas Stone,45.72,sec,5,150-210,,60,time,,3,4,39.5,
+2023 World's Strongest Man,WSM,2023-04-23,"Myrtle Beach, South Carolina",Open,M,,,Evan Singleton,USA,Atlas Stones,Load,Atlas Stone,28.16,sec,4,150-210,,60,time,,5,5,39.5,
+2023 World's Strongest Man,WSM,2023-04-23,"Myrtle Beach, South Carolina",Open,M,,,Pavlo Kordiyaka,UKR,Atlas Stones,Load,Atlas Stone,45.86,sec,4,150-210,,60,time,,7,6,31.5,
+2023 World's Strongest Man,WSM,2023-04-23,"Myrtle Beach, South Carolina",Open,M,,,Brian Shaw,USA,Atlas Stones,Load,Atlas Stone,35.88,sec,4,150-210,,60,time,,6,7,27.5,Brian Shaw's final WSM competition
+2023 World's Strongest Man,WSM,2023-04-23,"Myrtle Beach, South Carolina",Open,M,,,Luke Stoltman,GBR,Atlas Stones,Load,Atlas Stone,48.49,sec,4,150-210,,60,time,,8,8,21.5,
+2023 World's Strongest Man,WSM,2023-04-23,"Myrtle Beach, South Carolina",Open,M,,,Mathew Ragg,NZL,Atlas Stones,Load,Atlas Stone,49.5,sec,4,150-210,,60,time,,9,9,18.5,
+2023 World's Strongest Man,WSM,2023-04-23,"Myrtle Beach, South Carolina",Open,M,,,Jaco Schoonwinkel,RSA,Atlas Stones,Load,Atlas Stone,0,sec,0,150-210,,60,time,,10,10,5.5,

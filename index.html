@@ -385,7 +385,7 @@ async function loadStats() {
           .catch(e => { console.warn('Failed to load ' + url + ':', e); return []; })
       )
     );
-    const allRows = results.flat().filter(r => r.AthleteName && r.Event !== 'Overall' && r.Event !== '');
+    const allRows = results.flat().filter(r => r.AthleteName && r.AthleteName.trim() !== '');
 
     if (allRows.length === 0) {
       console.warn('OpenStrongman: No rows loaded from any CSV file.');

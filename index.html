@@ -350,6 +350,8 @@ const CSV_FILES = [
   'data/wsm_results.csv',
   'data/wsm_2023_finals.csv',
   'data/wsm_2024_finals.csv',
+  'data/rogue_invitational_overall.csv',
+  'data/rogue_2024_finals.csv',
 ];
 
 function parseCSV(text) {
@@ -367,16 +369,19 @@ async function loadStats() {
   try {
     const results = await Promise.all(
       CSV_FILES.map(url =>
-        fetch(url, { cache: 'no-cache' })
-          .then(r => { if (!r.ok) throw new Error(r.status); return r.text(); })
+        fetch(url)
+          .then(r => {
+            if (!r.ok) throw new Error('HTTP ' + r.status + ' for ' + url);
+            return r.text();
+          })
           .then(parseCSV)
-          .catch(() => [])
+          .catch(e => { console.warn('Failed to load ' + url + ':', e); return []; })
       )
     );
-    const allRows = results.flat();
+    const allRows = results.flat().filter(r => r.AthleteName && r.Event !== 'Overall' && r.Event !== '');
 
     if (allRows.length === 0) {
-      // Data didn't load — show dashes gracefully
+      console.warn('OpenStrongman: No rows loaded from any CSV file.');
       return;
     }
 
@@ -389,15 +394,11 @@ async function loadStats() {
     document.getElementById('stat-athletes').textContent = athletes.toLocaleString();
     document.getElementById('stat-meets').textContent = meets.toLocaleString();
     document.getElementById('stat-feds').textContent = feds.toLocaleString();
+    console.log('OpenStrongman stats loaded:', { resultCount, athletes, meets, feds });
   } catch(e) {
-    // Fail silently — dashes remain
+    console.error('OpenStrongman stats error:', e);
   }
 }
-
-// Also update default display to dashes instead of 0
-document.querySelectorAll('.stat-value[id]').forEach(el => {
-  if (el.textContent === '0') el.textContent = '—';
-});
 
 loadStats();
 </script>

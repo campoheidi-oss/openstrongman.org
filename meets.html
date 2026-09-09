@@ -63,8 +63,6 @@
     flex-shrink: 0;
   }
 
-  .fed-abbr.intl { background: var(--red-light); color: var(--red); }
-
   .fed-desc { font-size: 12px; color: var(--muted); line-height: 1.5; flex: 1; }
 
   .fed-link {
@@ -129,7 +127,7 @@
   <!-- BETA BANNER -->
   <div id="beta-banner" style="background:#1f3a5f;color:#fff;font-size:12px;text-align:center;padding:0.5rem 1rem;display:flex;align-items:center;justify-content:center;gap:0.75rem;flex-shrink:0;">
     <span>🏗️ <strong>OpenStrongman is actively being built.</strong> Data and features are added weekly — results may be incomplete.</span>
-    <a href="/about.html" style="color:#a8c4e0;text-decoration:none;white-space:nowrap;">Learn more →</a>
+    <a href="about.html" style="color:#a8c4e0;text-decoration:none;white-space:nowrap;">Learn more →</a>
     <button onclick="document.getElementById('beta-banner').style.display='none'" style="background:none;border:none;color:rgba(255,255,255,0.5);cursor:pointer;font-size:14px;line-height:1;padding:0 0 0 0.5rem;">✕</button>
   </div>
 
@@ -152,10 +150,9 @@
       <p>Search and browse past competitions by federation, year, and location. In the meantime, use the <a href="rankings.html">Rankings</a> page to filter results by year or federation.</p>
     </div>
 
-    <!-- US Federations -->
     <div class="section-header">
-      <h2>US Federations</h2>
-      <span>Upcoming events</span>
+      <h2>Find Upcoming Events</h2>
+      <span>Federation &amp; event websites</span>
     </div>
 
     <div class="fed-grid">
@@ -169,16 +166,16 @@
         <span class="fed-link">View upcoming SC events</span>
       </a>
 
-      <a class="fed-card" href="https://unitedstatesstrongman.com" target="_blank" rel="noopener">
+      <a class="fed-card" href="https://www.unitedstatesstrongman.com/upcoming-events" target="_blank" rel="noopener">
         <div class="fed-card-top">
           <span class="fed-name">United States Strongman</span>
           <span class="fed-abbr">USS</span>
         </div>
         <span class="fed-desc">National amateur federation with events across the US and a pathway to national competition. Many USS events are hosted on Iron Podium.</span>
-        <span class="fed-link">Visit USS website</span>
+        <span class="fed-link">View upcoming USS events</span>
       </a>
 
-      <a class="fed-card" href="https://ironpodium.com/events" target="_blank" rel="noopener">
+      <a class="fed-card" href="https://ironpodium.com/browse/events" target="_blank" rel="noopener">
         <div class="fed-card-top">
           <span class="fed-name">Iron Podium</span>
           <span class="fed-abbr">IP</span>
@@ -196,66 +193,55 @@
         <span class="fed-link">Visit OSG website</span>
       </a>
 
-      <a class="fed-card" href="https://www.instagram.com/prostrongmanleague/" target="_blank" rel="noopener">
+      <a class="fed-card" href="https://professionalstrongmanleague.com/" target="_blank" rel="noopener">
         <div class="fed-card-top">
           <span class="fed-name">Pro Strongman League</span>
           <span class="fed-abbr">PSL</span>
         </div>
-        <span class="fed-desc">Weight-class focused professional circuit with events livestreamed on YouTube. Events run through Iron Podium. Follow on Instagram for event announcements.</span>
-        <span class="fed-link">Follow PSL on Instagram</span>
+        <span class="fed-desc">Weight-class focused professional circuit with events livestreamed on YouTube. Events run through Iron Podium.</span>
+        <span class="fed-link">Visit PSL website</span>
       </a>
-
-
-    </div>
-
-    <!-- International -->
-    <div class="section-header">
-      <h2>International Events</h2>
-      <span>Elite &amp; professional competitions</span>
-    </div>
-
-    <div class="fed-grid">
 
       <a class="fed-card" href="https://theworldsstrongestman.com" target="_blank" rel="noopener">
         <div class="fed-card-top">
           <span class="fed-name">World's Strongest Man</span>
-          <span class="fed-abbr intl">WSM</span>
+          <span class="fed-abbr">WSM</span>
         </div>
         <span class="fed-desc">The most prestigious international strongman competition, held annually since 1977. Athletes qualify through the Giants Live series.</span>
         <span class="fed-link">Visit WSM website</span>
       </a>
 
-      <a class="fed-card" href="https://giantslive.com" target="_blank" rel="noopener">
+      <a class="fed-card" href="https://giants-live.com/" target="_blank" rel="noopener">
         <div class="fed-card-top">
           <span class="fed-name">Giants Live</span>
-          <span class="fed-abbr intl">GL</span>
+          <span class="fed-abbr">GL</span>
         </div>
         <span class="fed-desc">Official WSM qualifier series. Elite international arena events serving as the primary route to the World's Strongest Man competition.</span>
         <span class="fed-link">Visit Giants Live</span>
       </a>
 
-      <a class="fed-card" href="https://arnoldsports.com/sports/strongman/" target="_blank" rel="noopener">
+      <a class="fed-card" href="https://www.arnoldsports.com/" target="_blank" rel="noopener">
         <div class="fed-card-top">
-          <span class="fed-name">Arnold Strongman Classic</span>
-          <span class="fed-abbr intl">ASC</span>
+          <span class="fed-name">Arnold Sports Festival</span>
+          <span class="fed-abbr">ASC</span>
         </div>
-        <span class="fed-desc">Elite invitational held annually at the Arnold Sports Festival in Columbus, Ohio. Includes both a professional and amateur division.</span>
-        <span class="fed-link">View Arnold events</span>
+        <span class="fed-desc">Home of the Arnold Strongman Classic — an elite invitational held annually in Columbus, Ohio. Includes both professional and amateur divisions.</span>
+        <span class="fed-link">Visit Arnold Sports</span>
       </a>
 
       <a class="fed-card" href="https://rogueinvitational.com" target="_blank" rel="noopener">
         <div class="fed-card-top">
           <span class="fed-name">Rogue Invitational</span>
-          <span class="fed-abbr intl">RI</span>
+          <span class="fed-abbr">RI</span>
         </div>
-        <span class="fed-desc">Annual elite invitational hosted by Rogue Fitness in Columbus, Ohio. Features top international strongman athletes across multiple strength disciplines.</span>
+        <span class="fed-desc">Annual elite invitational hosted by Rogue Fitness. Features top international strongman and strongwoman athletes.</span>
         <span class="fed-link">Visit Rogue Invitational</span>
       </a>
 
-      <a class="fed-card" href="https://strongmanchampionsleague.com" target="_blank" rel="noopener">
+      <a class="fed-card" href="https://strongmancl.com/" target="_blank" rel="noopener">
         <div class="fed-card-top">
           <span class="fed-name">Strongman Champions League</span>
-          <span class="fed-abbr intl">SCL</span>
+          <span class="fed-abbr">SCL</span>
         </div>
         <span class="fed-desc">International competition circuit with Grand Prix events throughout the year. Features top European and international professional athletes.</span>
         <span class="fed-link">Visit SCL website</span>
@@ -264,7 +250,7 @@
     </div>
 
     <div class="disclaimer-box">
-      <strong>Note:</strong> OpenStrongman is an independent results archive and is not affiliated with any of the federations or platforms listed above. Links are provided as a resource for athletes looking for upcoming competitions. For the most accurate and up-to-date event information, always check official federation websites directly.
+      <strong>Note:</strong> OpenStrongman is not affiliated with any of the federations or platforms listed above. Links are provided as a resource for athletes looking for upcoming competitions. Always check official federation websites for the most accurate event information.
     </div>
 
   </div>

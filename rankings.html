@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OpenStrongman — Rankings</title>
+<meta name="description" content="Browse and filter strongman competition results across all federations and event categories.">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/6.6.6/css/flag-icons.min.css">
+<style>
+
+  body { display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
+
+  main { display: flex; flex-direction: column; flex: 1; overflow: hidden; min-height: 0; }
+
+  /* ── PAGE HEADER ── */
+  .rankings-header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 0.85rem 1.5rem;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .rankings-header h1 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.15rem;
+  }
+
+  .rankings-header p { font-size: 11px; color: var(--muted); }
+
+  /* ── LEGEND ── */
+  .legend {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    font-size: 11px;
+    color: var(--muted);
+    flex-wrap: wrap;
+  }
+
+  .legend-item { display: flex; align-items: center; gap: 0.35rem; }
+
+  .tag-wr-sm {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 3px;
+    background: var(--red-light);
+    color: var(--red);
+  }
+
+  .legend-dot { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
+
+  /* ── FILTER BAR ── */
+  .filter-section {
+    background: var(--surface);
+    border-bottom: 2px solid var(--border);
+    padding: 0.55rem 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .filter-section input[type="text"],
+  .filter-section select {
+    font-size: 12px;
+    font-family: var(--sans);
+    padding: 0 0.65rem;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    background: var(--bg);
+    color: var(--text);
+    outline: none;
+    transition: border-color 0.15s, opacity 0.15s;
+    height: 28px;
+  }
+
+  .filter-section input[type="text"] { min-width: 155px; }
+  .filter-section select { cursor: pointer; }
+  .filter-section input:focus, .filter-section select:focus { border-color: var(--accent); }
+
+  .filter-section select:disabled {
+    opacity: 0.38;
+    cursor: not-allowed;
+    background: var(--surface-2);
+  }
+
+  .filter-divider { width: 1px; height: 16px; background: var(--border); margin: 0 0.15rem; }
+
+  .btn-reset {
+    font-size: 12px;
+    color: var(--muted);
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 0 0.65rem;
+    height: 28px;
+    cursor: pointer;
+    font-family: var(--sans);
+    transition: color 0.15s, border-color 0.15s;
+  }
+
+  .btn-reset:hover { color: var(--text); border-color: var(--accent-mid); }
+
+  .result-count { margin-left: auto; font-size: 12px; color: var(--muted); white-space: nowrap; }
+
+  /* ── TABLE WRAPPER ── */
+  .table-wrap { overflow: auto; flex: 1; min-height: 0; }
+
+  /* ── TABLE ── */
+  table.rankings { width: 100%; border-collapse: collapse; font-size: 13px; }
+
+  table.rankings thead tr { position: sticky; top: 0; z-index: 10; }
+
+  table.rankings th {
+    text-align: left;
+    padding: 0.45rem 0.85rem;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--muted);
+    background: var(--surface-2);
+    border-bottom: 2px solid var(--border);
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.1s;
+  }
+
+  table.rankings th:hover { color: var(--text); }
+  table.rankings th.sorted-asc::after { content: ' ↑'; color: var(--accent); }
+  table.rankings th.sorted-desc::after { content: ' ↓'; color: var(--accent); }
+
+  table.rankings td {
+    padding: 0.4rem 0.85rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+
+  table.rankings tbody tr.data-row:nth-child(odd) td { background: var(--bg); }
+  table.rankings tbody tr.data-row:nth-child(even) td { background: var(--surface); }
+  table.rankings tbody tr.data-row:hover td { background: var(--accent-light) !important; cursor: pointer; }
+  table.rankings tbody tr.data-row.expanded td { background: var(--accent-light) !important; }
+
+  /* ── EXPAND ROW ── */
+  tr.expand-row td {
+    background: #edf2f9 !important;
+    padding: 0;
+    border-bottom: 2px solid #c5d5ea;
+  }
+
+  .expand-inner {
+    padding: 0.85rem 1.25rem 0.85rem 2.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+
+  .expand-group { display: flex; flex-direction: column; gap: 0.15rem; min-width: 90px; }
+
+  .expand-label {
+    font-size: 10px;
+    font-family: var(--mono);
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--faint);
+  }
+
+  .expand-value { font-size: 13px; font-weight: 500; color: var(--text); }
+
+  .expand-notes { flex: 1; min-width: 180px; max-width: 480px; }
+  .expand-notes .expand-value {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--muted);
+    white-space: normal;
+    line-height: 1.55;
+  }
+
+  /* ── FLAGS ── */
+  .fi { font-size: 14px; border-radius: 2px; }
+
+  .nat-cell { display: flex; align-items: center; gap: 5px; }
+  .nat-code { font-size: 11px; font-family: var(--mono); color: var(--muted); }
+
+  /* ── CELL STYLES ── */
+  .col-athlete { font-weight: 500; color: var(--text); }
+
+  .expand-arrow {
+    display: inline-block;
+    font-size: 9px;
+    color: var(--faint);
+    margin-left: 5px;
+    transition: transform 0.15s;
+    vertical-align: middle;
+  }
+
+  tr.data-row.expanded .expand-arrow { transform: rotate(90deg); color: var(--accent); }
+
+  .col-result {
+    font-weight: 600;
+    color: var(--text);
+    font-family: var(--mono);
+    font-size: 12px;
+  }
+
+  .col-place {
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--muted);
+    text-align: center;
+  }
+
+  .col-place.gold { color: #b8860b; }
+  .col-place.silver { color: #808080; }
+  .col-place.bronze { color: #8b5e3c; }
+
+  .tag-cat {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 500;
+    padding: 2px 6px;
+    border-radius: 3px;
+    background: var(--accent-light);
+    color: var(--accent);
+  }
+
+  .tag-wr {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 5px;
+    border-radius: 3px;
+    background: var(--red-light);
+    color: var(--red);
+    margin-left: 4px;
+  }
+
+  /* ── STATES ── */
+  .state-row td {
+    text-align: center;
+    padding: 4rem 1rem;
+    color: var(--muted);
+    font-size: 13px;
+    background: var(--bg) !important;
+    white-space: normal;
+  }
+
+  .no-results-hint { font-size: 12px; color: var(--faint); margin-top: 0.5rem; display: block; }
+
+  .loading-spinner {
+    display: inline-block;
+    width: 14px; height: 14px;
+    border: 2px solid var(--border);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+    vertical-align: middle;
+    margin-right: 0.4rem;
+  }
+
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  footer.site-footer { flex-shrink: 0; }
+
+  @media (max-width: 640px) {
+    body { height: auto; overflow: auto; }
+    main { overflow: visible; height: auto; }
+    .table-wrap { overflow-x: auto; }
+    .filter-section { padding: 0.6rem 1rem; }
+    .filter-divider { display: none; }
+    .result-count { margin-left: 0; width: 100%; }
+    .expand-inner { padding-left: 1rem; gap: 1rem; }
+    .legend { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a class="wordmark" href="index.html"><span>Open</span>Strongman</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="rankings.html" class="active">Rankings</a></li>
+    <li><a href="meets.html">Meets</a></li>
+    <li><a href="athletes.html">Athletes</a></li>
+    <li><a href="records.html">Records</a></li>
+    <li><a href="data.html">Data</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+  <div class="nav-right">
+    <a class="btn-contribute" href="about.html#contribute">Contribute Data</a>
+  </div>
+</nav>
+
+  <!-- BETA BANNER -->
+  <div id="beta-banner" style="background:#1f3a5f;color:#fff;font-size:12px;text-align:center;padding:0.5rem 1rem;display:flex;align-items:center;justify-content:center;gap:0.75rem;flex-shrink:0;">
+    <span>🏗️ <strong>OpenStrongman is actively being built.</strong> Data and features are added weekly — results may be incomplete.</span>
+    <a href="/about.html" style="color:#a8c4e0;text-decoration:none;white-space:nowrap;">Learn more →</a>
+    <button onclick="document.getElementById('beta-banner').style.display='none'" style="background:none;border:none;color:rgba(255,255,255,0.5);cursor:pointer;font-size:14px;line-height:1;padding:0 0 0 0.5rem;">✕</button>
+  </div>
+
+<main>
+
+  <div class="rankings-header">
+    <div>
+      <h1>Rankings</h1>
+      <p>Click any row to expand full event details. Dropdowns only show options available in your current selection.</p>
+    </div>
+    <div class="legend">
+      <div class="legend-item">
+        <span class="tag-wr-sm">WR</span>
+        <span>World Record</span>
+      </div>
+      <div class="legend-item">
+        <span>🥇</span>
+        <span>1st overall</span>
+      </div>
+      <div class="legend-item">
+        <span>🥈</span>
+        <span>2nd overall</span>
+      </div>
+      <div class="legend-item">
+        <span>🥉</span>
+        <span>3rd overall</span>
+      </div>
+      <div class="legend-item" style="color:var(--faint)">
+        ▶ click row for details
+      </div>
+    </div>
+  </div>
+
+  <div class="filter-section">
+    <input type="text" id="f-athlete" placeholder="Search athlete…" autocomplete="off">
+    <div class="filter-divider"></div>
+    <select id="f-federation"><option value="">All Federations</option></select>
+    <select id="f-year"><option value="">All Years</option></select>
+    <select id="f-sex"><option value="">Male / Female</option><option value="M">Male</option><option value="F">Female</option></select>
+    <select id="f-category"><option value="">All Categories</option></select>
+    <select id="f-implement" disabled><option value="">All Implements</option></select>
+    <select id="f-scored" disabled><option value="">Scored By</option></select>
+    <div class="filter-divider"></div>
+    <button class="btn-reset" onclick="resetFilters()">Reset</button>
+    <span class="result-count" id="result-count">Loading…</span>
+  </div>
+
+  <div class="table-wrap">
+    <table class="rankings">
+      <thead>
+        <tr>
+          <th onclick="sortBy('OverallPlace')" id="th-OverallPlace">Place</th>
+          <th onclick="sortBy('AthleteName')" id="th-AthleteName">Athlete</th>
+          <th onclick="sortBy('AthleteNationality')" id="th-AthleteNationality">Nat</th>
+          <th onclick="sortBy('MeetName')" id="th-MeetName">Meet</th>
+          <th onclick="sortBy('MeetDate')" id="th-MeetDate">Year</th>
+          <th onclick="sortBy('MeetFederation')" id="th-MeetFederation">Fed</th>
+          <th onclick="sortBy('Event')" id="th-Event">Event</th>
+          <th onclick="sortBy('EventCategory')" id="th-EventCategory">Category</th>
+          <th onclick="sortBy('Implement')" id="th-Implement">Implement</th>
+          <th onclick="sortBy('ResultValue')" id="th-ResultValue">Result</th>
+          <th onclick="sortBy('ScoredBy')" id="th-ScoredBy">Scored By</th>
+          <th onclick="sortBy('Place')" id="th-Place">Event Place</th>
+        </tr>
+      </thead>
+      <tbody id="rankings-body">
+        <tr class="state-row">
+          <td colspan="12"><span class="loading-spinner"></span> Loading data…</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <span>&copy; 2026 OpenStrongman &mdash; open source, open data</span>
+  <span>For powerlifting: <a href="https://www.openpowerlifting.org" target="_blank" rel="noopener">OpenPowerlifting.org</a> &nbsp;&middot;&nbsp; For weightlifting: <a href="https://www.openweightlifting.org" target="_blank" rel="noopener">OpenWeightlifting.org</a> &nbsp;&middot;&nbsp; All three sites are independent and unaffiliated.</span>
+</footer>
+
+<script>
+// ── CONFIG: add new CSV paths here as data grows ──
+const CSV_FILES = [
+  'data/wsm_results.csv',
+  'data/wsm_2023_finals.csv',
+  'data/wsm_2024_finals.csv',
+  'data/rogue_invitational_overall.csv',
+  'data/rogue_2024_finals.csv',
+];
+
+// IOC 3-letter code → ISO 2-letter code for flag-icons library
+const ISO = {
+  USA:'us',GBR:'gb',CAN:'ca',ISL:'is',FIN:'fi',NOR:'no',SWE:'se',
+  POL:'pl',LTU:'lt',UKR:'ua',AUT:'at',RSA:'za',NED:'nl',DEN:'dk',
+  RUS:'ru',NZL:'nz',LAT:'lv',MEX:'mx',AUS:'au',BEL:'be',FRA:'fr',
+  GER:'de',BRA:'br',EST:'ee',GEO:'ge',IRL:'ie',LEB:'lb',
+};
+
+function flagHTML(code) {
+  const iso = ISO[code];
+  if (!iso) return '';
+  return `<span class="fi fi-${iso}"></span>`;
+}
+
+let allRows = [];
+let sortCol = 'MeetDate';
+let sortDir = 'desc';
+let expandedIdx = null;
+
+// ── CSV PARSER ──
+function parseCSV(text) {
+  const lines = text.trim().split('\n');
+  const headers = lines[0].split(',').map(h => h.trim());
+  const rows = [];
+  for (let i = 1; i < lines.length; i++) {
+    const vals = splitCSVLine(lines[i]);
+    if (vals.length < 2) continue;
+    const row = {};
+    headers.forEach((h, idx) => { row[h] = (vals[idx] || '').trim().replace(/^"|"$/g, ''); });
+    rows.push(row);
+  }
+  return rows;
+}
+
+function splitCSVLine(line) {
+  const result = []; let cur = ''; let inQ = false;
+  for (const ch of line) {
+    if (ch === '"') { inQ = !inQ; }
+    else if (ch === ',' && !inQ) { result.push(cur); cur = ''; }
+    else { cur += ch; }
+  }
+  result.push(cur);
+  return result;
+}
+
+// ── LOAD ──
+async function loadData() {
+  const results = await Promise.all(
+    CSV_FILES.map(url => fetch(url).then(r => r.text()).then(parseCSV).catch(() => []))
+  );
+  allRows = results.flat().filter(r => r.AthleteName && r.Event && r.Event !== 'Overall');
+  populateFilters();
+  renderTable();
+}
+
+// ── CASCADING FILTERS ──
+function getFilteredExcept(except = []) {
+  const athlete = document.getElementById('f-athlete').value.toLowerCase().trim();
+  const fed     = document.getElementById('f-federation').value;
+  const year    = document.getElementById('f-year').value;
+  const sex     = document.getElementById('f-sex').value;
+  const cat     = document.getElementById('f-category').value;
+  const impl    = document.getElementById('f-implement').value;
+  const scored  = document.getElementById('f-scored').value;
+
+  return allRows.filter(r => {
+    if (!except.includes('athlete') && athlete && !(r.AthleteName||'').toLowerCase().includes(athlete)) return false;
+    if (!except.includes('fed')    && fed    && r.MeetFederation !== fed) return false;
+    if (!except.includes('year')   && year   && !(r.MeetDate||'').startsWith(year)) return false;
+    if (!except.includes('sex')    && sex    && r.Sex !== sex) return false;
+    if (!except.includes('cat')    && cat    && r.EventCategory !== cat) return false;
+    if (!except.includes('impl')   && impl   && r.Implement !== impl) return false;
+    if (!except.includes('scored') && scored && r.ScoredBy !== scored) return false;
+    return true;
+  });
+}
+
+function unique(rows, key) {
+  return [...new Set(rows.map(r => r[key]).filter(Boolean))].sort();
+}
+
+function uniqueYears(rows) {
+  return [...new Set(rows.map(r => (r.MeetDate||'').slice(0,4)).filter(y => y > '1900'))].sort((a,b)=>b-a);
+}
+
+function populateFilters() {
+  refill('f-federation', unique(getFilteredExcept(['fed']), 'MeetFederation'), 'All Federations');
+  refillYears('f-year', uniqueYears(getFilteredExcept(['year'])));
+  refill('f-category', unique(getFilteredExcept(['cat','impl','scored']), 'EventCategory'), 'All Categories');
+
+  const catSel = document.getElementById('f-category').value;
+  const implEl = document.getElementById('f-implement');
+  const scoredEl = document.getElementById('f-scored');
+
+  if (catSel) {
+    implEl.disabled = false;
+    refill('f-implement', unique(getFilteredExcept(['impl','scored']), 'Implement'), 'All Implements');
+    scoredEl.disabled = false;
+    refill('f-scored', unique(getFilteredExcept(['scored']), 'ScoredBy'), 'Scored By');
+  } else {
+    implEl.disabled = true; implEl.innerHTML = '<option value="">All Implements</option>'; implEl.value = '';
+    scoredEl.disabled = true; scoredEl.innerHTML = '<option value="">Scored By</option>'; scoredEl.value = '';
+  }
+}
+
+function refill(id, values, placeholder) {
+  const sel = document.getElementById(id);
+  const cur = sel.value;
+  sel.innerHTML = `<option value="">${placeholder}</option>`;
+  values.forEach(v => {
+    const o = document.createElement('option');
+    o.value = v; o.textContent = v;
+    if (v === cur) o.selected = true;
+    sel.appendChild(o);
+  });
+  if (cur && !values.includes(cur)) sel.value = '';
+}
+
+function refillYears(id, values) {
+  const sel = document.getElementById(id);
+  const cur = sel.value;
+  sel.innerHTML = '<option value="">All Years</option>';
+  values.forEach(v => {
+    const o = document.createElement('option');
+    o.value = v; o.textContent = v;
+    if (v === cur) o.selected = true;
+    sel.appendChild(o);
+  });
+  if (cur && !values.includes(cur)) sel.value = '';
+}
+
+// ── SORT ──
+function sortBy(col) {
+  if (sortCol === col) sortDir = sortDir === 'asc' ? 'desc' : 'asc';
+  else { sortCol = col; sortDir = 'asc'; }
+  expandedIdx = null;
+  renderTable();
+}
+
+function getSorted(rows) {
+  return [...rows].sort((a, b) => {
+    const va = a[sortCol]||'', vb = b[sortCol]||'';
+    const na = parseFloat(va), nb = parseFloat(vb);
+    if (!isNaN(na) && !isNaN(nb)) return sortDir === 'asc' ? na-nb : nb-na;
+    return sortDir === 'asc' ? va.localeCompare(vb) : vb.localeCompare(va);
+  });
+}
+
+// ── EXPAND ──
+function toggleExpand(idx) {
+  expandedIdx = expandedIdx === idx ? null : idx;
+  renderTable();
+}
+
+function buildExpandRow(r) {
+  const details = [];
+  if (r.ImplementWeightKg) details.push(['Implement Weight', r.ImplementWeightKg + ' kg']);
+  if (r.StonesCompleted)   details.push(['Stones Completed', r.StonesCompleted]);
+  if (r.CourseDistanceM)   details.push(['Course Distance',  r.CourseDistanceM + ' m']);
+  if (r.TimeLimitSec)      details.push(['Time Limit',       r.TimeLimitSec + ' sec']);
+  if (r.ScoredBy)          details.push(['Scored By',        r.ScoredBy]);
+  if (r.Points)            details.push(['Points Earned',    r.Points]);
+  if (r.MeetLocation)      details.push(['Location',         r.MeetLocation]);
+  if (r.Division)          details.push(['Division',         r.Division]);
+
+  const dHTML = details.map(([l,v]) =>
+    `<div class="expand-group"><span class="expand-label">${l}</span><span class="expand-value">${esc(v)}</span></div>`
+  ).join('');
+
+  const nHTML = r.Notes ? `<div class="expand-group expand-notes"><span class="expand-label">Notes</span><span class="expand-value">${esc(r.Notes)}</span></div>` : '';
+
+  const empty = details.length === 0 && !r.Notes
+    ? `<span style="color:var(--faint);font-size:12px;">No additional detail recorded for this result.</span>` : '';
+
+  return `<tr class="expand-row"><td colspan="12"><div class="expand-inner">${dHTML}${nHTML}${empty}</div></td></tr>`;
+}
+
+// ── RENDER ──
+function renderTable() {
+  populateFilters();
+
+  const filtered = getFilteredExcept([]);
+  const sorted = getSorted(filtered);
+
+  document.querySelectorAll('table.rankings th').forEach(th => th.classList.remove('sorted-asc','sorted-desc'));
+  const aTh = document.getElementById('th-'+sortCol);
+  if (aTh) aTh.classList.add(sortDir === 'asc' ? 'sorted-asc' : 'sorted-desc');
+
+  document.getElementById('result-count').textContent =
+    sorted.length.toLocaleString() + ' result' + (sorted.length !== 1 ? 's' : '');
+
+  const tbody = document.getElementById('rankings-body');
+
+  if (sorted.length === 0) {
+    tbody.innerHTML = `<tr class="state-row"><td colspan="12">
+      No results match your current filters.
+      <span class="no-results-hint">Try removing a filter or clicking Reset to start over.</span>
+    </td></tr>`;
+    return;
+  }
+
+  const MAX = 500;
+  let html = '';
+
+  sorted.slice(0, MAX).forEach((r, idx) => {
+    const year = (r.MeetDate||'').slice(0,4) || '—';
+    const op = parseInt(r.OverallPlace) || 0;
+    const pc = op===1?'gold':op===2?'silver':op===3?'bronze':'';
+    const placeDisplay = op===1 ? '🥇' : op===2 ? '🥈' : op===3 ? '🥉' : (op||'—');
+    const result = r.ResultValue ? `${r.ResultValue} ${r.ResultUnit||''}`.trim() : '—';
+    const wr = r.WorldRecord === 'Y' ? '<span class="tag-wr">WR</span>' : '';
+    const cat = r.EventCategory ? `<span class="tag-cat">${esc(r.EventCategory)}</span>` : '—';
+    const nat = r.AthleteNationality || '';
+    const expanded = expandedIdx === idx;
+
+    html += `<tr class="data-row${expanded?' expanded':''}" onclick="toggleExpand(${idx})">
+      <td class="col-place ${pc}">${placeDisplay}</td>
+      <td class="col-athlete">${esc(r.AthleteName)}<span class="expand-arrow">▶</span></td>
+      <td><div class="nat-cell">${flagHTML(nat)}<span class="nat-code">${esc(nat||'—')}</span></div></td>
+      <td>${esc(r.MeetName||'—')}</td>
+      <td>${year}</td>
+      <td>${esc(r.MeetFederation||'—')}</td>
+      <td>${esc(r.Event||'—')}</td>
+      <td>${cat}</td>
+      <td>${esc(r.Implement||'—')}</td>
+      <td class="col-result">${result}${wr}</td>
+      <td>${esc(r.ScoredBy||'—')}</td>
+      <td class="col-place">${r.Place||'—'}</td>
+    </tr>`;
+
+    if (expanded) html += buildExpandRow(r);
+  });
+
+  if (sorted.length > MAX) {
+    html += `<tr class="state-row"><td colspan="12">
+      Showing first ${MAX} of ${sorted.length.toLocaleString()} results — use filters to narrow down.
+    </td></tr>`;
+  }
+
+  tbody.innerHTML = html;
+}
+
+function esc(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function resetFilters() {
+  document.getElementById('f-athlete').value = '';
+  ['f-federation','f-year','f-sex','f-category','f-implement','f-scored']
+    .forEach(id => { document.getElementById(id).selectedIndex = 0; });
+  expandedIdx = null;
+  renderTable();
+}
+
+document.getElementById('f-athlete').addEventListener('input', () => { expandedIdx=null; renderTable(); });
+['f-federation','f-year','f-sex','f-category','f-implement','f-scored'].forEach(id => {
+  document.getElementById(id).addEventListener('change', () => { expandedIdx=null; renderTable(); });
+});
+
+loadData();
+</script>
+
+</body>
+</html>

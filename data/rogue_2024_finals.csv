@@ -1,0 +1,121 @@
+MeetName,MeetFederation,MeetDate,MeetLocation,Division,Sex,BodyweightKg,WeightClassKg,AthleteName,AthleteNationality,Event,EventCategory,Implement,ResultValue,ResultUnit,StonesCompleted,ImplementWeightKg,CourseDistanceM,TimeLimitSec,ScoredBy,WorldRecord,Place,OverallPlace,Points,Notes
+2024 Rogue Invitational,Rogue,2024-11-08,"Aberdeen, Scotland",Open,M,,,Hafthor Julius Bjornsson,ISL,Deadlift Ladder,Deadlift,Barbell,458.1,kg,,458.1,,,weight,,1,2,44,1010 lbs; one-rep max format; belt and straps only
+2024 Rogue Invitational,Rogue,2024-11-08,"Aberdeen, Scotland",Open,M,,,Mitchell Hooper,CAN,Deadlift Ladder,Deadlift,Barbell,442.3,kg,,442.3,,,weight,,2,1,54,975 lbs
+2024 Rogue Invitational,Rogue,2024-11-08,"Aberdeen, Scotland",Open,M,,,Mathew Ragg,NZL,Deadlift Ladder,Deadlift,Barbell,430.9,kg,,430.9,,,weight,,3,7,27,950 lbs
+2024 Rogue Invitational,Rogue,2024-11-08,"Aberdeen, Scotland",Open,M,,,Bobby Thompson,USA,Deadlift Ladder,Deadlift,Barbell,419.6,kg,,419.6,,,weight,,4,8,23.5,925 lbs; tied 4th
+2024 Rogue Invitational,Rogue,2024-11-08,"Aberdeen, Scotland",Open,M,,,Evan Singleton,USA,Deadlift Ladder,Deadlift,Barbell,419.6,kg,,419.6,,,weight,,4,4,41.5,925 lbs; tied 4th
+2024 Rogue Invitational,Rogue,2024-11-08,"Aberdeen, Scotland",Open,M,,,Thomas Evans,USA,Deadlift Ladder,Deadlift,Barbell,410.9,kg,,410.9,,,weight,,6,6,30,905 lbs
+2024 Rogue Invitational,Rogue,2024-11-08,"Aberdeen, Scotland",Open,M,,,Tom Stoltman,GBR,Deadlift Ladder,Deadlift,Barbell,396.9,kg,,396.9,,,weight,,7,3,44,875 lbs
+2024 Rogue Invitational,Rogue,2024-11-08,"Aberdeen, Scotland",Open,M,,,Luke Stoltman,GBR,Deadlift Ladder,Deadlift,Barbell,381,kg,,381,,,weight,,8,5,32,840 lbs
+2024 Rogue Invitational,Rogue,2024-11-08,"Aberdeen, Scotland",Open,M,,,Tristain Hoath,CAN,Deadlift Ladder,Deadlift,Barbell,372,kg,,372,,,weight,,9,10,14,820 lbs
+2024 Rogue Invitational,Rogue,2024-11-08,"Aberdeen, Scotland",Open,M,,,Pavlo Kordiyaka,UKR,Deadlift Ladder,Deadlift,Barbell,362.9,kg,,362.9,,,weight,,10,9,21,800 lbs
+2024 Rogue Invitational,Rogue,2024-11-08,"Aberdeen, Scotland",Open,M,,,Thomas Evans,USA,Grip and Press,Medley,"Farmer's Carry,Log",37.01,sec,,172.4,40,,time,,1,6,30,380lb log; 350lb farmer per hand; 40ft carry then 3 log reps
+2024 Rogue Invitational,Rogue,2024-11-08,"Aberdeen, Scotland",Open,M,,,Mitchell Hooper,CAN,Grip and Press,Medley,"Farmer's Carry,Log",37.03,sec,,172.4,40,,time,,2,1,54,Missed clean on first rep cost him the event win
+2024 Rogue Invitational,Rogue,2024-11-08,"Aberdeen, Scotland",Open,M,,,Tom Stoltman,GBR,Grip and Press,Medley,"Farmer's Carry,Log",39.77,sec,,172.4,40,,time,,3,3,44,
+2024 Rogue Invitational,Rogue,2024-11-08,"Aberdeen, Scotland",Open,M,,,Evan Singleton,USA,Grip and Press,Medley,"Farmer's Carry,Log",42.13,sec,,172.4,40,,time,,4,4,41.5,
+2024 Rogue Invitational,Rogue,2024-11-08,"Aberdeen, Scotland",Open,M,,,Luke Stoltman,GBR,Grip and Press,Medley,"Farmer's Carry,Log",118.86,sec,,172.4,40,,time,,5,5,32,
+2024 Rogue Invitational,Rogue,2024-11-08,"Aberdeen, Scotland",Open,M,,,Mathew Ragg,NZL,Grip and Press,Medley,"Farmer's Carry,Log",61.5,m,,172.4,40,,distance,,6,7,27,DNF
+2024 Rogue Invitational,Rogue,2024-11-08,"Aberdeen, Scotland",Open,M,,,Bobby Thompson,USA,Grip and Press,Medley,"Farmer's Carry,Log",64.5,m,,172.4,40,,distance,,7,8,23.5,DNF
+2024 Rogue Invitational,Rogue,2024-11-08,"Aberdeen, Scotland",Open,M,,,Pavlo Kordiyaka,UKR,Grip and Press,Medley,"Farmer's Carry,Log",126,sec,,172.4,40,,distance,,8,9,21,DNF
+2024 Rogue Invitational,Rogue,2024-11-08,"Aberdeen, Scotland",Open,M,,,Hafthor Julius Bjornsson,ISL,Grip and Press,Medley,"Farmer's Carry,Log",38.07,m,,172.4,40,,distance,,9,2,44,DNF; failed log press
+2024 Rogue Invitational,Rogue,2024-11-08,"Aberdeen, Scotland",Open,M,,,Tristain Hoath,CAN,Grip and Press,Medley,"Farmer's Carry,Log",117,sec,,172.4,40,,distance,,10,10,14,DNF
+2024 Rogue Invitational,Rogue,2024-11-08,"Aberdeen, Scotland",Open,M,,,Hafthor Julius Bjornsson,ISL,Inver Challenge,Load,Inver Stone,27.34,sec,5,124.7-190.5,,,time,,1,2,44,Stones 275-420 lbs; no tacky allowed
+2024 Rogue Invitational,Rogue,2024-11-08,"Aberdeen, Scotland",Open,M,,,Mitchell Hooper,CAN,Inver Challenge,Load,Inver Stone,31.8,sec,5,124.7-190.5,,,time,,2,1,54,
+2024 Rogue Invitational,Rogue,2024-11-08,"Aberdeen, Scotland",Open,M,,,Tom Stoltman,GBR,Inver Challenge,Load,Inver Stone,36.57,sec,5,124.7-190.5,,,time,,3,3,44,Forgot to press buzzer; cost 2-3 seconds
+2024 Rogue Invitational,Rogue,2024-11-08,"Aberdeen, Scotland",Open,M,,,Pavlo Kordiyaka,UKR,Inver Challenge,Load,Inver Stone,80.57,sec,5,124.7-190.5,,,time,,4,9,21,
+2024 Rogue Invitational,Rogue,2024-11-08,"Aberdeen, Scotland",Open,M,,,Evan Singleton,USA,Inver Challenge,Load,Inver Stone,29.99,m,3,124.7-190.5,,,distance,,5,4,41.5,DNF - 3 stones
+2024 Rogue Invitational,Rogue,2024-11-08,"Aberdeen, Scotland",Open,M,,,Luke Stoltman,GBR,Inver Challenge,Load,Inver Stone,61.79,m,3,124.7-190.5,,,distance,,6,5,32,DNF
+2024 Rogue Invitational,Rogue,2024-11-08,"Aberdeen, Scotland",Open,M,,,Tristain Hoath,CAN,Inver Challenge,Load,Inver Stone,17.73,m,2,124.7-190.5,,,distance,,7,10,14,DNF - 2 stones
+2024 Rogue Invitational,Rogue,2024-11-08,"Aberdeen, Scotland",Open,M,,,Mathew Ragg,NZL,Inver Challenge,Load,Inver Stone,29.31,m,2,124.7-190.5,,,distance,,8,7,27,DNF - 2 stones
+2024 Rogue Invitational,Rogue,2024-11-08,"Aberdeen, Scotland",Open,M,,,Bobby Thompson,USA,Inver Challenge,Load,Inver Stone,36.02,m,2,124.7-190.5,,,distance,,9,8,23.5,DNF - 2 stones
+2024 Rogue Invitational,Rogue,2024-11-08,"Aberdeen, Scotland",Open,M,,,Thomas Evans,USA,Inver Challenge,Load,Inver Stone,13.11,m,1,124.7-190.5,,,distance,,10,6,30,DNF - 1 stone
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,M,,,Tom Stoltman,GBR,Power Drive,Medley,"Power Drive,Husafell,Sled",64.81,sec,,340.2,,,time,,1,3,44,750lb Power Drive + 375lb Husafell 40ft + 650lb sled pull; 90sec cap
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,M,,,Hafthor Julius Bjornsson,ISL,Power Drive,Medley,"Power Drive,Husafell,Sled",69.04,sec,,340.2,,,time,,2,2,44,
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,M,,,Mitchell Hooper,CAN,Power Drive,Medley,"Power Drive,Husafell,Sled",81.21,sec,,340.2,,,time,,3,1,54,
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,M,,,Pavlo Kordiyaka,UKR,Power Drive,Medley,"Power Drive,Husafell,Sled",86.95,sec,,340.2,,,time,,4,9,21,
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,M,,,Evan Singleton,USA,Power Drive,Medley,"Power Drive,Husafell,Sled",39.1,m,,340.2,,,distance,,5,4,41.5,CAP+0 DNF
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,M,,,Luke Stoltman,GBR,Power Drive,Medley,"Power Drive,Husafell,Sled",38.1,m,,340.2,,,distance,,6,5,32,CAP+1 DNF
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,M,,,Bobby Thompson,USA,Power Drive,Medley,"Power Drive,Husafell,Sled",37.5,m,,340.2,,,distance,,7,8,23.5,CAP+1 DNF
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,M,,,Tristain Hoath,CAN,Power Drive,Medley,"Power Drive,Husafell,Sled",37.4,m,,340.2,,,distance,,8,10,14,CAP+1 DNF
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,M,,,Mathew Ragg,NZL,Power Drive,Medley,"Power Drive,Husafell,Sled",25.7,m,,340.2,,,distance,,9,7,27,CAP+1 DNF
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,M,,,Thomas Evans,USA,Power Drive,Medley,"Power Drive,Husafell,Sled",0,m,,340.2,,,distance,,10,6,30,CAP+2 DNF
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,M,,,Mitchell Hooper,CAN,Yoke Escalator,Medley,"Yoke,Power Stairs",35.35,sec,,408.2,,,time,,1,1,54,900lb yoke + 500/550/600lb power stairs up 4 flights
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,M,,,Evan Singleton,USA,Yoke Escalator,Medley,"Yoke,Power Stairs",36.98,sec,,408.2,,,time,,2,4,41.5,
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,M,,,Thomas Evans,USA,Yoke Escalator,Medley,"Yoke,Power Stairs",41.22,sec,,408.2,,,time,,3,6,30,
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,M,,,Hafthor Julius Bjornsson,ISL,Yoke Escalator,Medley,"Yoke,Power Stairs",41.32,sec,,408.2,,,time,,4,2,44,
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,M,,,Tom Stoltman,GBR,Yoke Escalator,Medley,"Yoke,Power Stairs",41.79,sec,,408.2,,,time,,5,3,44,
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,M,,,Mathew Ragg,NZL,Yoke Escalator,Medley,"Yoke,Power Stairs",45.79,sec,,408.2,,,time,,6,7,27,
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,M,,,Bobby Thompson,USA,Yoke Escalator,Medley,"Yoke,Power Stairs",49.39,sec,,408.2,,,time,,7,8,23.5,
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,M,,,Luke Stoltman,GBR,Yoke Escalator,Medley,"Yoke,Power Stairs",54.93,sec,,408.2,,,time,,8,5,32,
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,M,,,Tristain Hoath,CAN,Yoke Escalator,Medley,"Yoke,Power Stairs",62.31,sec,,408.2,,,time,,9,10,14,
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,M,,,Pavlo Kordiyaka,UKR,Yoke Escalator,Medley,"Yoke,Power Stairs",0,m,,408.2,,,distance,,10,9,21,CAP DNF
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,M,,,Luke Stoltman,GBR,Circus Medley,Overhead Press,"Kettlebell,Cyrbell,Axle",105.69,sec,,184,,,time,,1,5,32,95lb kettlebell + 253lb Cyrbell + 375lb & 405lb circus axles; 2 min cap
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,M,,,Mitchell Hooper,CAN,Circus Medley,Overhead Press,"Kettlebell,Cyrbell,Axle",111.61,sec,,184,,,time,,2,1,54,Completed all 4 implements
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,M,,,Tom Stoltman,GBR,Circus Medley,Overhead Press,"Kettlebell,Cyrbell,Axle",36.18,m,,184,,,distance,,3,3,44,CAP+1 - 3 implements
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,M,,,Evan Singleton,USA,Circus Medley,Overhead Press,"Kettlebell,Cyrbell,Axle",44.26,m,,184,,,distance,,4,4,41.5,CAP+1 - 3 implements
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,M,,,Hafthor Julius Bjornsson,ISL,Circus Medley,Overhead Press,"Kettlebell,Cyrbell,Axle",70.83,m,,184,,,distance,,5,2,44,CAP+1 - 3 implements
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,M,,,Thomas Evans,USA,Circus Medley,Overhead Press,"Kettlebell,Cyrbell,Axle",71.06,m,,184,,,distance,,6,6,30,CAP+1
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,M,,,Mathew Ragg,NZL,Circus Medley,Overhead Press,"Kettlebell,Cyrbell,Axle",66.29,m,,184,,,distance,,7,7,27,CAP+2
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,M,,,Bobby Thompson,USA,Circus Medley,Overhead Press,"Kettlebell,Cyrbell,Axle",13.47,m,,184,,,distance,,8,8,23.5,CAP+3
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,M,,,Pavlo Kordiyaka,UKR,Circus Medley,Overhead Press,"Kettlebell,Cyrbell,Axle",0,m,,184,,,distance,,9,9,21,CAP+4
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,M,,,Tristain Hoath,CAN,Circus Medley,Overhead Press,"Kettlebell,Cyrbell,Axle",0,m,,184,,,distance,,10,10,14,CAP+4
+2024 Rogue Invitational,Rogue,2024-11-08,"Aberdeen, Scotland",Open,F,,,Lucy Underdown,GBR,Deadlift Ladder,Deadlift,Barbell,310.7,kg,,310.7,,,weight,,1,3,41,685 lbs; current deadlift world record holder
+2024 Rogue Invitational,Rogue,2024-11-08,"Aberdeen, Scotland",Open,F,,,Andrea Thompson,GBR,Deadlift Ladder,Deadlift,Barbell,301.6,kg,,301.6,,,weight,,2,9,26,665 lbs
+2024 Rogue Invitational,Rogue,2024-11-08,"Aberdeen, Scotland",Open,F,,,Olga Liashchuk,UKR,Deadlift Ladder,Deadlift,Barbell,283.5,kg,,283.5,,,weight,,3,2,47,625 lbs
+2024 Rogue Invitational,Rogue,2024-11-08,"Aberdeen, Scotland",Open,F,,,Inez Carrasquillo,PUR,Deadlift Ladder,Deadlift,Barbell,274.4,kg,,274.4,,,weight,,4,1,53,605 lbs
+2024 Rogue Invitational,Rogue,2024-11-08,"Aberdeen, Scotland",Open,F,,,Angelica Jardine,GBR,Deadlift Ladder,Deadlift,Barbell,265.4,kg,,265.4,,,weight,,5,4,40,585 lbs
+2024 Rogue Invitational,Rogue,2024-11-08,"Aberdeen, Scotland",Open,F,,,Rebecca Roberts,USA,Deadlift Ladder,Deadlift,Barbell,256.3,kg,,256.3,,,weight,,6,6,28.5,565 lbs; tied 6th
+2024 Rogue Invitational,Rogue,2024-11-08,"Aberdeen, Scotland",Open,F,,,Melissa Peacock,USA,Deadlift Ladder,Deadlift,Barbell,256.3,kg,,256.3,,,weight,,6,7,28.5,565 lbs; tied 6th
+2024 Rogue Invitational,Rogue,2024-11-08,"Aberdeen, Scotland",Open,F,,,Hannah Linzay,GBR,Deadlift Ladder,Deadlift,Barbell,247.2,kg,,247.2,,,weight,,8,5,29,545 lbs
+2024 Rogue Invitational,Rogue,2024-11-08,"Aberdeen, Scotland",Open,F,,,Donna Moore,GBR,Deadlift Ladder,Deadlift,Barbell,238.1,kg,,238.1,,,weight,,9,10,10,525 lbs
+2024 Rogue Invitational,Rogue,2024-11-08,"Aberdeen, Scotland",Open,F,,,Samantha Belliveau,CAN,Deadlift Ladder,Deadlift,Barbell,229,kg,,229,,,weight,,10,8,26,505 lbs
+2024 Rogue Invitational,Rogue,2024-11-08,"Aberdeen, Scotland",Open,F,,,Inez Carrasquillo,PUR,Grip and Press,Medley,"Farmer's Carry,Log",36.17,sec,,117.9,40,,time,,1,1,53,260lb log; 225lb farmer per hand; current log lift world record holder
+2024 Rogue Invitational,Rogue,2024-11-08,"Aberdeen, Scotland",Open,F,,,Andrea Thompson,GBR,Grip and Press,Medley,"Farmer's Carry,Log",43.94,sec,,117.9,40,,time,,2,9,26,
+2024 Rogue Invitational,Rogue,2024-11-08,"Aberdeen, Scotland",Open,F,,,Angelica Jardine,GBR,Grip and Press,Medley,"Farmer's Carry,Log",54.31,m,,117.9,40,,distance,,3,4,40,CAP+1 DNF
+2024 Rogue Invitational,Rogue,2024-11-08,"Aberdeen, Scotland",Open,F,,,Olga Liashchuk,UKR,Grip and Press,Medley,"Farmer's Carry,Log",79.31,m,,117.9,40,,distance,,4,2,47,CAP+1 DNF
+2024 Rogue Invitational,Rogue,2024-11-08,"Aberdeen, Scotland",Open,F,,,Hannah Linzay,GBR,Grip and Press,Medley,"Farmer's Carry,Log",7.37,m,,117.9,40,,distance,,5,5,29,CAP+3 DNF
+2024 Rogue Invitational,Rogue,2024-11-08,"Aberdeen, Scotland",Open,F,,,Melissa Peacock,USA,Grip and Press,Medley,"Farmer's Carry,Log",7.41,m,,117.9,40,,distance,,6,7,28.5,CAP+3 DNF
+2024 Rogue Invitational,Rogue,2024-11-08,"Aberdeen, Scotland",Open,F,,,Lucy Underdown,GBR,Grip and Press,Medley,"Farmer's Carry,Log",9.05,m,,117.9,40,,distance,,7,3,41,CAP+3 DNF
+2024 Rogue Invitational,Rogue,2024-11-08,"Aberdeen, Scotland",Open,F,,,Rebecca Roberts,USA,Grip and Press,Medley,"Farmer's Carry,Log",9.88,m,,117.9,40,,distance,,8,6,28.5,CAP+3 DNF
+2024 Rogue Invitational,Rogue,2024-11-08,"Aberdeen, Scotland",Open,F,,,Donna Moore,GBR,Grip and Press,Medley,"Farmer's Carry,Log",10.54,m,,117.9,40,,distance,,9,10,10,CAP+3 DNF
+2024 Rogue Invitational,Rogue,2024-11-08,"Aberdeen, Scotland",Open,F,,,Samantha Belliveau,CAN,Grip and Press,Medley,"Farmer's Carry,Log",10.69,m,,117.9,40,,distance,,10,8,26,CAP+3 DNF
+2024 Rogue Invitational,Rogue,2024-11-08,"Aberdeen, Scotland",Open,F,,,Inez Carrasquillo,PUR,Inver Challenge,Load,Inver Stone,34.24,sec,5,90.7-136,,,time,,1,1,53,Stones 200-300 lbs; no tacky
+2024 Rogue Invitational,Rogue,2024-11-08,"Aberdeen, Scotland",Open,F,,,Angelica Jardine,GBR,Inver Challenge,Load,Inver Stone,51,sec,5,90.7-136,,,time,,2,4,40,
+2024 Rogue Invitational,Rogue,2024-11-08,"Aberdeen, Scotland",Open,F,,,Olga Liashchuk,UKR,Inver Challenge,Load,Inver Stone,64.28,sec,5,90.7-136,,,time,,3,2,47,
+2024 Rogue Invitational,Rogue,2024-11-08,"Aberdeen, Scotland",Open,F,,,Rebecca Roberts,USA,Inver Challenge,Load,Inver Stone,84.85,sec,5,90.7-136,,,time,,4,6,28.5,
+2024 Rogue Invitational,Rogue,2024-11-08,"Aberdeen, Scotland",Open,F,,,Lucy Underdown,GBR,Inver Challenge,Load,Inver Stone,31.14,m,4,90.7-136,,,distance,,5,3,41,CAP+1 DNF
+2024 Rogue Invitational,Rogue,2024-11-08,"Aberdeen, Scotland",Open,F,,,Hannah Linzay,GBR,Inver Challenge,Load,Inver Stone,52.41,m,4,90.7-136,,,distance,,6,5,29,CAP+1 DNF
+2024 Rogue Invitational,Rogue,2024-11-08,"Aberdeen, Scotland",Open,F,,,Donna Moore,GBR,Inver Challenge,Load,Inver Stone,86.44,m,4,90.7-136,,,distance,,7,10,10,CAP+1 DNF
+2024 Rogue Invitational,Rogue,2024-11-08,"Aberdeen, Scotland",Open,F,,,Samantha Belliveau,CAN,Inver Challenge,Load,Inver Stone,18.2,m,2,90.7-136,,,distance,,8,8,26,CAP+2 DNF
+2024 Rogue Invitational,Rogue,2024-11-08,"Aberdeen, Scotland",Open,F,,,Melissa Peacock,USA,Inver Challenge,Load,Inver Stone,21.36,m,2,90.7-136,,,distance,,9,7,28.5,CAP+2 DNF
+2024 Rogue Invitational,Rogue,2024-11-08,"Aberdeen, Scotland",Open,F,,,Andrea Thompson,GBR,Inver Challenge,Load,Inver Stone,22.53,m,2,90.7-136,,,distance,,10,9,26,CAP+2 DNF
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,F,,,Lucy Underdown,GBR,Power Drive,Medley,"Power Drive,Husafell,Sled",70.64,sec,,272.2,,,time,,1,3,41,600lb Power Drive + 250lb Husafell + 470lb sled; 90sec cap
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,F,,,Olga Liashchuk,UKR,Power Drive,Medley,"Power Drive,Husafell,Sled",75,sec,,272.2,,,time,,2,2,47,
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,F,,,Inez Carrasquillo,PUR,Power Drive,Medley,"Power Drive,Husafell,Sled",76.03,sec,,272.2,,,time,,3,1,53,
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,F,,,Rebecca Roberts,USA,Power Drive,Medley,"Power Drive,Husafell,Sled",82.12,sec,,272.2,,,time,,4,6,28.5,
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,F,,,Melissa Peacock,USA,Power Drive,Medley,"Power Drive,Husafell,Sled",40,m,,272.2,,,distance,,5,7,28.5,CAP+0 DNF
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,F,,,Samantha Belliveau,CAN,Power Drive,Medley,"Power Drive,Husafell,Sled",39.2,m,,272.2,,,distance,,6,8,26,CAP+1 DNF
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,F,,,Hannah Linzay,GBR,Power Drive,Medley,"Power Drive,Husafell,Sled",31.2,m,,272.2,,,distance,,7,5,29,CAP+1 DNF
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,F,,,Angelica Jardine,GBR,Power Drive,Medley,"Power Drive,Husafell,Sled",24.3,m,,272.2,,,distance,,8,4,40,CAP+1 DNF
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,F,,,Andrea Thompson,GBR,Power Drive,Medley,"Power Drive,Husafell,Sled",22.8,m,,272.2,,,distance,,9,9,26,CAP+1 DNF
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,F,,,Donna Moore,GBR,Power Drive,Medley,"Power Drive,Husafell,Sled",3.7,m,,272.2,,,distance,,10,10,10,CAP+1 DNF
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,F,,,Samantha Belliveau,CAN,Yoke Escalator,Medley,"Yoke,Power Stairs",34.87,sec,,272.2,,,time,,1,8,26,600lb yoke + 225/275/325lb power stairs
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,F,,,Melissa Peacock,USA,Yoke Escalator,Medley,"Yoke,Power Stairs",34.93,sec,,272.2,,,time,,2,7,28.5,0.06 seconds behind winner
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,F,,,Inez Carrasquillo,PUR,Yoke Escalator,Medley,"Yoke,Power Stairs",35.35,sec,,272.2,,,time,,3,1,53,
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,F,,,Olga Liashchuk,UKR,Yoke Escalator,Medley,"Yoke,Power Stairs",35.67,sec,,272.2,,,time,,4,2,47,
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,F,,,Lucy Underdown,GBR,Yoke Escalator,Medley,"Yoke,Power Stairs",37.28,sec,,272.2,,,time,,5,3,41,
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,F,,,Angelica Jardine,GBR,Yoke Escalator,Medley,"Yoke,Power Stairs",38.08,sec,,272.2,,,time,,6,4,40,
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,F,,,Hannah Linzay,GBR,Yoke Escalator,Medley,"Yoke,Power Stairs",39.03,sec,,272.2,,,time,,7,5,29,
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,F,,,Rebecca Roberts,USA,Yoke Escalator,Medley,"Yoke,Power Stairs",42.67,sec,,272.2,,,time,,8,6,28.5,
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,F,,,Andrea Thompson,GBR,Yoke Escalator,Medley,"Yoke,Power Stairs",44,sec,,272.2,,,time,,9,9,26,
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,F,,,Donna Moore,GBR,Yoke Escalator,Medley,"Yoke,Power Stairs",55.45,sec,,272.2,,,time,,10,10,10,
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,F,,,Inez Carrasquillo,PUR,Circus Medley,Overhead Press,"Kettlebell,Cyrbell,Axle",56.34,sec,,113.4,,,time,,1,1,53,124lb KB + 150lb Cyrbell + 235lb & 250lb circus axles; inaugural Rogue Strongwoman champion
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,F,,,Angelica Jardine,GBR,Circus Medley,Overhead Press,"Kettlebell,Cyrbell,Axle",109.85,sec,,113.4,,,time,,2,4,40,All 4 implements completed
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,F,,,Olga Liashchuk,UKR,Circus Medley,Overhead Press,"Kettlebell,Cyrbell,Axle",110.8,sec,,113.4,,,time,,3,2,47,All 4 implements completed
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,F,,,Hannah Linzay,GBR,Circus Medley,Overhead Press,"Kettlebell,Cyrbell,Axle",0,m,,113.4,,,distance,,4,5,29,CAP+1
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,F,,,Samantha Belliveau,CAN,Circus Medley,Overhead Press,"Kettlebell,Cyrbell,Axle",17.81,m,,113.4,,,distance,,5,8,26,CAP+2
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,F,,,Lucy Underdown,GBR,Circus Medley,Overhead Press,"Kettlebell,Cyrbell,Axle",35.38,m,,113.4,,,distance,,6,3,41,CAP+2
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,F,,,Rebecca Roberts,USA,Circus Medley,Overhead Press,"Kettlebell,Cyrbell,Axle",39.34,m,,113.4,,,distance,,7,6,28.5,CAP+3
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,F,,,Andrea Thompson,GBR,Circus Medley,Overhead Press,"Kettlebell,Cyrbell,Axle",62.8,m,,113.4,,,distance,,8,9,26,CAP+3
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,F,,,Melissa Peacock,USA,Circus Medley,Overhead Press,"Kettlebell,Cyrbell,Axle",0,m,,113.4,,,distance,,9,7,28.5,CAP+4
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,F,,,Donna Moore,GBR,Circus Medley,Overhead Press,"Kettlebell,Cyrbell,Axle",0,m,,113.4,,,distance,,10,10,10,Did not attempt

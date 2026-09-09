@@ -1,0 +1,61 @@
+MeetName,MeetFederation,MeetDate,MeetLocation,Division,Sex,BodyweightKg,WeightClassKg,AthleteName,AthleteNationality,Event,EventCategory,Implement,ResultValue,ResultUnit,StonesCompleted,ImplementWeightKg,CourseDistanceM,TimeLimitSec,ScoredBy,WorldRecord,Place,OverallPlace,Points,Notes
+2024 World's Strongest Man,WSM,2024-05-04,"Myrtle Beach, South Carolina",Open,M,,,Tom Stoltman,GBR,KNAACK Giant's Medley,Medley,"Yoke,Frame",41.26,sec,,454,20,,time,,3,1,53,Yoke 454kg + Frame Carry 330kg
+2024 World's Strongest Man,WSM,2024-05-04,"Myrtle Beach, South Carolina",Open,M,,,Mitchell Hooper,CAN,KNAACK Giant's Medley,Medley,"Yoke,Frame",34.59,m,,454,20,,distance,,6,2,47.5,DNF
+2024 World's Strongest Man,WSM,2024-05-04,"Myrtle Beach, South Carolina",Open,M,,,Evan Singleton,USA,KNAACK Giant's Medley,Medley,"Yoke,Frame",30.21,sec,,454,20,,time,,1,3,36,
+2024 World's Strongest Man,WSM,2024-05-04,"Myrtle Beach, South Carolina",Open,M,,,Matthew Ragg,NZL,KNAACK Giant's Medley,Medley,"Yoke,Frame",28.9,m,,454,20,,distance,,7,4,35.5,DNF
+2024 World's Strongest Man,WSM,2024-05-04,"Myrtle Beach, South Carolina",Open,M,,,Tristain Hoath,CAN,KNAACK Giant's Medley,Medley,"Yoke,Frame",35.54,m,,454,20,,distance,,5,5,33.5,DNF
+2024 World's Strongest Man,WSM,2024-05-04,"Myrtle Beach, South Carolina",Open,M,,,Wesley Derwinsky,CAN,KNAACK Giant's Medley,Medley,"Yoke,Frame",59.2,sec,,454,20,,time,,4,6,31,
+2024 World's Strongest Man,WSM,2024-05-04,"Myrtle Beach, South Carolina",Open,M,,,Austin Andrade,MEX,KNAACK Giant's Medley,Medley,"Yoke,Frame",40.61,sec,,454,20,,time,,2,7,30.5,
+2024 World's Strongest Man,WSM,2024-05-04,"Myrtle Beach, South Carolina",Open,M,,,Pavlo Kordiyaka,UKR,KNAACK Giant's Medley,Medley,"Yoke,Frame",20.99,m,,454,20,,distance,,10,8,27,DNF
+2024 World's Strongest Man,WSM,2024-05-04,"Myrtle Beach, South Carolina",Open,M,,,Luke Stoltman,GBR,KNAACK Giant's Medley,Medley,"Yoke,Frame",27.43,m,,454,20,,distance,,8,9,19.5,DNF
+2024 World's Strongest Man,WSM,2024-05-04,"Myrtle Beach, South Carolina",Open,M,,,Aivars Smaukstelis,LAT,KNAACK Giant's Medley,Medley,"Yoke,Frame",21.96,m,,454,20,,distance,,9,10,12.5,DNF
+2024 World's Strongest Man,WSM,2024-05-04,"Myrtle Beach, South Carolina",Open,M,,,Tom Stoltman,GBR,Max Axle Press,Overhead Press,Axle,210,kg,,210,,60,weight,,1,1,53,Tied 1st; 4 reps at 210kg
+2024 World's Strongest Man,WSM,2024-05-04,"Myrtle Beach, South Carolina",Open,M,,,Mitchell Hooper,CAN,Max Axle Press,Overhead Press,Axle,210,kg,,210,,60,weight,,1,2,47.5,Tied 1st; 4 reps at 210kg
+2024 World's Strongest Man,WSM,2024-05-04,"Myrtle Beach, South Carolina",Open,M,,,Evan Singleton,USA,Max Axle Press,Overhead Press,Axle,190,kg,,190,,60,weight,,4,3,36,3 reps at 190kg
+2024 World's Strongest Man,WSM,2024-05-04,"Myrtle Beach, South Carolina",Open,M,,,Matthew Ragg,NZL,Max Axle Press,Overhead Press,Axle,170,kg,,170,,60,weight,,8,4,35.5,1 rep at 170kg
+2024 World's Strongest Man,WSM,2024-05-04,"Myrtle Beach, South Carolina",Open,M,,,Tristain Hoath,CAN,Max Axle Press,Overhead Press,Axle,180,kg,,180,,60,weight,,7,5,33.5,2 reps at 180kg
+2024 World's Strongest Man,WSM,2024-05-04,"Myrtle Beach, South Carolina",Open,M,,,Wesley Derwinsky,CAN,Max Axle Press,Overhead Press,Axle,0,kg,,,, 60,weight,,9,6,31,No lift
+2024 World's Strongest Man,WSM,2024-05-04,"Myrtle Beach, South Carolina",Open,M,,,Austin Andrade,MEX,Max Axle Press,Overhead Press,Axle,190,kg,,190,,60,weight,,4,7,30.5,3 reps at 190kg
+2024 World's Strongest Man,WSM,2024-05-04,"Myrtle Beach, South Carolina",Open,M,,,Pavlo Kordiyaka,UKR,Max Axle Press,Overhead Press,Axle,200,kg,,200,,60,weight,,3,8,27,4 reps at 200kg
+2024 World's Strongest Man,WSM,2024-05-04,"Myrtle Beach, South Carolina",Open,M,,,Luke Stoltman,GBR,Max Axle Press,Overhead Press,Axle,190,kg,,190,,60,weight,,4,9,19.5,3 reps at 190kg
+2024 World's Strongest Man,WSM,2024-05-04,"Myrtle Beach, South Carolina",Open,M,,,Aivars Smaukstelis,LAT,Max Axle Press,Overhead Press,Axle,0,kg,,,, 60,weight,,9,10,12.5,No lift
+2024 World's Strongest Man,WSM,2024-05-04,"Myrtle Beach, South Carolina",Open,M,,,Tom Stoltman,GBR,Keg Toss,Toss,Keg,7.76,m,,15,,60,distance,Y,1,1,53,5 kegs cleared
+2024 World's Strongest Man,WSM,2024-05-04,"Myrtle Beach, South Carolina",Open,M,,,Mitchell Hooper,CAN,Keg Toss,Toss,Keg,7.76,m,,15,,60,distance,Y,1,2,47.5,5 kegs cleared; tied 1st
+2024 World's Strongest Man,WSM,2024-05-04,"Myrtle Beach, South Carolina",Open,M,,,Evan Singleton,USA,Keg Toss,Toss,Keg,7.5,m,,15,,60,distance,,4,3,36,4 kegs
+2024 World's Strongest Man,WSM,2024-05-04,"Myrtle Beach, South Carolina",Open,M,,,Matthew Ragg,NZL,Keg Toss,Toss,Keg,7,m,,15,,60,distance,,5,4,35.5,3 kegs
+2024 World's Strongest Man,WSM,2024-05-04,"Myrtle Beach, South Carolina",Open,M,,,Tristain Hoath,CAN,Keg Toss,Toss,Keg,6,m,,15,,60,distance,,9,5,33.5,1 keg
+2024 World's Strongest Man,WSM,2024-05-04,"Myrtle Beach, South Carolina",Open,M,,,Wesley Derwinsky,CAN,Keg Toss,Toss,Keg,7.76,m,,15,,60,distance,Y,1,6,31,5 kegs cleared; tied 1st
+2024 World's Strongest Man,WSM,2024-05-04,"Myrtle Beach, South Carolina",Open,M,,,Austin Andrade,MEX,Keg Toss,Toss,Keg,6.5,m,,15,,60,distance,,7,7,30.5,2 kegs
+2024 World's Strongest Man,WSM,2024-05-04,"Myrtle Beach, South Carolina",Open,M,,,Pavlo Kordiyaka,UKR,Keg Toss,Toss,Keg,0,m,,15,,60,distance,,10,8,27,No toss
+2024 World's Strongest Man,WSM,2024-05-04,"Myrtle Beach, South Carolina",Open,M,,,Luke Stoltman,GBR,Keg Toss,Toss,Keg,6.5,m,,15,,60,distance,,7,9,19.5,2 kegs
+2024 World's Strongest Man,WSM,2024-05-04,"Myrtle Beach, South Carolina",Open,M,,,Aivars Smaukstelis,LAT,Keg Toss,Toss,Keg,7,m,,15,,60,distance,,5,10,12.5,3 kegs
+2024 World's Strongest Man,WSM,2024-05-05,"Myrtle Beach, South Carolina",Open,M,,,Tom Stoltman,GBR,Reign Total Body Fuel Conan's Wheel,Hold,Conan's Wheel,777,degrees,,250,,,distance,,3,1,53,
+2024 World's Strongest Man,WSM,2024-05-05,"Myrtle Beach, South Carolina",Open,M,,,Mitchell Hooper,CAN,Reign Total Body Fuel Conan's Wheel,Hold,Conan's Wheel,821,degrees,,250,,,distance,,2,2,47.5,
+2024 World's Strongest Man,WSM,2024-05-05,"Myrtle Beach, South Carolina",Open,M,,,Evan Singleton,USA,Reign Total Body Fuel Conan's Wheel,Hold,Conan's Wheel,598,degrees,,250,,,distance,,7,3,36,
+2024 World's Strongest Man,WSM,2024-05-05,"Myrtle Beach, South Carolina",Open,M,,,Matthew Ragg,NZL,Reign Total Body Fuel Conan's Wheel,Hold,Conan's Wheel,748,degrees,,250,,,distance,,4,4,35.5,
+2024 World's Strongest Man,WSM,2024-05-05,"Myrtle Beach, South Carolina",Open,M,,,Tristain Hoath,CAN,Reign Total Body Fuel Conan's Wheel,Hold,Conan's Wheel,643,degrees,,250,,,distance,,5,5,33.5,Tied 5th
+2024 World's Strongest Man,WSM,2024-05-05,"Myrtle Beach, South Carolina",Open,M,,,Wesley Derwinsky,CAN,Reign Total Body Fuel Conan's Wheel,Hold,Conan's Wheel,643,degrees,,250,,,distance,,5,6,31,Tied 5th
+2024 World's Strongest Man,WSM,2024-05-05,"Myrtle Beach, South Carolina",Open,M,,,Austin Andrade,MEX,Reign Total Body Fuel Conan's Wheel,Hold,Conan's Wheel,526,degrees,,250,,,distance,,9,7,30.5,
+2024 World's Strongest Man,WSM,2024-05-05,"Myrtle Beach, South Carolina",Open,M,,,Pavlo Kordiyaka,UKR,Reign Total Body Fuel Conan's Wheel,Hold,Conan's Wheel,922,degrees,,250,,,distance,,1,8,27,
+2024 World's Strongest Man,WSM,2024-05-05,"Myrtle Beach, South Carolina",Open,M,,,Luke Stoltman,GBR,Reign Total Body Fuel Conan's Wheel,Hold,Conan's Wheel,527,degrees,,250,,,distance,,8,9,19.5,
+2024 World's Strongest Man,WSM,2024-05-05,"Myrtle Beach, South Carolina",Open,M,,,Aivars Smaukstelis,LAT,Reign Total Body Fuel Conan's Wheel,Hold,Conan's Wheel,486,degrees,,250,,,distance,,10,10,12.5,
+2024 World's Strongest Man,WSM,2024-05-05,"Myrtle Beach, South Carolina",Open,M,,,Tom Stoltman,GBR,BFGoodrich Tires HD Terrain Deadlift,Deadlift,Tire Deadlift,7,reps,,324,,60,reps,,2,1,53,Standing on blocks; tied 2nd
+2024 World's Strongest Man,WSM,2024-05-05,"Myrtle Beach, South Carolina",Open,M,,,Mitchell Hooper,CAN,BFGoodrich Tires HD Terrain Deadlift,Deadlift,Tire Deadlift,6,reps,,324,,60,reps,,6,2,47.5,Standing on blocks
+2024 World's Strongest Man,WSM,2024-05-05,"Myrtle Beach, South Carolina",Open,M,,,Evan Singleton,USA,BFGoodrich Tires HD Terrain Deadlift,Deadlift,Tire Deadlift,5,reps,,324,,60,reps,,7,3,36,Standing on blocks
+2024 World's Strongest Man,WSM,2024-05-05,"Myrtle Beach, South Carolina",Open,M,,,Matthew Ragg,NZL,BFGoodrich Tires HD Terrain Deadlift,Deadlift,Tire Deadlift,8,reps,,324,,60,reps,,1,4,35.5,Standing on blocks
+2024 World's Strongest Man,WSM,2024-05-05,"Myrtle Beach, South Carolina",Open,M,,,Tristain Hoath,CAN,BFGoodrich Tires HD Terrain Deadlift,Deadlift,Tire Deadlift,7,reps,,324,,60,reps,,2,5,33.5,Standing on blocks; tied 2nd
+2024 World's Strongest Man,WSM,2024-05-05,"Myrtle Beach, South Carolina",Open,M,,,Wesley Derwinsky,CAN,BFGoodrich Tires HD Terrain Deadlift,Deadlift,Tire Deadlift,6,reps,,324,,60,reps,,4,6,31,Standing on blocks; tied 4th
+2024 World's Strongest Man,WSM,2024-05-05,"Myrtle Beach, South Carolina",Open,M,,,Austin Andrade,MEX,BFGoodrich Tires HD Terrain Deadlift,Deadlift,Tire Deadlift,6,reps,,324,,60,reps,,4,7,30.5,Standing on blocks; tied 4th
+2024 World's Strongest Man,WSM,2024-05-05,"Myrtle Beach, South Carolina",Open,M,,,Pavlo Kordiyaka,UKR,BFGoodrich Tires HD Terrain Deadlift,Deadlift,Tire Deadlift,1,reps,,324,,60,reps,,10,8,27,Standing on blocks
+2024 World's Strongest Man,WSM,2024-05-05,"Myrtle Beach, South Carolina",Open,M,,,Luke Stoltman,GBR,BFGoodrich Tires HD Terrain Deadlift,Deadlift,Tire Deadlift,4,reps,,324,,60,reps,,8,9,19.5,Standing on blocks
+2024 World's Strongest Man,WSM,2024-05-05,"Myrtle Beach, South Carolina",Open,M,,,Aivars Smaukstelis,LAT,BFGoodrich Tires HD Terrain Deadlift,Deadlift,Tire Deadlift,3,reps,,324,,60,reps,,9,10,12.5,Standing on blocks
+2024 World's Strongest Man,WSM,2024-05-05,"Myrtle Beach, South Carolina",Open,M,,,Tom Stoltman,GBR,Atlas Stones,Load,Atlas Stone,38.14,sec,5,140-210,,60,time,,1,1,53,All 5 stones loaded
+2024 World's Strongest Man,WSM,2024-05-05,"Myrtle Beach, South Carolina",Open,M,,,Mitchell Hooper,CAN,Atlas Stones,Load,Atlas Stone,37.35,sec,4,140-210,,60,time,,2,2,47.5,
+2024 World's Strongest Man,WSM,2024-05-05,"Myrtle Beach, South Carolina",Open,M,,,Evan Singleton,USA,Atlas Stones,Load,Atlas Stone,29.09,sec,3,140-210,,60,time,,7,3,36,
+2024 World's Strongest Man,WSM,2024-05-05,"Myrtle Beach, South Carolina",Open,M,,,Matthew Ragg,NZL,Atlas Stones,Load,Atlas Stone,49.93,sec,4,140-210,,60,time,,5,4,35.5,
+2024 World's Strongest Man,WSM,2024-05-05,"Myrtle Beach, South Carolina",Open,M,,,Tristain Hoath,CAN,Atlas Stones,Load,Atlas Stone,43.79,sec,4,140-210,,60,time,,3,5,33.5,
+2024 World's Strongest Man,WSM,2024-05-05,"Myrtle Beach, South Carolina",Open,M,,,Wesley Derwinsky,CAN,Atlas Stones,Load,Atlas Stone,30.8,sec,3,140-210,,60,time,,8,6,31,
+2024 World's Strongest Man,WSM,2024-05-05,"Myrtle Beach, South Carolina",Open,M,,,Austin Andrade,MEX,Atlas Stones,Load,Atlas Stone,24.42,sec,3,140-210,,60,time,,6,7,30.5,
+2024 World's Strongest Man,WSM,2024-05-05,"Myrtle Beach, South Carolina",Open,M,,,Pavlo Kordiyaka,UKR,Atlas Stones,Load,Atlas Stone,44.58,sec,4,140-210,,60,time,,4,8,27,
+2024 World's Strongest Man,WSM,2024-05-05,"Myrtle Beach, South Carolina",Open,M,,,Luke Stoltman,GBR,Atlas Stones,Load,Atlas Stone,36.09,sec,3,140-210,,60,time,,10,9,19.5,
+2024 World's Strongest Man,WSM,2024-05-05,"Myrtle Beach, South Carolina",Open,M,,,Aivars Smaukstelis,LAT,Atlas Stones,Load,Atlas Stone,32.88,sec,3,140-210,,60,time,,9,10,12.5,

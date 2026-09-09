@@ -598,6 +598,7 @@ function renderTable() {
     const year = (r.MeetDate||'').slice(0,4) || '—';
     const op = parseInt(r.OverallPlace) || 0;
     const pc = op===1?'gold':op===2?'silver':op===3?'bronze':'';
+    const placeDisplay = op===1 ? '🥇' : op===2 ? '🥈' : op===3 ? '🥉' : (op||'—');
     const result = r.ResultValue ? `${r.ResultValue} ${r.ResultUnit||''}`.trim() : '—';
     const wr = r.WorldRecord === 'Y' ? '<span class="tag-wr">WR</span>' : '';
     const cat = r.EventCategory ? `<span class="tag-cat">${esc(r.EventCategory)}</span>` : '—';
@@ -605,7 +606,7 @@ function renderTable() {
     const expanded = expandedIdx === idx;
 
     html += `<tr class="data-row${expanded?' expanded':''}" onclick="toggleExpand(${idx})">
-      <td class="col-place ${pc}">${op||'—'}</td>
+      <td class="col-place ${pc}">${placeDisplay}</td>
       <td class="col-athlete">${esc(r.AthleteName)}<span class="expand-arrow">▶</span></td>
       <td><div class="nat-cell">${flagHTML(nat)}<span class="nat-code">${esc(nat||'—')}</span></div></td>
       <td>${esc(r.MeetName||'—')}</td>

@@ -24,18 +24,54 @@
     border-bottom: 1px solid var(--border);
     padding: 1rem 1.5rem 0.75rem;
     flex-shrink: 0;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
   }
 
   .rankings-header h1 {
     font-size: 1.2rem;
     font-weight: 700;
     letter-spacing: -0.02em;
-    margin-bottom: 0.2rem;
   }
 
   .rankings-header p {
     font-size: 12px;
     color: var(--muted);
+  }
+
+  /* ── LEGEND ── */
+  .legend {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 11px;
+    color: var(--muted);
+    flex-wrap: wrap;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  .tag-wr-sm {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 1px 5px;
+    border-radius: 3px;
+    background: var(--red-light);
+    color: var(--red);
+  }
+
+  .legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
   }
 
   /* ── FILTER BAR ── */
@@ -66,11 +102,9 @@
 
   .filter-section input[type="text"] { min-width: 160px; }
   .filter-section select { cursor: pointer; }
-
   .filter-section input[type="text"]:focus,
   .filter-section select:focus { border-color: var(--accent); }
 
-  /* Disabled state for cascaded filters */
   .filter-section select:disabled {
     opacity: 0.4;
     cursor: not-allowed;
@@ -106,7 +140,7 @@
     white-space: nowrap;
   }
 
-  /* ── TABLE WRAPPER — scrollable ── */
+  /* ── TABLE WRAPPER ── */
   .table-wrap {
     overflow: auto;
     flex: 1;
@@ -153,12 +187,68 @@
   }
 
   /* Alternating rows */
-  table.rankings tbody tr:nth-child(even) td { background: var(--surface); }
-  table.rankings tbody tr:nth-child(odd) td { background: var(--bg); }
-  table.rankings tbody tr:hover td { background: var(--accent-light) !important; }
+  table.rankings tbody tr.data-row:nth-child(odd) td { background: var(--bg); }
+  table.rankings tbody tr.data-row:nth-child(even) td { background: var(--surface); }
+  table.rankings tbody tr.data-row:hover td { background: var(--accent-light) !important; cursor: pointer; }
 
+  /* ── EXPANDED ROW ── */
+  tr.expand-row td {
+    background: #f0f4f9 !important;
+    padding: 0;
+    border-bottom: 2px solid var(--accent-light);
+  }
+
+  .expand-inner {
+    padding: 0.85rem 1.25rem 0.85rem 3.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+
+  .expand-group { display: flex; flex-direction: column; gap: 0.2rem; min-width: 100px; }
+
+  .expand-label {
+    font-size: 10px;
+    font-family: var(--mono);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--faint);
+  }
+
+  .expand-value {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text);
+  }
+
+  .expand-notes {
+    flex: 1;
+    min-width: 200px;
+    max-width: 500px;
+  }
+
+  .expand-notes .expand-value {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--muted);
+    white-space: normal;
+    line-height: 1.5;
+  }
+
+  tr.data-row.expanded td { background: var(--accent-light) !important; }
+  tr.data-row .expand-arrow { 
+    display: inline-block; 
+    font-size: 10px; 
+    color: var(--faint); 
+    margin-left: 6px;
+    transition: transform 0.15s;
+  }
+  tr.data-row.expanded .expand-arrow { transform: rotate(90deg); color: var(--accent); }
+
+  /* ── CELL STYLES ── */
   .col-athlete { font-weight: 500; color: var(--text); }
-  .col-nat { font-family: var(--mono); font-size: 11px; color: var(--muted); }
+  .col-nat { font-size: 13px; }
 
   .col-result {
     font-weight: 600;
@@ -209,6 +299,12 @@
     background: var(--bg) !important;
   }
 
+  .no-results-hint {
+    font-size: 12px;
+    color: var(--faint);
+    margin-top: 0.5rem;
+  }
+
   .loading-spinner {
     display: inline-block;
     width: 14px;
@@ -223,13 +319,6 @@
 
   @keyframes spin { to { transform: rotate(360deg); } }
 
-  /* ── NO RESULTS HELPER ── */
-  .no-results-hint {
-    font-size: 12px;
-    color: var(--faint);
-    margin-top: 0.5rem;
-  }
-
   footer.site-footer { flex-shrink: 0; }
 
   @media (max-width: 640px) {
@@ -239,6 +328,7 @@
     .filter-section { padding: 0.6rem 1rem; }
     .filter-divider { display: none; }
     .result-count { margin-left: 0; width: 100%; }
+    .expand-inner { padding-left: 1rem; }
   }
 </style>
 </head>
@@ -263,8 +353,28 @@
 <main>
 
   <div class="rankings-header">
-    <h1>Rankings</h1>
-    <p>Browse competition results across all federations and event categories. Each dropdown only shows options available in your current selection.</p>
+    <div>
+      <h1>Rankings</h1>
+      <p>Click any row to see full event details. Each dropdown only shows options available in your current selection.</p>
+    </div>
+    <div class="legend">
+      <div class="legend-item">
+        <span class="tag-wr-sm">WR</span>
+        <span>World Record set</span>
+      </div>
+      <div class="legend-item">
+        <span class="legend-dot" style="background:#b8860b"></span>
+        <span>1st place</span>
+      </div>
+      <div class="legend-item">
+        <span class="legend-dot" style="background:#808080"></span>
+        <span>2nd place</span>
+      </div>
+      <div class="legend-item">
+        <span class="legend-dot" style="background:#8b5e3c"></span>
+        <span>3rd place</span>
+      </div>
+    </div>
   </div>
 
   <div class="filter-section">
@@ -315,7 +425,7 @@
 </footer>
 
 <script>
-// ── CONFIG: add new CSV files here as you add data ──
+// ── CONFIG ──
 const CSV_FILES = [
   'https://raw.githubusercontent.com/campoheidi-oss/openstrongman.org/dev/data/wsm_results.csv',
   'https://raw.githubusercontent.com/campoheidi-oss/openstrongman.org/dev/data/wsm_2023_finals.csv',
@@ -325,6 +435,20 @@ const CSV_FILES = [
 let allRows = [];
 let sortCol = 'MeetDate';
 let sortDir = 'desc';
+let expandedIdx = null;
+
+// ── FLAG CONVERTER ──
+// Converts IOC 3-letter code to flag emoji via intermediate lookup
+const flagMap = {
+  USA:'🇺🇸',GBR:'🇬🇧',CAN:'🇨🇦',ISL:'🇮🇸',FIN:'🇫🇮',NOR:'🇳🇴',SWE:'🇸🇪',
+  POL:'🇵🇱',LTU:'🇱🇹',UKR:'🇺🇦',AUT:'🇦🇹',RSA:'🇿🇦',NED:'🇳🇱',DEN:'🇩🇰',
+  RUS:'🇷🇺',NZL:'🇳🇿',LAT:'🇱🇻',MEX:'🇲🇽',AUS:'🇦🇺',BEL:'🇧🇪',FRA:'🇫🇷',
+  GER:'🇩🇪',BRA:'🇧🇷',EST:'🇪🇪',GEO:'🇬🇪',IRL:'🇮🇪',LEB:'🇱🇧',
+};
+
+function flag(code) {
+  return flagMap[code] || '';
+}
 
 // ── CSV PARSER ──
 function parseCSV(text) {
@@ -355,19 +479,18 @@ function splitCSVLine(line) {
   return result;
 }
 
-// ── LOAD ALL CSVs ──
+// ── LOAD ──
 async function loadData() {
   const fetches = CSV_FILES.map(url =>
     fetch(url).then(r => r.text()).then(parseCSV).catch(() => [])
   );
   const results = await Promise.all(fetches);
   allRows = results.flat().filter(r => r.AthleteName && r.Event !== 'Overall' && r.Event !== '');
-  populateFilters(allRows);
+  populateFilters();
   renderTable();
 }
 
 // ── CASCADING FILTERS ──
-// Returns rows matching all filters EXCEPT the ones in `except`
 function getFilteredExcept(except = []) {
   const athlete = document.getElementById('f-athlete').value.toLowerCase().trim();
   const fed     = document.getElementById('f-federation').value;
@@ -394,19 +517,14 @@ function unique(rows, key) {
 }
 
 function uniqueYears(rows) {
-  return [...new Set(rows.map(r => (r.MeetDate||'').slice(0,4)).filter(y => y && y > '1900'))].sort((a,b)=>b-a);
+  return [...new Set(rows.map(r => (r.MeetDate||'').slice(0,4)).filter(y => y && y > '1900'))].sort((a,b) => b-a);
 }
 
-function populateFilters(baseRows) {
-  const cat  = document.getElementById('f-category').value;
-  const impl = document.getElementById('f-implement').value;
+function populateFilters() {
+  refill('f-federation', unique(getFilteredExcept(['fed']), 'MeetFederation'), 'All Federations');
+  refillYears('f-year', uniqueYears(getFilteredExcept(['year'])));
+  refill('f-category', unique(getFilteredExcept(['cat','impl','scored']), 'EventCategory'), 'All Categories');
 
-  // Each dropdown sees rows filtered by everything EXCEPT itself
-  refill('f-federation', unique(getFilteredExcept(['fed']),    'MeetFederation'), 'All Federations');
-  refillYears('f-year',  uniqueYears(getFilteredExcept(['year'])));
-  refill('f-category',   unique(getFilteredExcept(['cat','impl','scored']), 'EventCategory'), 'All Categories');
-
-  // Implement only enabled when a category is selected
   const catSel = document.getElementById('f-category').value;
   const implEl = document.getElementById('f-implement');
   const scoredEl = document.getElementById('f-scored');
@@ -414,17 +532,12 @@ function populateFilters(baseRows) {
   if (catSel) {
     implEl.disabled = false;
     refill('f-implement', unique(getFilteredExcept(['impl','scored']), 'Implement'), 'All Implements');
+    scoredEl.disabled = false;
+    refill('f-scored', unique(getFilteredExcept(['scored']), 'ScoredBy'), 'Scored By');
   } else {
     implEl.disabled = true;
     refill('f-implement', [], 'All Implements');
     implEl.value = '';
-  }
-
-  // ScoredBy only enabled when category is selected
-  if (catSel) {
-    scoredEl.disabled = false;
-    refill('f-scored', unique(getFilteredExcept(['scored']), 'ScoredBy'), 'Scored By');
-  } else {
     scoredEl.disabled = true;
     refill('f-scored', [], 'Scored By');
     scoredEl.value = '';
@@ -437,12 +550,10 @@ function refill(id, values, placeholder) {
   sel.innerHTML = `<option value="">${placeholder}</option>`;
   values.forEach(v => {
     const opt = document.createElement('option');
-    opt.value = v;
-    opt.textContent = v;
+    opt.value = v; opt.textContent = v;
     if (v === cur) opt.selected = true;
     sel.appendChild(opt);
   });
-  // If current value no longer in list, reset it
   if (cur && !values.includes(cur)) sel.value = '';
 }
 
@@ -452,51 +563,88 @@ function refillYears(id, values) {
   sel.innerHTML = '<option value="">All Years</option>';
   values.forEach(v => {
     const opt = document.createElement('option');
-    opt.value = v;
-    opt.textContent = v;
+    opt.value = v; opt.textContent = v;
     if (v === cur) opt.selected = true;
     sel.appendChild(opt);
   });
   if (cur && !values.includes(cur)) sel.value = '';
 }
 
-// ── FILTER + SORT ──
-function getFiltered() {
-  return getFilteredExcept([]);
-}
-
+// ── SORT ──
 function sortBy(col) {
   if (sortCol === col) { sortDir = sortDir === 'asc' ? 'desc' : 'asc'; }
   else { sortCol = col; sortDir = 'asc'; }
+  expandedIdx = null;
   renderTable();
 }
 
 function getSorted(rows) {
   return [...rows].sort((a, b) => {
-    let va = a[sortCol] || '';
-    let vb = b[sortCol] || '';
-    const na = parseFloat(va);
-    const nb = parseFloat(vb);
+    let va = a[sortCol] || '', vb = b[sortCol] || '';
+    const na = parseFloat(va), nb = parseFloat(vb);
     if (!isNaN(na) && !isNaN(nb)) return sortDir === 'asc' ? na - nb : nb - na;
     return sortDir === 'asc' ? va.localeCompare(vb) : vb.localeCompare(va);
   });
 }
 
+// ── EXPAND ROW ──
+function toggleExpand(idx, row) {
+  if (expandedIdx === idx) {
+    expandedIdx = null;
+  } else {
+    expandedIdx = idx;
+  }
+  renderTable();
+}
+
+function buildExpandRow(r) {
+  const details = [];
+
+  if (r.ImplementWeightKg) details.push({ label: 'Implement Weight', value: r.ImplementWeightKg + ' kg' });
+  if (r.StonesCompleted)   details.push({ label: 'Stones Completed', value: r.StonesCompleted });
+  if (r.CourseDistanceM)   details.push({ label: 'Course Distance', value: r.CourseDistanceM + ' m' });
+  if (r.TimeLimitSec)      details.push({ label: 'Time Limit', value: r.TimeLimitSec + ' sec' });
+  if (r.ScoredBy)          details.push({ label: 'Scored By', value: r.ScoredBy });
+  if (r.Points)            details.push({ label: 'Points Earned', value: r.Points });
+  if (r.MeetLocation)      details.push({ label: 'Location', value: r.MeetLocation });
+  if (r.Division)          details.push({ label: 'Division', value: r.Division });
+
+  const detailHTML = details.map(d => `
+    <div class="expand-group">
+      <span class="expand-label">${d.label}</span>
+      <span class="expand-value">${esc(d.value)}</span>
+    </div>`).join('');
+
+  const notesHTML = r.Notes ? `
+    <div class="expand-group expand-notes">
+      <span class="expand-label">Notes</span>
+      <span class="expand-value">${esc(r.Notes)}</span>
+    </div>` : '';
+
+  return `<tr class="expand-row">
+    <td colspan="12">
+      <div class="expand-inner">
+        ${detailHTML}
+        ${notesHTML}
+        ${details.length === 0 && !r.Notes ? '<span style="color:var(--faint);font-size:12px;">No additional detail available for this result.</span>' : ''}
+      </div>
+    </td>
+  </tr>`;
+}
+
 // ── RENDER ──
 function renderTable() {
-  populateFilters(allRows);
+  populateFilters();
 
-  const filtered = getFiltered();
+  const filtered = getFilteredExcept([]);
   const sorted = getSorted(filtered);
 
-  // Sort indicators
   document.querySelectorAll('table.rankings th').forEach(th => th.classList.remove('sorted-asc','sorted-desc'));
   const activeTh = document.getElementById('th-' + sortCol);
   if (activeTh) activeTh.classList.add(sortDir === 'asc' ? 'sorted-asc' : 'sorted-desc');
 
-  // Count
-  const countEl = document.getElementById('result-count');
-  countEl.textContent = sorted.length.toLocaleString() + ' result' + (sorted.length !== 1 ? 's' : '');
+  document.getElementById('result-count').textContent =
+    sorted.length.toLocaleString() + ' result' + (sorted.length !== 1 ? 's' : '');
 
   const tbody = document.getElementById('rankings-body');
 
@@ -510,19 +658,23 @@ function renderTable() {
 
   const MAX = 500;
   const rows = sorted.slice(0, MAX);
+  let html = '';
 
-  tbody.innerHTML = rows.map(r => {
+  rows.forEach((r, idx) => {
     const year = (r.MeetDate||'').slice(0,4) || '—';
     const op = parseInt(r.OverallPlace) || 0;
     const placeClass = op === 1 ? 'gold' : op === 2 ? 'silver' : op === 3 ? 'bronze' : '';
     const result = r.ResultValue ? `${r.ResultValue} ${r.ResultUnit||''}`.trim() : '—';
     const wr = r.WorldRecord === 'Y' ? '<span class="tag-wr">WR</span>' : '';
     const cat = r.EventCategory ? `<span class="tag-cat">${esc(r.EventCategory)}</span>` : '—';
+    const nat = r.AthleteNationality || '';
+    const fl = flag(nat);
+    const isExpanded = expandedIdx === idx;
 
-    return `<tr>
+    html += `<tr class="data-row${isExpanded ? ' expanded' : ''}" onclick="toggleExpand(${idx})">
       <td class="col-place ${placeClass}">${op||'—'}</td>
-      <td class="col-athlete">${esc(r.AthleteName)}</td>
-      <td class="col-nat">${esc(r.AthleteNationality||'—')}</td>
+      <td class="col-athlete">${esc(r.AthleteName)}<span class="expand-arrow">▶</span></td>
+      <td class="col-nat">${fl ? fl + ' ' : ''}${esc(nat||'—')}</td>
       <td>${esc(r.MeetName||'—')}</td>
       <td>${year}</td>
       <td>${esc(r.MeetFederation||'—')}</td>
@@ -533,13 +685,19 @@ function renderTable() {
       <td>${esc(r.ScoredBy||'—')}</td>
       <td class="col-place">${r.Place||'—'}</td>
     </tr>`;
-  }).join('');
+
+    if (isExpanded) {
+      html += buildExpandRow(r);
+    }
+  });
 
   if (sorted.length > MAX) {
-    tbody.innerHTML += `<tr class="state-row"><td colspan="12">
+    html += `<tr class="state-row"><td colspan="12">
       Showing first ${MAX} of ${sorted.length.toLocaleString()} results — use filters to narrow down.
     </td></tr>`;
   }
+
+  tbody.innerHTML = html;
 }
 
 function esc(str) {
@@ -551,16 +709,16 @@ function resetFilters() {
   ['f-federation','f-year','f-sex','f-category','f-implement','f-scored'].forEach(id => {
     document.getElementById(id).selectedIndex = 0;
   });
+  expandedIdx = null;
   renderTable();
 }
 
 // ── EVENT LISTENERS ──
-document.getElementById('f-athlete').addEventListener('input', renderTable);
+document.getElementById('f-athlete').addEventListener('input', () => { expandedIdx = null; renderTable(); });
 ['f-federation','f-year','f-sex','f-category','f-implement','f-scored'].forEach(id => {
-  document.getElementById(id).addEventListener('change', renderTable);
+  document.getElementById(id).addEventListener('change', () => { expandedIdx = null; renderTable(); });
 });
 
-// ── INIT ──
 loadData();
 </script>
 

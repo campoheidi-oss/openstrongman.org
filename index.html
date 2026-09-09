@@ -13,10 +13,7 @@
     padding: 4rem 1.5rem;
   }
 
-  .hero-inner {
-    max-width: 700px;
-    margin: 0 auto;
-  }
+  .hero-inner { max-width: 700px; margin: 0 auto; }
 
   .hero .eyebrow {
     font-family: var(--mono);
@@ -36,10 +33,7 @@
     margin-bottom: 1.25rem;
   }
 
-  .hero h1 em {
-    font-style: normal;
-    color: var(--accent);
-  }
+  .hero h1 em { font-style: normal; color: var(--accent); }
 
   .hero-desc {
     font-size: 17px;
@@ -49,11 +43,7 @@
     margin-bottom: 2rem;
   }
 
-  .hero-actions {
-    display: flex;
-    gap: 0.75rem;
-    flex-wrap: wrap;
-  }
+  .hero-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
 
   .btn-primary {
     background: var(--accent);
@@ -67,20 +57,6 @@
   }
 
   .btn-primary:hover { background: #162d4a; }
-
-  .btn-secondary {
-    background: transparent;
-    color: var(--accent);
-    font-size: 14px;
-    font-weight: 500;
-    padding: 0.65rem 1.25rem;
-    border-radius: 6px;
-    border: 1px solid var(--border);
-    text-decoration: none;
-    transition: border-color 0.15s, background 0.15s;
-  }
-
-  .btn-secondary:hover { border-color: var(--accent); background: var(--accent-light); }
 
   /* stats bar */
   .stats-bar {
@@ -110,7 +86,14 @@
     margin-top: 0.2rem;
   }
 
-  /* how it works */
+  .stat-growing {
+    font-size: 10px;
+    opacity: 0.5;
+    font-style: italic;
+    margin-top: 0.1rem;
+  }
+
+  /* sections */
   .section {
     padding: 3rem 1.5rem;
     border-bottom: 1px solid var(--border);
@@ -148,25 +131,9 @@
     padding: 1.25rem;
   }
 
-  .how-num {
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--faint);
-    margin-bottom: 0.6rem;
-  }
-
-  .how-card h3 {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--text);
-    margin-bottom: 0.4rem;
-  }
-
-  .how-card p {
-    font-size: 13px;
-    color: var(--muted);
-    line-height: 1.55;
-  }
+  .how-num { font-family: var(--mono); font-size: 11px; color: var(--faint); margin-bottom: 0.6rem; }
+  .how-card h3 { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 0.4rem; }
+  .how-card p { font-size: 13px; color: var(--muted); line-height: 1.55; }
 
   /* categories */
   .cat-grid {
@@ -189,16 +156,8 @@
   }
 
   .cat-card:hover { border-color: var(--accent-mid); background: var(--accent-light); }
-
-  .cat-name {
-    font-size: 14px;
-    font-weight: 600;
-  }
-
-  .cat-example {
-    font-size: 12px;
-    color: var(--muted);
-  }
+  .cat-name { font-size: 14px; font-weight: 600; }
+  .cat-example { font-size: 12px; color: var(--muted); }
 
   /* mission */
   .mission-section {
@@ -207,11 +166,7 @@
     padding: 3rem 1.5rem;
   }
 
-  .mission-inner {
-    max-width: 620px;
-    margin: 0 auto;
-  }
-
+  .mission-inner { max-width: 620px; margin: 0 auto; }
   .mission-section .section-label { color: rgba(255,255,255,0.5); }
 
   .mission-section h2 {
@@ -222,17 +177,8 @@
     line-height: 1.2;
   }
 
-  .mission-section p {
-    font-size: 15px;
-    line-height: 1.7;
-    opacity: 0.85;
-    margin-bottom: 1rem;
-  }
-
-  .mission-section a {
-    color: #fff;
-    font-weight: 500;
-  }
+  .mission-section p { font-size: 15px; line-height: 1.7; opacity: 0.85; margin-bottom: 1rem; }
+  .mission-section a { color: #fff; font-weight: 500; }
 
   @media (max-width: 640px) {
     .hero { padding: 2.5rem 1rem; }
@@ -270,26 +216,28 @@
       </p>
       <div class="hero-actions">
         <a class="btn-primary" href="rankings.html">Browse Rankings</a>
-        <a class="btn-secondary" href="data.html">Download Data</a>
       </div>
     </div>
   </section>
 
   <div class="stats-bar">
     <div class="stat-item">
-      <span class="stat-value">—</span>
+      <span class="stat-value" id="stat-results">—</span>
       <span class="stat-label">Results</span>
+      <span class="stat-growing">and growing</span>
     </div>
     <div class="stat-item">
-      <span class="stat-value">—</span>
+      <span class="stat-value" id="stat-athletes">—</span>
       <span class="stat-label">Athletes</span>
+      <span class="stat-growing">and growing</span>
     </div>
     <div class="stat-item">
-      <span class="stat-value">—</span>
+      <span class="stat-value" id="stat-meets">—</span>
       <span class="stat-label">Meets</span>
+      <span class="stat-growing">and growing</span>
     </div>
     <div class="stat-item">
-      <span class="stat-value">—</span>
+      <span class="stat-value" id="stat-feds">—</span>
       <span class="stat-label">Federations</span>
     </div>
     <div class="stat-item">
@@ -358,7 +306,7 @@
         </a>
         <a class="cat-card" href="rankings.html?category=flip">
           <span class="cat-name">Flip</span>
-          <span class="cat-example">Tire flip</span>
+          <span class="cat-example">Tire flip, Fingal's Fingers</span>
         </a>
         <a class="cat-card" href="rankings.html?category=toss">
           <span class="cat-name">Toss</span>
@@ -396,6 +344,44 @@
   <span>&copy; 2026 OpenStrongman &mdash; open source, open data</span>
   <span>For powerlifting: <a href="https://www.openpowerlifting.org" target="_blank" rel="noopener">OpenPowerlifting.org</a> &nbsp;&middot;&nbsp; For weightlifting: <a href="https://www.openweightlifting.org" target="_blank" rel="noopener">OpenWeightlifting.org</a> &nbsp;&middot;&nbsp; All three sites are independent and unaffiliated.</span>
 </footer>
+
+<script>
+const CSV_FILES = [
+  'https://raw.githubusercontent.com/campoheidi-oss/openstrongman.org/dev/data/wsm_results.csv',
+  'https://raw.githubusercontent.com/campoheidi-oss/openstrongman.org/dev/data/wsm_2023_finals.csv',
+  'https://raw.githubusercontent.com/campoheidi-oss/openstrongman.org/dev/data/wsm_2024_finals.csv',
+];
+
+function parseCSV(text) {
+  const lines = text.trim().split('\n');
+  const headers = lines[0].split(',').map(h => h.trim());
+  return lines.slice(1).map(line => {
+    const vals = line.split(',');
+    const row = {};
+    headers.forEach((h, i) => { row[h] = (vals[i]||'').trim().replace(/^"|"$/g,''); });
+    return row;
+  }).filter(r => r.AthleteName && r.Event !== 'Overall' && r.Event !== '');
+}
+
+async function loadStats() {
+  const results = await Promise.all(
+    CSV_FILES.map(url => fetch(url).then(r => r.text()).then(parseCSV).catch(() => []))
+  );
+  const allRows = results.flat();
+
+  const resultCount = allRows.length;
+  const athletes = new Set(allRows.map(r => r.AthleteName).filter(Boolean)).size;
+  const meets = new Set(allRows.map(r => r.MeetName).filter(Boolean)).size;
+  const feds = new Set(allRows.map(r => r.MeetFederation).filter(Boolean)).size;
+
+  document.getElementById('stat-results').textContent = resultCount.toLocaleString();
+  document.getElementById('stat-athletes').textContent = athletes.toLocaleString();
+  document.getElementById('stat-meets').textContent = meets.toLocaleString();
+  document.getElementById('stat-feds').textContent = feds.toLocaleString();
+}
+
+loadStats();
+</script>
 
 </body>
 </html>

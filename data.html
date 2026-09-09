@@ -3,9 +3,203 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OpenStrongman — Data</title>
-<meta name="description" content="Download the full OpenStrongman dataset as CSV — free, no account required.">
+<title>OpenStrongman — Data Downloads</title>
+<meta name="description" content="Download the OpenStrongman database as CSV. Free, open, no account required.">
 <link rel="stylesheet" href="style.css">
+<style>
+  .data-hero {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 2.5rem 1.5rem;
+  }
+
+  .data-hero-inner { max-width: 760px; }
+
+  .data-hero h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+  }
+
+  .data-hero p {
+    font-size: 14px;
+    color: var(--muted);
+    max-width: 560px;
+    line-height: 1.65;
+  }
+
+  .data-body {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-header h2 {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .section-header span { font-size: 11px; color: var(--faint); }
+
+  .download-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 2.5rem;
+  }
+
+  .download-item {
+    background: var(--surface);
+    padding: 1rem 1.25rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .download-item:hover { background: var(--surface-2); }
+
+  .dl-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.2rem;
+  }
+
+  .dl-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+  .dl-tags {
+    display: flex;
+    gap: 0.35rem;
+    margin-top: 0.4rem;
+    flex-wrap: wrap;
+  }
+
+  .dl-tag {
+    font-size: 10px;
+    font-weight: 500;
+    padding: 2px 6px;
+    border-radius: 3px;
+    background: var(--accent-light);
+    color: var(--accent);
+  }
+
+  .dl-tag.red { background: var(--red-light); color: var(--red); }
+
+  .dl-actions {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .btn-dl {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--accent);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 0.45rem 0.85rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.15s;
+    white-space: nowrap;
+  }
+
+  .btn-dl:hover { background: #162d4a; }
+
+  .btn-dl svg { width: 12px; height: 12px; flex-shrink: 0; }
+
+  .btn-preview {
+    display: inline-flex;
+    align-items: center;
+    font-size: 12px;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 0.45rem 0.6rem;
+    border-radius: 5px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    transition: border-color 0.15s, color 0.15s;
+    white-space: nowrap;
+  }
+
+  .btn-preview:hover { border-color: var(--accent-mid); color: var(--accent); }
+
+  .schema-wrap {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 2.5rem;
+  }
+
+  .schema-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+
+  .schema-table th {
+    text-align: left;
+    padding: 0.55rem 1rem;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--muted);
+    border-bottom: 1px solid var(--border);
+    background: var(--surface-2);
+  }
+
+  .schema-table td {
+    padding: 0.55rem 1rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    line-height: 1.5;
+  }
+
+  .schema-table tr:last-child td { border-bottom: none; }
+  .schema-table tr:hover td { background: var(--surface-2); }
+
+  .field-name { font-family: var(--mono); font-size: 11px; color: var(--accent); white-space: nowrap; }
+  .field-desc { color: var(--muted); }
+  .field-example { font-family: var(--mono); font-size: 10px; color: var(--faint); }
+
+  .license-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+
+  .license-box strong { color: var(--text); }
+  .license-box a { color: var(--accent-mid); }
+
+  @media (max-width: 580px) {
+    .download-item { grid-template-columns: 1fr; }
+    .dl-actions { justify-content: flex-start; }
+    .data-body { padding: 1.5rem 1rem; }
+  }
+</style>
 </head>
 <body>
 
@@ -13,12 +207,12 @@
   <a class="wordmark" href="index.html"><span>Open</span>Strongman</a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
-    <li><a href="rankings.html" >Rankings</a></li>
-    <li><a href="meets.html" >Meets</a></li>
-    <li><a href="athletes.html" >Athletes</a></li>
-    <li><a href="records.html" >Records</a></li>
+    <li><a href="rankings.html">Rankings</a></li>
+    <li><a href="meets.html">Meets</a></li>
+    <li><a href="athletes.html">Athletes</a></li>
+    <li><a href="records.html">Records</a></li>
     <li><a href="data.html" class="active">Data</a></li>
-    <li><a href="about.html" >About</a></li>
+    <li><a href="about.html">About</a></li>
   </ul>
   <div class="nav-right">
     <a class="btn-contribute" href="about.html#contribute">Contribute Data</a>
@@ -26,18 +220,136 @@
 </nav>
 
 <main>
-  <div class="page-header">
-    <p class="eyebrow">OpenStrongman</p>
-    <h1>Data</h1>
-    <p>Download the full OpenStrongman dataset as CSV — free, no account required.</p>
+  <div class="data-hero">
+    <div class="data-hero-inner">
+      <p class="eyebrow">OpenStrongman</p>
+      <h1>Data Downloads</h1>
+      <p>All OpenStrongman data is free to download and use. No account required. Each file is a CSV following our open schema — ready for Excel, Python, R, or any data tool.</p>
+    </div>
   </div>
 
-  <div class="placeholder-body">
-    <div class="placeholder-inner">
-      <div class="placeholder-icon">⬇️</div>
-      <h2>Coming soon</h2>
-      <p>Download the complete results database as CSV. Updated regularly. Free to use for research, coaching, or building your own tools — no account or attribution required.</p>
+  <div class="data-body">
+
+    <div class="section-header">
+      <h2>World's Strongest Man</h2>
+      <span>WSM &middot; 1977&ndash;2026</span>
     </div>
+
+    <div class="download-list">
+
+      <div class="download-item">
+        <div class="dl-meta">
+          <div class="dl-name">WSM Overall Results — All Years</div>
+          <div class="dl-desc">Overall finishing positions for every WSM final from 1977 to 2026. Top 3 per year with location and nationality data where available.</div>
+          <div class="dl-tags">
+            <span class="dl-tag">49 meets</span>
+            <span class="dl-tag">Overall placings</span>
+            <span class="dl-tag">1977&ndash;2026</span>
+          </div>
+        </div>
+        <div class="dl-actions">
+          <a class="btn-preview" href="https://github.com/campohedi-oss/openstrongman.org/blob/dev/data/wsm_results.csv" target="_blank" rel="noopener">View</a>
+          <a class="btn-dl" href="https://raw.githubusercontent.com/campohedi-oss/openstrongman.org/dev/data/wsm_results.csv" download="wsm_results.csv">
+            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12l-4-4h2.5V3h3v5H12L8 12z"/><path d="M2 13h12v1.5H2z"/></svg>
+            CSV
+          </a>
+        </div>
+      </div>
+
+      <div class="download-item">
+        <div class="dl-meta">
+          <div class="dl-name">WSM 2023 Finals — Event Results</div>
+          <div class="dl-desc">Full event-by-event results for all 10 finalists across 6 events: Reign Shield Carry, KNAACK Deadlift, Fingal's Fingers, Max Dumbbell, Bus Pull, Atlas Stones.</div>
+          <div class="dl-tags">
+            <span class="dl-tag">6 events</span>
+            <span class="dl-tag">10 athletes</span>
+            <span class="dl-tag">Finals only</span>
+            <span class="dl-tag red">Mitchell Hooper wins</span>
+          </div>
+        </div>
+        <div class="dl-actions">
+          <a class="btn-preview" href="https://github.com/campohedi-oss/openstrongman.org/blob/dev/data/wsm_2023_finals.csv" target="_blank" rel="noopener">View</a>
+          <a class="btn-dl" href="https://raw.githubusercontent.com/campohedi-oss/openstrongman.org/dev/data/wsm_2023_finals.csv" download="wsm_2023_finals.csv">
+            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12l-4-4h2.5V3h3v5H12L8 12z"/><path d="M2 13h12v1.5H2z"/></svg>
+            CSV
+          </a>
+        </div>
+      </div>
+
+      <div class="download-item">
+        <div class="dl-meta">
+          <div class="dl-name">WSM 2024 Finals — Event Results</div>
+          <div class="dl-desc">Full event-by-event results for all 10 finalists across 6 events: KNAACK Giant's Medley, Max Axle Press, Keg Toss, Conan's Wheel, Terrain Deadlift, Atlas Stones.</div>
+          <div class="dl-tags">
+            <span class="dl-tag">6 events</span>
+            <span class="dl-tag">10 athletes</span>
+            <span class="dl-tag">Finals only</span>
+            <span class="dl-tag red">Tom Stoltman wins</span>
+          </div>
+        </div>
+        <div class="dl-actions">
+          <a class="btn-preview" href="https://github.com/campohedi-oss/openstrongman.org/blob/dev/data/wsm_2024_finals.csv" target="_blank" rel="noopener">View</a>
+          <a class="btn-dl" href="https://raw.githubusercontent.com/campohedi-oss/openstrongman.org/dev/data/wsm_2024_finals.csv" download="wsm_2024_finals.csv">
+            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 12l-4-4h2.5V3h3v5H12L8 12z"/><path d="M2 13h12v1.5H2z"/></svg>
+            CSV
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="section-header">
+      <h2>Data schema</h2>
+      <span>v1.0</span>
+    </div>
+
+    <div class="schema-wrap">
+      <table class="schema-table">
+        <thead>
+          <tr>
+            <th>Field</th>
+            <th>Description</th>
+            <th>Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="field-name">MeetName</td><td class="field-desc">Full competition name as officially used</td><td class="field-example">2024 World's Strongest Man</td></tr>
+          <tr><td class="field-name">MeetFederation</td><td class="field-desc">Organizing federation</td><td class="field-example">WSM</td></tr>
+          <tr><td class="field-name">MeetDate</td><td class="field-desc">YYYY-MM-DD; use 00 for unknown month or day</td><td class="field-example">2024-05-04</td></tr>
+          <tr><td class="field-name">MeetLocation</td><td class="field-desc">City, State or Country</td><td class="field-example">Myrtle Beach, SC</td></tr>
+          <tr><td class="field-name">Division</td><td class="field-desc">Competition division</td><td class="field-example">Open</td></tr>
+          <tr><td class="field-name">Sex</td><td class="field-desc">M or F</td><td class="field-example">M</td></tr>
+          <tr><td class="field-name">BodyweightKg</td><td class="field-desc">Athlete's weighed-in bodyweight</td><td class="field-example">185.5</td></tr>
+          <tr><td class="field-name">WeightClassKg</td><td class="field-desc">Weight class as used by the federation</td><td class="field-example">140+</td></tr>
+          <tr><td class="field-name">AthleteName</td><td class="field-desc">Full name as competed</td><td class="field-example">Tom Stoltman</td></tr>
+          <tr><td class="field-name">AthleteNationality</td><td class="field-desc">IOC 3-letter country code</td><td class="field-example">GBR</td></tr>
+          <tr><td class="field-name">Event</td><td class="field-desc">Event name exactly as used at the competition</td><td class="field-example">KNAACK Giant's Medley</td></tr>
+          <tr><td class="field-name">EventCategory</td><td class="field-desc">Biomechanical category</td><td class="field-example">Medley</td></tr>
+          <tr><td class="field-name">Implement</td><td class="field-desc">Primary implement used</td><td class="field-example">Yoke, Frame</td></tr>
+          <tr><td class="field-name">ResultValue</td><td class="field-desc">The raw result number</td><td class="field-example">38.14</td></tr>
+          <tr><td class="field-name">ResultUnit</td><td class="field-desc">Unit for the result</td><td class="field-example">sec / kg / m / reps / degrees</td></tr>
+          <tr><td class="field-name">StonesCompleted</td><td class="field-desc">Number of stones completed (stone events)</td><td class="field-example">5</td></tr>
+          <tr><td class="field-name">ImplementWeightKg</td><td class="field-desc">Weight of the implement in kg</td><td class="field-example">324</td></tr>
+          <tr><td class="field-name">CourseDistanceM</td><td class="field-desc">Course distance in metres</td><td class="field-example">20</td></tr>
+          <tr><td class="field-name">TimeLimitSec</td><td class="field-desc">Time cap in seconds</td><td class="field-example">60</td></tr>
+          <tr><td class="field-name">ScoredBy</td><td class="field-desc">How the event was judged</td><td class="field-example">time / reps / weight / distance</td></tr>
+          <tr><td class="field-name">WorldRecord</td><td class="field-desc">Y if a world record was set, blank otherwise</td><td class="field-example">Y</td></tr>
+          <tr><td class="field-name">Place</td><td class="field-desc">Placing in this specific event</td><td class="field-example">1</td></tr>
+          <tr><td class="field-name">OverallPlace</td><td class="field-desc">Final overall placing in the meet</td><td class="field-example">1</td></tr>
+          <tr><td class="field-name">Points</td><td class="field-desc">Competition points earned</td><td class="field-example">53</td></tr>
+          <tr><td class="field-name">Notes</td><td class="field-desc">Implement specs, penalties, or context</td><td class="field-example">19.8m penalty for out of bounds</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section-header">
+      <h2>License</h2>
+    </div>
+
+    <div class="license-box">
+      <strong>All competition data is released to the public domain.</strong> Competition results are facts and are not subject to copyright. You are free to use, share, and build on this data for any purpose without restriction or attribution required. If you find this data useful, consider <a href="about.html#contribute">contributing results</a> back to the project.
+    </div>
+
   </div>
 </main>
 

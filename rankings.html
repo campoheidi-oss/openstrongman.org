@@ -4,8 +4,215 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>OpenStrongman — Rankings</title>
-<meta name="description" content="Filter and browse competition results across all federations and event categories.">
+<meta name="description" content="Browse and filter strongman competition results across all federations and event categories.">
 <link rel="stylesheet" href="style.css">
+<style>
+
+  /* ── FILTER BAR ── */
+  .filter-section {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .filter-section input[type="text"],
+  .filter-section select {
+    font-size: 13px;
+    font-family: var(--sans);
+    padding: 0.4rem 0.65rem;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    background: var(--bg);
+    color: var(--text);
+    outline: none;
+    transition: border-color 0.15s;
+    height: 32px;
+  }
+
+  .filter-section input[type="text"] { min-width: 180px; }
+  .filter-section select { cursor: pointer; }
+
+  .filter-section input[type="text"]:focus,
+  .filter-section select:focus { border-color: var(--accent); }
+
+  .filter-divider {
+    width: 1px;
+    height: 20px;
+    background: var(--border);
+    margin: 0 0.25rem;
+  }
+
+  .btn-reset {
+    font-size: 12px;
+    color: var(--muted);
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 0 0.75rem;
+    height: 32px;
+    cursor: pointer;
+    font-family: var(--sans);
+    transition: color 0.15s, border-color 0.15s;
+  }
+
+  .btn-reset:hover { color: var(--text); border-color: var(--accent-mid); }
+
+  .result-count {
+    margin-left: auto;
+    font-size: 12px;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  /* ── TABLE ── */
+  .table-wrap {
+    overflow-x: auto;
+    flex: 1;
+  }
+
+  table.rankings {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+
+  table.rankings thead {
+    position: sticky;
+    top: 52px;
+    z-index: 10;
+  }
+
+  table.rankings th {
+    text-align: left;
+    padding: 0.55rem 0.85rem;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--muted);
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.1s;
+  }
+
+  table.rankings th:hover { color: var(--text); }
+
+  table.rankings th.sorted-asc::after { content: ' ↑'; color: var(--accent); }
+  table.rankings th.sorted-desc::after { content: ' ↓'; color: var(--accent); }
+
+  table.rankings td {
+    padding: 0.5rem 0.85rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+
+  table.rankings tbody tr:hover td { background: var(--surface-2); }
+
+  .col-athlete {
+    font-weight: 500;
+    color: var(--text);
+    white-space: nowrap;
+  }
+
+  .col-nat {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+  }
+
+  .col-result {
+    font-weight: 600;
+    color: var(--text);
+    font-family: var(--mono);
+    font-size: 12px;
+  }
+
+  .col-place {
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--muted);
+  }
+
+  .col-place.first { color: #b8860b; }
+  .col-place.second { color: var(--muted); }
+  .col-place.third { color: #8b5e3c; }
+
+  .tag-cat {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 500;
+    padding: 2px 6px;
+    border-radius: 3px;
+    background: var(--accent-light);
+    color: var(--accent);
+  }
+
+  .tag-wr {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 5px;
+    border-radius: 3px;
+    background: var(--red-light);
+    color: var(--red);
+    margin-left: 4px;
+  }
+
+  /* ── STATES ── */
+  .state-row td {
+    text-align: center;
+    padding: 4rem 1rem;
+    color: var(--muted);
+    font-size: 13px;
+  }
+
+  .loading-spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--border);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+    vertical-align: middle;
+    margin-right: 0.5rem;
+  }
+
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* ── PAGE HEADER ── */
+  .rankings-header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 1.5rem 1.5rem 1rem;
+  }
+
+  .rankings-header h1 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.25rem;
+  }
+
+  .rankings-header p {
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  @media (max-width: 640px) {
+    .filter-section { padding: 0.75rem 1rem; }
+    .filter-divider { display: none; }
+    .result-count { margin-left: 0; width: 100%; }
+    table.rankings td, table.rankings th { padding: 0.5rem 0.6rem; }
+  }
+</style>
 </head>
 <body>
 
@@ -14,11 +221,11 @@
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="rankings.html" class="active">Rankings</a></li>
-    <li><a href="meets.html" >Meets</a></li>
-    <li><a href="athletes.html" >Athletes</a></li>
-    <li><a href="records.html" >Records</a></li>
-    <li><a href="data.html" >Data</a></li>
-    <li><a href="about.html" >About</a></li>
+    <li><a href="meets.html">Meets</a></li>
+    <li><a href="athletes.html">Athletes</a></li>
+    <li><a href="records.html">Records</a></li>
+    <li><a href="data.html">Data</a></li>
+    <li><a href="about.html">About</a></li>
   </ul>
   <div class="nav-right">
     <a class="btn-contribute" href="about.html#contribute">Contribute Data</a>
@@ -26,25 +233,261 @@
 </nav>
 
 <main>
-  <div class="page-header">
-    <p class="eyebrow">OpenStrongman</p>
+
+  <div class="rankings-header">
     <h1>Rankings</h1>
-    <p>Filter and browse competition results across all federations and event categories.</p>
+    <p>Browse competition results across all federations and event categories. Filter by any combination of fields.</p>
   </div>
 
-  <div class="placeholder-body">
-    <div class="placeholder-inner">
-      <div class="placeholder-icon">🏆</div>
-      <h2>Coming soon</h2>
-      <p>The rankings table will display athlete results filterable by federation, event category, implement, weight class, sex, age, and year.</p>
-    </div>
+  <div class="filter-section">
+    <input type="text" id="f-athlete" placeholder="Search athlete…" autocomplete="off">
+    <div class="filter-divider"></div>
+    <select id="f-federation"><option value="">All Federations</option></select>
+    <select id="f-year"><option value="">All Years</option></select>
+    <select id="f-sex"><option value="">M / F</option><option value="M">Men</option><option value="F">Women</option></select>
+    <select id="f-category"><option value="">All Categories</option></select>
+    <select id="f-implement"><option value="">All Implements</option></select>
+    <select id="f-scored"><option value="">Scored By</option></select>
+    <div class="filter-divider"></div>
+    <button class="btn-reset" onclick="resetFilters()">Reset</button>
+    <span class="result-count" id="result-count">Loading…</span>
   </div>
+
+  <div class="table-wrap">
+    <table class="rankings" id="rankings-table">
+      <thead>
+        <tr>
+          <th onclick="sortBy('OverallPlace')" id="th-OverallPlace">Place</th>
+          <th onclick="sortBy('AthleteName')" id="th-AthleteName">Athlete</th>
+          <th onclick="sortBy('AthleteNationality')" id="th-AthleteNationality">Nat</th>
+          <th onclick="sortBy('MeetName')" id="th-MeetName">Meet</th>
+          <th onclick="sortBy('MeetDate')" id="th-MeetDate">Year</th>
+          <th onclick="sortBy('MeetFederation')" id="th-MeetFederation">Fed</th>
+          <th onclick="sortBy('Event')" id="th-Event">Event</th>
+          <th onclick="sortBy('EventCategory')" id="th-EventCategory">Category</th>
+          <th onclick="sortBy('Implement')" id="th-Implement">Implement</th>
+          <th onclick="sortBy('ResultValue')" id="th-ResultValue">Result</th>
+          <th onclick="sortBy('ScoredBy')" id="th-ScoredBy">Scored By</th>
+          <th onclick="sortBy('Place')" id="th-Place">Event Place</th>
+        </tr>
+      </thead>
+      <tbody id="rankings-body">
+        <tr class="state-row">
+          <td colspan="12"><span class="loading-spinner"></span> Loading data…</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
 </main>
 
 <footer class="site-footer">
   <span>&copy; 2026 OpenStrongman &mdash; open source, open data</span>
   <span>For powerlifting: <a href="https://www.openpowerlifting.org" target="_blank" rel="noopener">OpenPowerlifting.org</a> &nbsp;&middot;&nbsp; For weightlifting: <a href="https://www.openweightlifting.org" target="_blank" rel="noopener">OpenWeightlifting.org</a> &nbsp;&middot;&nbsp; All three sites are independent and unaffiliated.</span>
 </footer>
+
+<script>
+// ── CONFIG: add new CSV files here as you upload them ──
+const CSV_FILES = [
+  'https://raw.githubusercontent.com/campoheidi-oss/openstrongman.org/dev/data/wsm_results.csv',
+  'https://raw.githubusercontent.com/campoheidi-oss/openstrongman.org/dev/data/wsm_2023_finals.csv',
+  'https://raw.githubusercontent.com/campoheidi-oss/openstrongman.org/dev/data/wsm_2024_finals.csv',
+];
+
+let allRows = [];
+let sortCol = 'MeetDate';
+let sortDir = 'desc';
+
+// ── CSV PARSER ──
+function parseCSV(text) {
+  const lines = text.trim().split('\n');
+  const headers = lines[0].split(',').map(h => h.trim());
+  const rows = [];
+  for (let i = 1; i < lines.length; i++) {
+    const vals = splitCSVLine(lines[i]);
+    if (vals.length < 2) continue;
+    const row = {};
+    headers.forEach((h, idx) => { row[h] = (vals[idx] || '').trim().replace(/^"|"$/g, ''); });
+    rows.push(row);
+  }
+  return rows;
+}
+
+function splitCSVLine(line) {
+  const result = [];
+  let cur = '';
+  let inQuotes = false;
+  for (let i = 0; i < line.length; i++) {
+    const ch = line[i];
+    if (ch === '"') { inQuotes = !inQuotes; }
+    else if (ch === ',' && !inQuotes) { result.push(cur); cur = ''; }
+    else { cur += ch; }
+  }
+  result.push(cur);
+  return result;
+}
+
+// ── LOAD ALL CSVs ──
+async function loadData() {
+  const fetches = CSV_FILES.map(url =>
+    fetch(url).then(r => r.text()).then(parseCSV).catch(() => [])
+  );
+  const results = await Promise.all(fetches);
+  allRows = results.flat().filter(r => r.AthleteName && r.AthleteName !== 'Overall');
+  populateFilters();
+  renderTable();
+}
+
+// ── POPULATE FILTER DROPDOWNS ──
+function populateFilters() {
+  const unique = (key) => [...new Set(allRows.map(r => r[key]).filter(Boolean))].sort();
+
+  const feds = unique('MeetFederation');
+  const years = [...new Set(allRows.map(r => (r.MeetDate || '').slice(0,4)).filter(y => y && y !== '0000'))].sort((a,b) => b-a);
+  const cats = unique('EventCategory');
+  const implements_ = unique('Implement');
+  const scored = unique('ScoredBy');
+
+  populate('f-federation', feds);
+  populate('f-year', years);
+  populate('f-category', cats);
+  populate('f-implement', implements_);
+  populate('f-scored', scored);
+}
+
+function populate(id, values) {
+  const sel = document.getElementById(id);
+  const first = sel.options[0];
+  sel.innerHTML = '';
+  sel.appendChild(first);
+  values.forEach(v => {
+    const opt = document.createElement('option');
+    opt.value = v;
+    opt.textContent = v;
+    sel.appendChild(opt);
+  });
+}
+
+// ── FILTER ──
+function getFiltered() {
+  const athlete = document.getElementById('f-athlete').value.toLowerCase().trim();
+  const fed = document.getElementById('f-federation').value;
+  const year = document.getElementById('f-year').value;
+  const sex = document.getElementById('f-sex').value;
+  const cat = document.getElementById('f-category').value;
+  const impl = document.getElementById('f-implement').value;
+  const scored = document.getElementById('f-scored').value;
+
+  return allRows.filter(r => {
+    if (athlete && !(r.AthleteName || '').toLowerCase().includes(athlete)) return false;
+    if (fed && r.MeetFederation !== fed) return false;
+    if (year && !(r.MeetDate || '').startsWith(year)) return false;
+    if (sex && r.Sex !== sex) return false;
+    if (cat && r.EventCategory !== cat) return false;
+    if (impl && r.Implement !== impl) return false;
+    if (scored && r.ScoredBy !== scored) return false;
+    return true;
+  });
+}
+
+// ── SORT ──
+function sortBy(col) {
+  if (sortCol === col) { sortDir = sortDir === 'asc' ? 'desc' : 'asc'; }
+  else { sortCol = col; sortDir = 'asc'; }
+  renderTable();
+}
+
+function getSorted(rows) {
+  return [...rows].sort((a, b) => {
+    let va = a[sortCol] || '';
+    let vb = b[sortCol] || '';
+    const na = parseFloat(va);
+    const nb = parseFloat(vb);
+    if (!isNaN(na) && !isNaN(nb)) {
+      return sortDir === 'asc' ? na - nb : nb - na;
+    }
+    return sortDir === 'asc' ? va.localeCompare(vb) : vb.localeCompare(va);
+  });
+}
+
+// ── RENDER ──
+function renderTable() {
+  const filtered = getFiltered();
+  const sorted = getSorted(filtered);
+
+  // Update sort indicators
+  document.querySelectorAll('table.rankings th').forEach(th => {
+    th.classList.remove('sorted-asc', 'sorted-desc');
+  });
+  const activeTh = document.getElementById('th-' + sortCol);
+  if (activeTh) activeTh.classList.add(sortDir === 'asc' ? 'sorted-asc' : 'sorted-desc');
+
+  // Update count
+  document.getElementById('result-count').textContent =
+    sorted.length.toLocaleString() + ' result' + (sorted.length !== 1 ? 's' : '');
+
+  const tbody = document.getElementById('rankings-body');
+
+  if (sorted.length === 0) {
+    tbody.innerHTML = '<tr class="state-row"><td colspan="12">No results match your filters.</td></tr>';
+    return;
+  }
+
+  const MAX_ROWS = 500;
+  const rows = sorted.slice(0, MAX_ROWS);
+
+  tbody.innerHTML = rows.map(r => {
+    const year = (r.MeetDate || '').slice(0, 4) || '—';
+    const place = parseInt(r.OverallPlace) || 0;
+    const placeClass = place === 1 ? 'first' : place === 2 ? 'second' : place === 3 ? 'third' : '';
+    const result = r.ResultValue ? `${r.ResultValue} ${r.ResultUnit || ''}`.trim() : '—';
+    const wr = r.WorldRecord === 'Y' ? '<span class="tag-wr">WR</span>' : '';
+    const cat = r.EventCategory ? `<span class="tag-cat">${esc(r.EventCategory)}</span>` : '—';
+    const eventPlace = r.Place || '—';
+
+    return `<tr>
+      <td class="col-place ${placeClass}">${place || '—'}</td>
+      <td class="col-athlete">${esc(r.AthleteName)}</td>
+      <td class="col-nat">${esc(r.AthleteNationality || '—')}</td>
+      <td>${esc(r.MeetName || '—')}</td>
+      <td>${year}</td>
+      <td>${esc(r.MeetFederation || '—')}</td>
+      <td>${esc(r.Event || '—')}</td>
+      <td>${cat}</td>
+      <td>${esc(r.Implement || '—')}</td>
+      <td class="col-result">${result}${wr}</td>
+      <td>${esc(r.ScoredBy || '—')}</td>
+      <td class="col-place">${eventPlace}</td>
+    </tr>`;
+  }).join('');
+
+  if (sorted.length > MAX_ROWS) {
+    tbody.innerHTML += `<tr class="state-row"><td colspan="12">Showing first ${MAX_ROWS} of ${sorted.length.toLocaleString()} results. Use filters to narrow down.</td></tr>`;
+  }
+}
+
+function esc(str) {
+  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function resetFilters() {
+  ['f-athlete','f-federation','f-year','f-sex','f-category','f-implement','f-scored'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el.tagName === 'INPUT') el.value = '';
+    else el.selectedIndex = 0;
+  });
+  renderTable();
+}
+
+// ── EVENT LISTENERS ──
+['f-athlete','f-federation','f-year','f-sex','f-category','f-implement','f-scored'].forEach(id => {
+  const el = document.getElementById(id);
+  el.addEventListener(el.tagName === 'INPUT' ? 'input' : 'change', renderTable);
+});
+
+// ── INIT ──
+loadData();
+</script>
 
 </body>
 </html>

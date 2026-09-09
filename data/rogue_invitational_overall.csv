@@ -1,0 +1,51 @@
+MeetName,MeetFederation,MeetDate,MeetLocation,Division,Sex,BodyweightKg,WeightClassKg,AthleteName,AthleteNationality,Event,EventCategory,Implement,ResultValue,ResultUnit,StonesCompleted,ImplementWeightKg,CourseDistanceM,TimeLimitSec,ScoredBy,WorldRecord,Place,OverallPlace,Points,Notes
+2021 Rogue Invitational,Rogue,2021-10-30,"Austin, Texas",Open,M,,,Martins Licis,USA,Overall,,,,,,,,,,,,1,,
+2021 Rogue Invitational,Rogue,2021-10-30,"Austin, Texas",Open,M,,,Tom Stoltman,GBR,Overall,,,,,,,,,,,,2,,
+2021 Rogue Invitational,Rogue,2021-10-30,"Austin, Texas",Open,M,,,Oleksii Novikov,UKR,Overall,,,,,,,,,,,,3,,
+2021 Rogue Invitational,Rogue,2021-10-30,"Austin, Texas",Open,M,,,Mateusz Kieliszkowski,POL,Overall,,,,,,,,,,,,4,,
+2021 Rogue Invitational,Rogue,2021-10-30,"Austin, Texas",Open,M,,,Brian Shaw,USA,Overall,,,,,,,,,,,,5,,
+2021 Rogue Invitational,Rogue,2021-10-30,"Austin, Texas",Open,M,,,Bobby Thompson,USA,Overall,,,,,,,,,,,,6,,
+2021 Rogue Invitational,Rogue,2021-10-30,"Austin, Texas",Open,M,,,Trey Mitchell,USA,Overall,,,,,,,,,,,,7,,
+2021 Rogue Invitational,Rogue,2021-10-30,"Austin, Texas",Open,M,,,Maxime Boudreault,CAN,Overall,,,,,,,,,,,,8,,
+2021 Rogue Invitational,Rogue,2021-10-30,"Austin, Texas",Open,M,,,Rob Kearney,USA,Overall,,,,,,,,,,,,9,,
+2021 Rogue Invitational,Rogue,2021-10-30,"Austin, Texas",Open,M,,,Kevin Faires,USA,Overall,,,,,,,,,,,,10,,
+2022 Rogue Invitational,Rogue,2022-10-29,"Austin, Texas",Open,M,,,Oleksii Novikov,UKR,Overall,,,,,,,,,,,,1,,
+2022 Rogue Invitational,Rogue,2022-10-29,"Austin, Texas",Open,M,,,Trey Mitchell,USA,Overall,,,,,,,,,,,,2,,
+2022 Rogue Invitational,Rogue,2022-10-29,"Austin, Texas",Open,M,,,Mitchell Hooper,CAN,Overall,,,,,,,,,,,,3,,Hooper's first Rogue Invitational
+2022 Rogue Invitational,Rogue,2022-10-29,"Austin, Texas",Open,M,,,Pavlo Nakonechnyy,UKR,Overall,,,,,,,,,,,,4,,
+2022 Rogue Invitational,Rogue,2022-10-29,"Austin, Texas",Open,M,,,Martins Licis,USA,Overall,,,,,,,,,,,,5,,
+2022 Rogue Invitational,Rogue,2022-10-29,"Austin, Texas",Open,M,,,Eythor Ingolfsson Melsted,ISL,Overall,,,,,,,,,,,,6,,
+2022 Rogue Invitational,Rogue,2022-10-29,"Austin, Texas",Open,M,,,Bobby Thompson,USA,Overall,,,,,,,,,,,,7,,
+2022 Rogue Invitational,Rogue,2022-10-29,"Austin, Texas",Open,M,,,Brian Shaw,USA,Overall,,,,,,,,,,,,8,,
+2022 Rogue Invitational,Rogue,2022-10-29,"Austin, Texas",Open,M,,,Maxime Boudreault,CAN,Overall,,,,,,,,,,,,9,,
+2022 Rogue Invitational,Rogue,2022-10-29,"Austin, Texas",Open,M,,,Rob Kearney,USA,Overall,,,,,,,,,,,,10,,
+2023 Rogue Invitational,Rogue,2023-10-28,"Austin, Texas",Open,M,,,Mitchell Hooper,CAN,Overall,,,,,,,,,,,,1,,53.5 points
+2023 Rogue Invitational,Rogue,2023-10-28,"Austin, Texas",Open,M,,,Tom Stoltman,GBR,Overall,,,,,,,,,,,,2,,
+2023 Rogue Invitational,Rogue,2023-10-28,"Austin, Texas",Open,M,,,Mateusz Kieliszkowski,POL,Overall,,,,,,,,,,,,3,,
+2023 Rogue Invitational,Rogue,2023-10-28,"Austin, Texas",Open,M,,,Oleksii Novikov,UKR,Overall,,,,,,,,,,,,4,,
+2023 Rogue Invitational,Rogue,2023-10-28,"Austin, Texas",Open,M,,,Evan Singleton,USA,Overall,,,,,,,,,,,,5,,
+2023 Rogue Invitational,Rogue,2023-10-28,"Austin, Texas",Open,M,,,Maxime Boudreault,CAN,Overall,,,,,,,,,,,,6,,
+2023 Rogue Invitational,Rogue,2023-10-28,"Austin, Texas",Open,M,,,Thomas Evans,USA,Overall,,,,,,,,,,,,7,,
+2023 Rogue Invitational,Rogue,2023-10-28,"Austin, Texas",Open,M,,,Bobby Thompson,USA,Overall,,,,,,,,,,,,8,,
+2023 Rogue Invitational,Rogue,2023-10-28,"Austin, Texas",Open,M,,,Luke Stoltman,GBR,Overall,,,,,,,,,,,,9,,
+2023 Rogue Invitational,Rogue,2023-10-28,"Austin, Texas",Open,M,,,Trey Mitchell,USA,Overall,,,,,,,,,,,,10,,Withdrew with torn Achilles during Iron Bull event
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,M,,,Mitchell Hooper,CAN,Overall,,,,,,,,,,,,1,,54 points; first Rogue held outside USA
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,M,,,Hafthor Julius Bjornsson,ISL,Overall,,,,,,,,,,,,2,,44 points; return from retirement
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,M,,,Tom Stoltman,GBR,Overall,,,,,,,,,,,,3,,44 points; tied on points with Bjornsson
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,M,,,Evan Singleton,USA,Overall,,,,,,,,,,,,4,,41.5 points
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,M,,,Luke Stoltman,GBR,Overall,,,,,,,,,,,,5,,32 points
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,M,,,Thomas Evans,USA,Overall,,,,,,,,,,,,6,,30 points
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,M,,,Mathew Ragg,NZL,Overall,,,,,,,,,,,,7,,27 points
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,M,,,Bobby Thompson,USA,Overall,,,,,,,,,,,,8,,23.5 points
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,M,,,Pavlo Kordiyaka,UKR,Overall,,,,,,,,,,,,9,,21 points
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,M,,,Tristain Hoath,CAN,Overall,,,,,,,,,,,,10,,14 points
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,F,,,Inez Carrasquillo,PUR,Overall,,,,,,,,,,,,1,,53 points; inaugural Rogue Strongwoman champion
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,F,,,Olga Liashchuk,UKR,Overall,,,,,,,,,,,,2,,47 points
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,F,,,Lucy Underdown,GBR,Overall,,,,,,,,,,,,3,,41 points
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,F,,,Angelica Jardine,GBR,Overall,,,,,,,,,,,,4,,40 points
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,F,,,Hannah Linzay,GBR,Overall,,,,,,,,,,,,5,,29 points
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,F,,,Rebecca Roberts,USA,Overall,,,,,,,,,,,,6,,28.5 points
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,F,,,Melissa Peacock,USA,Overall,,,,,,,,,,,,7,,28.5 points
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,F,,,Samantha Belliveau,CAN,Overall,,,,,,,,,,,,8,,26 points
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,F,,,Andrea Thompson,GBR,Overall,,,,,,,,,,,,9,,26 points
+2024 Rogue Invitational,Rogue,2024-11-09,"Aberdeen, Scotland",Open,F,,,Donna Moore,GBR,Overall,,,,,,,,,,,,10,,10 points

@@ -364,21 +364,40 @@ function parseCSV(text) {
 }
 
 async function loadStats() {
-  const results = await Promise.all(
-    CSV_FILES.map(url => fetch(url).then(r => r.text()).then(parseCSV).catch(() => []))
-  );
-  const allRows = results.flat();
+  try {
+    const results = await Promise.all(
+      CSV_FILES.map(url =>
+        fetch(url, { cache: 'no-cache' })
+          .then(r => { if (!r.ok) throw new Error(r.status); return r.text(); })
+          .then(parseCSV)
+          .catch(() => [])
+      )
+    );
+    const allRows = results.flat();
 
-  const resultCount = allRows.length;
-  const athletes = new Set(allRows.map(r => r.AthleteName).filter(Boolean)).size;
-  const meets = new Set(allRows.map(r => r.MeetName).filter(Boolean)).size;
-  const feds = new Set(allRows.map(r => r.MeetFederation).filter(Boolean)).size;
+    if (allRows.length === 0) {
+      // Data didn't load — show dashes gracefully
+      return;
+    }
 
-  document.getElementById('stat-results').textContent = resultCount.toLocaleString();
-  document.getElementById('stat-athletes').textContent = athletes.toLocaleString();
-  document.getElementById('stat-meets').textContent = meets.toLocaleString();
-  document.getElementById('stat-feds').textContent = feds.toLocaleString();
+    const resultCount = allRows.length;
+    const athletes = new Set(allRows.map(r => r.AthleteName).filter(Boolean)).size;
+    const meets = new Set(allRows.map(r => r.MeetName).filter(Boolean)).size;
+    const feds = new Set(allRows.map(r => r.MeetFederation).filter(Boolean)).size;
+
+    document.getElementById('stat-results').textContent = resultCount.toLocaleString();
+    document.getElementById('stat-athletes').textContent = athletes.toLocaleString();
+    document.getElementById('stat-meets').textContent = meets.toLocaleString();
+    document.getElementById('stat-feds').textContent = feds.toLocaleString();
+  } catch(e) {
+    // Fail silently — dashes remain
+  }
 }
+
+// Also update default display to dashes instead of 0
+document.querySelectorAll('.stat-value[id]').forEach(el => {
+  if (el.textContent === '0') el.textContent = '—';
+});
 
 loadStats();
 </script>

@@ -318,15 +318,15 @@
         <span>World Record</span>
       </div>
       <div class="legend-item">
-        <span class="legend-dot" style="background:#b8860b"></span>
+        <span>🥇</span>
         <span>1st overall</span>
       </div>
       <div class="legend-item">
-        <span class="legend-dot" style="background:#808080"></span>
+        <span>🥈</span>
         <span>2nd overall</span>
       </div>
       <div class="legend-item">
-        <span class="legend-dot" style="background:#8b5e3c"></span>
+        <span>🥉</span>
         <span>3rd overall</span>
       </div>
       <div class="legend-item" style="color:var(--faint)">
@@ -340,7 +340,7 @@
     <div class="filter-divider"></div>
     <select id="f-federation"><option value="">All Federations</option></select>
     <select id="f-year"><option value="">All Years</option></select>
-    <select id="f-sex"><option value="">M / F</option><option value="M">Men</option><option value="F">Women</option></select>
+    <select id="f-sex"><option value="">Male / Female</option><option value="M">Male</option><option value="F">Female</option></select>
     <select id="f-category"><option value="">All Categories</option></select>
     <select id="f-implement" disabled><option value="">All Implements</option></select>
     <select id="f-scored" disabled><option value="">Scored By</option></select>
@@ -388,6 +388,8 @@ const CSV_FILES = [
   'data/wsm_results.csv',
   'data/wsm_2023_finals.csv',
   'data/wsm_2024_finals.csv',
+  'data/rogue_invitational_overall.csv',
+  'data/rogue_2024_finals.csv',
 ];
 
 // IOC 3-letter code → ISO 2-letter code for flag-icons library

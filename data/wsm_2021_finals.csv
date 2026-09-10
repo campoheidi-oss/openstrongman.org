@@ -1,0 +1,61 @@
+MeetName,MeetFederation,MeetDate,MeetLocation,Division,Sex,BodyweightKg,WeightClassKg,AthleteName,AthleteNationality,Event,EventCategory,Implement,ResultValue,ResultUnit,StonesCompleted,ImplementWeightKg,CourseDistanceM,TimeLimitSec,ScoredBy,WorldRecord,Place,OverallPlace,Points,Notes
+2021 World's Strongest Man,WSM,2021-06-19,"Sacramento, California",Open,M,,,Tom Stoltman,GBR,Giants Medley,Medley,"Yoke,Frame",18.36,sec,,440,25,,time,,1,1,45.5,440kg yoke 10m + 350kg frame carry 15m
+2021 World's Strongest Man,WSM,2021-06-19,"Sacramento, California",Open,M,,,Konstantine Janashia,GEO,Giants Medley,Medley,"Yoke,Frame",20.31,sec,,440,25,,time,,2,6,32.5,
+2021 World's Strongest Man,WSM,2021-06-19,"Sacramento, California",Open,M,,,Brian Shaw,USA,Giants Medley,Medley,"Yoke,Frame",20.53,sec,,440,25,,time,,3,2,42.5,
+2021 World's Strongest Man,WSM,2021-06-19,"Sacramento, California",Open,M,,,Luke Stoltman,GBR,Giants Medley,Medley,"Yoke,Frame",20.72,sec,,440,25,,time,,4,7,32,
+2021 World's Strongest Man,WSM,2021-06-19,"Sacramento, California",Open,M,,,JF Caron,CAN,Giants Medley,Medley,"Yoke,Frame",21.31,sec,,440,25,,time,,5,5,34,
+2021 World's Strongest Man,WSM,2021-06-19,"Sacramento, California",Open,M,,,Adam Bishop,GBR,Giants Medley,Medley,"Yoke,Frame",22.39,sec,,440,25,,time,,6,8,27,
+2021 World's Strongest Man,WSM,2021-06-19,"Sacramento, California",Open,M,,,Bobby Thompson,USA,Giants Medley,Medley,"Yoke,Frame",25.06,sec,,440,25,,time,,7,9,23.5,Withdrew day 2 of finals
+2021 World's Strongest Man,WSM,2021-06-19,"Sacramento, California",Open,M,,,Maxime Boudreault,CAN,Giants Medley,Medley,"Yoke,Frame",31.43,sec,,440,25,,time,,8,3,36.5,
+2021 World's Strongest Man,WSM,2021-06-19,"Sacramento, California",Open,M,,,Trey Mitchell,USA,Giants Medley,Medley,"Yoke,Frame",45.61,sec,,440,25,,time,,9,4,35,
+2021 World's Strongest Man,WSM,2021-06-19,"Sacramento, California",Open,M,,,Eythor Ingolfsson Melsted,ISL,Giants Medley,Medley,"Yoke,Frame",12.75,m,,440,25,,distance,,10,10,20.5,DNF - 10m completed
+2021 World's Strongest Man,WSM,2021-06-19,"Sacramento, California",Open,M,,,Tom Stoltman,GBR,Titan's Turntable,Other,Train,46.89,sec,,,,,time,,1,1,45.5,30-ton steam engine pushed 160 degrees on turntable; 75sec cap; new event
+2021 World's Strongest Man,WSM,2021-06-19,"Sacramento, California",Open,M,,,Trey Mitchell,USA,Titan's Turntable,Other,Train,52.34,sec,,,,,time,,2,4,35,
+2021 World's Strongest Man,WSM,2021-06-19,"Sacramento, California",Open,M,,,Eythor Ingolfsson Melsted,ISL,Titan's Turntable,Other,Train,52.83,sec,,,,,time,,3,10,20.5,
+2021 World's Strongest Man,WSM,2021-06-19,"Sacramento, California",Open,M,,,Maxime Boudreault,CAN,Titan's Turntable,Other,Train,55.16,sec,,,,,time,,4,3,36.5,
+2021 World's Strongest Man,WSM,2021-06-19,"Sacramento, California",Open,M,,,Luke Stoltman,GBR,Titan's Turntable,Other,Train,55.94,sec,,,,,time,,5,7,32,
+2021 World's Strongest Man,WSM,2021-06-19,"Sacramento, California",Open,M,,,Brian Shaw,USA,Titan's Turntable,Other,Train,56.73,sec,,,,,time,,6,2,42.5,
+2021 World's Strongest Man,WSM,2021-06-19,"Sacramento, California",Open,M,,,Adam Bishop,GBR,Titan's Turntable,Other,Train,57.78,sec,,,,,time,,7,8,27,
+2021 World's Strongest Man,WSM,2021-06-19,"Sacramento, California",Open,M,,,JF Caron,CAN,Titan's Turntable,Other,Train,57.84,sec,,,,,time,,8,5,34,
+2021 World's Strongest Man,WSM,2021-06-19,"Sacramento, California",Open,M,,,Konstantine Janashia,GEO,Titan's Turntable,Other,Train,60.15,sec,,,,,time,,9,6,32.5,
+2021 World's Strongest Man,WSM,2021-06-19,"Sacramento, California",Open,M,,,Bobby Thompson,USA,Titan's Turntable,Other,Train,62.31,sec,,,,,time,,10,9,23.5,
+2021 World's Strongest Man,WSM,2021-06-19,"Sacramento, California",Open,M,,,Brian Shaw,USA,REIGN Keg Toss,Toss,Keg,7.75,m,,15,,,distance,Y,1,2,42.5,World record; broke his own record three times in same event
+2021 World's Strongest Man,WSM,2021-06-19,"Sacramento, California",Open,M,,,Tom Stoltman,GBR,REIGN Keg Toss,Toss,Keg,7.5,m,,15,,,distance,,2,1,45.5,Tied 2nd
+2021 World's Strongest Man,WSM,2021-06-19,"Sacramento, California",Open,M,,,Maxime Boudreault,CAN,REIGN Keg Toss,Toss,Keg,7.5,m,,15,,,distance,,2,3,36.5,Tied 2nd
+2021 World's Strongest Man,WSM,2021-06-19,"Sacramento, California",Open,M,,,Konstantine Janashia,GEO,REIGN Keg Toss,Toss,Keg,7.26,m,,15,,,distance,,4,6,32.5,Also broke previous world record
+2021 World's Strongest Man,WSM,2021-06-19,"Sacramento, California",Open,M,,,Eythor Ingolfsson Melsted,ISL,REIGN Keg Toss,Toss,Keg,6.75,m,,15,,,distance,,5,10,20.5,Tied 5th
+2021 World's Strongest Man,WSM,2021-06-19,"Sacramento, California",Open,M,,,Luke Stoltman,GBR,REIGN Keg Toss,Toss,Keg,6.75,m,,15,,,distance,,5,7,32,Tied 5th
+2021 World's Strongest Man,WSM,2021-06-19,"Sacramento, California",Open,M,,,Adam Bishop,GBR,REIGN Keg Toss,Toss,Keg,6.75,m,,15,,,distance,,5,8,27,Tied 5th
+2021 World's Strongest Man,WSM,2021-06-19,"Sacramento, California",Open,M,,,JF Caron,CAN,REIGN Keg Toss,Toss,Keg,6.75,m,,15,,,distance,,5,5,34,Tied 5th
+2021 World's Strongest Man,WSM,2021-06-19,"Sacramento, California",Open,M,,,Bobby Thompson,USA,REIGN Keg Toss,Toss,Keg,6.75,m,,15,,,distance,,5,9,23.5,Tied 5th
+2021 World's Strongest Man,WSM,2021-06-19,"Sacramento, California",Open,M,,,Trey Mitchell,USA,REIGN Keg Toss,Toss,Keg,6,m,,15,,,distance,,10,4,35,
+2021 World's Strongest Man,WSM,2021-06-20,"Sacramento, California",Open,M,,,Luke Stoltman,GBR,Max Log Lift,Overhead Press,Log,215,kg,,215,,,weight,,1,7,32,2.5kg shy of Bobby Thompson's American Record
+2021 World's Strongest Man,WSM,2021-06-20,"Sacramento, California",Open,M,,,Maxime Boudreault,CAN,Max Log Lift,Overhead Press,Log,205,kg,,205,,,weight,,2,3,36.5,Tied 2nd
+2021 World's Strongest Man,WSM,2021-06-20,"Sacramento, California",Open,M,,,Trey Mitchell,USA,Max Log Lift,Overhead Press,Log,205,kg,,205,,,weight,,2,4,35,Tied 2nd
+2021 World's Strongest Man,WSM,2021-06-20,"Sacramento, California",Open,M,,,Bobby Thompson,USA,Max Log Lift,Overhead Press,Log,205,kg,,205,,,weight,,2,9,23.5,Tied 2nd
+2021 World's Strongest Man,WSM,2021-06-20,"Sacramento, California",Open,M,,,Brian Shaw,USA,Max Log Lift,Overhead Press,Log,195,kg,,195,,,weight,,5,2,42.5,Tied 5th
+2021 World's Strongest Man,WSM,2021-06-20,"Sacramento, California",Open,M,,,Konstantine Janashia,GEO,Max Log Lift,Overhead Press,Log,195,kg,,195,,,weight,,5,6,32.5,Tied 5th
+2021 World's Strongest Man,WSM,2021-06-20,"Sacramento, California",Open,M,,,JF Caron,CAN,Max Log Lift,Overhead Press,Log,195,kg,,195,,,weight,,5,5,34,Tied 5th
+2021 World's Strongest Man,WSM,2021-06-20,"Sacramento, California",Open,M,,,Tom Stoltman,GBR,Max Log Lift,Overhead Press,Log,185,kg,,185,,,weight,,8,1,45.5,Tied 8th
+2021 World's Strongest Man,WSM,2021-06-20,"Sacramento, California",Open,M,,,Eythor Ingolfsson Melsted,ISL,Max Log Lift,Overhead Press,Log,185,kg,,185,,,weight,,8,10,20.5,Tied 8th
+2021 World's Strongest Man,WSM,2021-06-20,"Sacramento, California",Open,M,,,Adam Bishop,GBR,Max Log Lift,Overhead Press,Log,170,kg,,170,,,weight,,10,8,27,
+2021 World's Strongest Man,WSM,2021-06-20,"Sacramento, California",Open,M,,,Trey Mitchell,USA,KNAACK Deadlift,Deadlift,KNAACK Box,10,reps,,350,,60,reps,,1,4,35,Tied 1st
+2021 World's Strongest Man,WSM,2021-06-20,"Sacramento, California",Open,M,,,JF Caron,CAN,KNAACK Deadlift,Deadlift,KNAACK Box,10,reps,,350,,60,reps,,1,5,34,Tied 1st
+2021 World's Strongest Man,WSM,2021-06-20,"Sacramento, California",Open,M,,,Adam Bishop,GBR,KNAACK Deadlift,Deadlift,KNAACK Box,10,reps,,350,,60,reps,,1,8,27,Tied 1st; two KNAACK boxes totaling 350kg
+2021 World's Strongest Man,WSM,2021-06-20,"Sacramento, California",Open,M,,,Brian Shaw,USA,KNAACK Deadlift,Deadlift,KNAACK Box,9,reps,,350,,60,reps,,4,2,42.5,Tied 4th
+2021 World's Strongest Man,WSM,2021-06-20,"Sacramento, California",Open,M,,,Bobby Thompson,USA,KNAACK Deadlift,Deadlift,KNAACK Box,9,reps,,350,,60,reps,,4,9,23.5,Tied 4th; withdrew after this event
+2021 World's Strongest Man,WSM,2021-06-20,"Sacramento, California",Open,M,,,Tom Stoltman,GBR,KNAACK Deadlift,Deadlift,KNAACK Box,8,reps,,350,,60,reps,,6,1,45.5,Tied 6th
+2021 World's Strongest Man,WSM,2021-06-20,"Sacramento, California",Open,M,,,Konstantine Janashia,GEO,KNAACK Deadlift,Deadlift,KNAACK Box,8,reps,,350,,60,reps,,6,6,32.5,Tied 6th
+2021 World's Strongest Man,WSM,2021-06-20,"Sacramento, California",Open,M,,,Eythor Ingolfsson Melsted,ISL,KNAACK Deadlift,Deadlift,KNAACK Box,7,reps,,350,,60,reps,,8,10,20.5,
+2021 World's Strongest Man,WSM,2021-06-20,"Sacramento, California",Open,M,,,Luke Stoltman,GBR,KNAACK Deadlift,Deadlift,KNAACK Box,6,reps,,350,,60,reps,,9,7,32,
+2021 World's Strongest Man,WSM,2021-06-20,"Sacramento, California",Open,M,,,Maxime Boudreault,CAN,KNAACK Deadlift,Deadlift,KNAACK Box,3,reps,,350,,60,reps,,10,3,36.5,
+2021 World's Strongest Man,WSM,2021-06-20,"Sacramento, California",Open,M,,,Tom Stoltman,GBR,Atlas Stones,Load,Atlas Stone,20.21,sec,5,140-210,,60,time,,1,1,45.5,First WSM title for Tom Stoltman
+2021 World's Strongest Man,WSM,2021-06-20,"Sacramento, California",Open,M,,,Maxime Boudreault,CAN,Atlas Stones,Load,Atlas Stone,28.63,sec,5,140-210,,60,time,,2,3,36.5,
+2021 World's Strongest Man,WSM,2021-06-20,"Sacramento, California",Open,M,,,Brian Shaw,USA,Atlas Stones,Load,Atlas Stone,31.45,sec,5,140-210,,60,time,,3,2,42.5,
+2021 World's Strongest Man,WSM,2021-06-20,"Sacramento, California",Open,M,,,JF Caron,CAN,Atlas Stones,Load,Atlas Stone,37.17,sec,5,140-210,,60,time,,4,5,34,
+2021 World's Strongest Man,WSM,2021-06-20,"Sacramento, California",Open,M,,,Trey Mitchell,USA,Atlas Stones,Load,Atlas Stone,37.26,sec,5,140-210,,60,time,,5,4,35,
+2021 World's Strongest Man,WSM,2021-06-20,"Sacramento, California",Open,M,,,Konstantine Janashia,GEO,Atlas Stones,Load,Atlas Stone,20.81,sec,4,140-210,,60,time,,6,6,32.5,4 stones
+2021 World's Strongest Man,WSM,2021-06-20,"Sacramento, California",Open,M,,,Adam Bishop,GBR,Atlas Stones,Load,Atlas Stone,30.61,sec,4,140-210,,60,time,,7,8,27,4 stones
+2021 World's Strongest Man,WSM,2021-06-20,"Sacramento, California",Open,M,,,Luke Stoltman,GBR,Atlas Stones,Load,Atlas Stone,33.50,sec,4,140-210,,60,time,,8,7,32,4 stones
+2021 World's Strongest Man,WSM,2021-06-20,"Sacramento, California",Open,M,,,Eythor Ingolfsson Melsted,ISL,Atlas Stones,Load,Atlas Stone,33.65,sec,4,140-210,,60,time,,9,10,20.5,4 stones
+2021 World's Strongest Man,WSM,2021-06-20,"Sacramento, California",Open,M,,,Bobby Thompson,USA,Atlas Stones,Load,Atlas Stone,0,sec,0,140-210,,60,time,,10,9,23.5,Withdrew before this event

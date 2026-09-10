@@ -361,9 +361,10 @@
         <tr>
           <th onclick="sortBy('OverallPlace')" id="th-OverallPlace">Place</th>
           <th onclick="sortBy('AthleteName')" id="th-AthleteName">Athlete</th>
-          <th onclick="sortBy('AthleteNationality')" id="th-AthleteNationality">Nat</th>
-          <th onclick="sortBy('MeetName')" id="th-MeetName">Meet</th>
-          <th onclick="sortBy('MeetFederation')" id="th-MeetFederation">Fed</th>
+          <th onclick="sortBy('AthleteNationality')" id="th-AthleteNationality">Nation</th>
+          <th onclick="sortBy('MeetName')" id="th-MeetName">Competition</th>
+          <th onclick="sortBy('MeetDate')" id="th-MeetDate">Year</th>
+          <th onclick="sortBy('MeetFederation')" id="th-MeetFederation">Federation</th>
           <th onclick="sortBy('Event')" id="th-Event">Event</th>
           <th onclick="sortBy('EventCategory')" id="th-EventCategory">Category</th>
           <th onclick="sortBy('Implement')" id="th-Implement">Implement</th>
@@ -616,11 +617,13 @@ function renderTable() {
     const nat = r.AthleteNationality || '';
     const expanded = expandedIdx === idx;
 
+    const year = (r.MeetDate||'').slice(0,4) || '-';
     html += `<tr class="data-row${expanded?' expanded':''}" onclick="toggleExpand(${idx})">
       <td class="col-place ${pc}">${placeDisplay}</td>
       <td class="col-athlete">${esc(r.AthleteName)}<span class="expand-arrow">▶</span></td>
       <td><div class="nat-cell">${flagHTML(nat)}<span class="nat-code">${esc(nat||'-')}</span></div></td>
       <td>${esc(r.MeetName||'-')}</td>
+      <td>${year}</td>
       <td>${esc(r.MeetFederation||'-')}</td>
       <td>${esc(r.Event||'-')}</td>
       <td>${cat}</td>

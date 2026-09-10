@@ -617,7 +617,6 @@ function renderTable() {
     const nat = r.AthleteNationality || '';
     const expanded = expandedIdx === idx;
 
-    const year = (r.MeetDate||'').slice(0,4) || '-';
     html += `<tr class="data-row${expanded?' expanded':''}" onclick="toggleExpand(${idx})">
       <td class="col-place ${pc}">${placeDisplay}</td>
       <td class="col-athlete">${esc(r.AthleteName)}<span class="expand-arrow">▶</span></td>

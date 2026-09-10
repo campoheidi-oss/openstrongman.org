@@ -1,0 +1,51 @@
+MeetName,MeetFederation,MeetDate,MeetLocation,Division,Sex,BodyweightKg,WeightClassKg,AthleteName,AthleteNationality,Event,EventCategory,Implement,ResultValue,ResultUnit,StonesCompleted,ImplementWeightKg,CourseDistanceM,TimeLimitSec,ScoredBy,WorldRecord,Place,OverallPlace,Points,Notes
+2025 World's Strongest Man,WSM,2025-05-17,"Sacramento, California",Open,M,,,Rayno Nel,RSA,KNAACK Carry and Hoist,Medley,"Zercher Carry,Rope Hoist",30.58,sec,,250,20,,time,,1,1,47,250kg Zercher carry 20m + 200kg hoist 8m
+2025 World's Strongest Man,WSM,2025-05-17,"Sacramento, California",Open,M,,,Tom Stoltman,GBR,KNAACK Carry and Hoist,Medley,"Zercher Carry,Rope Hoist",34.49,sec,,250,20,,time,,2,2,46.5,Frame-by-frame review to separate 2nd and 3rd
+2025 World's Strongest Man,WSM,2025-05-17,"Sacramento, California",Open,M,,,Mitchell Hooper,CAN,KNAACK Carry and Hoist,Medley,"Zercher Carry,Rope Hoist",35.47,sec,,250,20,,time,,3,3,43.5,
+2025 World's Strongest Man,WSM,2025-05-17,"Sacramento, California",Open,M,,,Paddy Haynes,GBR,KNAACK Carry and Hoist,Medley,"Zercher Carry,Rope Hoist",36.97,sec,,250,20,,time,,4,5,32,
+2025 World's Strongest Man,WSM,2025-05-17,"Sacramento, California",Open,M,,,Pavlo Kordiyaka,UKR,KNAACK Carry and Hoist,Medley,"Zercher Carry,Rope Hoist",37.42,sec,,250,20,,time,,5,8,25,
+2025 World's Strongest Man,WSM,2025-05-17,"Sacramento, California",Open,M,,,Eddie Williams,AUS,KNAACK Carry and Hoist,Medley,"Zercher Carry,Rope Hoist",38.11,sec,,250,20,,time,,6,10,20.5,
+2025 World's Strongest Man,WSM,2025-05-17,"Sacramento, California",Open,M,,,Ondrej Fojtu,CZE,KNAACK Carry and Hoist,Medley,"Zercher Carry,Rope Hoist",40.95,sec,,250,20,,time,,7,6,27,
+2025 World's Strongest Man,WSM,2025-05-17,"Sacramento, California",Open,M,,,Luke Stoltman,GBR,KNAACK Carry and Hoist,Medley,"Zercher Carry,Rope Hoist",45.58,sec,,250,20,,time,,8,9,21.5,
+2025 World's Strongest Man,WSM,2025-05-17,"Sacramento, California",Open,M,,,Trey Mitchell,USA,KNAACK Carry and Hoist,Medley,"Zercher Carry,Rope Hoist",49.38,sec,,250,20,,time,,9,4,38.5,
+2025 World's Strongest Man,WSM,2025-05-17,"Sacramento, California",Open,M,,,Shane Flowers,GBR,KNAACK Carry and Hoist,Medley,"Zercher Carry,Rope Hoist",8.6,m,,250,20,,distance,,10,7,25.5,DNF
+2025 World's Strongest Man,WSM,2025-05-17,"Sacramento, California",Open,M,,,Trey Mitchell,USA,18-Inch Deadlift,Deadlift,Barbell,500,kg,,500,,,weight,,1,4,38.5,500kg; 1102 lbs; deadlift suit used
+2025 World's Strongest Man,WSM,2025-05-17,"Sacramento, California",Open,M,,,Rayno Nel,RSA,18-Inch Deadlift,Deadlift,Barbell,490,kg,,490,,,weight,,2,1,47,490kg; 1080 lbs
+2025 World's Strongest Man,WSM,2025-05-17,"Sacramento, California",Open,M,,,Tom Stoltman,GBR,18-Inch Deadlift,Deadlift,Barbell,465,kg,,465,,,weight,,3,2,46.5,465kg; tied 3rd
+2025 World's Strongest Man,WSM,2025-05-17,"Sacramento, California",Open,M,,,Mitchell Hooper,CAN,18-Inch Deadlift,Deadlift,Barbell,465,kg,,465,,,weight,,3,3,43.5,465kg; tied 3rd
+2025 World's Strongest Man,WSM,2025-05-17,"Sacramento, California",Open,M,,,Paddy Haynes,GBR,18-Inch Deadlift,Deadlift,Barbell,465,kg,,465,,,weight,,3,5,32,465kg; tied 3rd
+2025 World's Strongest Man,WSM,2025-05-17,"Sacramento, California",Open,M,,,Ondrej Fojtu,CZE,18-Inch Deadlift,Deadlift,Barbell,465,kg,,465,,,weight,,3,6,27,465kg; tied 3rd
+2025 World's Strongest Man,WSM,2025-05-17,"Sacramento, California",Open,M,,,Shane Flowers,GBR,18-Inch Deadlift,Deadlift,Barbell,465,kg,,465,,,weight,,3,7,25.5,465kg; tied 3rd
+2025 World's Strongest Man,WSM,2025-05-17,"Sacramento, California",Open,M,,,Pavlo Kordiyaka,UKR,18-Inch Deadlift,Deadlift,Barbell,435,kg,,435,,,weight,,8,8,25,
+2025 World's Strongest Man,WSM,2025-05-17,"Sacramento, California",Open,M,,,Eddie Williams,AUS,18-Inch Deadlift,Deadlift,Barbell,435,kg,,435,,,weight,,8,10,20.5,
+2025 World's Strongest Man,WSM,2025-05-17,"Sacramento, California",Open,M,,,Luke Stoltman,GBR,18-Inch Deadlift,Deadlift,Barbell,402,kg,,402,,,weight,,10,9,21.5,
+2025 World's Strongest Man,WSM,2025-05-17,"Sacramento, California",Open,M,,,Eddie Williams,AUS,Hercules Hold,Hold,Hercules Hold,82.14,sec,,159,,,time,,1,10,20.5,350.5 lbs per pillar
+2025 World's Strongest Man,WSM,2025-05-17,"Sacramento, California",Open,M,,,Rayno Nel,RSA,Hercules Hold,Hold,Hercules Hold,75.63,sec,,159,,,time,,2,1,47,
+2025 World's Strongest Man,WSM,2025-05-17,"Sacramento, California",Open,M,,,Paddy Haynes,GBR,Hercules Hold,Hold,Hercules Hold,59.64,sec,,159,,,time,,3,5,32,
+2025 World's Strongest Man,WSM,2025-05-17,"Sacramento, California",Open,M,,,Ondrej Fojtu,CZE,Hercules Hold,Hold,Hercules Hold,55.41,sec,,159,,,time,,4,6,27,
+2025 World's Strongest Man,WSM,2025-05-17,"Sacramento, California",Open,M,,,Shane Flowers,GBR,Hercules Hold,Hold,Hercules Hold,40.26,sec,,159,,,time,,5,7,25.5,
+2025 World's Strongest Man,WSM,2025-05-17,"Sacramento, California",Open,M,,,Mitchell Hooper,CAN,Hercules Hold,Hold,Hercules Hold,40.09,sec,,159,,,time,,6,3,43.5,
+2025 World's Strongest Man,WSM,2025-05-17,"Sacramento, California",Open,M,,,Luke Stoltman,GBR,Hercules Hold,Hold,Hercules Hold,32.30,sec,,159,,,time,,7,9,21.5,
+2025 World's Strongest Man,WSM,2025-05-17,"Sacramento, California",Open,M,,,Tom Stoltman,GBR,Hercules Hold,Hold,Hercules Hold,31.82,sec,,159,,,time,,8,2,46.5,
+2025 World's Strongest Man,WSM,2025-05-17,"Sacramento, California",Open,M,,,Pavlo Kordiyaka,UKR,Hercules Hold,Hold,Hercules Hold,29.91,sec,,159,,,time,,9,8,25,
+2025 World's Strongest Man,WSM,2025-05-17,"Sacramento, California",Open,M,,,Trey Mitchell,USA,Hercules Hold,Hold,Hercules Hold,22.29,sec,,159,,,time,,10,4,38.5,
+2025 World's Strongest Man,WSM,2025-05-18,"Sacramento, California",Open,M,,,Tom Stoltman,GBR,Flintstone Barbell Press,Overhead Press,Barbell,241,kg,,241,,,weight,,1,2,46.5,Tied 1st with Trey Mitchell
+2025 World's Strongest Man,WSM,2025-05-18,"Sacramento, California",Open,M,,,Trey Mitchell,USA,Flintstone Barbell Press,Overhead Press,Barbell,241,kg,,241,,,weight,,1,4,38.5,Tied 1st with Tom Stoltman
+2025 World's Strongest Man,WSM,2025-05-18,"Sacramento, California",Open,M,,,Mitchell Hooper,CAN,Flintstone Barbell Press,Overhead Press,Barbell,230,kg,,230,,,weight,,3,3,43.5,Tied 3rd with Kordiyaka
+2025 World's Strongest Man,WSM,2025-05-18,"Sacramento, California",Open,M,,,Pavlo Kordiyaka,UKR,Flintstone Barbell Press,Overhead Press,Barbell,230,kg,,230,,,weight,,3,8,25,Tied 3rd
+2025 World's Strongest Man,WSM,2025-05-18,"Sacramento, California",Open,M,,,Ondrej Fojtu,CZE,Flintstone Barbell Press,Overhead Press,Barbell,220,kg,,220,,,weight,,5,6,27,
+2025 World's Strongest Man,WSM,2025-05-18,"Sacramento, California",Open,M,,,Shane Flowers,GBR,Flintstone Barbell Press,Overhead Press,Barbell,200,kg,,200,,,weight,,6,7,25.5,Tied 6th
+2025 World's Strongest Man,WSM,2025-05-18,"Sacramento, California",Open,M,,,Luke Stoltman,GBR,Flintstone Barbell Press,Overhead Press,Barbell,200,kg,,200,,,weight,,6,9,21.5,Tied 6th
+2025 World's Strongest Man,WSM,2025-05-18,"Sacramento, California",Open,M,,,Rayno Nel,RSA,Flintstone Barbell Press,Overhead Press,Barbell,188,kg,,188,,,weight,,8,1,47,Cost him significant lead going into Atlas Stones
+2025 World's Strongest Man,WSM,2025-05-18,"Sacramento, California",Open,M,,,Paddy Haynes,GBR,Flintstone Barbell Press,Overhead Press,Barbell,0,kg,,,,,weight,,9,5,32,No lift
+2025 World's Strongest Man,WSM,2025-05-18,"Sacramento, California",Open,M,,,Eddie Williams,AUS,Flintstone Barbell Press,Overhead Press,Barbell,0,kg,,,,,weight,,9,10,20.5,No lift
+2025 World's Strongest Man,WSM,2025-05-18,"Sacramento, California",Open,M,,,Tom Stoltman,GBR,Atlas Stones,Load,Atlas Stone,31.76,sec,5,140-210,,60,time,,1,2,46.5,All 5 stones; King of the Stones
+2025 World's Strongest Man,WSM,2025-05-18,"Sacramento, California",Open,M,,,Trey Mitchell,USA,Atlas Stones,Load,Atlas Stone,41.08,sec,5,140-210,,60,time,,2,4,38.5,All 5 stones
+2025 World's Strongest Man,WSM,2025-05-18,"Sacramento, California",Open,M,,,Rayno Nel,RSA,Atlas Stones,Load,Atlas Stone,30.17,sec,4,140-210,,60,time,,3,1,47,4 stones; secured overall win; beat Hooper by 0.85 seconds
+2025 World's Strongest Man,WSM,2025-05-18,"Sacramento, California",Open,M,,,Mitchell Hooper,CAN,Atlas Stones,Load,Atlas Stone,31.02,sec,4,140-210,,60,time,,4,3,43.5,4 stones
+2025 World's Strongest Man,WSM,2025-05-18,"Sacramento, California",Open,M,,,Paddy Haynes,GBR,Atlas Stones,Load,Atlas Stone,34.07,sec,4,140-210,,60,time,,5,5,32,4 stones
+2025 World's Strongest Man,WSM,2025-05-18,"Sacramento, California",Open,M,,,Pavlo Kordiyaka,UKR,Atlas Stones,Load,Atlas Stone,38.39,sec,4,140-210,,60,time,,6,8,25,4 stones
+2025 World's Strongest Man,WSM,2025-05-18,"Sacramento, California",Open,M,,,Shane Flowers,GBR,Atlas Stones,Load,Atlas Stone,54.09,sec,4,140-210,,60,time,,7,7,25.5,4 stones
+2025 World's Strongest Man,WSM,2025-05-18,"Sacramento, California",Open,M,,,Luke Stoltman,GBR,Atlas Stones,Load,Atlas Stone,25.05,sec,3,140-210,,60,time,,8,9,21.5,3 stones
+2025 World's Strongest Man,WSM,2025-05-18,"Sacramento, California",Open,M,,,Eddie Williams,AUS,Atlas Stones,Load,Atlas Stone,25.88,sec,3,140-210,,60,time,,9,10,20.5,3 stones
+2025 World's Strongest Man,WSM,2025-05-18,"Sacramento, California",Open,M,,,Ondrej Fojtu,CZE,Atlas Stones,Load,Atlas Stone,31.38,sec,3,140-210,,60,time,,10,6,27,3 stones

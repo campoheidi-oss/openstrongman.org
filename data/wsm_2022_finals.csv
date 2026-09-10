@@ -1,0 +1,61 @@
+MeetName,MeetFederation,MeetDate,MeetLocation,Division,Sex,BodyweightKg,WeightClassKg,AthleteName,AthleteNationality,Event,EventCategory,Implement,ResultValue,ResultUnit,StonesCompleted,ImplementWeightKg,CourseDistanceM,TimeLimitSec,ScoredBy,WorldRecord,Place,OverallPlace,Points,Notes
+2022 World's Strongest Man,WSM,2022-05-28,"Sacramento, California",Open,M,,,Mitchell Hooper,CAN,KNAACK Giant's Medley,Medley,"Box Carry,Yoke",21.96,sec,,455,20,,time,,1,8,30,120kg boxes + 455kg yoke; Hooper's first WSM final event win
+2022 World's Strongest Man,WSM,2022-05-28,"Sacramento, California",Open,M,,,Tom Stoltman,GBR,KNAACK Giant's Medley,Medley,"Box Carry,Yoke",24.75,sec,,455,20,,time,,2,1,53.5,
+2022 World's Strongest Man,WSM,2022-05-28,"Sacramento, California",Open,M,,,Oleksii Novikov,UKR,KNAACK Giant's Medley,Medley,"Box Carry,Yoke",24.84,sec,,455,20,,time,,3,3,43,
+2022 World's Strongest Man,WSM,2022-05-28,"Sacramento, California",Open,M,,,Luke Stoltman,GBR,KNAACK Giant's Medley,Medley,"Box Carry,Yoke",28.72,sec,,455,20,,time,,4,7,30.5,
+2022 World's Strongest Man,WSM,2022-05-28,"Sacramento, California",Open,M,,,Martins Licis,USA,KNAACK Giant's Medley,Medley,"Box Carry,Yoke",30.60,sec,,455,20,,time,,5,2,43,
+2022 World's Strongest Man,WSM,2022-05-28,"Sacramento, California",Open,M,,,Brian Shaw,USA,KNAACK Giant's Medley,Medley,"Box Carry,Yoke",30.78,sec,,455,20,,time,,6,4,37.5,
+2022 World's Strongest Man,WSM,2022-05-28,"Sacramento, California",Open,M,,,Trey Mitchell,USA,KNAACK Giant's Medley,Medley,"Box Carry,Yoke",32.54,sec,,455,20,,time,,7,6,34,
+2022 World's Strongest Man,WSM,2022-05-28,"Sacramento, California",Open,M,,,Gabriel Rheaume,CAN,KNAACK Giant's Medley,Medley,"Box Carry,Yoke",33.87,sec,,455,20,,time,,8,10,11,
+2022 World's Strongest Man,WSM,2022-05-28,"Sacramento, California",Open,M,,,Maxime Boudreault,CAN,KNAACK Giant's Medley,Medley,"Box Carry,Yoke",34.11,sec,,455,20,,time,,9,5,34.5,
+2022 World's Strongest Man,WSM,2022-05-28,"Sacramento, California",Open,M,,,Eythor Ingolfsson Melsted,ISL,KNAACK Giant's Medley,Medley,"Box Carry,Yoke",37.61,sec,,455,20,,time,,10,9,13,
+2022 World's Strongest Man,WSM,2022-05-28,"Sacramento, California",Open,M,,,Oleksii Novikov,UKR,Car Deadlift,Deadlift,Car,15,reps,,360,,60,reps,,1,3,43,360kg car deadlift; nosebleed during set
+2022 World's Strongest Man,WSM,2022-05-28,"Sacramento, California",Open,M,,,Tom Stoltman,GBR,Car Deadlift,Deadlift,Car,13,reps,,360,,60,reps,,2,1,53.5,Tied 2nd
+2022 World's Strongest Man,WSM,2022-05-28,"Sacramento, California",Open,M,,,Trey Mitchell,USA,Car Deadlift,Deadlift,Car,13,reps,,360,,60,reps,,2,6,34,Tied 2nd
+2022 World's Strongest Man,WSM,2022-05-28,"Sacramento, California",Open,M,,,Mitchell Hooper,CAN,Car Deadlift,Deadlift,Car,12,reps,,360,,60,reps,,4,8,30,Tied 4th
+2022 World's Strongest Man,WSM,2022-05-28,"Sacramento, California",Open,M,,,Martins Licis,USA,Car Deadlift,Deadlift,Car,12,reps,,360,,60,reps,,4,2,43,Tied 4th
+2022 World's Strongest Man,WSM,2022-05-28,"Sacramento, California",Open,M,,,Brian Shaw,USA,Car Deadlift,Deadlift,Car,12,reps,,360,,60,reps,,4,4,37.5,Tied 4th
+2022 World's Strongest Man,WSM,2022-05-28,"Sacramento, California",Open,M,,,Maxime Boudreault,CAN,Car Deadlift,Deadlift,Car,10,reps,,360,,60,reps,,7,5,34.5,
+2022 World's Strongest Man,WSM,2022-05-28,"Sacramento, California",Open,M,,,Luke Stoltman,GBR,Car Deadlift,Deadlift,Car,9,reps,,360,,60,reps,,8,7,30.5,
+2022 World's Strongest Man,WSM,2022-05-28,"Sacramento, California",Open,M,,,Gabriel Rheaume,CAN,Car Deadlift,Deadlift,Car,8,reps,,360,,60,reps,,9,10,11,Tied 9th
+2022 World's Strongest Man,WSM,2022-05-28,"Sacramento, California",Open,M,,,Eythor Ingolfsson Melsted,ISL,Car Deadlift,Deadlift,Car,8,reps,,360,,60,reps,,9,9,13,Tied 9th
+2022 World's Strongest Man,WSM,2022-05-28,"Sacramento, California",Open,M,,,Oleksii Novikov,UKR,Flintstone Barbell,Overhead Press,Barbell,246,kg,,246,,,weight,Y,1,3,43,World record; 542 lbs
+2022 World's Strongest Man,WSM,2022-05-28,"Sacramento, California",Open,M,,,Tom Stoltman,GBR,Flintstone Barbell,Overhead Press,Barbell,240,kg,,240,,,weight,,2,1,53.5,Did not attempt 246kg
+2022 World's Strongest Man,WSM,2022-05-28,"Sacramento, California",Open,M,,,Martins Licis,USA,Flintstone Barbell,Overhead Press,Barbell,235,kg,,235,,,weight,,3,2,43,
+2022 World's Strongest Man,WSM,2022-05-28,"Sacramento, California",Open,M,,,Trey Mitchell,USA,Flintstone Barbell,Overhead Press,Barbell,212,kg,,212,,,weight,,4,6,34,Tied 4th
+2022 World's Strongest Man,WSM,2022-05-28,"Sacramento, California",Open,M,,,Brian Shaw,USA,Flintstone Barbell,Overhead Press,Barbell,212,kg,,212,,,weight,,4,4,37.5,Tied 4th
+2022 World's Strongest Man,WSM,2022-05-28,"Sacramento, California",Open,M,,,Luke Stoltman,GBR,Flintstone Barbell,Overhead Press,Barbell,212,kg,,212,,,weight,,4,7,30.5,Tied 4th
+2022 World's Strongest Man,WSM,2022-05-28,"Sacramento, California",Open,M,,,Maxime Boudreault,CAN,Flintstone Barbell,Overhead Press,Barbell,212,kg,,212,,,weight,,4,5,34.5,Tied 4th
+2022 World's Strongest Man,WSM,2022-05-28,"Sacramento, California",Open,M,,,Mitchell Hooper,CAN,Flintstone Barbell,Overhead Press,Barbell,200,kg,,200,,,weight,,8,8,30,
+2022 World's Strongest Man,WSM,2022-05-28,"Sacramento, California",Open,M,,,Gabriel Rheaume,CAN,Flintstone Barbell,Overhead Press,Barbell,190,kg,,190,,,weight,,9,10,11,Tied 9th
+2022 World's Strongest Man,WSM,2022-05-28,"Sacramento, California",Open,M,,,Eythor Ingolfsson Melsted,ISL,Flintstone Barbell,Overhead Press,Barbell,190,kg,,190,,,weight,,9,9,13,Tied 9th
+2022 World's Strongest Man,WSM,2022-05-29,"Sacramento, California",Open,M,,,Oleksii Novikov,UKR,Bus Pull,Pull,Bus,41.51,sec,,,30,75,time,,1,3,43,Bus weight approximately 18144kg; 40000 lbs
+2022 World's Strongest Man,WSM,2022-05-29,"Sacramento, California",Open,M,,,Martins Licis,USA,Bus Pull,Pull,Bus,42.18,sec,,,30,75,time,,2,2,43,
+2022 World's Strongest Man,WSM,2022-05-29,"Sacramento, California",Open,M,,,Tom Stoltman,GBR,Bus Pull,Pull,Bus,44.50,sec,,,30,75,time,,3,1,53.5,
+2022 World's Strongest Man,WSM,2022-05-29,"Sacramento, California",Open,M,,,Brian Shaw,USA,Bus Pull,Pull,Bus,44.69,sec,,,30,75,time,,4,4,37.5,
+2022 World's Strongest Man,WSM,2022-05-29,"Sacramento, California",Open,M,,,Trey Mitchell,USA,Bus Pull,Pull,Bus,45.72,sec,,,30,75,time,,5,6,34,
+2022 World's Strongest Man,WSM,2022-05-29,"Sacramento, California",Open,M,,,Luke Stoltman,GBR,Bus Pull,Pull,Bus,47.00,sec,,,30,75,time,,6,7,30.5,
+2022 World's Strongest Man,WSM,2022-05-29,"Sacramento, California",Open,M,,,Maxime Boudreault,CAN,Bus Pull,Pull,Bus,47.20,sec,,,30,75,time,,7,5,34.5,
+2022 World's Strongest Man,WSM,2022-05-29,"Sacramento, California",Open,M,,,Mitchell Hooper,CAN,Bus Pull,Pull,Bus,49.24,sec,,,30,75,time,,8,8,30,
+2022 World's Strongest Man,WSM,2022-05-29,"Sacramento, California",Open,M,,,Eythor Ingolfsson Melsted,ISL,Bus Pull,Pull,Bus,51.32,sec,,,30,75,time,,9,9,13,
+2022 World's Strongest Man,WSM,2022-05-29,"Sacramento, California",Open,M,,,Gabriel Rheaume,CAN,Bus Pull,Pull,Bus,52.22,sec,,,30,75,time,,10,10,11,
+2022 World's Strongest Man,WSM,2022-05-29,"Sacramento, California",Open,M,,,Maxime Boudreault,CAN,Reign Total Body Fuel Power Stairs,Load,Power Stairs,39.07,sec,9,226,,75,time,,1,5,34.5,9 stairs; 226kg blocks; 3 blocks x 3 stairs
+2022 World's Strongest Man,WSM,2022-05-29,"Sacramento, California",Open,M,,,Tom Stoltman,GBR,Reign Total Body Fuel Power Stairs,Load,Power Stairs,41.04,sec,9,226,,75,time,,2,1,53.5,
+2022 World's Strongest Man,WSM,2022-05-29,"Sacramento, California",Open,M,,,Martins Licis,USA,Reign Total Body Fuel Power Stairs,Load,Power Stairs,44.56,sec,9,226,,75,time,,3,2,43,
+2022 World's Strongest Man,WSM,2022-05-29,"Sacramento, California",Open,M,,,Brian Shaw,USA,Reign Total Body Fuel Power Stairs,Load,Power Stairs,69.03,sec,8,226,,75,reps,,4,4,37.5,8 stairs
+2022 World's Strongest Man,WSM,2022-05-29,"Sacramento, California",Open,M,,,Mitchell Hooper,CAN,Reign Total Body Fuel Power Stairs,Load,Power Stairs,32.36,sec,7,226,,75,reps,,5,8,30,7 stairs
+2022 World's Strongest Man,WSM,2022-05-29,"Sacramento, California",Open,M,,,Luke Stoltman,GBR,Reign Total Body Fuel Power Stairs,Load,Power Stairs,59.47,sec,7,226,,75,reps,,5,7,30.5,7 stairs; tied 5th
+2022 World's Strongest Man,WSM,2022-05-29,"Sacramento, California",Open,M,,,Oleksii Novikov,UKR,Reign Total Body Fuel Power Stairs,Load,Power Stairs,34.20,sec,6,226,,75,reps,,7,3,43,6 stairs; cost him the overall lead
+2022 World's Strongest Man,WSM,2022-05-29,"Sacramento, California",Open,M,,,Eythor Ingolfsson Melsted,ISL,Reign Total Body Fuel Power Stairs,Load,Power Stairs,35.78,sec,6,226,,75,reps,,7,9,13,6 stairs; tied 7th
+2022 World's Strongest Man,WSM,2022-05-29,"Sacramento, California",Open,M,,,Trey Mitchell,USA,Reign Total Body Fuel Power Stairs,Load,Power Stairs,70.22,sec,6,226,,75,reps,,7,6,34,6 stairs; tied 7th
+2022 World's Strongest Man,WSM,2022-05-29,"Sacramento, California",Open,M,,,Gabriel Rheaume,CAN,Reign Total Body Fuel Power Stairs,Load,Power Stairs,35.78,sec,5,226,,75,reps,,10,10,11,5 stairs
+2022 World's Strongest Man,WSM,2022-05-29,"Sacramento, California",Open,M,,,Tom Stoltman,GBR,Atlas Stones,Load,Atlas Stone,25.76,sec,5,140-200,,60,time,,1,1,53.5,All 5 stones; 140-200kg
+2022 World's Strongest Man,WSM,2022-05-29,"Sacramento, California",Open,M,,,Maxime Boudreault,CAN,Atlas Stones,Load,Atlas Stone,28.04,sec,5,140-200,,60,time,,2,5,34.5,
+2022 World's Strongest Man,WSM,2022-05-29,"Sacramento, California",Open,M,,,Trey Mitchell,USA,Atlas Stones,Load,Atlas Stone,33.06,sec,5,140-200,,60,time,,3,6,34,
+2022 World's Strongest Man,WSM,2022-05-29,"Sacramento, California",Open,M,,,Brian Shaw,USA,Atlas Stones,Load,Atlas Stone,39.29,sec,5,140-200,,60,time,,4,4,37.5,
+2022 World's Strongest Man,WSM,2022-05-29,"Sacramento, California",Open,M,,,Martins Licis,USA,Atlas Stones,Load,Atlas Stone,45.74,sec,5,140-200,,60,time,,5,2,43,Overtook Novikov for 2nd place overall
+2022 World's Strongest Man,WSM,2022-05-29,"Sacramento, California",Open,M,,,Luke Stoltman,GBR,Atlas Stones,Load,Atlas Stone,25.78,sec,4,140-200,,60,time,,6,7,30.5,4 stones
+2022 World's Strongest Man,WSM,2022-05-29,"Sacramento, California",Open,M,,,Eythor Ingolfsson Melsted,ISL,Atlas Stones,Load,Atlas Stone,28.87,sec,4,140-200,,60,time,,7,9,13,4 stones
+2022 World's Strongest Man,WSM,2022-05-29,"Sacramento, California",Open,M,,,Gabriel Rheaume,CAN,Atlas Stones,Load,Atlas Stone,33.55,sec,4,140-200,,60,time,,8,10,11,4 stones
+2022 World's Strongest Man,WSM,2022-05-29,"Sacramento, California",Open,M,,,Mitchell Hooper,CAN,Atlas Stones,Load,Atlas Stone,33.78,sec,4,140-200,,60,time,,9,8,30,4 stones
+2022 World's Strongest Man,WSM,2022-05-29,"Sacramento, California",Open,M,,,Oleksii Novikov,UKR,Atlas Stones,Load,Atlas Stone,36.70,sec,4,140-200,,60,time,,10,3,43,4 stones; dropped from 1st to 3rd overall

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OpenStrongman — Rankings</title>
+<title>OpenStrongman - Rankings</title>
 <meta name="description" content="Browse and filter strongman competition results across all federations and event categories.">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/6.6.6/css/flag-icons.min.css">
@@ -306,7 +306,7 @@
 
   <!-- BETA BANNER -->
   <div id="beta-banner" style="background:#1f3a5f;color:#fff;font-size:12px;text-align:center;padding:0.5rem 1rem;display:flex;align-items:center;justify-content:center;gap:0.75rem;flex-shrink:0;">
-    <span>🏗️ <strong>OpenStrongman is actively being built.</strong> Data and features are added weekly — results may be incomplete.</span>
+    <span>🏗️ <strong>OpenStrongman is actively being built.</strong> Data and features are added weekly - results may be incomplete.</span>
     <a href="/about.html" style="color:#a8c4e0;text-decoration:none;white-space:nowrap;">Learn more →</a>
     <button onclick="document.getElementById('beta-banner').style.display='none'" style="background:none;border:none;color:rgba(255,255,255,0.5);cursor:pointer;font-size:14px;line-height:1;padding:0 0 0 0.5rem;">✕</button>
   </div>
@@ -383,7 +383,7 @@
 </main>
 
 <footer class="site-footer">
-  <span>&copy; 2026 OpenStrongman &mdash; open source, open data</span>
+  <span>&copy; 2026 OpenStrongman - open source, open data</span>
   <span>For powerlifting: <a href="https://www.openpowerlifting.org" target="_blank" rel="noopener">OpenPowerlifting.org</a> &nbsp;&middot;&nbsp; For weightlifting: <a href="https://www.openweightlifting.org" target="_blank" rel="noopener">OpenWeightlifting.org</a> &nbsp;&middot;&nbsp; All three sites are independent and unaffiliated.</span>
 </footer>
 
@@ -393,6 +393,7 @@ const CSV_FILES = [
   'data/wsm_results.csv',
   'data/wsm_2023_finals.csv',
   'data/wsm_2024_finals.csv',
+  'data/wsm_2025_finals.csv',
   'data/rogue_invitational_overall.csv',
   'data/rogue_2024_finals.csv',
 ];
@@ -605,28 +606,28 @@ function renderTable() {
   let html = '';
 
   sorted.slice(0, MAX).forEach((r, idx) => {
-    const year = (r.MeetDate||'').slice(0,4) || '—';
+    const year = (r.MeetDate||'').slice(0,4) || '-';
     const op = parseInt(r.OverallPlace) || 0;
     const pc = op===1?'gold':op===2?'silver':op===3?'bronze':'';
-    const placeDisplay = op===1 ? '🥇' : op===2 ? '🥈' : op===3 ? '🥉' : (op||'—');
-    const result = r.ResultValue ? `${r.ResultValue} ${r.ResultUnit||''}`.trim() : '—';
+    const placeDisplay = op===1 ? '🥇' : op===2 ? '🥈' : op===3 ? '🥉' : (op||'-');
+    const result = r.ResultValue ? `${r.ResultValue} ${r.ResultUnit||''}`.trim() : '-';
     const wr = r.WorldRecord === 'Y' ? '<span class="tag-wr">WR</span>' : '';
-    const cat = r.EventCategory ? `<span class="tag-cat">${esc(r.EventCategory)}</span>` : '—';
+    const cat = r.EventCategory ? `<span class="tag-cat">${esc(r.EventCategory)}</span>` : '-';
     const nat = r.AthleteNationality || '';
     const expanded = expandedIdx === idx;
 
     html += `<tr class="data-row${expanded?' expanded':''}" onclick="toggleExpand(${idx})">
       <td class="col-place ${pc}">${placeDisplay}</td>
       <td class="col-athlete">${esc(r.AthleteName)}<span class="expand-arrow">▶</span></td>
-      <td><div class="nat-cell">${flagHTML(nat)}<span class="nat-code">${esc(nat||'—')}</span></div></td>
-      <td>${esc(r.MeetName||'—')}</td>
-      <td>${esc(r.MeetFederation||'—')}</td>
-      <td>${esc(r.Event||'—')}</td>
+      <td><div class="nat-cell">${flagHTML(nat)}<span class="nat-code">${esc(nat||'-')}</span></div></td>
+      <td>${esc(r.MeetName||'-')}</td>
+      <td>${esc(r.MeetFederation||'-')}</td>
+      <td>${esc(r.Event||'-')}</td>
       <td>${cat}</td>
-      <td>${esc(r.Implement||'—')}</td>
+      <td>${esc(r.Implement||'-')}</td>
       <td class="col-result">${result}${wr}</td>
-      <td>${esc(r.ScoredBy||'—')}</td>
-      <td class="col-place">${r.Place||'—'}</td>
+      <td>${esc(r.ScoredBy||'-')}</td>
+      <td class="col-place">${r.Place||'-'}</td>
     </tr>`;
 
     if (expanded) html += buildExpandRow(r);
@@ -634,7 +635,7 @@ function renderTable() {
 
   if (sorted.length > MAX) {
     html += `<tr class="state-row"><td colspan="12">
-      Showing first ${MAX} of ${sorted.length.toLocaleString()} results — use filters to narrow down.
+      Showing first ${MAX} of ${sorted.length.toLocaleString()} results - use filters to narrow down.
     </td></tr>`;
   }
 

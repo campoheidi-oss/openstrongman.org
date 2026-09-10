@@ -363,7 +363,6 @@
           <th onclick="sortBy('AthleteName')" id="th-AthleteName">Athlete</th>
           <th onclick="sortBy('AthleteNationality')" id="th-AthleteNationality">Nat</th>
           <th onclick="sortBy('MeetName')" id="th-MeetName">Meet</th>
-          <th onclick="sortBy('MeetDate')" id="th-MeetDate">Year</th>
           <th onclick="sortBy('MeetFederation')" id="th-MeetFederation">Fed</th>
           <th onclick="sortBy('Event')" id="th-Event">Event</th>
           <th onclick="sortBy('EventCategory')" id="th-EventCategory">Category</th>
@@ -403,7 +402,10 @@ const ISO = {
   USA:'us',GBR:'gb',CAN:'ca',ISL:'is',FIN:'fi',NOR:'no',SWE:'se',
   POL:'pl',LTU:'lt',UKR:'ua',AUT:'at',RSA:'za',NED:'nl',DEN:'dk',
   RUS:'ru',NZL:'nz',LAT:'lv',MEX:'mx',AUS:'au',BEL:'be',FRA:'fr',
-  GER:'de',BRA:'br',EST:'ee',GEO:'ge',IRL:'ie',LEB:'lb',
+  GER:'de',BRA:'br',EST:'ee',GEO:'ge',IRL:'ie',LEB:'lb',PUR:'pr',
+  SCO:'gb-sct',WAL:'gb-wls',NGR:'ng',KAZ:'kz',BLR:'by',CRO:'hr',
+  SRB:'rs',SVK:'sk',CZE:'cz',HUN:'hu',ROU:'ro',BGR:'bg',TUR:'tr',
+  JPN:'jp',KOR:'kr',CHN:'cn',IND:'in',IRN:'ir',EGY:'eg',MAR:'ma',
 };
 
 function flagHTML(code) {
@@ -618,7 +620,6 @@ function renderTable() {
       <td class="col-athlete">${esc(r.AthleteName)}<span class="expand-arrow">▶</span></td>
       <td><div class="nat-cell">${flagHTML(nat)}<span class="nat-code">${esc(nat||'—')}</span></div></td>
       <td>${esc(r.MeetName||'—')}</td>
-      <td>${year}</td>
       <td>${esc(r.MeetFederation||'—')}</td>
       <td>${esc(r.Event||'—')}</td>
       <td>${cat}</td>

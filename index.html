@@ -218,7 +218,7 @@
       <p class="eyebrow">Open database &mdash; all federations</p>
       <h1>Every rep.<br>Every stone.<br><em>Open to everyone.</em></h1>
       <p class="hero-desc">
-        OpenStrongman is a free, open archive of strongman competition results across all major US federations. Raw data including weights, times, distances, reps are searchable, filterable, and free to download.
+        OpenStrongman is a free, open archive of strongman competition results across all major US federations. Raw data — weights, times, distances, reps — searchable, filterable, and free to download.
       </p>
       <div class="hero-actions">
         <a class="btn-primary" href="rankings.html">Browse Rankings</a>
@@ -260,17 +260,17 @@
         <div class="how-card">
           <p class="how-num">01</p>
           <h3>Raw data, faithfully logged</h3>
-          <p>We record the actual result: weight lifted, time, distance, reps exactly as competed. No forced standardization.</p>
+          <p>We record the actual result — weight lifted, time, distance, reps — exactly as competed. No forced standardization.</p>
         </div>
         <div class="how-card">
           <p class="how-num">02</p>
           <h3>Biomechanical categories</h3>
-          <p>Events are grouped by movement pattern, not implement. A log press and an axle press are both Overhead Press. Results are filterable by implement.</p>
+          <p>Events are grouped by movement pattern, not implement. A log press and an axle press are both Overhead Press — filterable by implement.</p>
         </div>
         <div class="how-card">
           <p class="how-num">03</p>
           <h3>Multi-federation filters</h3>
-          <p>Filter by federation, weight class, sex, age, or year. Weight classes vary across feds. (We handle that with filters, not forced normalization)</p>
+          <p>Filter by federation, weight class, sex, age, or year. Weight classes vary across feds — we handle that with filters, not forced normalization.</p>
         </div>
         <div class="how-card">
           <p class="how-num">04</p>
@@ -335,10 +335,10 @@
       <p class="section-label">Our mission</p>
       <h2>Strongman deserves an open record.</h2>
       <p>
-        Results from thousands of competitions including local, national, and international meets exist only as PDFs, Facebook posts, and spreadsheets scattered across the internet. Athletes have no reliable way to track their history. Coaches can't benchmark athletes across federations. Researchers have no dataset to work with.
+        Results from thousands of competitions — local, national, and international — exist only as PDFs, Facebook posts, and spreadsheets scattered across the internet. Athletes have no reliable way to track their history. Coaches can't benchmark athletes across federations. Researchers have no dataset to work with.
       </p>
       <p>
-        OpenStrongman exists to fix that. We're building a permanent, open, community-maintained archive of strongman results. Free to use, free to download, and free forever.
+        OpenStrongman exists to fix that. We're building a permanent, open, community-maintained archive of strongman results — free to use, free to download, and free forever.
       </p>
       <a href="about.html">Learn more about the project &rarr;</a>
     </div>
@@ -363,12 +363,29 @@ const CSV_FILES = [
 function parseCSV(text) {
   const lines = text.trim().split('\n');
   const headers = lines[0].split(',').map(h => h.trim());
-  return lines.slice(1).map(line => {
-    const vals = line.split(',');
+  const rows = [];
+  for (let i = 1; i < lines.length; i++) {
+    const vals = splitCSVLine(lines[i]);
+    if (vals.length < 2) continue;
     const row = {};
-    headers.forEach((h, i) => { row[h] = (vals[i]||'').trim().replace(/^"|"$/g,''); });
-    return row;
-  }).filter(r => r.AthleteName && r.AthleteName.trim() !== '');
+    headers.forEach((h, idx) => { row[h] = (vals[idx] || '').trim().replace(/^"|"$/g, ''); });
+    if (row.AthleteName && row.AthleteName.trim() !== '') rows.push(row);
+  }
+  return rows;
+}
+
+function splitCSVLine(line) {
+  const result = [];
+  let cur = '';
+  let inQuotes = false;
+  for (let i = 0; i < line.length; i++) {
+    const ch = line[i];
+    if (ch === '"') { inQuotes = !inQuotes; }
+    else if (ch === ',' && !inQuotes) { result.push(cur); cur = ''; }
+    else { cur += ch; }
+  }
+  result.push(cur);
+  return result;
 }
 
 async function loadStats() {
@@ -376,20 +393,13 @@ async function loadStats() {
     const results = await Promise.all(
       CSV_FILES.map(url =>
         fetch(url)
-          .then(r => {
-            if (!r.ok) throw new Error('HTTP ' + r.status + ' for ' + url);
-            return r.text();
-          })
+          .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.text(); })
           .then(parseCSV)
-          .catch(e => { console.warn('Failed to load ' + url + ':', e); return []; })
+          .catch(e => { console.warn('Failed:', url, e); return []; })
       )
     );
-    const allRows = results.flat().filter(r => r.AthleteName && r.AthleteName.trim() !== '');
-
-    if (allRows.length === 0) {
-      console.warn('OpenStrongman: No rows loaded from any CSV file.');
-      return;
-    }
+    const allRows = results.flat();
+    if (allRows.length === 0) { console.warn('No rows loaded'); return; }
 
     const resultCount = allRows.length;
     const athletes = new Set(allRows.map(r => r.AthleteName).filter(Boolean)).size;
@@ -400,9 +410,9 @@ async function loadStats() {
     document.getElementById('stat-athletes').textContent = athletes.toLocaleString();
     document.getElementById('stat-meets').textContent = meets.toLocaleString();
     document.getElementById('stat-feds').textContent = feds.toLocaleString();
-    console.log('OpenStrongman stats loaded:', { resultCount, athletes, meets, feds });
+    console.log('Stats loaded:', { resultCount, athletes, meets, feds });
   } catch(e) {
-    console.error('OpenStrongman stats error:', e);
+    console.error('Stats error:', e);
   }
 }
 

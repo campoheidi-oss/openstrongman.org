@@ -1,0 +1,51 @@
+MeetName,MeetFederation,MeetDate,MeetLocation,Division,Sex,BodyweightKg,WeightClassKg,AthleteName,AthleteNationality,Event,EventCategory,Implement,ResultValue,ResultUnit,StonesCompleted,ImplementWeightKg,CourseDistanceM,TimeLimitSec,ScoredBy,WorldRecord,Place,OverallPlace,Points,Notes
+2026 World's Strongest Man,WSM,2026-04-25,"Myrtle Beach, South Carolina",Open,M,,,Rayno Nel,RSA,KNAACK Monster Box Flip and Carry,Medley,"Box Flip,Yoke",27.30,sec,,520,20,,time,,1,2,52,520kg box flipped 4 times + 454kg yoke 20m
+2026 World's Strongest Man,WSM,2026-04-25,"Myrtle Beach, South Carolina",Open,M,,,Mitchell Hooper,CAN,KNAACK Monster Box Flip and Carry,Medley,"Box Flip,Yoke",27.44,sec,,520,20,,time,,2,1,54,Photo finish; 0.14 seconds behind Nel
+2026 World's Strongest Man,WSM,2026-04-25,"Myrtle Beach, South Carolina",Open,M,,,Pavlo Kordiyaka,UKR,KNAACK Monster Box Flip and Carry,Medley,"Box Flip,Yoke",33.80,sec,,520,20,,time,,3,4,31.5,
+2026 World's Strongest Man,WSM,2026-04-25,"Myrtle Beach, South Carolina",Open,M,,,Eddie Williams,AUS,KNAACK Monster Box Flip and Carry,Medley,"Box Flip,Yoke",34.74,sec,,520,20,,time,,4,8,26,
+2026 World's Strongest Man,WSM,2026-04-25,"Myrtle Beach, South Carolina",Open,M,,,Ondrej Fojtu,CZE,KNAACK Monster Box Flip and Carry,Medley,"Box Flip,Yoke",36.13,sec,,520,20,,time,,5,5,31.5,
+2026 World's Strongest Man,WSM,2026-04-25,"Myrtle Beach, South Carolina",Open,M,,,Mathew Ragg,NZL,KNAACK Monster Box Flip and Carry,Medley,"Box Flip,Yoke",37.24,sec,,520,20,,time,,6,7,29,
+2026 World's Strongest Man,WSM,2026-04-25,"Myrtle Beach, South Carolina",Open,M,,,Martins Licis,USA,KNAACK Monster Box Flip and Carry,Medley,"Box Flip,Yoke",39.31,sec,,520,20,,time,,7,6,30.5,
+2026 World's Strongest Man,WSM,2026-04-25,"Myrtle Beach, South Carolina",Open,M,,,Trey Mitchell,USA,KNAACK Monster Box Flip and Carry,Medley,"Box Flip,Yoke",40.43,sec,,520,20,,time,,8,3,36,
+2026 World's Strongest Man,WSM,2026-04-25,"Myrtle Beach, South Carolina",Open,M,,,Austin Andrade,MEX,KNAACK Monster Box Flip and Carry,Medley,"Box Flip,Yoke",40.57,sec,,520,20,,time,,9,10,12.5,Withdrew later in competition
+2026 World's Strongest Man,WSM,2026-04-25,"Myrtle Beach, South Carolina",Open,M,,,Nick Guardione,USA,KNAACK Monster Box Flip and Carry,Medley,"Box Flip,Yoke",43.86,sec,,520,20,,time,,10,9,21,
+2026 World's Strongest Man,WSM,2026-04-25,"Myrtle Beach, South Carolina",Open,M,,,Rayno Nel,RSA,Deadlift for Reps,Deadlift,Barbell,5,reps,,400,,,reps,,1,2,52,5 reps with 400kg; athletes chose 360kg or 400kg
+2026 World's Strongest Man,WSM,2026-04-25,"Myrtle Beach, South Carolina",Open,M,,,Mitchell Hooper,CAN,Deadlift for Reps,Deadlift,Barbell,4,reps,,400,,,reps,,2,1,54,4 reps 400kg + 1 rep 360kg; tied 2nd
+2026 World's Strongest Man,WSM,2026-04-25,"Myrtle Beach, South Carolina",Open,M,,,Mathew Ragg,NZL,Deadlift for Reps,Deadlift,Barbell,4,reps,,400,,,reps,,2,7,29,4 reps 400kg + 1 rep 360kg; tied 2nd
+2026 World's Strongest Man,WSM,2026-04-25,"Myrtle Beach, South Carolina",Open,M,,,Eddie Williams,AUS,Deadlift for Reps,Deadlift,Barbell,3,reps,,400,,,reps,,4,8,26,3 reps 400kg + 1 rep 360kg
+2026 World's Strongest Man,WSM,2026-04-25,"Myrtle Beach, South Carolina",Open,M,,,Martins Licis,USA,Deadlift for Reps,Deadlift,Barbell,3,reps,,400,,,reps,,5,6,30.5,3 reps with 400kg; tied 5th
+2026 World's Strongest Man,WSM,2026-04-25,"Myrtle Beach, South Carolina",Open,M,,,Trey Mitchell,USA,Deadlift for Reps,Deadlift,Barbell,3,reps,,400,,,reps,,5,3,36,3 reps with 400kg; tied 5th
+2026 World's Strongest Man,WSM,2026-04-25,"Myrtle Beach, South Carolina",Open,M,,,Ondrej Fojtu,CZE,Deadlift for Reps,Deadlift,Barbell,2,reps,,400,,,reps,,7,5,31.5,2 reps 400kg + 1 rep 360kg
+2026 World's Strongest Man,WSM,2026-04-25,"Myrtle Beach, South Carolina",Open,M,,,Austin Andrade,MEX,Deadlift for Reps,Deadlift,Barbell,1,reps,,400,,,reps,,8,10,12.5,1 rep with 400kg; tied 8th
+2026 World's Strongest Man,WSM,2026-04-25,"Myrtle Beach, South Carolina",Open,M,,,Nick Guardione,USA,Deadlift for Reps,Deadlift,Barbell,1,reps,,400,,,reps,,8,9,21,1 rep with 400kg; tied 8th
+2026 World's Strongest Man,WSM,2026-04-25,"Myrtle Beach, South Carolina",Open,M,,,Pavlo Kordiyaka,UKR,Deadlift for Reps,Deadlift,Barbell,0,reps,,400,,,reps,,10,4,31.5,No lift
+2026 World's Strongest Man,WSM,2026-04-25,"Myrtle Beach, South Carolina",Open,M,,,Rayno Nel,RSA,Titan's Toss,Toss,Sandbag,9,reps,,6.4,,,reps,,1,2,52,9 sandbags over beam; 14kg each; only man to complete 9
+2026 World's Strongest Man,WSM,2026-04-25,"Myrtle Beach, South Carolina",Open,M,,,Mitchell Hooper,CAN,Titan's Toss,Toss,Sandbag,8,reps,,6.4,,,reps,,2,1,54,8 sandbags in 35 seconds
+2026 World's Strongest Man,WSM,2026-04-25,"Myrtle Beach, South Carolina",Open,M,,,Nick Guardione,USA,Titan's Toss,Toss,Sandbag,8,reps,,6.4,,,reps,,3,9,21,8 sandbags in 43.09 seconds; 8 seconds slower than Hooper
+2026 World's Strongest Man,WSM,2026-04-25,"Myrtle Beach, South Carolina",Open,M,,,Pavlo Kordiyaka,UKR,Titan's Toss,Toss,Sandbag,6,reps,,6.4,,,reps,,4,4,31.5,6 in 21.78 seconds; tied 4th
+2026 World's Strongest Man,WSM,2026-04-25,"Myrtle Beach, South Carolina",Open,M,,,Mathew Ragg,NZL,Titan's Toss,Toss,Sandbag,6,reps,,6.4,,,reps,,4,7,29,6 in 23.10 seconds; tied 4th
+2026 World's Strongest Man,WSM,2026-04-25,"Myrtle Beach, South Carolina",Open,M,,,Martins Licis,USA,Titan's Toss,Toss,Sandbag,6,reps,,6.4,,,reps,,4,6,30.5,6 in 26.78 seconds; tied 4th
+2026 World's Strongest Man,WSM,2026-04-25,"Myrtle Beach, South Carolina",Open,M,,,Trey Mitchell,USA,Titan's Toss,Toss,Sandbag,6,reps,,6.4,,,reps,,4,3,36,6 in 28.44 seconds; tied 4th
+2026 World's Strongest Man,WSM,2026-04-25,"Myrtle Beach, South Carolina",Open,M,,,Eddie Williams,AUS,Titan's Toss,Toss,Sandbag,6,reps,,6.4,,,reps,,4,8,26,6 in 33.94 seconds; tied 4th
+2026 World's Strongest Man,WSM,2026-04-25,"Myrtle Beach, South Carolina",Open,M,,,Ondrej Fojtu,CZE,Titan's Toss,Toss,Sandbag,3,reps,,6.4,,,reps,,9,5,31.5,3 in 17.84 seconds
+2026 World's Strongest Man,WSM,2026-04-25,"Myrtle Beach, South Carolina",Open,M,,,Austin Andrade,MEX,Titan's Toss,Toss,Sandbag,0,reps,,6.4,,,reps,,10,10,12.5,Withdrew
+2026 World's Strongest Man,WSM,2026-04-26,"Myrtle Beach, South Carolina",Open,M,,,Trey Mitchell,USA,Max Log,Overhead Press,Log,213,kg,,213,,,weight,,1,3,36,470 lbs; won event
+2026 World's Strongest Man,WSM,2026-04-26,"Myrtle Beach, South Carolina",Open,M,,,Ondrej Fojtu,CZE,Max Log,Overhead Press,Log,209,kg,,209,,,weight,,2,5,31.5,461 lbs; failed 218kg attempt; tied 2nd
+2026 World's Strongest Man,WSM,2026-04-26,"Myrtle Beach, South Carolina",Open,M,,,Mitchell Hooper,CAN,Max Log,Overhead Press,Log,209,kg,,209,,,weight,,2,1,54,461 lbs; tied 2nd; reduced Nel's lead to 1 point
+2026 World's Strongest Man,WSM,2026-04-26,"Myrtle Beach, South Carolina",Open,M,,,Rayno Nel,RSA,Max Log,Overhead Press,Log,200,kg,,200,,,weight,,4,2,52,441 lbs; showed significant overhead improvement
+2026 World's Strongest Man,WSM,2026-04-26,"Myrtle Beach, South Carolina",Open,M,,,Mathew Ragg,NZL,Max Log,Overhead Press,Log,191,kg,,191,,,weight,,5,7,29,421 lbs; tied 5th
+2026 World's Strongest Man,WSM,2026-04-26,"Myrtle Beach, South Carolina",Open,M,,,Pavlo Kordiyaka,UKR,Max Log,Overhead Press,Log,191,kg,,191,,,weight,,5,4,31.5,421 lbs; tied 5th
+2026 World's Strongest Man,WSM,2026-04-26,"Myrtle Beach, South Carolina",Open,M,,,Martins Licis,USA,Max Log,Overhead Press,Log,191,kg,,191,,,weight,,5,6,30.5,421 lbs; tied 5th
+2026 World's Strongest Man,WSM,2026-04-26,"Myrtle Beach, South Carolina",Open,M,,,Nick Guardione,USA,Max Log,Overhead Press,Log,191,kg,,191,,,weight,,5,9,21,421 lbs; tied 5th
+2026 World's Strongest Man,WSM,2026-04-26,"Myrtle Beach, South Carolina",Open,M,,,Eddie Williams,AUS,Max Log,Overhead Press,Log,0,kg,,,,,weight,,9,8,26,No lift
+2026 World's Strongest Man,WSM,2026-04-26,"Myrtle Beach, South Carolina",Open,M,,,Austin Andrade,MEX,Max Log,Overhead Press,Log,0,kg,,,,,weight,,10,10,12.5,Withdrew
+2026 World's Strongest Man,WSM,2026-04-26,"Myrtle Beach, South Carolina",Open,M,,,Trey Mitchell,USA,Atlas Stones,Load,Atlas Stone,42.10,sec,5,140-210,,60,time,,1,3,36,Only man to complete all 5 stones; secured 3rd overall
+2026 World's Strongest Man,WSM,2026-04-26,"Myrtle Beach, South Carolina",Open,M,,,Mitchell Hooper,CAN,Atlas Stones,Load,Atlas Stone,28.67,sec,4,140-210,,60,time,,2,1,54,Fastest 4-stone time; won 2026 WSM title
+2026 World's Strongest Man,WSM,2026-04-26,"Myrtle Beach, South Carolina",Open,M,,,Martins Licis,USA,Atlas Stones,Load,Atlas Stone,29.71,sec,4,140-210,,60,time,,3,6,30.5,4 stones
+2026 World's Strongest Man,WSM,2026-04-26,"Myrtle Beach, South Carolina",Open,M,,,Pavlo Kordiyaka,UKR,Atlas Stones,Load,Atlas Stone,32.70,sec,4,140-210,,60,time,,4,4,31.5,4 stones
+2026 World's Strongest Man,WSM,2026-04-26,"Myrtle Beach, South Carolina",Open,M,,,Rayno Nel,RSA,Atlas Stones,Load,Atlas Stone,35.01,sec,4,140-210,,60,time,,5,2,52,4 stones; slipped on 4th stone; cost him the title
+2026 World's Strongest Man,WSM,2026-04-26,"Myrtle Beach, South Carolina",Open,M,,,Ondrej Fojtu,CZE,Atlas Stones,Load,Atlas Stone,42.07,sec,4,140-210,,60,time,,6,5,31.5,4 stones
+2026 World's Strongest Man,WSM,2026-04-26,"Myrtle Beach, South Carolina",Open,M,,,Nick Guardione,USA,Atlas Stones,Load,Atlas Stone,22.15,sec,3,140-210,,60,time,,7,9,21,3 stones
+2026 World's Strongest Man,WSM,2026-04-26,"Myrtle Beach, South Carolina",Open,M,,,Mathew Ragg,NZL,Atlas Stones,Load,Atlas Stone,30.60,sec,3,140-210,,60,time,,8,7,29,3 stones
+2026 World's Strongest Man,WSM,2026-04-26,"Myrtle Beach, South Carolina",Open,M,,,Eddie Williams,AUS,Atlas Stones,Load,Atlas Stone,32.39,sec,3,140-210,,60,time,,9,8,26,3 stones
+2026 World's Strongest Man,WSM,2026-04-26,"Myrtle Beach, South Carolina",Open,M,,,Austin Andrade,MEX,Atlas Stones,Load,Atlas Stone,0,sec,0,140-210,,60,time,,10,10,12.5,Withdrew

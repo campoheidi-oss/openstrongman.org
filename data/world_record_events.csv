@@ -1,0 +1,28 @@
+MeetName,MeetFederation,MeetDate,MeetLocation,Division,Sex,BodyweightKg,WeightClassKg,AthleteName,AthleteNationality,Event,EventCategory,Implement,ResultValue,ResultUnit,StonesCompleted,ImplementWeightKg,CourseDistanceM,TimeLimitSec,ScoredBy,WorldRecord,Place,OverallPlace,Points,Notes
+2015 World Deadlift Championships,Giants Live,2015-07-25,"Leeds, England",Open,M,,,Eddie Hall,GBR,Max Deadlift,Deadlift,Barbell,463,kg,,463,,,weight,Y,1,,,Three judges; set new world record 463kg / 1021 lbs
+2016 World Deadlift Championships,Giants Live,2016-07-09,"Leeds, England",Open,M,,,Eddie Hall,GBR,Max Deadlift,Deadlift,Barbell,500,kg,,500,,,weight,Y,1,,,Three judges; first 500kg / 1102 lbs deadlift in history; Hall collapsed after lift
+2016 World Deadlift Championships,Giants Live,2016-07-09,"Leeds, England",Open,M,,,Jerry Pritchett,USA,Max Deadlift,Deadlift,Barbell,465,kg,,465,,,weight,,2,,,465kg / 1025 lbs
+2016 World Deadlift Championships,Giants Live,2016-07-09,"Leeds, England",Open,M,,,Hafthor Julius Bjornsson,ISL,Max Deadlift,Deadlift,Barbell,435,kg,,435,,,weight,,3,,,435kg / 959 lbs
+2017 World Deadlift Championships,Giants Live,2017-09-16,"Manchester, England",Open,M,,,JF Caron,CAN,Deadlift for Reps,Deadlift,Barbell,14,reps,,400,,60,reps,,1,,,400kg for reps format; 60 second time limit
+2017 World Deadlift Championships,Giants Live,2017-09-16,"Manchester, England",Open,M,,,Konstantine Janashia,GEO,Deadlift for Reps,Deadlift,Barbell,6,reps,,400,,60,reps,,1,,,400kg for 6 reps; tied 1st
+2019 World Deadlift Championships,Giants Live,2019-09-07,"Wembley, England",Open,M,,,Rauno Heinla,EST,Max Deadlift,Deadlift,Barbell,462,kg,,462,,,weight,,1,,,462kg / 1019 lbs; returned to max format
+2019 World Deadlift Championships,Giants Live,2019-09-07,"Wembley, England",Open,M,,,Jerry Pritchett,USA,Max Deadlift,Deadlift,Barbell,462,kg,,462,,,weight,,1,,,462kg; tied 1st
+2021 World Deadlift Championships,Giants Live,2021-09-18,"Manchester, England",Open,M,,,Ivan Makarov,GEO,Max Deadlift,Deadlift,Barbell,470,kg,,470,,,weight,Y,1,,,World record 470kg / 1036 lbs; three official judges
+2021 World Deadlift Championships,Giants Live,2021-09-18,"Manchester, England",Open,M,,,Pavlo Nakonechnyy,UKR,Max Deadlift,Deadlift,Barbell,453.5,kg,,453.5,,,weight,,2,,,453.5kg / 1000 lbs
+2021 World Deadlift Championships,Giants Live,2021-09-18,"Manchester, England",Open,M,,,Oleksii Novikov,UKR,Max Deadlift,Deadlift,Barbell,440,kg,,440,,,weight,,3,,,440kg / 970 lbs
+2022 World Deadlift Championships,Giants Live,2022-09-17,"Manchester, England",Open,M,,,Rauno Heinla,EST,Max Deadlift,Deadlift,Barbell,476,kg,,476,,,weight,Y,1,,,World record 476kg / 1049 lbs
+2022 World Deadlift Championships,Giants Live,2022-09-17,"Manchester, England",Open,M,,,Graham Hicks,GBR,Max Deadlift,Deadlift,Barbell,455,kg,,455,,,weight,,2,,,455kg / 1003 lbs
+2023 World Deadlift Championships,Giants Live,2023-09-02,"Manchester, England",Open,M,,,Rauno Heinla,EST,Max Deadlift,Deadlift,Barbell,476,kg,,476,,,weight,,1,,,476kg; successfully defended title
+2023 World Deadlift Championships,Giants Live,2023-09-02,"Manchester, England",Open,M,,,Ivan Makarov,GEO,Max Deadlift,Deadlift,Barbell,470,kg,,470,,,weight,,2,,,470kg / 1036 lbs
+2024 World Deadlift Championships,Giants Live,2024-09-28,"Las Vegas, Nevada",Open,M,,,Rauno Heinla,EST,Max Deadlift,Deadlift,Barbell,476,kg,,476,,,weight,,1,,,Four-way tie; Heinla declared winner by tiebreaker
+2024 World Deadlift Championships,Giants Live,2024-09-28,"Las Vegas, Nevada",Open,M,,,Mitchell Hooper,CAN,Max Deadlift,Deadlift,Barbell,476,kg,,476,,,weight,,1,,,476kg; tied 1st
+2024 World Deadlift Championships,Giants Live,2024-09-28,"Las Vegas, Nevada",Open,M,,,Ivan Makarov,GEO,Max Deadlift,Deadlift,Barbell,476,kg,,476,,,weight,,1,,,476kg; tied 1st
+2024 World Deadlift Championships,Giants Live,2024-09-28,"Las Vegas, Nevada",Open,M,,,Trey Mitchell,USA,Max Deadlift,Deadlift,Barbell,476,kg,,476,,,weight,,1,,,476kg; tied 1st
+2025 World Deadlift Championships,Giants Live,2025-09-06,"Birmingham, England",Open,M,,,Hafthor Julius Bjornsson,ISL,Max Deadlift,Deadlift,Barbell,510,kg,,510,,,weight,Y,1,,,World record 510kg / 1124 lbs; broke his own record
+2021 World Log Lift Championships,Giants Live,2021-10-09,"Manchester, England",Open,M,,,Cheick Sanou,NGR,Max Log Lift,Overhead Press,Log,229,kg,,229,,,weight,Y,1,,,World record 229kg / 505 lbs; broke Savickas record held since 2015
+2021 World Log Lift Championships,Giants Live,2021-10-09,"Manchester, England",Open,M,,,Bobby Thompson,USA,Max Log Lift,Overhead Press,Log,215,kg,,215,,,weight,,2,,,215kg / 474 lbs
+2023 World Log Lift Championships,Giants Live,2023-09-02,"Glasgow, Scotland",Open,M,,,Cheick Sanou,NGR,Max Log Lift,Overhead Press,Log,230,kg,,230,,,weight,Y,1,,,World record 230kg / 507 lbs
+2024 World Log Lift Championships,Giants Live,2024-09-28,"Birmingham, England",Open,M,,,Cheick Sanou,NGR,Max Log Lift,Overhead Press,Log,231,kg,,231,,,weight,Y,1,,,World record 231kg / 509 lbs; current world record as of 2026
+2024 World Log Lift Championships,Giants Live,2024-09-28,"Birmingham, England",Open,M,,,Mitchell Hooper,CAN,Max Log Lift,Overhead Press,Log,220,kg,,220,,,weight,,2,,,220kg / 485 lbs
+2024 World Log Lift Championships,Giants Live,2024-09-28,"Birmingham, England",Open,F,,,Andrea Thompson,GBR,Max Log Lift,Overhead Press,Log,131,kg,,131,,,weight,Y,1,,,Women's world record 131kg / 289 lbs
+2024 World Log Lift Championships,Giants Live,2024-09-28,"Birmingham, England",Open,F,,,Inez Carrasquillo,PUR,Max Log Lift,Overhead Press,Log,125,kg,,125,,,weight,,2,,,125kg / 276 lbs

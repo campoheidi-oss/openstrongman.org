@@ -1,0 +1,51 @@
+MeetName,MeetFederation,MeetDate,MeetLocation,Division,Sex,BodyweightKg,WeightClassKg,AthleteName,AthleteNationality,Event,EventCategory,Implement,ResultValue,ResultUnit,StonesCompleted,ImplementWeightKg,CourseDistanceM,TimeLimitSec,ScoredBy,WorldRecord,Place,OverallPlace,Points,Notes
+2023 Rogue Invitational,Rogue,2023-10-27,"Round Rock, Texas",Open,M,,,Trey Mitchell,USA,Tower of Power Deadlift,Deadlift,Barbell,8,reps,,408.2,,60,reps,,1,10,11.5,900 lbs; belt and straps; no suit; tied 1st; withdrew later with Achilles tear
+2023 Rogue Invitational,Rogue,2023-10-27,"Round Rock, Texas",Open,M,,,Bobby Thompson,USA,Tower of Power Deadlift,Deadlift,Barbell,8,reps,,408.2,,60,reps,,1,5,25.5,Tied 1st
+2023 Rogue Invitational,Rogue,2023-10-27,"Round Rock, Texas",Open,M,,,Mitchell Hooper,CAN,Tower of Power Deadlift,Deadlift,Barbell,7,reps,,408.2,,60,reps,,3,1,42,
+2023 Rogue Invitational,Rogue,2023-10-27,"Round Rock, Texas",Open,M,,,Oleksii Novikov,UKR,Tower of Power Deadlift,Deadlift,Barbell,6,reps,,408.2,,60,reps,,4,9,21.5,
+2023 Rogue Invitational,Rogue,2023-10-27,"Round Rock, Texas",Open,M,,,Tom Stoltman,GBR,Tower of Power Deadlift,Deadlift,Barbell,4,reps,,408.2,,60,reps,,5,2,40,
+2023 Rogue Invitational,Rogue,2023-10-27,"Round Rock, Texas",Open,M,,,Tom Evans,USA,Tower of Power Deadlift,Deadlift,Barbell,3,reps,,408.2,,60,reps,,6,7,23,
+2023 Rogue Invitational,Rogue,2023-10-27,"Round Rock, Texas",Open,M,,,Evan Singleton,USA,Tower of Power Deadlift,Deadlift,Barbell,2,reps,,408.2,,60,reps,,7,4,28.5,
+2023 Rogue Invitational,Rogue,2023-10-27,"Round Rock, Texas",Open,M,,,Luke Stoltman,GBR,Tower of Power Deadlift,Deadlift,Barbell,1,reps,,408.2,,60,reps,,8,8,22,
+2023 Rogue Invitational,Rogue,2023-10-27,"Round Rock, Texas",Open,M,,,Maxime Boudreault,CAN,Tower of Power Deadlift,Deadlift,Barbell,0,reps,,408.2,,60,reps,,9,6,23.5,Tied 9th
+2023 Rogue Invitational,Rogue,2023-10-27,"Round Rock, Texas",Open,M,,,Mateusz Kieliszkowski,POL,Tower of Power Deadlift,Deadlift,Barbell,0,reps,,408.2,,60,reps,,9,3,31.5,Tied 9th; zeroed the deadlift but won next event
+2023 Rogue Invitational,Rogue,2023-10-27,"Round Rock, Texas",Open,M,,,Mateusz Kieliszkowski,POL,Iron Bull Sled Pull,Pull,Sled,41.82,sec,,453.6,15,,time,,1,3,31.5,1000 lb sled; only man to finish course; 90 sec cap
+2023 Rogue Invitational,Rogue,2023-10-27,"Round Rock, Texas",Open,M,,,Mitchell Hooper,CAN,Iron Bull Sled Pull,Pull,Sled,11.15,m,,453.6,15,,distance,,2,1,42,36ft 7in
+2023 Rogue Invitational,Rogue,2023-10-27,"Round Rock, Texas",Open,M,,,Evan Singleton,USA,Iron Bull Sled Pull,Pull,Sled,10.92,m,,453.6,15,,distance,,3,4,28.5,35ft 10in
+2023 Rogue Invitational,Rogue,2023-10-27,"Round Rock, Texas",Open,M,,,Luke Stoltman,GBR,Iron Bull Sled Pull,Pull,Sled,10.31,m,,453.6,15,,distance,,4,8,22,33ft 10in
+2023 Rogue Invitational,Rogue,2023-10-27,"Round Rock, Texas",Open,M,,,Maxime Boudreault,CAN,Iron Bull Sled Pull,Pull,Sled,9.53,m,,453.6,15,,distance,,5,6,23.5,31ft 3in
+2023 Rogue Invitational,Rogue,2023-10-27,"Round Rock, Texas",Open,M,,,Tom Stoltman,GBR,Iron Bull Sled Pull,Pull,Sled,7.06,m,,453.6,15,,distance,,6,2,40,23ft 2in; shoe slipped off during attempt
+2023 Rogue Invitational,Rogue,2023-10-27,"Round Rock, Texas",Open,M,,,Oleksii Novikov,UKR,Iron Bull Sled Pull,Pull,Sled,6.73,m,,453.6,15,,distance,,7,9,21.5,22ft 1in
+2023 Rogue Invitational,Rogue,2023-10-27,"Round Rock, Texas",Open,M,,,Tom Evans,USA,Iron Bull Sled Pull,Pull,Sled,6.40,m,,453.6,15,,distance,,8,7,23,21ft
+2023 Rogue Invitational,Rogue,2023-10-27,"Round Rock, Texas",Open,M,,,Trey Mitchell,USA,Iron Bull Sled Pull,Pull,Sled,5.05,m,,453.6,15,,distance,,9,10,11.5,16ft 7in; needed medical attention after event
+2023 Rogue Invitational,Rogue,2023-10-27,"Round Rock, Texas",Open,M,,,Bobby Thompson,USA,Iron Bull Sled Pull,Pull,Sled,3.05,m,,453.6,15,,distance,,10,5,25.5,Approx 10ft
+2023 Rogue Invitational,Rogue,2023-10-28,"Round Rock, Texas",Open,M,,,Mateusz Kieliszkowski,POL,Rogue-a-Coaster,Pull,Rope,29.79,sec,,272.2,16.5,90,time,,1,3,31.5,272kg cart on 54ft incline ramp; seated rope pull; 90sec cap
+2023 Rogue Invitational,Rogue,2023-10-28,"Round Rock, Texas",Open,M,,,Tom Stoltman,GBR,Rogue-a-Coaster,Pull,Rope,34.79,sec,,272.2,16.5,90,time,,2,2,40,
+2023 Rogue Invitational,Rogue,2023-10-28,"Round Rock, Texas",Open,M,,,Evan Singleton,USA,Rogue-a-Coaster,Pull,Rope,35.75,sec,,272.2,16.5,90,time,,3,4,28.5,
+2023 Rogue Invitational,Rogue,2023-10-28,"Round Rock, Texas",Open,M,,,Mitchell Hooper,CAN,Rogue-a-Coaster,Pull,Rope,38.41,sec,,272.2,16.5,90,time,,4,1,42,
+2023 Rogue Invitational,Rogue,2023-10-28,"Round Rock, Texas",Open,M,,,Oleksii Novikov,UKR,Rogue-a-Coaster,Pull,Rope,42.05,sec,,272.2,16.5,90,time,,5,9,21.5,
+2023 Rogue Invitational,Rogue,2023-10-28,"Round Rock, Texas",Open,M,,,Tom Evans,USA,Rogue-a-Coaster,Pull,Rope,44.43,sec,,272.2,16.5,90,time,,6,7,23,
+2023 Rogue Invitational,Rogue,2023-10-28,"Round Rock, Texas",Open,M,,,Maxime Boudreault,CAN,Rogue-a-Coaster,Pull,Rope,44.49,sec,,272.2,16.5,90,time,,7,6,23.5,Nearly 25 seconds faster than his 2022 time
+2023 Rogue Invitational,Rogue,2023-10-28,"Round Rock, Texas",Open,M,,,Bobby Thompson,USA,Rogue-a-Coaster,Pull,Rope,49.29,sec,,272.2,16.5,90,time,,8,5,25.5,
+2023 Rogue Invitational,Rogue,2023-10-28,"Round Rock, Texas",Open,M,,,Luke Stoltman,GBR,Rogue-a-Coaster,Pull,Rope,15.24,m,,272.2,16.5,90,distance,,9,8,22,50ft; DNF
+2023 Rogue Invitational,Rogue,2023-10-28,"Round Rock, Texas",Open,M,,,Trey Mitchell,USA,Rogue-a-Coaster,Pull,Rope,0,sec,,,16.5,90,time,,10,10,11.5,Withdrew with torn Achilles sustained during Iron Bull event
+2023 Rogue Invitational,Rogue,2023-10-28,"Round Rock, Texas",Open,M,,,Tom Stoltman,GBR,Max Rep Log Lift,Overhead Press,Log,10,reps,,163.5,,90,reps,,1,2,40,360 lbs; 90 sec; replaced Apollon's Wheels due to weather
+2023 Rogue Invitational,Rogue,2023-10-28,"Round Rock, Texas",Open,M,,,Mitchell Hooper,CAN,Max Rep Log Lift,Overhead Press,Log,9,reps,,163.5,,90,reps,,2,1,42,
+2023 Rogue Invitational,Rogue,2023-10-28,"Round Rock, Texas",Open,M,,,Luke Stoltman,GBR,Max Rep Log Lift,Overhead Press,Log,8,reps,,163.5,,90,reps,,3,8,22,Tied 3rd
+2023 Rogue Invitational,Rogue,2023-10-28,"Round Rock, Texas",Open,M,,,Tom Evans,USA,Max Rep Log Lift,Overhead Press,Log,8,reps,,163.5,,90,reps,,3,7,23,Tied 3rd
+2023 Rogue Invitational,Rogue,2023-10-28,"Round Rock, Texas",Open,M,,,Bobby Thompson,USA,Max Rep Log Lift,Overhead Press,Log,8,reps,,163.5,,90,reps,,3,5,25.5,Tied 3rd
+2023 Rogue Invitational,Rogue,2023-10-28,"Round Rock, Texas",Open,M,,,Maxime Boudreault,CAN,Max Rep Log Lift,Overhead Press,Log,7,reps,,163.5,,90,reps,,6,6,23.5,Tied 6th
+2023 Rogue Invitational,Rogue,2023-10-28,"Round Rock, Texas",Open,M,,,Mateusz Kieliszkowski,POL,Max Rep Log Lift,Overhead Press,Log,7,reps,,163.5,,90,reps,,6,3,31.5,Tied 6th
+2023 Rogue Invitational,Rogue,2023-10-28,"Round Rock, Texas",Open,M,,,Oleksii Novikov,UKR,Max Rep Log Lift,Overhead Press,Log,5,reps,,163.5,,90,reps,,8,9,21.5,Tied 8th
+2023 Rogue Invitational,Rogue,2023-10-28,"Round Rock, Texas",Open,M,,,Evan Singleton,USA,Max Rep Log Lift,Overhead Press,Log,5,reps,,163.5,,90,reps,,8,4,28.5,Tied 8th
+2023 Rogue Invitational,Rogue,2023-10-28,"Round Rock, Texas",Open,M,,,Trey Mitchell,USA,Max Rep Log Lift,Overhead Press,Log,0,reps,,163.5,,90,reps,,10,10,11.5,Withdrew
+2023 Rogue Invitational,Rogue,2023-10-28,"Round Rock, Texas",Open,M,,,Tom Stoltman,GBR,The Duel,Load,Sandbag,17.57,sec,3,170,,60,time,,1,2,40,3 sandbags 325/350/375 lbs loaded into cage; highest prize purse in sport history at time
+2023 Rogue Invitational,Rogue,2023-10-28,"Round Rock, Texas",Open,M,,,Mitchell Hooper,CAN,The Duel,Load,Sandbag,17.84,sec,3,170,,60,time,,2,1,42,0.27 seconds behind Stoltman; secured overall title
+2023 Rogue Invitational,Rogue,2023-10-28,"Round Rock, Texas",Open,M,,,Maxime Boudreault,CAN,The Duel,Load,Sandbag,18.83,sec,3,170,,60,time,,3,6,23.5,
+2023 Rogue Invitational,Rogue,2023-10-28,"Round Rock, Texas",Open,M,,,Mateusz Kieliszkowski,POL,The Duel,Load,Sandbag,19.63,sec,3,170,,60,time,,4,3,31.5,
+2023 Rogue Invitational,Rogue,2023-10-28,"Round Rock, Texas",Open,M,,,Evan Singleton,USA,The Duel,Load,Sandbag,20.55,sec,3,170,,60,time,,5,4,28.5,
+2023 Rogue Invitational,Rogue,2023-10-28,"Round Rock, Texas",Open,M,,,Bobby Thompson,USA,The Duel,Load,Sandbag,20.81,sec,3,170,,60,time,,6,5,25.5,
+2023 Rogue Invitational,Rogue,2023-10-28,"Round Rock, Texas",Open,M,,,Tom Evans,USA,The Duel,Load,Sandbag,20.94,sec,3,170,,60,time,,7,7,23,
+2023 Rogue Invitational,Rogue,2023-10-28,"Round Rock, Texas",Open,M,,,Luke Stoltman,GBR,The Duel,Load,Sandbag,22.35,sec,3,170,,60,time,,8,8,22,
+2023 Rogue Invitational,Rogue,2023-10-28,"Round Rock, Texas",Open,M,,,Oleksii Novikov,UKR,The Duel,Load,Sandbag,23.38,sec,3,170,,60,time,,9,9,21.5,
+2023 Rogue Invitational,Rogue,2023-10-28,"Round Rock, Texas",Open,M,,,Trey Mitchell,USA,The Duel,Load,Sandbag,0,sec,0,170,,60,time,,10,10,11.5,Withdrew

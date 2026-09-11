@@ -1,0 +1,61 @@
+MeetName,MeetFederation,MeetDate,MeetLocation,Division,Sex,BodyweightKg,WeightClassKg,AthleteName,AthleteNationality,Event,EventCategory,Implement,ResultValue,ResultUnit,StonesCompleted,ImplementWeightKg,CourseDistanceM,TimeLimitSec,ScoredBy,WorldRecord,Place,OverallPlace,Points,Notes
+2022 Rogue Invitational,Rogue,2022-10-28,"Austin, Texas",Open,M,,,Pavlo Nakonechnyy,UKR,Tower of Power,Deadlift,Barbell,12,reps,,408.2,,60,reps,,1,5,35,900 lbs; 18-inch elevated deadlift; belt and straps only
+2022 Rogue Invitational,Rogue,2022-10-28,"Austin, Texas",Open,M,,,Trey Mitchell,USA,Tower of Power,Deadlift,Barbell,10,reps,,408.2,,60,reps,,2,2,48,
+2022 Rogue Invitational,Rogue,2022-10-28,"Austin, Texas",Open,M,,,Martins Licis,USA,Tower of Power,Deadlift,Barbell,9,reps,,408.2,,60,reps,,3,4,37.5,Tied 3rd
+2022 Rogue Invitational,Rogue,2022-10-28,"Austin, Texas",Open,M,,,Oleksii Novikov,UKR,Tower of Power,Deadlift,Barbell,9,reps,,408.2,,60,reps,,3,1,49.5,Tied 3rd
+2022 Rogue Invitational,Rogue,2022-10-28,"Austin, Texas",Open,M,,,Bobby Thompson,USA,Tower of Power,Deadlift,Barbell,8,reps,,408.2,,60,reps,,5,6,27.5,Tied 5th
+2022 Rogue Invitational,Rogue,2022-10-28,"Austin, Texas",Open,M,,,Mitchell Hooper,CAN,Tower of Power,Deadlift,Barbell,8,reps,,408.2,,60,reps,,5,3,43.5,Tied 5th; Hooper's first Rogue Invitational
+2022 Rogue Invitational,Rogue,2022-10-28,"Austin, Texas",Open,M,,,Rob Kearney,USA,Tower of Power,Deadlift,Barbell,7,reps,,408.2,,60,reps,,7,8,25,
+2022 Rogue Invitational,Rogue,2022-10-28,"Austin, Texas",Open,M,,,Eythor Ingolfsson Melsted,ISL,Tower of Power,Deadlift,Barbell,2,reps,,408.2,,60,reps,,8,9,22.5,
+2022 Rogue Invitational,Rogue,2022-10-28,"Austin, Texas",Open,M,,,Kevin Faires,USA,Tower of Power,Deadlift,Barbell,2,reps,,408.2,,60,reps,,8,10,14.5,Tied 8th
+2022 Rogue Invitational,Rogue,2022-10-28,"Austin, Texas",Open,M,,,Maxime Boudreault,CAN,Tower of Power,Deadlift,Barbell,0,reps,,408.2,,60,reps,,10,7,27,No lift
+2022 Rogue Invitational,Rogue,2022-10-28,"Austin, Texas",Open,M,,,Oleksii Novikov,UKR,Cyr Bell Ladder,Overhead Press,Circus Dumbbell,5,reps,,129.3,,,reps,,1,1,49.5,Dumbbells 253/274/280/285 lbs; only man to get 2 reps with 285lb
+2022 Rogue Invitational,Rogue,2022-10-28,"Austin, Texas",Open,M,,,Trey Mitchell,USA,Cyr Bell Ladder,Overhead Press,Circus Dumbbell,4,reps,,129.3,,,reps,,2,2,48,4 reps in 49.39 sec; 1 rep with 285lb
+2022 Rogue Invitational,Rogue,2022-10-28,"Austin, Texas",Open,M,,,Martins Licis,USA,Cyr Bell Ladder,Overhead Press,Circus Dumbbell,3,reps,,129.3,,,reps,,3,4,37.5,3 reps in 32.52 sec; tied 3rd
+2022 Rogue Invitational,Rogue,2022-10-28,"Austin, Texas",Open,M,,,Rob Kearney,USA,Cyr Bell Ladder,Overhead Press,Circus Dumbbell,3,reps,,129.3,,,reps,,3,8,25,3 reps in 49.81 sec; tied 3rd
+2022 Rogue Invitational,Rogue,2022-10-28,"Austin, Texas",Open,M,,,Eythor Ingolfsson Melsted,ISL,Cyr Bell Ladder,Overhead Press,Circus Dumbbell,2,reps,,129.3,,,reps,,5,9,22.5,2 reps in 20.93 sec
+2022 Rogue Invitational,Rogue,2022-10-28,"Austin, Texas",Open,M,,,Maxime Boudreault,CAN,Cyr Bell Ladder,Overhead Press,Circus Dumbbell,1,reps,,129.3,,,reps,,6,7,27,Tied 6th
+2022 Rogue Invitational,Rogue,2022-10-28,"Austin, Texas",Open,M,,,Bobby Thompson,USA,Cyr Bell Ladder,Overhead Press,Circus Dumbbell,1,reps,,129.3,,,reps,,6,6,27.5,Tied 6th
+2022 Rogue Invitational,Rogue,2022-10-28,"Austin, Texas",Open,M,,,Mitchell Hooper,CAN,Cyr Bell Ladder,Overhead Press,Circus Dumbbell,1,reps,,129.3,,,reps,,6,3,43.5,Tied 6th
+2022 Rogue Invitational,Rogue,2022-10-28,"Austin, Texas",Open,M,,,Pavlo Nakonechnyy,UKR,Cyr Bell Ladder,Overhead Press,Circus Dumbbell,1,reps,,129.3,,,reps,,6,5,35,Tied 6th
+2022 Rogue Invitational,Rogue,2022-10-28,"Austin, Texas",Open,M,,,Kevin Faires,USA,Cyr Bell Ladder,Overhead Press,Circus Dumbbell,1,reps,,129.3,,,reps,,6,10,14.5,Tied 6th
+2022 Rogue Invitational,Rogue,2022-10-28,"Austin, Texas",Open,M,,,Mitchell Hooper,CAN,Husafell Sandbag Carry,Carry,Husafell Sandbag,68.58,m,,181.4,,,distance,,1,3,43.5,400 lb sandbag; 225 feet; Hooper's first event win as pro
+2022 Rogue Invitational,Rogue,2022-10-28,"Austin, Texas",Open,M,,,Oleksii Novikov,UKR,Husafell Sandbag Carry,Carry,Husafell Sandbag,65.15,m,,181.4,,,distance,,2,1,49.5,213 feet 9 inches; waited to see others' distances before attempting
+2022 Rogue Invitational,Rogue,2022-10-28,"Austin, Texas",Open,M,,,Pavlo Nakonechnyy,UKR,Husafell Sandbag Carry,Carry,Husafell Sandbag,63.50,m,,181.4,,,distance,,3,5,35,208 feet 4 inches
+2022 Rogue Invitational,Rogue,2022-10-28,"Austin, Texas",Open,M,,,Trey Mitchell,USA,Husafell Sandbag Carry,Carry,Husafell Sandbag,48.22,m,,181.4,,,distance,,4,2,48,158 feet 2 inches
+2022 Rogue Invitational,Rogue,2022-10-28,"Austin, Texas",Open,M,,,Rob Kearney,USA,Husafell Sandbag Carry,Carry,Husafell Sandbag,45.21,m,,181.4,,,distance,,5,8,25,148 feet 3 inches
+2022 Rogue Invitational,Rogue,2022-10-28,"Austin, Texas",Open,M,,,Martins Licis,USA,Husafell Sandbag Carry,Carry,Husafell Sandbag,41.67,m,,181.4,,,distance,,6,4,37.5,136 feet 8 inches
+2022 Rogue Invitational,Rogue,2022-10-28,"Austin, Texas",Open,M,,,Bobby Thompson,USA,Husafell Sandbag Carry,Carry,Husafell Sandbag,41.35,m,,181.4,,,distance,,7,6,27.5,135 feet 8 inches
+2022 Rogue Invitational,Rogue,2022-10-28,"Austin, Texas",Open,M,,,Kevin Faires,USA,Husafell Sandbag Carry,Carry,Husafell Sandbag,40.60,m,,181.4,,,distance,,8,10,14.5,133 feet 2 inches
+2022 Rogue Invitational,Rogue,2022-10-28,"Austin, Texas",Open,M,,,Eythor Ingolfsson Melsted,ISL,Husafell Sandbag Carry,Carry,Husafell Sandbag,39.47,m,,181.4,,,distance,,9,9,22.5,129 feet 6 inches
+2022 Rogue Invitational,Rogue,2022-10-28,"Austin, Texas",Open,M,,,Maxime Boudreault,CAN,Husafell Sandbag Carry,Carry,Husafell Sandbag,32.11,m,,181.4,,,distance,,10,7,27,105 feet 4 inches
+2022 Rogue Invitational,Rogue,2022-10-29,"Austin, Texas",Open,M,,,Martins Licis,USA,Rogue-a-Coaster,Pull,Rope,33.44,sec,,272.2,16.5,90,time,,1,4,37.5,272kg cart on incline ramp; seated rope pull
+2022 Rogue Invitational,Rogue,2022-10-29,"Austin, Texas",Open,M,,,Pavlo Nakonechnyy,UKR,Rogue-a-Coaster,Pull,Rope,37.69,sec,,272.2,16.5,90,time,,2,5,35,
+2022 Rogue Invitational,Rogue,2022-10-29,"Austin, Texas",Open,M,,,Oleksii Novikov,UKR,Rogue-a-Coaster,Pull,Rope,38.35,sec,,272.2,16.5,90,time,,3,1,49.5,
+2022 Rogue Invitational,Rogue,2022-10-29,"Austin, Texas",Open,M,,,Trey Mitchell,USA,Rogue-a-Coaster,Pull,Rope,40.25,sec,,272.2,16.5,90,time,,4,2,48,
+2022 Rogue Invitational,Rogue,2022-10-29,"Austin, Texas",Open,M,,,Mitchell Hooper,CAN,Rogue-a-Coaster,Pull,Rope,42.53,sec,,272.2,16.5,90,time,,5,3,43.5,
+2022 Rogue Invitational,Rogue,2022-10-29,"Austin, Texas",Open,M,,,Bobby Thompson,USA,Rogue-a-Coaster,Pull,Rope,62.62,sec,,272.2,16.5,90,time,,6,6,27.5,
+2022 Rogue Invitational,Rogue,2022-10-29,"Austin, Texas",Open,M,,,Maxime Boudreault,CAN,Rogue-a-Coaster,Pull,Rope,69.69,sec,,272.2,16.5,90,time,,7,7,27,
+2022 Rogue Invitational,Rogue,2022-10-29,"Austin, Texas",Open,M,,,Eythor Ingolfsson Melsted,ISL,Rogue-a-Coaster,Pull,Rope,87.62,sec,,272.2,16.5,90,time,,8,9,22.5,
+2022 Rogue Invitational,Rogue,2022-10-29,"Austin, Texas",Open,M,,,Kevin Faires,USA,Rogue-a-Coaster,Pull,Rope,13.18,m,,272.2,16.5,90,distance,,9,10,14.5,43ft 3in; DNF
+2022 Rogue Invitational,Rogue,2022-10-29,"Austin, Texas",Open,M,,,Rob Kearney,USA,Rogue-a-Coaster,Pull,Rope,7.80,m,,272.2,16.5,90,distance,,10,8,25,25ft 7in; DNF
+2022 Rogue Invitational,Rogue,2022-10-29,"Austin, Texas",Open,M,,,Mitchell Hooper,CAN,Yoke and Log Medley,Medley,"Yoke,Log",32.69,sec,,453.6,,90,time,,1,3,43.5,1000lb yoke + 360lb log for 3 reps; 90sec cap
+2022 Rogue Invitational,Rogue,2022-10-29,"Austin, Texas",Open,M,,,Maxime Boudreault,CAN,Yoke and Log Medley,Medley,"Yoke,Log",46.93,sec,,453.6,,90,time,,2,7,27,
+2022 Rogue Invitational,Rogue,2022-10-29,"Austin, Texas",Open,M,,,Bobby Thompson,USA,Yoke and Log Medley,Medley,"Yoke,Log",54.09,sec,,453.6,,90,time,,3,6,27.5,
+2022 Rogue Invitational,Rogue,2022-10-29,"Austin, Texas",Open,M,,,Oleksii Novikov,UKR,Yoke and Log Medley,Medley,"Yoke,Log",59.86,sec,,453.6,,90,time,,4,1,49.5,
+2022 Rogue Invitational,Rogue,2022-10-29,"Austin, Texas",Open,M,,,Trey Mitchell,USA,Yoke and Log Medley,Medley,"Yoke,Log",68.49,sec,,453.6,,90,time,,5,2,48,
+2022 Rogue Invitational,Rogue,2022-10-29,"Austin, Texas",Open,M,,,Rob Kearney,USA,Yoke and Log Medley,Medley,"Yoke,Log",80.64,sec,,453.6,,90,time,,6,8,25,
+2022 Rogue Invitational,Rogue,2022-10-29,"Austin, Texas",Open,M,,,Martins Licis,USA,Yoke and Log Medley,Medley,"Yoke,Log",44.68,m,,453.6,,90,distance,,7,4,37.5,CAP+1 DNF
+2022 Rogue Invitational,Rogue,2022-10-29,"Austin, Texas",Open,M,,,Eythor Ingolfsson Melsted,ISL,Yoke and Log Medley,Medley,"Yoke,Log",116.66,m,,453.6,,90,distance,,8,9,22.5,CAP+1 DNF
+2022 Rogue Invitational,Rogue,2022-10-29,"Austin, Texas",Open,M,,,Kevin Faires,USA,Yoke and Log Medley,Medley,"Yoke,Log",39.71,m,,453.6,,90,distance,,9,10,14.5,CAP+2 DNF
+2022 Rogue Invitational,Rogue,2022-10-29,"Austin, Texas",Open,M,,,Pavlo Nakonechnyy,UKR,Yoke and Log Medley,Medley,"Yoke,Log",48.59,m,,453.6,,90,distance,,10,5,35,CAP+2 DNF
+2022 Rogue Invitational,Rogue,2022-10-29,"Austin, Texas",Open,M,,,Trey Mitchell,USA,Stones Over Hitching Post,Load,Atlas Stone,24.79,sec,5,124.7-190.5,,60,time,,1,2,48,Stones 275/300/365/400/420 lbs
+2022 Rogue Invitational,Rogue,2022-10-29,"Austin, Texas",Open,M,,,Mitchell Hooper,CAN,Stones Over Hitching Post,Load,Atlas Stone,28.49,sec,5,124.7-190.5,,60,time,,2,3,43.5,
+2022 Rogue Invitational,Rogue,2022-10-29,"Austin, Texas",Open,M,,,Oleksii Novikov,UKR,Stones Over Hitching Post,Load,Atlas Stone,30.82,sec,5,124.7-190.5,,60,time,,3,1,49.5,Secured overall title
+2022 Rogue Invitational,Rogue,2022-10-29,"Austin, Texas",Open,M,,,Maxime Boudreault,CAN,Stones Over Hitching Post,Load,Atlas Stone,36.28,sec,5,124.7-190.5,,60,time,,4,7,27,
+2022 Rogue Invitational,Rogue,2022-10-29,"Austin, Texas",Open,M,,,Eythor Ingolfsson Melsted,ISL,Stones Over Hitching Post,Load,Atlas Stone,67.14,sec,5,124.7-190.5,,60,time,,5,9,22.5,
+2022 Rogue Invitational,Rogue,2022-10-29,"Austin, Texas",Open,M,,,Pavlo Nakonechnyy,UKR,Stones Over Hitching Post,Load,Atlas Stone,22.19,m,4,124.7-190.5,,60,distance,,6,5,35,CAP+1; 4 stones
+2022 Rogue Invitational,Rogue,2022-10-29,"Austin, Texas",Open,M,,,Kevin Faires,USA,Stones Over Hitching Post,Load,Atlas Stone,31.26,m,4,124.7-190.5,,60,distance,,7,10,14.5,CAP+1; 4 stones
+2022 Rogue Invitational,Rogue,2022-10-29,"Austin, Texas",Open,M,,,Martins Licis,USA,Stones Over Hitching Post,Load,Atlas Stone,13.67,m,3,124.7-190.5,,60,distance,,8,4,37.5,CAP+2; 3 stones
+2022 Rogue Invitational,Rogue,2022-10-29,"Austin, Texas",Open,M,,,Rob Kearney,USA,Stones Over Hitching Post,Load,Atlas Stone,15.43,m,3,124.7-190.5,,60,distance,,9,8,25,CAP+2; 3 stones
+2022 Rogue Invitational,Rogue,2022-10-29,"Austin, Texas",Open,M,,,Bobby Thompson,USA,Stones Over Hitching Post,Load,Atlas Stone,11.91,m,2,124.7-190.5,,60,distance,,10,6,27.5,CAP+3; 2 stones

@@ -13,6 +13,37 @@
 
   main { display: flex; flex-direction: column; flex: 1; overflow: hidden; min-height: 0; }
 
+  /* ── VIEW TOGGLE ── */
+  .view-toggle {
+    display: flex;
+    gap: 0;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .view-toggle button {
+    font-size: 12px;
+    font-family: var(--sans);
+    font-weight: 500;
+    padding: 0.35rem 0.85rem;
+    border: none;
+    background: none;
+    color: var(--muted);
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+    white-space: nowrap;
+  }
+
+  .view-toggle button:hover { background: var(--accent-light); color: var(--accent); }
+
+  .view-toggle button.active {
+    background: var(--accent);
+    color: #fff;
+  }
+
   /* ── PAGE HEADER ── */
   .rankings-header {
     background: var(--surface);
@@ -36,13 +67,28 @@
   .rankings-header p { font-size: 11px; color: var(--muted); }
 
   /* ── LEGEND ── */
-  .legend {
+  .legend-box {
     display: flex;
     align-items: center;
-    gap: 1.25rem;
+    gap: 1rem;
+    flex-wrap: wrap;
     font-size: 11px;
     color: var(--muted);
-    flex-wrap: wrap;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.4rem 0.75rem;
+  }
+
+  .legend-label {
+    font-size: 10px;
+    font-weight: 600;
+    font-family: var(--mono);
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--faint);
+    padding-right: 0.5rem;
+    border-right: 1px solid var(--border);
   }
 
   .legend-item { display: flex; align-items: center; gap: 0.35rem; }
@@ -339,6 +385,7 @@
         ▶ click row for details
       </div>
     </div>
+    </div>
   </div>
 
   <div class="filter-section">
@@ -412,6 +459,20 @@ function flagHTML(code) {
 }
 
 let allRows = [];
+let currentView = 'wr'; // 'wr' = world records only, 'all' = everything
+
+function setView(view) {
+  currentView = view;
+  document.getElementById('btn-wr').classList.toggle('active', view === 'wr');
+  document.getElementById('btn-all').classList.toggle('active', view === 'all');
+
+  // Show/hide filter bar based on view
+  const filterSection = document.querySelector('.filter-section');
+  filterSection.style.display = view === 'all' ? '' : 'none';
+
+  expandedIdx = null;
+  renderTable();
+}
 let sortCol = 'MeetDate';
 let sortDir = 'desc';
 let expandedIdx = null;
@@ -463,6 +524,7 @@ function getFilteredExcept(except = []) {
   const scored  = document.getElementById('f-scored').value;
 
   return allRows.filter(r => {
+    if (currentView === 'wr' && r.WorldRecord !== 'Y') return false;
     if (!except.includes('athlete') && athlete && !(r.AthleteName||'').toLowerCase().includes(athlete)) return false;
     if (!except.includes('fed')    && fed    && r.MeetFederation !== fed) return false;
     if (!except.includes('year')   && year   && !(r.MeetDate||'').startsWith(year)) return false;

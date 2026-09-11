@@ -470,6 +470,15 @@ function setView(view) {
   const filterSection = document.querySelector('.filter-section');
   filterSection.style.display = view === 'all' ? '' : 'none';
 
+  // Reset all filters when switching views to avoid stale selections
+  document.getElementById('f-athlete').value = '';
+  document.getElementById('f-federation').value = '';
+  document.getElementById('f-year').value = '';
+  document.getElementById('f-sex').value = '';
+  document.getElementById('f-category').value = '';
+  document.getElementById('f-implement').value = '';
+  document.getElementById('f-scored').value = '';
+
   expandedIdx = null;
   renderTable();
 }

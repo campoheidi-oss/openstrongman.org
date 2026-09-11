@@ -1,0 +1,61 @@
+MeetName,MeetFederation,MeetDate,MeetLocation,Division,Sex,BodyweightKg,WeightClassKg,AthleteName,AthleteNationality,Event,EventCategory,Implement,ResultValue,ResultUnit,StonesCompleted,ImplementWeightKg,CourseDistanceM,TimeLimitSec,ScoredBy,WorldRecord,Place,OverallPlace,Points,Notes
+2020 World's Strongest Man,WSM,2020-11-14,"Bradenton, Florida",Open,M,,,Adam Bishop,GBR,Giants Loading Medley,Medley,"Anvil,Yoke",22.55,sec,,125,25,75,time,,1,6,34,125kg anvil 10m + 454kg yoke 15m; held behind closed doors due to COVID-19
+2020 World's Strongest Man,WSM,2020-11-14,"Bradenton, Florida",Open,M,,,Oleksii Novikov,UKR,Giants Loading Medley,Medley,"Anvil,Yoke",23.79,sec,,125,25,75,time,,2,1,47,
+2020 World's Strongest Man,WSM,2020-11-14,"Bradenton, Florida",Open,M,,,Jerry Pritchett,USA,Giants Loading Medley,Medley,"Anvil,Yoke",24.71,sec,,125,25,75,time,,3,4,40,
+2020 World's Strongest Man,WSM,2020-11-14,"Bradenton, Florida",Open,M,,,Kevin Faires,USA,Giants Loading Medley,Medley,"Anvil,Yoke",26.22,sec,,125,25,75,time,,4,7,31,
+2020 World's Strongest Man,WSM,2020-11-14,"Bradenton, Florida",Open,M,,,Tom Stoltman,GBR,Giants Loading Medley,Medley,"Anvil,Yoke",26.61,sec,,125,25,75,time,,5,2,43.5,
+2020 World's Strongest Man,WSM,2020-11-14,"Bradenton, Florida",Open,M,,,JF Caron,CAN,Giants Loading Medley,Medley,"Anvil,Yoke",26.92,sec,,125,25,75,time,,6,3,42,
+2020 World's Strongest Man,WSM,2020-11-14,"Bradenton, Florida",Open,M,,,Brian Shaw,USA,Giants Loading Medley,Medley,"Anvil,Yoke",27.03,sec,,125,25,75,time,,7,5,35.5,
+2020 World's Strongest Man,WSM,2020-11-14,"Bradenton, Florida",Open,M,,,Aivars Smaukstelis,LAT,Giants Loading Medley,Medley,"Anvil,Yoke",34.97,sec,,125,25,75,time,,8,8,28.5,
+2020 World's Strongest Man,WSM,2020-11-14,"Bradenton, Florida",Open,M,,,Luke Richardson,GBR,Giants Loading Medley,Medley,"Anvil,Yoke",36.70,sec,,125,25,75,time,,9,9,22.5,
+2020 World's Strongest Man,WSM,2020-11-14,"Bradenton, Florida",Open,M,,,Graham Hicks,GBR,Giants Loading Medley,Medley,"Anvil,Yoke",0,sec,,,25,75,time,,10,10,1,Withdrew with torn bicep before finals; recorded 1 point
+2020 World's Strongest Man,WSM,2020-11-14,"Bradenton, Florida",Open,M,,,Oleksii Novikov,UKR,18-Inch Deadlift,Deadlift,Barbell,537.5,kg,,537.5,,,weight,Y,1,1,47,World record; 1185 lbs
+2020 World's Strongest Man,WSM,2020-11-14,"Bradenton, Florida",Open,M,,,Adam Bishop,GBR,18-Inch Deadlift,Deadlift,Barbell,509,kg,,509,,,weight,,2,6,34,1122 lbs; tied 2nd
+2020 World's Strongest Man,WSM,2020-11-14,"Bradenton, Florida",Open,M,,,Jerry Pritchett,USA,18-Inch Deadlift,Deadlift,Barbell,509,kg,,509,,,weight,,2,4,40,1122 lbs; tied 2nd
+2020 World's Strongest Man,WSM,2020-11-14,"Bradenton, Florida",Open,M,,,JF Caron,CAN,18-Inch Deadlift,Deadlift,Barbell,509,kg,,509,,,weight,,2,3,42,1122 lbs; tied 2nd
+2020 World's Strongest Man,WSM,2020-11-14,"Bradenton, Florida",Open,M,,,Tom Stoltman,GBR,18-Inch Deadlift,Deadlift,Barbell,470,kg,,470,,,weight,,5,2,43.5,1036 lbs; tied 5th
+2020 World's Strongest Man,WSM,2020-11-14,"Bradenton, Florida",Open,M,,,Brian Shaw,USA,18-Inch Deadlift,Deadlift,Barbell,470,kg,,470,,,weight,,5,5,35.5,1036 lbs; tied 5th
+2020 World's Strongest Man,WSM,2020-11-14,"Bradenton, Florida",Open,M,,,Kevin Faires,USA,18-Inch Deadlift,Deadlift,Barbell,440,kg,,440,,,weight,,7,7,31,970 lbs
+2020 World's Strongest Man,WSM,2020-11-14,"Bradenton, Florida",Open,M,,,Aivars Smaukstelis,LAT,18-Inch Deadlift,Deadlift,Barbell,0,kg,,,,,weight,,8,8,28.5,No lift; tied 8th
+2020 World's Strongest Man,WSM,2020-11-14,"Bradenton, Florida",Open,M,,,Luke Richardson,GBR,18-Inch Deadlift,Deadlift,Barbell,0,kg,,,,,weight,,8,9,22.5,No lift; tied 8th
+2020 World's Strongest Man,WSM,2020-11-14,"Bradenton, Florida",Open,M,,,Graham Hicks,GBR,18-Inch Deadlift,Deadlift,Barbell,0,kg,,,,,weight,,10,10,1,Withdrew
+2020 World's Strongest Man,WSM,2020-11-14,"Bradenton, Florida",Open,M,,,Tom Stoltman,GBR,Keg Toss,Toss,Keg,8,reps,,,,60,reps,,1,2,43.5,8 kegs in 20.05 sec
+2020 World's Strongest Man,WSM,2020-11-14,"Bradenton, Florida",Open,M,,,JF Caron,CAN,Keg Toss,Toss,Keg,8,reps,,,,60,reps,,2,3,42,8 kegs in 20.31 sec
+2020 World's Strongest Man,WSM,2020-11-14,"Bradenton, Florida",Open,M,,,Brian Shaw,USA,Keg Toss,Toss,Keg,8,reps,,,,60,reps,,3,5,35.5,8 kegs in 21.75 sec
+2020 World's Strongest Man,WSM,2020-11-14,"Bradenton, Florida",Open,M,,,Aivars Smaukstelis,LAT,Keg Toss,Toss,Keg,8,reps,,,,60,reps,,4,8,28.5,8 kegs in 24.88 sec
+2020 World's Strongest Man,WSM,2020-11-14,"Bradenton, Florida",Open,M,,,Oleksii Novikov,UKR,Keg Toss,Toss,Keg,8,reps,,,,60,reps,,5,1,47,8 kegs in 26.96 sec
+2020 World's Strongest Man,WSM,2020-11-14,"Bradenton, Florida",Open,M,,,Luke Richardson,GBR,Keg Toss,Toss,Keg,8,reps,,,,60,reps,,6,9,22.5,8 kegs in 27.82 sec
+2020 World's Strongest Man,WSM,2020-11-14,"Bradenton, Florida",Open,M,,,Adam Bishop,GBR,Keg Toss,Toss,Keg,7,reps,,,,60,reps,,7,6,34,7 kegs in 39.9 sec
+2020 World's Strongest Man,WSM,2020-11-14,"Bradenton, Florida",Open,M,,,Jerry Pritchett,USA,Keg Toss,Toss,Keg,7,reps,,,,60,reps,,8,4,40,7 kegs in 39.94 sec
+2020 World's Strongest Man,WSM,2020-11-14,"Bradenton, Florida",Open,M,,,Kevin Faires,USA,Keg Toss,Toss,Keg,6,reps,,,,60,reps,,9,7,31,
+2020 World's Strongest Man,WSM,2020-11-14,"Bradenton, Florida",Open,M,,,Graham Hicks,GBR,Keg Toss,Toss,Keg,0,reps,,,,60,reps,,10,10,1,Withdrew
+2020 World's Strongest Man,WSM,2020-11-15,"Bradenton, Florida",Open,M,,,JF Caron,CAN,Hercules Hold,Hold,Hercules Hold,52.67,sec,,158.8,,,time,,1,3,42,158.8kg per pillar
+2020 World's Strongest Man,WSM,2020-11-15,"Bradenton, Florida",Open,M,,,Kevin Faires,USA,Hercules Hold,Hold,Hercules Hold,49.22,sec,,158.8,,,time,,2,7,31,
+2020 World's Strongest Man,WSM,2020-11-15,"Bradenton, Florida",Open,M,,,Jerry Pritchett,USA,Hercules Hold,Hold,Hercules Hold,42.99,sec,,158.8,,,time,,3,4,40,
+2020 World's Strongest Man,WSM,2020-11-15,"Bradenton, Florida",Open,M,,,Oleksii Novikov,UKR,Hercules Hold,Hold,Hercules Hold,41.63,sec,,158.8,,,time,,4,1,47,
+2020 World's Strongest Man,WSM,2020-11-15,"Bradenton, Florida",Open,M,,,Luke Richardson,GBR,Hercules Hold,Hold,Hercules Hold,35.12,sec,,158.8,,,time,,5,9,22.5,
+2020 World's Strongest Man,WSM,2020-11-15,"Bradenton, Florida",Open,M,,,Brian Shaw,USA,Hercules Hold,Hold,Hercules Hold,34.79,sec,,158.8,,,time,,6,5,35.5,
+2020 World's Strongest Man,WSM,2020-11-15,"Bradenton, Florida",Open,M,,,Adam Bishop,GBR,Hercules Hold,Hold,Hercules Hold,28.40,sec,,158.8,,,time,,7,6,34,
+2020 World's Strongest Man,WSM,2020-11-15,"Bradenton, Florida",Open,M,,,Aivars Smaukstelis,LAT,Hercules Hold,Hold,Hercules Hold,28.17,sec,,158.8,,,time,,8,8,28.5,
+2020 World's Strongest Man,WSM,2020-11-15,"Bradenton, Florida",Open,M,,,Tom Stoltman,GBR,Hercules Hold,Hold,Hercules Hold,21.23,sec,,158.8,,,time,,9,2,43.5,
+2020 World's Strongest Man,WSM,2020-11-15,"Bradenton, Florida",Open,M,,,Graham Hicks,GBR,Hercules Hold,Hold,Hercules Hold,0,sec,,,,,time,,10,10,1,Withdrew
+2020 World's Strongest Man,WSM,2020-11-15,"Bradenton, Florida",Open,M,,,Tom Stoltman,GBR,Log Ladder,Overhead Press,Log,5,reps,,180,,,reps,,1,2,43.5,5 logs completed in 49.45 sec; logs ranged 130-180kg
+2020 World's Strongest Man,WSM,2020-11-15,"Bradenton, Florida",Open,M,,,Jerry Pritchett,USA,Log Ladder,Overhead Press,Log,5,reps,,180,,,reps,,2,4,40,5 logs in 51.84 sec
+2020 World's Strongest Man,WSM,2020-11-15,"Bradenton, Florida",Open,M,,,Oleksii Novikov,UKR,Log Ladder,Overhead Press,Log,4,reps,,180,,,reps,,3,1,47,4 logs in 32.68 sec
+2020 World's Strongest Man,WSM,2020-11-15,"Bradenton, Florida",Open,M,,,Aivars Smaukstelis,LAT,Log Ladder,Overhead Press,Log,4,reps,,180,,,reps,,4,8,28.5,4 logs in 41.42 sec
+2020 World's Strongest Man,WSM,2020-11-15,"Bradenton, Florida",Open,M,,,Kevin Faires,USA,Log Ladder,Overhead Press,Log,4,reps,,180,,,reps,,5,7,31,4 logs in 46.67 sec
+2020 World's Strongest Man,WSM,2020-11-15,"Bradenton, Florida",Open,M,,,Luke Richardson,GBR,Log Ladder,Overhead Press,Log,4,reps,,180,,,reps,,6,9,22.5,4 logs in 62.12 sec
+2020 World's Strongest Man,WSM,2020-11-15,"Bradenton, Florida",Open,M,,,Brian Shaw,USA,Log Ladder,Overhead Press,Log,3,reps,,180,,,reps,,7,5,35.5,3 logs in 27.91 sec
+2020 World's Strongest Man,WSM,2020-11-15,"Bradenton, Florida",Open,M,,,Adam Bishop,GBR,Log Ladder,Overhead Press,Log,3,reps,,180,,,reps,,8,6,34,3 logs in 37.02 sec
+2020 World's Strongest Man,WSM,2020-11-15,"Bradenton, Florida",Open,M,,,JF Caron,CAN,Log Ladder,Overhead Press,Log,3,reps,,180,,,reps,,9,3,42,3 logs in 47.05 sec
+2020 World's Strongest Man,WSM,2020-11-15,"Bradenton, Florida",Open,M,,,Graham Hicks,GBR,Log Ladder,Overhead Press,Log,0,reps,,,,,reps,,10,10,1,Withdrew
+2020 World's Strongest Man,WSM,2020-11-15,"Bradenton, Florida",Open,M,,,Tom Stoltman,GBR,Atlas Stones,Load,Atlas Stone,19.89,sec,5,140-210,,60,time,,1,2,43.5,5 stones; 140-210kg
+2020 World's Strongest Man,WSM,2020-11-15,"Bradenton, Florida",Open,M,,,Brian Shaw,USA,Atlas Stones,Load,Atlas Stone,28.55,sec,5,140-210,,60,time,,2,5,35.5,5 stones
+2020 World's Strongest Man,WSM,2020-11-15,"Bradenton, Florida",Open,M,,,JF Caron,CAN,Atlas Stones,Load,Atlas Stone,34.03,sec,5,140-210,,60,time,,3,3,42,5 stones
+2020 World's Strongest Man,WSM,2020-11-15,"Bradenton, Florida",Open,M,,,Oleksii Novikov,UKR,Atlas Stones,Load,Atlas Stone,19.47,sec,4,140-210,,60,time,,4,1,47,4 stones; won overall title
+2020 World's Strongest Man,WSM,2020-11-15,"Bradenton, Florida",Open,M,,,Aivars Smaukstelis,LAT,Atlas Stones,Load,Atlas Stone,20.63,sec,4,140-210,,60,time,,5,8,28.5,4 stones
+2020 World's Strongest Man,WSM,2020-11-15,"Bradenton, Florida",Open,M,,,Adam Bishop,GBR,Atlas Stones,Load,Atlas Stone,24.30,sec,4,140-210,,60,time,,6,6,34,4 stones
+2020 World's Strongest Man,WSM,2020-11-15,"Bradenton, Florida",Open,M,,,Jerry Pritchett,USA,Atlas Stones,Load,Atlas Stone,24.53,sec,4,140-210,,60,time,,7,4,40,4 stones
+2020 World's Strongest Man,WSM,2020-11-15,"Bradenton, Florida",Open,M,,,Kevin Faires,USA,Atlas Stones,Load,Atlas Stone,24.73,sec,4,140-210,,60,time,,8,7,31,4 stones
+2020 World's Strongest Man,WSM,2020-11-15,"Bradenton, Florida",Open,M,,,Luke Richardson,GBR,Atlas Stones,Load,Atlas Stone,18.02,sec,3,140-210,,60,time,,9,9,22.5,3 stones
+2020 World's Strongest Man,WSM,2020-11-15,"Bradenton, Florida",Open,M,,,Graham Hicks,GBR,Atlas Stones,Load,Atlas Stone,0,sec,0,140-210,,60,time,,10,10,1,Withdrew

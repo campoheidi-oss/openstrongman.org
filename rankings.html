@@ -390,14 +390,9 @@
 
 <script>
 // ── CONFIG: add new CSV paths here as data grows ──
-const CSV_FILES = [
-  'data/wsm_results.csv',
-  'data/wsm_2023_finals.csv',
-  'data/wsm_2024_finals.csv',
-  'data/wsm_2025_finals.csv',
-  'data/rogue_invitational_overall.csv',
-  'data/rogue_2024_finals.csv',
-];
+// CSV list is loaded automatically from data/manifest.json
+// To add new data: upload the CSV to /data and add its path to manifest.json
+let CSV_FILES = [];
 
 // IOC 3-letter code → ISO 2-letter code for flag-icons library
 const ISO = {
@@ -661,7 +656,16 @@ document.getElementById('f-athlete').addEventListener('input', () => { expandedI
   document.getElementById(id).addEventListener('change', () => { expandedIdx=null; renderTable(); });
 });
 
-loadData();
+async function init() {
+  try {
+    const res = await fetch('manifest.json');
+    CSV_FILES = await res.json();
+  } catch(e) {
+    console.error('Failed to load manifest:', e);
+  }
+  loadData();
+}
+init();
 </script>
 
 </body>

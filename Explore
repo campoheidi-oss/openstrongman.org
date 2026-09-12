@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OpenStrongman — Explore the Data</title>
+<meta name="description" content="Build your own chart from the OpenStrongman database. Pick a question, pick fields and filters, and see the data — no spreadsheet or code required.">
+<link rel="stylesheet" href="style.css">
+<style>
+
+  /* ── PAGE HEADER ── */
+  .explore-header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 2rem 1.5rem 1.25rem;
+  }
+  .explore-header-inner { max-width: 900px; }
+  .explore-header h1 { font-size: 1.6rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.4rem; }
+  .explore-header p { font-size: 14px; color: var(--muted); max-width: 640px; line-height: 1.6; }
+
+  .explore-body { max-width: 1100px; margin: 0 auto; padding: 1.5rem; }
+
+  /* ── GUIDED STARTS ── */
+  .starts-row { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; margin-bottom: 1.25rem; }
+  .starts-label { font-size: 12px; color: var(--muted); margin-right: 0.25rem; white-space: nowrap; }
+
+  .chip {
+    font-size: 12.5px;
+    font-family: var(--sans);
+    font-weight: 500;
+    padding: 0.4rem 0.8rem;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+    cursor: pointer;
+    transition: border-color 0.15s, background 0.15s, color 0.15s;
+    white-space: nowrap;
+  }
+  .chip:hover { border-color: var(--accent-mid); color: var(--accent); }
+  .chip.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .chip.ghost { background: none; color: var(--muted); border-style: dashed; }
+
+  /* ── GLOSSARY ── */
+  .glossary-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 12px;
+    color: var(--accent-mid);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-bottom: 1rem;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .glossary-panel {
+    display: none;
+    background: var(--accent-light);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.25rem;
+    font-size: 13px;
+    color: var(--text);
+    line-height: 1.6;
+  }
+  .glossary-panel.open { display: block; }
+  .glossary-panel dt { font-weight: 700; margin-top: 0.6rem; }
+  .glossary-panel dt:first-child { margin-top: 0; }
+  .glossary-panel dd { color: var(--muted); margin-bottom: 0; }
+
+  /* ── BUILDER CARD ── */
+  .builder-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 1.25rem;
+    overflow: hidden;
+  }
+
+  .builder-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+    padding: 0.75rem 1rem;
+  }
+  .builder-row + .builder-row { border-top: 1px solid var(--border); }
+  .builder-row.filters { background: var(--surface-2); }
+
+  .builder-group { display: flex; align-items: center; gap: 0.35rem; }
+  .builder-group label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--faint);
+    white-space: nowrap;
+  }
+
+  .builder-row select,
+  .builder-row input[type="text"],
+  .builder-row input[type="number"] {
+    font-size: 12.5px;
+    font-family: var(--sans);
+    padding: 0.35rem 0.55rem;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    background: var(--bg);
+    color: var(--text);
+    outline: none;
+    height: 30px;
+  }
+  .builder-row select:focus, .builder-row input:focus { border-color: var(--accent); }
+  .builder-row input[type="text"] { min-width: 150px; }
+  .builder-row input[type="number"] { width: 70px; }
+
+  .type-toggle { display: flex; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
+  .type-toggle button {
+    font-size: 12.5px; font-family: var(--sans); font-weight: 500;
+    padding: 0.35rem 0.75rem; border: none; background: var(--bg); color: var(--muted);
+    cursor: pointer; transition: background 0.15s, color 0.15s;
+  }
+  .type-toggle button + button { border-left: 1px solid var(--border); }
+  .type-toggle button.active { background: var(--accent); color: #fff; }
+
+  .wr-toggle { display: flex; align-items: center; gap: 0.3rem; font-size: 12.5px; color: var(--text); cursor: pointer; }
+  .wr-toggle input { cursor: pointer; }
+
+  .athlete-picker { position: relative; }
+  .athlete-suggestions {
+    position: absolute; top: 100%; left: 0; z-index: 20;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 6px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    max-height: 220px; overflow-y: auto; min-width: 220px; display: none;
+  }
+  .athlete-suggestions.open { display: block; }
+  .athlete-suggestions div { padding: 0.4rem 0.65rem; font-size: 12.5px; cursor: pointer; }
+  .athlete-suggestions div:hover { background: var(--accent-light); color: var(--accent); }
+
+  .athlete-chips { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+  .athlete-chip {
+    display: inline-flex; align-items: center; gap: 0.3rem;
+    background: var(--accent-light); color: var(--accent);
+    font-size: 12px; font-weight: 500; padding: 0.2rem 0.3rem 0.2rem 0.6rem;
+    border-radius: 999px;
+  }
+  .athlete-chip button {
+    background: none; border: none; color: var(--accent); cursor: pointer;
+    font-size: 13px; line-height: 1; padding: 0.1rem 0.35rem; border-radius: 50%;
+  }
+  .athlete-chip button:hover { background: rgba(31,58,95,0.15); }
+
+  .btn-reset-builder {
+    font-size: 12px; color: var(--muted); background: none;
+    border: 1px solid var(--border); border-radius: 5px; padding: 0.35rem 0.65rem;
+    cursor: pointer; height: 30px; margin-left: auto;
+  }
+  .btn-reset-builder:hover { color: var(--text); border-color: var(--accent-mid); }
+
+  .result-count-b { font-size: 12px; color: var(--muted); white-space: nowrap; }
+
+  /* ── ADVISORY ── */
+  .advisory {
+    display: none;
+    font-size: 12.5px;
+    color: var(--red);
+    background: var(--red-light);
+    border: 1px solid var(--red);
+    border-radius: 6px;
+    padding: 0.6rem 0.85rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+  .advisory.show { display: block; }
+
+  /* ── CHART CARD ── */
+  .chart-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem;
+  }
+  .chart-caption { font-size: 13px; color: var(--muted); margin-bottom: 0.85rem; }
+  .chart-caption strong { color: var(--text); }
+
+  .chart-wrap { position: relative; width: 100%; }
+  .chart-wrap svg { width: 100%; height: auto; display: block; overflow: visible; }
+
+  .chart-legend {
+    display: flex; flex-wrap: wrap; gap: 0.75rem 1.1rem;
+    margin-top: 0.85rem; padding-top: 0.75rem; border-top: 1px solid var(--border);
+    font-size: 12px; color: var(--muted);
+  }
+  .legend-item { display: flex; align-items: center; gap: 0.4rem; }
+  .legend-swatch { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
+  .legend-swatch.line { width: 14px; height: 2px; border-radius: 1px; }
+
+  .chart-tooltip {
+    position: fixed;
+    z-index: 1000;
+    pointer-events: none;
+    background: #1a1a18;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 6px;
+    padding: 0.5rem 0.65rem;
+    max-width: 240px;
+    line-height: 1.5;
+    opacity: 0;
+    transition: opacity 0.1s;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+  }
+  .chart-tooltip.show { opacity: 1; }
+  .chart-tooltip .tt-title { font-weight: 700; margin-bottom: 0.15rem; }
+  .chart-tooltip .tt-row { display: flex; align-items: center; gap: 0.35rem; }
+  .chart-tooltip .tt-key { width: 9px; height: 9px; border-radius: 2px; flex-shrink: 0; }
+  .chart-tooltip .tt-val { font-weight: 700; }
+  .chart-tooltip .tt-label { color: #ccc; }
+
+  .chart-empty { text-align: center; padding: 3.5rem 1rem; color: var(--muted); font-size: 13px; }
+
+  .btn-table-toggle {
+    font-size: 12px; color: var(--accent-mid); background: none; border: 1px solid var(--border);
+    border-radius: 5px; padding: 0.35rem 0.65rem; cursor: pointer; margin-left: 0.5rem;
+  }
+  .btn-table-toggle:hover { border-color: var(--accent-mid); }
+
+  .table-view { margin-top: 1rem; max-height: 420px; overflow: auto; border: 1px solid var(--border); border-radius: 6px; }
+  .table-view table { width: 100%; }
+
+  @media (max-width: 640px) {
+    .explore-body { padding: 1rem; }
+    .explore-header { padding: 1.5rem 1rem 1rem; }
+    .builder-row { padding: 0.6rem 0.75rem; }
+    .btn-reset-builder { margin-left: 0; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a class="wordmark" href="index.html"><span>Open</span>Strongman</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="rankings.html">Rankings</a></li>
+    <li><a href="meets.html">Competitions</a></li>
+    <li><a href="athletes.html">Athletes</a></li>
+    <li><a href="records.html">Records</a></li>
+    <li><a href="explore.html" class="active">Explore</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+  <div class="nav-right">
+    <a class="btn-contribute" href="about.html#contribute">Contribute Data</a>
+  </div>
+</nav>
+
+  <!-- BETA BANNER -->
+  <div id="beta-banner" style="background:#1f3a5f;color:#fff;font-size:12px;text-align:center;padding:0.5rem 1rem;display:flex;align-items:center;justify-content:center;gap:0.75rem;flex-shrink:0;">
+    <span>🏗️ <strong>OpenStrongman is actively being built.</strong> Data and features are added weekly - results may be incomplete.</span>
+    <a href="/about.html" style="color:#a8c4e0;text-decoration:none;white-space:nowrap;">Learn more →</a>
+    <button onclick="document.getElementById('beta-banner').style.display='none'" style="background:none;border:none;color:rgba(255,255,255,0.5);cursor:pointer;font-size:14px;line-height:1;padding:0 0 0 0.5rem;">✕</button>
+  </div>
+
+<main>
+  <div class="explore-header">
+    <div class="explore-header-inner">
+      <p class="eyebrow" style="font-family:var(--mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--red);margin-bottom:0.5rem;">OpenStrongman</p>
+      <h1>Explore the Data</h1>
+      <p>Build your own chart — pick a starting question or choose your own fields and filters below. Nothing here requires a spreadsheet, R, or Python. Every chart can be viewed as a plain table too.</p>
+    </div>
+  </div>
+
+  <div class="explore-body">
+
+    <div class="starts-row" id="starts-row">
+      <span class="starts-label">Not sure where to start?</span>
+      <button class="chip" data-preset="wr">How has the world record changed over time?</button>
+      <button class="chip" data-preset="athlete">Compare two athletes head-to-head</button>
+      <button class="chip" data-preset="meet">See the spread of results at one competition</button>
+      <button class="chip ghost" data-preset="reset">Start from scratch</button>
+    </div>
+
+    <button class="glossary-toggle" id="glossary-toggle" type="button">
+      <span id="glossary-caret">▸</span> What do these chart types mean?
+    </button>
+    <dl class="glossary-panel" id="glossary-panel">
+      <dt>Line chart</dt>
+      <dd>Shows how a number changes across years. Use it for trends — like a world record climbing over decades.</dd>
+      <dt>Bar chart</dt>
+      <dd>Compares a number across categories side by side — like average finishing place by federation, or how many world records each event has produced.</dd>
+      <dt>Scatter plot</dt>
+      <dd>Shows every individual result as its own dot, instead of averaging them away. Best when you want to see the full spread, not just the summary.</dd>
+    </dl>
+
+    <div class="advisory" id="advisory"></div>
+
+    <div class="builder-card">
+      <div class="builder-row filters">
+        <div class="builder-group">
+          <label>Federation</label>
+          <select id="f-fed"><option value="">All</option></select>
+        </div>
+        <div class="builder-group">
+          <label>From</label>
+          <select id="f-year-from"><option value="">Any</option></select>
+        </div>
+        <div class="builder-group">
+          <label>To</label>
+          <select id="f-year-to"><option value="">Any</option></select>
+        </div>
+        <div class="builder-group">
+          <label>Sex</label>
+          <select id="f-sex"><option value="">All</option><option value="M">Male</option><option value="F">Female</option></select>
+        </div>
+        <div class="builder-group">
+          <label>Category</label>
+          <select id="f-category"><option value="">All</option></select>
+        </div>
+        <div class="builder-group">
+          <label>Event</label>
+          <select id="f-event"><option value="">All</option></select>
+        </div>
+        <div class="builder-group">
+          <label>Scored by</label>
+          <select id="f-scoredby"><option value="">All</option></select>
+        </div>
+        <label class="wr-toggle"><input type="checkbox" id="f-wronly"> World records only</label>
+        <div class="builder-group athlete-picker">
+          <label>Athlete</label>
+          <input type="text" id="f-athlete-input" placeholder="Search & add…" autocomplete="off">
+          <div class="athlete-suggestions" id="athlete-suggestions"></div>
+        </div>
+        <button class="btn-reset-builder" id="btn-reset-filters">Reset filters</button>
+      </div>
+
+      <div class="builder-row" id="athlete-chip-row" style="display:none;">
+        <div class="athlete-chips" id="athlete-chips"></div>
+      </div>
+
+      <div class="builder-row">
+        <div class="builder-group">
+          <label>Chart type</label>
+          <div class="type-toggle">
+            <button data-type="line" class="active">Line</button>
+            <button data-type="bar">Bar</button>
+            <button data-type="scatter">Scatter</button>
+          </div>
+        </div>
+        <div class="builder-group" id="x-field-group">
+          <label>X axis</label>
+          <select id="f-xfield"></select>
+        </div>
+        <div class="builder-group">
+          <label>Y axis</label>
+          <select id="f-yfield"></select>
+        </div>
+        <div class="builder-group">
+          <label>Color / group by</label>
+          <select id="f-groupby"><option value="">None</option></select>
+        </div>
+        <div class="builder-group" id="agg-group">
+          <label>Show</label>
+          <select id="f-agg">
+            <option value="best_max">Best (highest)</option>
+            <option value="best_min">Best (lowest)</option>
+            <option value="avg">Average</option>
+            <option value="count">Count of results</option>
+          </select>
+        </div>
+        <span class="result-count-b" id="result-count-b">Loading…</span>
+      </div>
+    </div>
+
+    <div class="chart-card">
+      <div class="chart-caption" id="chart-caption">Loading data…</div>
+      <div class="chart-wrap" id="chart-wrap"></div>
+      <div class="chart-legend" id="chart-legend"></div>
+      <div style="margin-top:0.5rem;">
+        <button class="btn-table-toggle" id="btn-table-toggle">View as table</button>
+      </div>
+      <div class="table-view" id="table-view" style="display:none;"></div>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <span>&copy; 2026 OpenStrongman - open source, open data</span>
+  <span>For powerlifting: <a href="https://www.openpowerlifting.org" target="_blank" rel="noopener">OpenPowerlifting.org</a> &nbsp;&middot;&nbsp; For weightlifting: <a href="https://www.openweightlifting.org" target="_blank" rel="noopener">OpenWeightlifting.org</a> &nbsp;&middot;&nbsp; All three sites are independent and unaffiliated.</span>
+</footer>
+
+<div class="chart-tooltip" id="tooltip"></div>
+
+<script>
+/* ══════════════════════════════════════════════════════════════
+   OpenStrongman · Explore — self-serve chart builder
+   No build step, no external chart library. Loads CSVs listed in
+   manifest.json (same pattern as rankings.html), unifies them into
+   one row set, and lets the visitor pick fields/filters/chart type.
+   ══════════════════════════════════════════════════════════════ */
+
+// ── FIELD CATALOG ──
+const FIELDS = {
+  Year:               { label: 'Year',                kind: 'temporal'   },
+  AthleteName:        { label: 'Athlete',              kind: 'categorical'},
+  MeetName:           { label: 'Competition',          kind: 'categorical'},
+  MeetFederation:     { label: 'Federation',           kind: 'categorical'},
+  AthleteNationality: { label: 'Nationality',           kind: 'categorical'},
+  Event:              { label: 'Event',                kind: 'categorical'},
+  EventCategory:      { label: 'Event Category',       kind: 'categorical'},
+  Implement:          { label: 'Implement',             kind: 'categorical'},
+  Sex:                { label: 'Sex',                  kind: 'categorical'},
+  WeightClassKg:      { label: 'Weight Class',          kind: 'categorical'},
+  ScoredBy:           { label: 'Scored By',             kind: 'categorical'},
+  Division:           { label: 'Division',              kind: 'categorical'},
+  ResultValue:        { label: 'Result Value',          kind: 'numeric'    },
+  BodyweightKg:       { label: 'Bodyweight (kg)',       kind: 'numeric'    },
+  Place:              { label: 'Event Place',           kind: 'numeric'    },
+  OverallPlace:       { label: 'Overall Place',         kind: 'numeric'    },
+  Points:             { label: 'Points',                kind: 'numeric'    },
+  ImplementWeightKg:  { label: 'Implement Weight (kg)', kind: 'numeric'    },
+  StonesCompleted:    { label: 'Stones Completed',      kind: 'numeric'    },
+  CourseDistanceM:    { label: 'Course Distance (m)',   kind: 'numeric'    },
+  TimeLimitSec:       { label: 'Time Limit (sec)',      kind: 'numeric'    },
+};
+const CATEGORICAL_FIELDS = Object.keys(FIELDS).filter(k => FIELDS[k].kind === 'categorical');
+const NUMERIC_FIELDS = Object.keys(FIELDS).filter(k => FIELDS[k].kind === 'numeric');
+
+// ── PALETTE (validated categorical order — see dataviz skill) ──
+const PALETTE = ['#2a78d6', '#eb6834', '#1baf7a', '#eda100', '#e87ba4', '#008300', '#4a3aa7', '#e34948'];
+const OTHER_COLOR = '#9b9b97';
+const colorAssignments = new Map(); // entity value -> hex, assigned once, kept for the session
+let nextSlot = 0;
+function colorFor(value) {
+  if (value === 'Other') return OTHER_COLOR;
+  if (!colorAssignments.has(value)) {
+    colorAssignments.set(value, PALETTE[nextSlot % PALETTE.length]);
+    nextSlot++;
+  }
+  return colorAssignments.get(value);
+}
+
+// ── CSV PARSER (same approach as rankings.html) ──
+function parseCSV(text) {
+  const lines = text.trim().split('\n');
+  const headers = lines[0].split(',').map(h => h.trim());
+  const rows = [];
+  for (let i = 1; i < lines.length; i++) {
+    const vals = splitCSVLine(lines[i]);
+    if (vals.length < 2) continue;
+    const row = {};
+    headers.forEach((h, idx) => { row[h] = (vals[idx] || '').trim().replace(/^"|"$/g, ''); });
+    rows.push(row);
+  }
+  return rows;
+}
+function splitCSVLine(line) {
+  const result = []; let cur = ''; let inQ = false;
+  for (const ch of line) {
+    if (ch === '"') { inQ = !inQ; }
+    else if (ch === ',' && !inQ) { result.push(cur); cur = ''; }
+    else { cur += ch; }
+  }
+  result.push(cur);
+  return result;
+}
+
+let allRows = [];
+
+async function loadData() {
+  let files = [];
+  try {
+    const res = await fetch('manifest.json');
+    files = await res.json();
+  } catch (e) { console.error('Failed to load manifest:', e); }
+
+  const results = await Promise.all(
+    files.map(url => fetch(url).then(r => r.text()).then(parseCSV).catch(() => []))
+  );
+
+  allRows = results.flat().filter(r => r.AthleteName).map(r => {
+    r.Year = (r.MeetDate || '').slice(0, 4);
+    r.ResultValueNum = parseFloat(r.ResultValue);
+    r.BodyweightKgNum = parseFloat(r.BodyweightKg);
+    r.PlaceNum = parseFloat(r.Place);
+    r.OverallPlaceNum = parseFloat(r.OverallPlace);
+    r.PointsNum = parseFloat(r.Points);
+    r.ImplementWeightKgNum = parseFloat(r.ImplementWeightKg);
+    r.StonesCompletedNum = parseFloat(r.StonesCompleted);
+    r.CourseDistanceMNum = parseFloat(r.CourseDistanceM);
+    r.TimeLimitSecNum = parseFloat(r.TimeLimitSec);
+    r.YearNum = parseFloat(r.Year);
+    return r;
+  });
+
+  initFilterOptions();
+  applyPreset('custom', true);
+  render();
+}
+
+function numKey(field) { return field === 'Year' ? 'YearNum' : field + 'Num'; }
+function rawValue(r, field) { return field === 'Year' ? r.Year : r[field]; }
+function numValue(r, field) { return r[numKey(field)]; }
+
+// ── FILTER STATE ──
+const state = {
+  fed: '', yearFrom: '', yearTo: '', sex: '', category: '', event: '', scoredBy: '',
+  wrOnly: false, athletes: new Set(),
+  chartType: 'line', xField: 'Year', yField: 'ResultValue', groupBy: '', agg: 'best_max',
+};
+
+function filteredRows() {
+  return allRows.filter(r => {
+    if (state.fed && r.MeetFederation !== state.fed) return false;
+    if (state.yearFrom && r.Year < state.yearFrom) return false;
+    if (state.yearTo && r.Year > state.yearTo) return false;
+    if (state.sex && r.Sex !== state.sex) return false;
+    if (state.category && r.EventCategory !== state.category) return false;
+    if (state.event && r.Event !== state.event) return false;
+    if (state.scoredBy && r.ScoredBy !== state.scoredBy) return false;
+    if (state.wrOnly && r.WorldRecord !== 'Y') return false;
+    if (state.athletes.size && !state.athletes.has(r.AthleteName)) return false;
+    return true;
+  });
+}
+
+function unique(rows, key) { return [...new Set(rows.map(r => r[key]).filter(Boolean))].sort(); }
+
+function initFilterOptions() {
+  refill('f-fed', unique(allRows, 'MeetFederation'), 'All');
+  const years = [...new Set(allRows.map(r => r.Year).filter(y => y && y > '1900'))].sort();
+  refill('f-year-from', years, 'Any');
+  refill('f-year-to', years, 'Any');
+  refill('f-category', unique(allRows, 'EventCategory'), 'All');
+  refillEventOptions();
+  refillScoredByOptions();
+
+  // X / Y / group-by field selects
+  const xSel = document.getElementById('f-xfield');
+  const ySel = document.getElementById('f-yfield');
+  const gSel = document.getElementById('f-groupby');
+  ySel.innerHTML = NUMERIC_FIELDS.map(k => `<option value="${k}">${FIELDS[k].label}</option>`).join('');
+  gSel.innerHTML = '<option value="">None</option>' + CATEGORICAL_FIELDS.map(k => `<option value="${k}">${FIELDS[k].label}</option>`).join('');
+  updateXFieldOptions();
+  ySel.value = state.yField;
+}
+
+function refillEventOptions() {
+  const rows = state.category ? allRows.filter(r => r.EventCategory === state.category) : allRows;
+  refill('f-event', unique(rows, 'Event'), 'All');
+}
+function refillScoredByOptions() {
+  const rows = state.event ? allRows.filter(r => r.Event === state.event) : (state.category ? allRows.filter(r => r.EventCategory === state.category) : allRows);
+  refill('f-scoredby', unique(rows, 'ScoredBy'), 'All');
+}
+
+function refill(id, values, placeholder) {
+  const sel = document.getElementById(id);
+  const cur = sel.value;
+  sel.innerHTML = `<option value="">${placeholder}</option>`;
+  values.forEach(v => {
+    const o = document.createElement('option');
+    o.value = v; o.textContent = v;
+    sel.appendChild(o);
+  });
+  if (cur && values.includes(cur)) sel.value = cur; else sel.value = '';
+}
+
+function updateXFieldOptions() {
+  const xSel = document.getElementById('f-xfield');
+  const xGroup = document.getElementById('x-field-group');
+  let options;
+  if (state.chartType === 'line') {
+    xGroup.style.display = 'none'; // line X is always Year
+    state.xField = 'Year';
+    return;
+  }
+  xGroup.style.display = '';
+  if (state.chartType === 'bar') {
+    options = ['Year', ...CATEGORICAL_FIELDS];
+  } else { // scatter
+    options = ['Year', ...NUMERIC_FIELDS];
+  }
+  // Prefer the field the caller (a preset, or the previous chart type) already
+  // wants; only fall back to the DOM's stale value or the first option when
+  // that intended field doesn't apply to this chart type.
+  const wanted = state.xField;
+  const cur = xSel.value;
+  xSel.innerHTML = options.map(k => `<option value="${k}">${FIELDS[k].label}</option>`).join('');
+  if (options.includes(wanted)) { xSel.value = wanted; state.xField = wanted; }
+  else if (options.includes(cur)) { xSel.value = cur; state.xField = cur; }
+  else { xSel.value = options[0]; state.xField = options[0]; }
+}
+
+// ── AGGREGATION DEFAULT HEURISTIC ──
+function suggestAgg() {
+  if (state.yField === 'ResultValue') {
+    const rows = filteredRows();
+    const scored = new Set(rows.map(r => r.ScoredBy).filter(Boolean));
+    if (scored.size === 1 && scored.has('time')) return 'best_min';
+    if (scored.size >= 1 && !scored.has('time')) return 'best_max';
+    return 'avg';
+  }
+  if (state.yField === 'Place' || state.yField === 'OverallPlace') return 'avg';
+  return 'avg';
+}
+
+// ── PRESETS ──
+function applyPreset(name, silent) {
+  state.athletes.clear();
+  if (name === 'wr') {
+    // World-record-setting lifts only (WorldRecord = Y) for one event, men's —
+    // isolates the handful of rows that actually moved the record, instead of
+    // every "Deadlift"-category result (which includes one-off event variants
+    // like "18-Inch Deadlift" or "Flintstone Barbell") across every meet.
+    // Switch the Event dropdown to compare a different lift's progression.
+    state.fed = ''; state.yearFrom = ''; state.yearTo = ''; state.sex = 'M'; state.scoredBy = '';
+    state.category = 'Deadlift'; state.event = 'Max Deadlift'; state.wrOnly = true;
+    state.chartType = 'line'; state.yField = 'ResultValue'; state.groupBy = ''; state.agg = 'best_max';
+  } else if (name === 'athlete') {
+    state.fed = ''; state.yearFrom = ''; state.yearTo = ''; state.sex = ''; state.category = '';
+    state.event = ''; state.scoredBy = ''; state.wrOnly = false;
+    state.chartType = 'line'; state.yField = 'OverallPlace'; state.groupBy = 'AthleteName'; state.agg = 'avg';
+    // pre-seed two well-known athletes if present in the data
+    ['Mitchell Hooper', 'Tom Stoltman'].forEach(n => { if (allRows.some(r => r.AthleteName === n)) state.athletes.add(n); });
+  } else if (name === 'meet') {
+    // One meet, one bar per athlete — "compare magnitude across a category"
+    // is a bar chart's job, not a scatter's; scatter degenerates to a single
+    // vertical strip of points when every row shares one X value (one meet).
+    const years = [...new Set(allRows.filter(r => r.MeetFederation === 'WSM').map(r => r.Year))].sort();
+    const latestYear = years[years.length - 1] || '';
+    state.fed = 'WSM'; state.yearFrom = latestYear; state.yearTo = latestYear;
+    state.sex = ''; state.category = ''; state.event = ''; state.scoredBy = ''; state.wrOnly = false;
+    state.chartType = 'bar'; state.xField = 'AthleteName'; state.yField = 'Points'; state.groupBy = ''; state.agg = 'avg';
+  } else if (name === 'reset' || name === 'custom') {
+    Object.assign(state, { fed:'', yearFrom:'', yearTo:'', sex:'', category:'', event:'', scoredBy:'', wrOnly:false,
+      chartType:'line', xField:'Year', yField:'ResultValue', groupBy:'', agg:'best_max' });
+  }
+  syncControlsFromState();
+  if (!silent) render();
+}
+
+function syncControlsFromState() {
+  document.getElementById('f-fed').value = state.fed;
+  refillEventOptions(); document.getElementById('f-category').value = state.category;
+  refillEventOptions(); document.getElementById('f-event').value = state.event;
+  refillScoredByOptions(); document.getElementById('f-scoredby').value = state.scoredBy;
+  document.getElementById('f-year-from').value = state.yearFrom;
+  document.getElementById('f-year-to').value = state.yearTo;
+  document.getElementById('f-sex').value = state.sex;
+  document.getElementById('f-wronly').checked = state.wrOnly;
+  document.querySelectorAll('.type-toggle button').forEach(b => b.classList.toggle('active', b.dataset.type === state.chartType));
+  updateXFieldOptions();
+  document.getElementById('f-xfield').value = state.xField;
+  document.getElementById('f-yfield').value = state.yField;
+  document.getElementById('f-groupby').value = state.groupBy;
+  document.getElementById('f-agg').value = state.agg;
+  document.getElementById('agg-group').style.display = state.chartType === 'scatter' ? 'none' : '';
+  renderAthleteChips();
+  document.querySelectorAll('.chip[data-preset]').forEach(c => c.classList.remove('active'));
+}
+
+function renderAthleteChips() {
+  const row = document.getElementById('athlete-chip-row');
+  const wrap = document.getElementById('athlete-chips');
+  if (!state.athletes.size) { row.style.display = 'none'; wrap.innerHTML = ''; return; }
+  row.style.display = '';
+  wrap.innerHTML = '';
+  state.athletes.forEach(name => {
+    const chip = document.createElement('span');
+    chip.className = 'athlete-chip';
+    const label = document.createElement('span');
+    label.textContent = name;
+    const btn = document.createElement('button');
+    btn.textContent = '✕';
+    btn.type = 'button';
+    btn.addEventListener('click', () => { state.athletes.delete(name); renderAthleteChips(); render(); });
+    chip.appendChild(label); chip.appendChild(btn);
+    wrap.appendChild(chip);
+  });
+}
+
+// ══════════════════════════════════════════════════════════════
+// AGGREGATION
+// ══════════════════════════════════════════════════════════════
+function aggregate(rows, xField, groupField, yField, agg) {
+  // buckets keyed by "x||group"
+  const buckets = new Map();
+  rows.forEach(r => {
+    const xv = rawValue(r, xField);
+    if (xv === '' || xv == null) return;
+    const gv = groupField ? (r[groupField] || '—') : '__single__';
+    const key = xv + '||' + gv;
+    if (!buckets.has(key)) buckets.set(key, { x: xv, group: gv, rows: [] });
+    buckets.get(key).rows.push(r);
+  });
+
+  const out = [];
+  buckets.forEach(b => {
+    const nums = b.rows.map(r => numValue(r, yField)).filter(v => !isNaN(v));
+    let y;
+    if (agg === 'count') y = b.rows.length;
+    else if (agg === 'best_max') y = nums.length ? Math.max(...nums) : null;
+    else if (agg === 'best_min') y = nums.length ? Math.min(...nums) : null;
+    else y = nums.length ? nums.reduce((a,b2)=>a+b2,0) / nums.length : null; // avg
+    if (y === null || isNaN(y)) return;
+    // representative row (best match) for tooltip context
+    let rep = b.rows[0];
+    if (agg === 'best_max') rep = b.rows.find(r => numValue(r, yField) === y) || rep;
+    if (agg === 'best_min') rep = b.rows.find(r => numValue(r, yField) === y) || rep;
+    out.push({ x: b.x, group: b.group, y, n: b.rows.length, rep });
+  });
+  return out;
+}
+
+function scatterPoints(rows, xField, groupField, yField) {
+  return rows.map(r => {
+    const xv = xField === 'Year' ? r.YearNum : numValue(r, xField);
+    const yv = numValue(r, yField);
+    if (xv == null || isNaN(xv) || yv == null || isNaN(yv)) return null;
+    return { x: xv, y: yv, group: groupField ? (r[groupField] || '—') : '__single__', rep: r };
+  }).filter(Boolean);
+}
+
+// fold long tails into "Other" — cap depends on chart form (all-pairs vs adjacent)
+function foldOther(points, cap, key) {
+  const counts = new Map();
+  points.forEach(p => counts.set(p[key], (counts.get(p[key])||0) + 1));
+  const ranked = [...counts.entries()].sort((a,b) => b[1]-a[1] || a[0].localeCompare(b[0]));
+  if (ranked.length <= cap) return points;
+  const keep = new Set(ranked.slice(0, cap).map(e => e[0]));
+  return points.map(p => keep.has(p[key]) ? p : Object.assign({}, p, { [key]: 'Other' }));
+}
+
+// ══════════════════════════════════════════════════════════════
+// SCALES
+// ══════════════════════════════════════════════════════════════
+function niceStep(rough) {
+  const mag = Math.pow(10, Math.floor(Math.log10(rough)));
+  const norm = rough / mag;
+  let step;
+  if (norm < 1.5) step = 1; else if (norm < 3) step = 2; else if (norm < 7) step = 5; else step = 10;
+  return step * mag;
+}
+function niceScale(min, max, count) {
+  if (min === max) { min -= 1; max += 1; }
+  const range = max - min;
+  const step = niceStep(range / (count - 1) || 1);
+  const niceMin = Math.floor(min / step) * step;
+  const niceMax = Math.ceil(max / step) * step;
+  const ticks = [];
+  for (let v = niceMin; v <= niceMax + step/1e6; v += step) ticks.push(Math.round(v*1e6)/1e6);
+  return { min: niceMin, max: niceMax, ticks };
+}
+function fmtNum(v, plain) {
+  if (plain) return Math.round(v).toString();
+  if (Math.abs(v) >= 1000) return v.toLocaleString(undefined, {maximumFractionDigits:0});
+  return v.toLocaleString(undefined, {maximumFractionDigits: 2});
+}
+function esc(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+// ══════════════════════════════════════════════════════════════
+// RENDER
+// ══════════════════════════════════════════════════════════════
+const tooltipEl = document.getElementById('tooltip');
+function showTooltip(x, y, html) {
+  tooltipEl.innerHTML = html;
+  tooltipEl.style.left = (x + 14) + 'px';
+  tooltipEl.style.top = (y + 14) + 'px';
+  tooltipEl.classList.add('show');
+}
+function hideTooltip() { tooltipEl.classList.remove('show'); }
+
+function render() {
+  updateAdvisory();
+  const rows = filteredRows();
+  document.getElementById('result-count-b').textContent = rows.length.toLocaleString() + ' matching results';
+
+  const wrap = document.getElementById('chart-wrap');
+  const legendEl = document.getElementById('chart-legend');
+  wrap.innerHTML = '';
+  legendEl.innerHTML = '';
+
+  if (!rows.length) {
+    wrap.innerHTML = '<div class="chart-empty">No results match your current filters. Try widening your year range or clearing a filter.</div>';
+    document.getElementById('chart-caption').textContent = 'Nothing to show yet.';
+    document.getElementById('table-view').innerHTML = '';
+    return;
+  }
+
+  let chartData, seriesKey = 'group';
+  const cap = state.chartType === 'scatter' ? 3 : 7;
+
+  if (state.chartType === 'scatter') {
+    chartData = scatterPoints(rows, state.xField, state.groupBy, state.yField);
+    if (state.groupBy) chartData = foldOther(chartData, cap, 'group');
+  } else {
+    chartData = aggregate(rows, state.xField, state.groupBy, state.yField, state.agg);
+    if (state.groupBy) chartData = foldOther(chartData, cap, 'group');
+  }
+
+  if (!chartData.length) {
+    wrap.innerHTML = '<div class="chart-empty">Nothing numeric to plot for this combination — try a different Y-axis field.</div>';
+    return;
+  }
+
+  let groups = [...new Set(chartData.map(d => d.group))];
+  // stable order: by first-assigned color slot, with "Other" always last
+  groups = groups.filter(g => g !== 'Other').sort((a, b) => (colorAssignments.has(a) && colorAssignments.has(b)) ? PALETTE.indexOf(colorFor(a)) - PALETTE.indexOf(colorFor(b)) : 0);
+  if ([...new Set(chartData.map(d => d.group))].includes('Other')) groups.push('Other');
+  const isSingleSeries = groups.length <= 1 && groups[0] === '__single__';
+
+  setCaption(rows.length);
+
+  if (state.chartType === 'line') drawLine(wrap, chartData, groups, isSingleSeries);
+  else if (state.chartType === 'bar') drawBar(wrap, chartData, groups, isSingleSeries);
+  else drawScatter(wrap, chartData, groups, isSingleSeries);
+
+  if (!isSingleSeries) drawLegend(legendEl, groups, state.chartType === 'line' ? 'line' : 'box');
+
+  buildTableView(rows);
+}
+
+function setCaption(n) {
+  const y = FIELDS[state.yField].label;
+  const x = FIELDS[state.xField].label;
+  const aggLabel = { best_max:'best', best_min:'best (lowest)', avg:'average', count:'count' }[state.agg];
+  let text;
+  if (state.chartType === 'scatter') text = `<strong>${esc(y)}</strong> vs <strong>${esc(x)}</strong> — every matching result (${n.toLocaleString()} rows)`;
+  else text = `${state.chartType === 'line' ? 'Trend' : 'Comparison'} of <strong>${esc(aggLabel)} ${esc(y)}</strong> by <strong>${esc(x)}</strong>${state.groupBy ? ', grouped by ' + esc(FIELDS[state.groupBy].label) : ''} — ${n.toLocaleString()} matching rows`;
+  document.getElementById('chart-caption').innerHTML = text;
+}
+
+function updateAdvisory() {
+  const box = document.getElementById('advisory');
+  const rows = filteredRows();
+  const scoredSet = new Set(rows.map(r => r.ScoredBy).filter(Boolean));
+  if (state.yField === 'ResultValue' && scoredSet.size > 1) {
+    box.textContent = `Heads up: your current filter mixes different scoring types (${[...scoredSet].join(', ')}) on the Result Value axis — times, weights, and rep counts aren't directly comparable. Narrow to one Event or Category for a fair comparison.`;
+    box.classList.add('show');
+  } else {
+    box.classList.remove('show'); box.textContent = '';
+  }
+}
+
+// ── LEGEND ──
+function drawLegend(el, groups, kind) {
+  groups.forEach(g => {
+    const item = document.createElement('div');
+    item.className = 'legend-item';
+    const sw = document.createElement('span');
+    sw.className = 'legend-swatch' + (kind === 'line' ? ' line' : '');
+    sw.style.background = kind === 'line' ? 'none' : colorFor(g);
+    if (kind === 'line') { sw.style.background = colorFor(g); }
+    const label = document.createElement('span');
+    label.textContent = g;
+    item.appendChild(sw); item.appendChild(label);
+    el.appendChild(item);
+  });
+}
+
+// ══════════════════════════════════════════════════════════════
+// LINE CHART
+// ══════════════════════════════════════════════════════════════
+function chartDims() { return { w: 900, h: 380, m: { top: 20, right: 24, bottom: 40, left: 56 } }; }
+
+function drawLine(wrap, data, groups, isSingle) {
+  const { w, h, m } = chartDims();
+  const innerW = w - m.left - m.right, innerH = h - m.top - m.bottom;
+
+  const xs = [...new Set(data.map(d => +d.x))].sort((a,b)=>a-b);
+  const ys = data.map(d => d.y);
+  const yScale = niceScale(Math.min(0, ...ys), Math.max(...ys), 5);
+  const xMin = xs[0], xMax = xs[xs.length-1];
+
+  const X = v => m.left + (xMax === xMin ? innerW/2 : (v - xMin) / (xMax - xMin) * innerW);
+  const Y = v => m.top + innerH - (v - yScale.min) / (yScale.max - yScale.min) * innerH;
+
+  let svg = `<svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="xMidYMid meet">`;
+
+  // gridlines + y ticks
+  yScale.ticks.forEach(t => {
+    const y = Y(t);
+    svg += `<line x1="${m.left}" y1="${y}" x2="${w-m.right}" y2="${y}" stroke="#e1e0d9" stroke-width="1"/>`;
+    svg += `<text x="${m.left-8}" y="${y+4}" text-anchor="end" font-size="11" fill="#898781">${fmtNum(t)}</text>`;
+  });
+  // x ticks — thin to avoid crowding
+  const xTickEvery = Math.max(1, Math.ceil(xs.length / 10));
+  xs.forEach((xv, i) => {
+    if (i % xTickEvery !== 0 && i !== xs.length-1) return;
+    svg += `<text x="${X(xv)}" y="${h-m.bottom+18}" text-anchor="middle" font-size="11" fill="#898781">${xv}</text>`;
+  });
+  svg += `<line x1="${m.left}" y1="${h-m.bottom}" x2="${w-m.right}" y2="${h-m.bottom}" stroke="#c3c2b7" stroke-width="1"/>`;
+
+  const seriesData = groups.map(g => ({
+    g, pts: data.filter(d => d.group === g).sort((a,b) => +a.x - +b.x)
+  }));
+
+  seriesData.forEach(s => {
+    const color = colorFor(s.g);
+    const path = s.pts.map((p,i) => `${i===0?'M':'L'}${X(+p.x)},${Y(p.y)}`).join(' ');
+    svg += `<path d="${path}" fill="none" stroke="${color}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>`;
+    s.pts.forEach(p => {
+      svg += `<circle cx="${X(+p.x)}" cy="${Y(p.y)}" r="4" fill="${color}" stroke="#fff" stroke-width="2" data-x="${p.x}" data-y="${p.y}" data-g="${esc(s.g)}"/>`;
+    });
+    // direct end label — skip past ~4 series to avoid label collisions;
+    // the legend + tooltip still carry every series' identity in that case.
+    if (s.pts.length && (isSingle || groups.length <= 4)) {
+      const last = s.pts[s.pts.length-1];
+      const lbl = isSingle ? fmtNum(last.y) : s.g;
+      svg += `<text x="${X(+last.x)+8}" y="${Y(last.y)+4}" font-size="11" font-weight="600" fill="#1a1a18">${esc(lbl)}</text>`;
+    }
+  });
+
+  svg += `</svg>`;
+  wrap.innerHTML = svg;
+
+  const svgEl = wrap.querySelector('svg');
+  svgEl.querySelectorAll('circle').forEach(c => {
+    c.style.cursor = 'pointer';
+    const g = c.getAttribute('data-g'), xv = c.getAttribute('data-x'), yv = parseFloat(c.getAttribute('data-y'));
+    const handler = (evt) => {
+      const rect = svgEl.getBoundingClientRect();
+      const pt = evt.touches ? evt.touches[0] : evt;
+      const html = `<div class="tt-title">${esc(xv)}</div><div class="tt-row"><span class="tt-key" style="background:${colorFor(g)}"></span><span class="tt-val">${fmtNum(yv)}</span> <span class="tt-label">${g==='__single__'?'':esc(g)}</span></div>`;
+      showTooltip(pt.clientX, pt.clientY, html);
+    };
+    c.addEventListener('mousemove', handler);
+    c.addEventListener('mouseenter', handler);
+    c.addEventListener('mouseleave', hideTooltip);
+    c.setAttribute('tabindex', '0');
+    c.addEventListener('focus', (e) => handler({clientX: rect(c).x, clientY: rect(c).y}));
+    c.addEventListener('blur', hideTooltip);
+  });
+  function rect(el) { const r = el.getBoundingClientRect(); return { x: r.x, y: r.y }; }
+}
+
+// ══════════════════════════════════════════════════════════════
+// BAR CHART
+// ══════════════════════════════════════════════════════════════
+function drawBar(wrap, data, groups, isSingle) {
+  const { w, h, m } = chartDims();
+  const innerW = w - m.left - m.right, innerH = h - m.top - m.bottom;
+
+  const cats = [...new Set(data.map(d => d.x))];
+  // sort categories by total value desc for readability, unless X is Year (keep chronological)
+  if (state.xField === 'Year') cats.sort((a,b) => +a - +b);
+  else cats.sort((a,b) => {
+    const sa = data.filter(d=>d.x===a).reduce((s,d)=>s+d.y,0);
+    const sb = data.filter(d=>d.x===b).reduce((s,d)=>s+d.y,0);
+    return sb - sa;
+  });
+
+  const ys = data.map(d => d.y);
+  const yScale = niceScale(Math.min(0, ...ys), Math.max(...ys), 5);
+  const Y = v => m.top + innerH - (v - yScale.min) / (yScale.max - yScale.min) * innerH;
+  const baseline = Y(Math.max(0, yScale.min));
+
+  const catBandW = innerW / cats.length;
+  const barMaxW = 24;
+  const barsPerCat = Math.max(1, groups.length);
+  const gap = 2;
+  const clusterW = Math.min(catBandW * 0.8, barMaxW * barsPerCat + gap * (barsPerCat - 1));
+  const barW = Math.min(barMaxW, (clusterW - gap * (barsPerCat - 1)) / barsPerCat);
+
+  let svg = `<svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="xMidYMid meet">`;
+
+  yScale.ticks.forEach(t => {
+    const y = Y(t);
+    svg += `<line x1="${m.left}" y1="${y}" x2="${w-m.right}" y2="${y}" stroke="#e1e0d9" stroke-width="1"/>`;
+    svg += `<text x="${m.left-8}" y="${y+4}" text-anchor="end" font-size="11" fill="#898781">${fmtNum(t)}</text>`;
+  });
+
+  cats.forEach((cat, ci) => {
+    const catCenter = m.left + catBandW * ci + catBandW/2;
+    const clusterLeft = catCenter - clusterW/2;
+    groups.forEach((g, gi) => {
+      const d = data.find(dd => dd.x === cat && dd.group === g);
+      const bx = clusterLeft + gi * (barW + gap);
+      if (!d) return;
+      const by = Y(Math.max(0, d.y));
+      const bh = Math.abs(Y(d.y) - baseline);
+      const top = d.y >= 0 ? by : baseline;
+      svg += `<rect class="bar-mark" x="${bx}" y="${top}" width="${barW}" height="${Math.max(1,bh)}" rx="4" fill="${colorFor(g)}" data-cat="${esc(cat)}" data-g="${esc(g)}" data-y="${d.y}" data-n="${d.n}" style="cursor:pointer;"/>`;
+    });
+    // category label (truncate handled by font-size + rotation-free short labels)
+    const label = String(cat).length > 14 ? String(cat).slice(0,13) + '…' : cat;
+    svg += `<text x="${catCenter}" y="${h-m.bottom+18}" text-anchor="middle" font-size="10.5" fill="#898781">${esc(label)}</text>`;
+  });
+
+  svg += `<line x1="${m.left}" y1="${baseline}" x2="${w-m.right}" y2="${baseline}" stroke="#c3c2b7" stroke-width="1"/>`;
+  svg += `</svg>`;
+  wrap.innerHTML = svg;
+
+  const svgEl = wrap.querySelector('svg');
+  svgEl.querySelectorAll('.bar-mark').forEach(bar => {
+    const cat = bar.getAttribute('data-cat'), g = bar.getAttribute('data-g'), yv = parseFloat(bar.getAttribute('data-y')), n = bar.getAttribute('data-n');
+    const handler = (evt) => {
+      const html = `<div class="tt-title">${esc(cat)}</div><div class="tt-row"><span class="tt-key" style="background:${colorFor(g)}"></span><span class="tt-val">${fmtNum(yv)}</span> <span class="tt-label">${g==='__single__'?'':esc(g)} · ${n} result${n==1?'':'s'}</span></div>`;
+      showTooltip(evt.clientX, evt.clientY, html);
+    };
+    bar.addEventListener('mousemove', handler);
+    bar.addEventListener('mouseenter', handler);
+    bar.addEventListener('mouseleave', hideTooltip);
+    bar.setAttribute('tabindex', '0');
+    bar.addEventListener('focus', () => { const r = bar.getBoundingClientRect(); handler({clientX:r.x, clientY:r.y}); });
+    bar.addEventListener('blur', hideTooltip);
+  });
+}
+
+// ══════════════════════════════════════════════════════════════
+// SCATTER CHART
+// ══════════════════════════════════════════════════════════════
+function drawScatter(wrap, data, groups, isSingle) {
+  const { w, h, m } = chartDims();
+  const innerW = w - m.left - m.right, innerH = h - m.top - m.bottom;
+
+  const xs = data.map(d => d.x), ys = data.map(d => d.y);
+  const xScale = niceScale(Math.min(...xs), Math.max(...xs), 6);
+  const yScale = niceScale(Math.min(...ys), Math.max(...ys), 5);
+
+  const X = v => m.left + (v - xScale.min) / (xScale.max - xScale.min) * innerW;
+  const Y = v => m.top + innerH - (v - yScale.min) / (yScale.max - yScale.min) * innerH;
+
+  let svg = `<svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="xMidYMid meet">`;
+
+  yScale.ticks.forEach(t => {
+    const y = Y(t);
+    svg += `<line x1="${m.left}" y1="${y}" x2="${w-m.right}" y2="${y}" stroke="#e1e0d9" stroke-width="1"/>`;
+    svg += `<text x="${m.left-8}" y="${y+4}" text-anchor="end" font-size="11" fill="#898781">${fmtNum(t)}</text>`;
+  });
+  const xPlain = state.xField === 'Year';
+  xScale.ticks.forEach(t => {
+    svg += `<text x="${X(t)}" y="${h-m.bottom+18}" text-anchor="middle" font-size="11" fill="#898781">${fmtNum(t, xPlain)}</text>`;
+  });
+  svg += `<line x1="${m.left}" y1="${h-m.bottom}" x2="${w-m.right}" y2="${h-m.bottom}" stroke="#c3c2b7" stroke-width="1"/>`;
+  svg += `<line x1="${m.left}" y1="${m.top}" x2="${m.left}" y2="${h-m.bottom}" stroke="#c3c2b7" stroke-width="1"/>`;
+
+  data.forEach((d,i) => {
+    const cx = X(d.x), cy = Y(d.y);
+    svg += `<circle cx="${cx}" cy="${cy}" r="5" fill="${colorFor(d.group)}" stroke="#fff" stroke-width="2" data-i="${i}" style="cursor:pointer;"/>`;
+  });
+
+  svg += `</svg>`;
+  wrap.innerHTML = svg;
+
+  const svgEl = wrap.querySelector('svg');
+  svgEl.querySelectorAll('circle').forEach(c => {
+    const i = +c.getAttribute('data-i');
+    const d = data[i];
+    const handler = (evt) => {
+      const r = d.rep || {};
+      const html = `<div class="tt-title">${esc(r.AthleteName || '')}</div>
+        <div class="tt-row"><span class="tt-key" style="background:${colorFor(d.group)}"></span><span class="tt-val">${fmtNum(d.y)}</span> <span class="tt-label">${FIELDS[state.yField].label}</span></div>
+        <div class="tt-row"><span class="tt-label">${esc(r.MeetName||'')} ${r.Year? '('+r.Year+')':''}</span></div>
+        ${d.group !== '__single__' ? `<div class="tt-row"><span class="tt-label">${esc(d.group)}</span></div>` : ''}`;
+      showTooltip(evt.clientX, evt.clientY, html);
+    };
+    c.addEventListener('mousemove', handler);
+    c.addEventListener('mouseenter', handler);
+    c.addEventListener('mouseleave', hideTooltip);
+    c.setAttribute('tabindex', '0');
+    c.addEventListener('focus', () => { const r = c.getBoundingClientRect(); handler({clientX:r.x, clientY:r.y}); });
+    c.addEventListener('blur', hideTooltip);
+  });
+}
+
+// ══════════════════════════════════════════════════════════════
+// TABLE VIEW
+// ══════════════════════════════════════════════════════════════
+function buildTableView(rows) {
+  const el = document.getElementById('table-view');
+  const cols = ['AthleteName','MeetName','Year','MeetFederation','Event','EventCategory','ResultValue','ResultUnit','Place','OverallPlace'];
+  const MAX = 300;
+  let html = '<table class="data-table"><thead><tr>' + cols.map(c => `<th>${FIELDS[c] ? FIELDS[c].label : c}</th>`).join('') + '</tr></thead><tbody>';
+  rows.slice(0, MAX).forEach(r => {
+    html += '<tr>' + cols.map(c => `<td>${esc(r[c] || '-')}</td>`).join('') + '</tr>';
+  });
+  html += '</tbody></table>';
+  if (rows.length > MAX) html += `<div style="padding:0.6rem 1rem;font-size:12px;color:var(--muted);">Showing first ${MAX} of ${rows.length.toLocaleString()} matching rows.</div>`;
+  el.innerHTML = html;
+}
+
+// ══════════════════════════════════════════════════════════════
+// EVENT WIRING
+// ══════════════════════════════════════════════════════════════
+document.getElementById('starts-row').addEventListener('click', (e) => {
+  const btn = e.target.closest('.chip[data-preset]');
+  if (!btn) return;
+  document.querySelectorAll('.chip[data-preset]').forEach(c => c.classList.remove('active'));
+  btn.classList.add('active');
+  applyPreset(btn.dataset.preset);
+});
+
+document.getElementById('glossary-toggle').addEventListener('click', () => {
+  const panel = document.getElementById('glossary-panel');
+  const open = panel.classList.toggle('open');
+  document.getElementById('glossary-caret').textContent = open ? '▾' : '▸';
+});
+
+['f-fed','f-sex','f-year-from','f-year-to'].forEach(id => {
+  document.getElementById(id).addEventListener('change', (e) => {
+    const map = { 'f-fed':'fed', 'f-sex':'sex', 'f-year-from':'yearFrom', 'f-year-to':'yearTo' };
+    state[map[id]] = e.target.value; render();
+  });
+});
+document.getElementById('f-category').addEventListener('change', (e) => {
+  state.category = e.target.value; state.event = ''; refillEventOptions(); refillScoredByOptions(); render();
+});
+document.getElementById('f-event').addEventListener('change', (e) => {
+  state.event = e.target.value; refillScoredByOptions(); render();
+});
+document.getElementById('f-scoredby').addEventListener('change', (e) => { state.scoredBy = e.target.value; render(); });
+document.getElementById('f-wronly').addEventListener('change', (e) => { state.wrOnly = e.target.checked; render(); });
+
+document.getElementById('btn-reset-filters').addEventListener('click', () => {
+  state.fed=''; state.yearFrom=''; state.yearTo=''; state.sex=''; state.category=''; state.event=''; state.scoredBy=''; state.wrOnly=false; state.athletes.clear();
+  syncControlsFromState(); render();
+});
+
+document.querySelectorAll('.type-toggle button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    state.chartType = btn.dataset.type;
+    document.querySelectorAll('.type-toggle button').forEach(b => b.classList.toggle('active', b === btn));
+    updateXFieldOptions();
+    document.getElementById('f-xfield').value = state.xField;
+    document.getElementById('agg-group').style.display = state.chartType === 'scatter' ? 'none' : '';
+    state.agg = suggestAgg();
+    document.getElementById('f-agg').value = state.agg;
+    render();
+  });
+});
+document.getElementById('f-xfield').addEventListener('change', (e) => { state.xField = e.target.value; render(); });
+document.getElementById('f-yfield').addEventListener('change', (e) => {
+  state.yField = e.target.value; state.agg = suggestAgg(); document.getElementById('f-agg').value = state.agg; render();
+});
+document.getElementById('f-groupby').addEventListener('change', (e) => { state.groupBy = e.target.value; render(); });
+document.getElementById('f-agg').addEventListener('change', (e) => { state.agg = e.target.value; render(); });
+
+document.getElementById('btn-table-toggle').addEventListener('click', () => {
+  const tv = document.getElementById('table-view');
+  const showing = tv.style.display !== 'none';
+  tv.style.display = showing ? 'none' : 'block';
+  document.getElementById('btn-table-toggle').textContent = showing ? 'View as table' : 'Hide table';
+});
+
+// athlete picker
+const athleteInput = document.getElementById('f-athlete-input');
+const suggBox = document.getElementById('athlete-suggestions');
+athleteInput.addEventListener('input', () => {
+  const q = athleteInput.value.trim().toLowerCase();
+  if (!q) { suggBox.classList.remove('open'); return; }
+  const names = [...new Set(allRows.map(r => r.AthleteName))].filter(n => n.toLowerCase().includes(q) && !state.athletes.has(n)).slice(0, 8);
+  if (!names.length) { suggBox.classList.remove('open'); return; }
+  suggBox.innerHTML = '';
+  names.forEach(n => {
+    const d = document.createElement('div');
+    d.textContent = n;
+    d.addEventListener('click', () => {
+      state.athletes.add(n); athleteInput.value = ''; suggBox.classList.remove('open');
+      renderAthleteChips(); render();
+    });
+    suggBox.appendChild(d);
+  });
+  suggBox.classList.add('open');
+});
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('.athlete-picker')) suggBox.classList.remove('open');
+});
+
+loadData();
+</script>
+
+</body>
+</html>

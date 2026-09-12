@@ -181,15 +181,15 @@
     </div>
 
     <div class="about-section">
-      <h2>Why does this exist?</h2>
+      <h2>Background and novelty</h2>
       <p>
-        When this project launched, no open strongman dataset existed anywhere. Results from thousands of competitions lived only as PDFs, Facebook posts, and scattered spreadsheets. Athletes had no reliable way to track their history across federations. Coaches couldn't benchmark athletes objectively. Researchers had no dataset to work with.
+        Market research conducted in the fall of 2025 identified several existing platforms covering strongman results. Strongman Archives and the FitnessVolt Strongman Database both provided browse-only access to historical competition results, with the former maintained by community volunteers and the latter by a commercial media organization.<sup>1,2</sup> LiftingBase, a solo-built project covering international elite competitions, launched in early 2025.<sup>3</sup> All three are browse-only destinations: none offered a downloadable, structured dataset under an open license.
       </p>
       <p>
-        The landscape has since expanded. Browse-only archives for historical results have existed for years.<sup>1,2</sup> US amateur coverage through Iron Podium scoreboards has improved recently.<sup>3</sup> These are genuine contributions to the sport's record-keeping, and we acknowledge them.
+        That gap - a public-domain, machine-readable dataset spanning international elite and domestic amateur competition results under a consistent schema - was the basis for launching OpenStrongman in March 2026. The project is modeled explicitly on the open data philosophy of OpenPowerlifting.org and OpenWeightlifting.org, which demonstrated that open, downloadable sports datasets attract research, community contribution, and long-term value that browse-only platforms do not.<sup>4,5</sup>
       </p>
       <p>
-        The gap that remains - and what OpenStrongman is built to fill - is a single open, downloadable dataset covering international elite competition alongside domestic amateur results, organized under a consistent schema, freely available for any use. That dataset does not yet exist elsewhere. This project is building it.
+        Since OpenStrongman launched, additional platforms have entered the space. StrongmanResults.com, registered in August 2026, tracks US amateur events sourced from Iron Podium scoreboards and offers its own downloadable dataset, though limited to domestic PSL, Strongman Corporation, and USS sanctioned competitions from mid-2024 onward.<sup>6</sup> These developments confirm demand for open strongman data. They do not duplicate OpenStrongman's scope: no other platform currently provides a downloadable, federation-spanning dataset that includes international elite competition results.
       </p>
     </div>
 
@@ -199,7 +199,7 @@
         Data are researched from publicly available sources including official results pages, federation websites, and competition records, then entered manually following our <a href="https://github.com/campoheidi-oss/openstrongman.org" target="_blank" rel="noopener">open schema</a>. We prioritize accuracy over speed: every result is verified before it's published.
       </p>
       <p>
-        Results are stored as open CSV files in a public GitHub repository, giving the data a permanent home and full version history. We are actively working toward data partnerships with federations and platforms to make collection more efficient over time.
+        Results are stored as open CSV files in a public GitHub repository, giving the data a permanent home and full version history. We are actively working toward data partnerships with federations and platforms to make collection more efficient over time. Coverage currently runs from 2020 forward across WSM, Rogue Invitational, and standalone world record events, with historical data and additional federations being added continuously.
       </p>
     </div>
 
@@ -216,10 +216,13 @@
     <div class="contribute-box" id="contribute">
       <h3>Collaborate</h3>
       <p>
-        OpenStrongman is a community project. Independent researchers, coaches, athletes, and fans are all welcome to contribute - whether that means submitting a single meet result, helping build a federation data partnership, improving the schema, or just flagging an error.
+        OpenStrongman is a community project in the fullest sense. It is not owned by a federation, a media company, or a single person with a private codebase. The data, the schema, and the site itself are all public. Anyone can see exactly how it works, propose changes, and contribute directly.
       </p>
       <p>
-        Open an issue on our <a href="https://github.com/campoheidi-oss/openstrongman.org" target="_blank" rel="noopener">GitHub repository</a>. Every contribution, large or small, helps build the historical record.
+        We are actively looking for collaborators: independent researchers who want a dataset to work with, coaches and athletes who can verify results from competitions they attended, developers who want to build on the data, and fans who know their federation's history better than anyone. Every contribution is credited in the repository's commit history and acknowledged in the project record.
+      </p>
+      <p>
+        If you have results we're missing, know a federation or meet that should be included, want to propose a schema change, or are interested in a formal data partnership with a federation or organization - open an issue on our <a href="https://github.com/campoheidi-oss/openstrongman.org" target="_blank" rel="noopener">GitHub repository</a>. The door is open.
       </p>
     </div>
 
@@ -233,9 +236,12 @@
     <div class="references-section">
       <h2>References</h2>
       <ol>
-        <li>Strongman Archives. Community-maintained historical results archive. <a href="https://strongmanarchives.com" target="_blank" rel="noopener">strongmanarchives.com</a></li>
-        <li>FitnessVolt Strongman Database. Commercial results database, results from 1977 to present. <a href="https://fitnessvolt.com/strongman/" target="_blank" rel="noopener">fitnessvolt.com/strongman</a></li>
-        <li>Strongman Results. US amateur results via Iron Podium scoreboards; PSL, Strongman Corporation, and USS sanctioned events from mid-2024. <a href="https://strongmanresults.com" target="_blank" rel="noopener">strongmanresults.com</a></li>
+        <li>Strongman Archives. Community-maintained browse-only historical results archive. <a href="https://strongmanarchives.com" target="_blank" rel="noopener">strongmanarchives.com</a></li>
+        <li>FitnessVolt Strongman Database. Commercial browse-only results database; results from 1977 to present, 2,000+ contests, 80,000+ individual event results. <a href="https://fitnessvolt.com/strongman/" target="_blank" rel="noopener">fitnessvolt.com/strongman</a></li>
+        <li>LiftingBase. Solo-built browse-only database of international elite strongman competitions; launched early 2025, 26 competitions, 311 athletes as of September 2026. <a href="https://www.liftingbase.com" target="_blank" rel="noopener">liftingbase.com</a></li>
+        <li>OpenPowerlifting. Open-source powerlifting competition database; full dataset downloadable under public domain. <a href="https://www.openpowerlifting.org" target="_blank" rel="noopener">openpowerlifting.org</a></li>
+        <li>OpenWeightlifting. Open-source weightlifting competition database; modeled on OpenPowerlifting. <a href="https://www.openweightlifting.org" target="_blank" rel="noopener">openweightlifting.org</a></li>
+        <li>Strongman Results. US amateur results via Iron Podium scoreboards; PSL, Strongman Corporation, and USS sanctioned events from mid-2024. Downloadable dataset limited to domestic amateur scope. Registered August 2026. <a href="https://strongmanresults.com" target="_blank" rel="noopener">strongmanresults.com</a></li>
       </ol>
     </div>
 

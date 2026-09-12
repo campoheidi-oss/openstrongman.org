@@ -79,6 +79,15 @@
     border-radius: 6px;
     padding: 0.4rem 0.75rem;
   }
+  .legend-key {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--faint);
+    padding-right: 1rem;
+    border-right: 1px solid var(--border);
+    text-transform: uppercase;
+  }
 
   .legend-label {
     font-size: 10px;
@@ -364,25 +373,32 @@
       <h1>Rankings</h1>
       <p>Click any row to expand full event details. Dropdowns only show options available in your current selection.</p>
     </div>
-    <div class="legend">
-      <div class="legend-item">
-        <span class="tag-wr-sm">WR</span>
-        <span>World Record</span>
+    <div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;">
+      <div class="view-toggle">
+        <button id="btn-wr" class="active" onclick="setView('wr')">World Records</button>
+        <button id="btn-all" onclick="setView('all')">All Results</button>
       </div>
-      <div class="legend-item">
-        <span>🥇</span>
-        <span>1st overall</span>
-      </div>
-      <div class="legend-item">
-        <span>🥈</span>
-        <span>2nd overall</span>
-      </div>
-      <div class="legend-item">
-        <span>🥉</span>
-        <span>3rd overall</span>
-      </div>
-      <div class="legend-item" style="color:var(--faint)">
-        ▶ click row for details
+      <div class="legend-box">
+        <span class="legend-key">KEY</span>
+        <div class="legend-item">
+          <span class="tag-wr-sm">WR</span>
+          <span>World Record</span>
+        </div>
+        <div class="legend-item">
+          <span>🥇</span>
+          <span>1st overall</span>
+        </div>
+        <div class="legend-item">
+          <span>🥈</span>
+          <span>2nd overall</span>
+        </div>
+        <div class="legend-item">
+          <span>🥉</span>
+          <span>3rd overall</span>
+        </div>
+        <div class="legend-item" style="color:var(--faint)">
+          ▶ click row for details
+        </div>
       </div>
     </div>
     </div>

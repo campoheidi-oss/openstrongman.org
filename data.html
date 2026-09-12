@@ -194,10 +194,110 @@
   .license-box strong { color: var(--text); }
   .license-box a { color: var(--accent-mid); }
 
+  .standards-card {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface);
+    margin-bottom: 2.5rem;
+    overflow: hidden;
+  }
+
+  .standards-card summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 1.1rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .standards-card summary::-webkit-details-marker { display: none; }
+  .standards-card summary::marker { content: ''; }
+  .standards-card summary:hover { background: var(--surface-2); }
+  .standards-card[open] summary { border-bottom: 1px solid var(--border); }
+
+  .standards-summary-text { flex: 1; min-width: 0; }
+
+  .standards-summary-text h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.3rem;
+  }
+
+  .standards-summary-text p {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  .standards-cta {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--accent-mid);
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  .standards-arrow { display: inline-block; transition: transform 0.15s; }
+  .standards-card[open] .standards-arrow { transform: rotate(180deg); }
+
+  .standards-body {
+    padding: 1.25rem 1.5rem 1.5rem;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .standards-body > p:first-child { margin-top: 0; }
+
+  .standards-body h4 {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    margin: 1.5rem 0 0.6rem;
+  }
+
+  .standards-body h4:first-of-type { margin-top: 0; }
+  .standards-body p { margin: 0 0 0.85rem; }
+  .standards-body ol { margin: 0.5rem 0 0.9rem 1.25rem; padding: 0; }
+  .standards-body li { margin-bottom: 0.4rem; }
+  .standards-body a { color: var(--accent-mid); }
+  .standards-body sup { font-size: 0.7em; }
+  .standards-body sup a { text-decoration: none; }
+
+  .citation-block {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text);
+    margin: 0.5rem 0 1rem;
+  }
+
+  .standards-refs {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px dashed var(--border);
+    font-size: 11px;
+    color: var(--faint);
+  }
+
+  .standards-refs ol { margin: 0 0 0 1.2rem; padding: 0; }
+  .standards-refs li { margin-bottom: 0.5rem; }
+  .standards-refs a { color: var(--accent-mid); }
+
   @media (max-width: 580px) {
     .download-item { grid-template-columns: 1fr; }
     .dl-actions { justify-content: flex-start; }
     .data-body { padding: 1.5rem 1rem; }
+    .standards-card summary { flex-direction: column; align-items: flex-start; }
+    .standards-cta { align-self: flex-end; }
   }
 </style>
 </head>
@@ -344,12 +444,58 @@
     </div>
 
     <div class="section-header">
-      <h2>License</h2>
+      <h2>Data License &amp; Research Standards</h2>
     </div>
 
-    <div class="license-box">
-      <strong>All competition data is released to the public domain.</strong> Competition results are facts and are not subject to copyright. You are free to use, share, and build on this data for any purpose without restriction or attribution required. If you find this data useful, consider <a href="about.html#contribute">contributing results</a> back to the project.
-    </div>
+    <details class="standards-card">
+      <summary>
+        <div class="standards-summary-text">
+          <h3>📜 How this data can be used, cited, and credited</h3>
+          <p>Not another wall of terms and conditions. The license, the citation format, what counts as authorship, and how we used AI to build this, written so you'd actually want to read it.</p>
+        </div>
+        <span class="standards-cta">Read the standards <span class="standards-arrow">↓</span></span>
+      </summary>
+
+      <div class="standards-body">
+        <p>Strongman has never had a shared, citable data standard the way powerlifting or Olympic weightlifting do. OpenStrongman is trying to build one, which means being upfront about the rules we're following, not just the data itself.</p>
+
+        <h4>License</h4>
+        <p>The underlying facts here, who competed, what they lifted, where, and when, aren't owned by anyone.<sup><a href="#ref1">1</a></sup> Competition results are public record. What OpenStrongman holds rights to is the compiled database itself: the specific files, structure, and categorization this project builds and maintains. Those files are licensed under Creative Commons Attribution 4.0 (CC BY 4.0).<sup><a href="#ref2">2</a></sup> You're free to use, share, and build on this data, commercially included, as long as you credit OpenStrongman and link back to openstrongman.org.</p>
+
+        <h4>How to Cite This Data</h4>
+        <div class="citation-block">OpenStrongman. (2026). OpenStrongman Strongman Competition Results Database [Data set]. openstrongman.org</div>
+
+        <h4>Collaboration &amp; Authorship</h4>
+        <p>We built this because we want people to use it: to write papers, build tools, ask questions we haven't thought of yet. If that's you, open an issue on <a href="https://github.com/campoheidi-oss/openstrongman.org/issues" target="_blank" rel="noopener">our GitHub repo</a> describing what you're working on and how OpenStrongman's data fits in. That's the front door, no email chasing, no gatekeeping, just tell us what you're building.</p>
+        <p>We also want to be upfront about where OpenStrongman fits into a published work, because getting this right is part of respecting the people who did the actual collaborating.</p>
+        <p>Using our dataset earns a citation, the format is above. Co-authorship is a different bar, and it's the same one we'd expect applied to our own contributions if we joined a project properly. The widely used ICMJE standard sets four conditions, and all four have to be met<sup><a href="#ref3">3</a></sup>:</p>
+        <ol>
+          <li>Substantial contribution to the work's conception or design, or to acquiring, analyzing, or interpreting its data</li>
+          <li>Drafting the work or critically revising it for important content</li>
+          <li>Final approval of the version to be published</li>
+          <li>Agreement to be accountable for the accuracy and integrity of the whole work</li>
+        </ol>
+        <p>The CRediT taxonomy, which many publishers now use to describe individual contributions like "data curation," is explicit that describing a contribution isn't the same as qualifying for authorship.<sup><a href="#ref4">4</a></sup> Supplying source data, on its own, doesn't meet the bar above, for us or for anyone. That distinction matters more than it used to: recent research on academic publishing documents how routinely authorship credit gets diluted through practices, like honorary or gift authorship, that don't reflect real contribution.<sup><a href="#ref5">5</a></sup></p>
+        <p>When it does, when we're actually involved in the design, analysis, or writing of a project, meeting those four conditions, we're glad to be named as co-authors. That's an invitation, not a formality. Open that issue early if you think that's the shape of what you're building.</p>
+
+        <h4>How We Used AI, and What We Expect From You</h4>
+        <p>In the interest of holding ourselves to the same standard described below: this site and its tools, including the Explore chart builder and the section you're reading now, were built with the assistance of Claude Sonnet 5, an AI model made by Anthropic, with human review, revision, and testing at every step.</p>
+        <p>The Rogue Invitational, Giants Live, and World's Strongest Man results currently in this database were compiled the same way: Claude was directed to pull publicly available competition results from federation results pages into this site's structured format, reviewed, revised, and tested by OpenStrongman's maintainers. As new data sources get added, this section will be updated to say how each one was compiled, by AI assistance, by hand, or, ideally, contributed directly by the federations and platforms themselves.</p>
+        <p>The same standard applies in reverse. If you use AI tools, including large language models, to analyze or write about this data, ICMJE guidance is direct: AI tools can't be listed as authors, because they can't be accountable for a work's accuracy,<sup><a href="#ref6">6</a></sup> and any AI use in producing a manuscript should be disclosed, the same disclosure we just gave you. Recent research has found that large language model use is already reshaping how scientific ideas get proposed, selected, and funded at a national scale,<sup><a href="#ref7">7</a></sup> which is exactly why disclosure and human accountability matter more, not less, as these tools get more capable. You're responsible for what you publish, whatever helped you produce it.</p>
+
+        <div class="standards-refs">
+          <ol>
+            <li id="ref1">Facts and data are generally not copyrightable, though specific compilations of facts can be. See the CC BY 4.0 terms below for how this applies to OpenStrongman's files specifically.</li>
+            <li id="ref2">Creative Commons Attribution 4.0 International (CC BY 4.0). <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">creativecommons.org/licenses/by/4.0</a></li>
+            <li id="ref3">International Committee of Medical Journal Editors. <em>Recommendations for the Conduct, Reporting, Editing, and Publication of Scholarly Work in Medical Journals.</em> Updated January 2026. <a href="https://www.icmje.org/recommendations/" target="_blank" rel="noopener">icmje.org</a></li>
+            <li id="ref4">CRediT (Contributor Roles Taxonomy). <a href="https://credit.niso.org/" target="_blank" rel="noopener">credit.niso.org</a></li>
+            <li id="ref5">Marcelino, R. (2026). Beyond genuine collaboration: the rise of strategic co-authorship in contemporary academic publishing. <em>Research Integrity and Peer Review</em>, 11:12. <a href="https://doi.org/10.1186/s41073-026-00197-z" target="_blank" rel="noopener">doi.org/10.1186/s41073-026-00197-z</a></li>
+            <li id="ref6">ICMJE, Section V: Use of AI in Publishing. <a href="https://www.icmje.org/recommendations/" target="_blank" rel="noopener">icmje.org</a></li>
+            <li id="ref7">Qian, Y., Wen, Z., Furnas, A.C., Bai, Y., Shao, E., &amp; Wang, D. (2026). The rise of large language models and the direction and impact of US federal research funding. <em>PNAS</em>, 123(33), e2601439123. <a href="https://doi.org/10.1073/pnas.2601439123" target="_blank" rel="noopener">doi.org/10.1073/pnas.2601439123</a></li>
+          </ol>
+        </div>
+      </div>
+    </details>
 
   </div>
 </main>

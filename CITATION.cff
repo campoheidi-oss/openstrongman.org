@@ -1,0 +1,32 @@
+# This CITATION.cff file lets GitHub show a "Cite this repository" button,
+# and is read directly by Zenodo when the repo is connected there, so the
+# fields below feed both.
+#
+# Update `version` and `date-released` each time you cut a new data release
+# (see ZENODO-SETUP.md). Everything else should stay stable.
+
+cff-version: 1.2.0
+message: "If you use this dataset or its results in research, please cite it as below."
+type: dataset
+title: "OpenStrongman: An Open Database of Strongman Competition Results"
+abstract: >-
+  An open, community-maintained database of strongman competition results,
+  covering sanctioned federation events, qualifiers, and standalone world
+  record attempts. Modeled structurally on OpenPowerlifting. Data is
+  released under CC0-1.0 (public domain); site code is released under
+  AGPL-3.0-or-later.
+authors:
+  - name: "OpenStrongman Project"
+    website: "https://openstrongman.org"
+repository-code: "https://github.com/campoheidi-oss/openstrongman.org"
+url: "https://openstrongman.org"
+license: CC0-1.0
+license-url: "https://creativecommons.org/publicdomain/zero/1.0/"
+keywords:
+  - strongman
+  - strength sports
+  - open data
+  - sports statistics
+  - competition results
+version: "2026.09"
+date-released: "2026-09-18"

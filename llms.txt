@@ -1,0 +1,106 @@
+# OpenStrongman
+
+> OpenStrongman (openstrongman.org) is a free, open, public-domain (CC0) database of strongman competition results, recorded event by event, built for researchers as well as fans. It also publishes a Research Roadmap of open questions in strongman science, intended to help graduate students and researchers find thesis and dissertation topics.
+
+Strongman is one of the least studied strength sports. Only a few dozen peer-reviewed papers deal with it, and no structured, downloadable results dataset existed before OpenStrongman. The project is modeled on OpenPowerlifting, whose open data has supported published research on career trajectories, normative strength standards, and scoring systems.
+
+Current coverage: 707 event-level results from 34 competitions (Giants Live, Rogue, and WSM), plus overall placings back to 1977; 100 athletes from 24 nations. Coverage is growing; qualifiers, more federations, and historical results are being added.
+
+## Key pages
+
+- [Research Roadmap](https://openstrongman.org/roadmap.html): 9 risk areas and 33 knowledge gaps in strongman science, each with cited evidence and the studies or data needed to close it. Every gap has a stable ID (for example INJ-2) and a direct link.
+- [Explore](https://openstrongman.org/explore.html): build charts from the data without code.
+- [Rankings](https://openstrongman.org/rankings.html): filterable results and world records.
+- [About](https://openstrongman.org/about.html): mission, data collection methods, and how to contribute.
+- [Source repository](https://github.com/campoheidi-oss/openstrongman.org): all data, schema, and site code.
+- [Contributor guide](https://github.com/campoheidi-oss/openstrongman.org/blob/main/CONTRIBUTING.md): how to add competition results.
+- [Data rules](https://github.com/campoheidi-oss/openstrongman.org/blob/main/data/DATA-RULES.md): every column, event type, and edge case; also written as instructions for AI assistants helping with data entry.
+
+## Data files (CSV, CC0 public domain)
+
+- [World's Strongest Man Results](https://openstrongman.org/data/wsm_results.csv): 147 rows
+- [World's Strongest Man 2020 Finals](https://openstrongman.org/data/wsm_2020_finals.csv): 60 rows
+- [World's Strongest Man 2021 Finals](https://openstrongman.org/data/wsm_2021_finals.csv): 60 rows
+- [World's Strongest Man 2022 Finals](https://openstrongman.org/data/wsm_2022_finals.csv): 60 rows
+- [World's Strongest Man 2023 Finals](https://openstrongman.org/data/wsm_2023_finals.csv): 60 rows
+- [World's Strongest Man 2024 Finals](https://openstrongman.org/data/wsm_2024_finals.csv): 60 rows
+- [World's Strongest Man 2025 Finals](https://openstrongman.org/data/wsm_2025_finals.csv): 50 rows
+- [World's Strongest Man 2026 Finals](https://openstrongman.org/data/wsm_2026_finals.csv): 50 rows
+- [Rogue Invitational Overall](https://openstrongman.org/data/rogue_invitational_overall.csv): 50 rows
+- [Rogue 2021 Finals](https://openstrongman.org/data/rogue_2021_finals.csv): 50 rows
+- [Rogue 2022 Finals](https://openstrongman.org/data/rogue_2022_finals.csv): 60 rows
+- [Rogue 2023 Finals](https://openstrongman.org/data/rogue_2023_finals.csv): 50 rows
+- [Rogue 2024 Finals](https://openstrongman.org/data/rogue_2024_finals.csv): 120 rows
+- [World Record Events](https://openstrongman.org/data/world_record_events.csv): 27 rows
+
+## Schema
+
+Columns: MeetName, MeetFederation, MeetDate, MeetLocation, Division, Sex, BodyweightKg, WeightClassKg, AthleteName, AthleteNationality, Event, EventCategory, Implement, ResultValue, ResultUnit, Place, OverallPlace, Points, Notes, StonesCompleted, ImplementWeightKg, CourseDistanceM, TimeLimitSec, ScoredBy, WorldRecord. Events are grouped into biomechanical categories (Overhead Press, Deadlift, Carry, Load, Pull, Hold, Flip, Toss, Medley, Other); the implement is a separate attribute. Dates are YYYY-MM-DD with 00 for unknown month or day.
+
+## License and citation
+
+Data: CC0-1.0 (public domain). Code: AGPL-3.0-or-later. Please cite as: OpenStrongman Project. OpenStrongman: An Open Database of Strongman Competition Results (version 2026.09). https://openstrongman.org. Citation metadata: https://openstrongman.org/CITATION.cff
+
+## Open research questions (from the Research Roadmap)
+
+Each gap below is an open question suitable for a thesis, dissertation, or research project. Full evidence summaries and references: https://openstrongman.org/roadmap.html
+
+### INJ: Musculoskeletal injury (strongman-specific evidence: limited)
+
+- [INJ-1](https://openstrongman.org/roadmap.html#INJ-1): What is the true incidence of injury in strongman when it is measured prospectively rather than recalled? (needs outside lab, clinical, or survey research)
+- [INJ-2](https://openstrongman.org/roadmap.html#INJ-2): Which competition events carry the highest injury risk? (needs a new OpenStrongman data field)
+- [INJ-3](https://openstrongman.org/roadmap.html#INJ-3): How do upper-limb tendon ruptures happen, and how long does it take to return to competition? (needs outside lab, clinical, or survey research; answerable with OpenStrongman data)
+- [INJ-4](https://openstrongman.org/roadmap.html#INJ-4): Do the spinal loads measured in the yoke and atlas stone translate into lower back injury? (needs outside lab, clinical, or survey research)
+
+### CARD: Cardiovascular health (strongman-specific evidence: none)
+
+- [CARD-1](https://openstrongman.org/roadmap.html#CARD-1): What do the hearts of elite strongman competitors look like, structurally and functionally? (needs outside lab, clinical, or survey research)
+- [CARD-2](https://openstrongman.org/roadmap.html#CARD-2): What are the long-term mortality and illness rates of former strongman competitors? (needs a new OpenStrongman data field; needs outside lab, clinical, or survey research)
+- [CARD-3](https://openstrongman.org/roadmap.html#CARD-3): What blood pressure and cardiac loads occur during maximal holds, carries, and overhead events? (needs outside lab, clinical, or survey research)
+
+### PED: Performance-enhancing drugs (strongman-specific evidence: none)
+
+- [PED-1](https://openstrongman.org/roadmap.html#PED-1): How common is drug use among strongman athletes, and does it differ by competitive level and division? (needs outside lab, clinical, or survey research)
+- [PED-2](https://openstrongman.org/roadmap.html#PED-2): How do results differ between drug-tested and untested competition? (needs a new OpenStrongman data field)
+- [PED-3](https://openstrongman.org/roadmap.html#PED-3): What medical monitoring and harm-reduction practices do users actually follow? (needs outside lab, clinical, or survey research)
+
+### NUT: Nutrition and body mass (strongman-specific evidence: minimal)
+
+- [NUT-1](https://openstrongman.org/roadmap.html#NUT-1): What do strongman athletes actually eat, and how does it differ across weight classes? (needs outside lab, clinical, or survey research)
+- [NUT-2](https://openstrongman.org/roadmap.html#NUT-2): How common is acute weight cutting in weight-class strongman, and does it affect results? (needs a new OpenStrongman data field; answerable with OpenStrongman data)
+- [NUT-3](https://openstrongman.org/roadmap.html#NUT-3): What happens to metabolic health when heavyweight competitors lose mass after retiring? (needs outside lab, clinical, or survey research)
+- [NUT-4](https://openstrongman.org/roadmap.html#NUT-4): Which competition-day fueling and supplement strategies improve multi-event performance? (needs outside lab, clinical, or survey research)
+
+### PERF: Performance determinants and biomechanics (strongman-specific evidence: developing)
+
+- [PERF-1](https://openstrongman.org/roadmap.html#PERF-1): What separates elite from sub-elite performance in each event? (needs outside lab, clinical, or survey research; answerable with OpenStrongman data)
+- [PERF-2](https://openstrongman.org/roadmap.html#PERF-2): How much do implement specifications change results? (needs a new OpenStrongman data field)
+- [PERF-3](https://openstrongman.org/roadmap.html#PERF-3): How can difficulty be compared across different events, formats, and scoring units? (answerable with OpenStrongman data)
+- [PERF-4](https://openstrongman.org/roadmap.html#PERF-4): What are the metabolic and physiological demands of competition events? (needs outside lab, clinical, or survey research)
+
+### TRAIN: Training and competition preparation (strongman-specific evidence: developing)
+
+- [TRAIN-1](https://openstrongman.org/roadmap.html#TRAIN-1): Which training and tapering strategies actually improve strongman competition results? (needs outside lab, clinical, or survey research)
+- [TRAIN-2](https://openstrongman.org/roadmap.html#TRAIN-2): How does competition frequency affect performance and career length? (answerable with OpenStrongman data)
+- [TRAIN-3](https://openstrongman.org/roadmap.html#TRAIN-3): Does event order within a competition affect results? (needs a new OpenStrongman data field)
+- [TRAIN-4](https://openstrongman.org/roadmap.html#TRAIN-4): How should conditioning work be balanced against maximal strength training? (needs outside lab, clinical, or survey research)
+
+### EPI: Participation, careers, and performance trends (strongman-specific evidence: none)
+
+- [EPI-1](https://openstrongman.org/roadmap.html#EPI-1): At what age do strongman athletes peak, and how long do careers last? (needs a new OpenStrongman data field)
+- [EPI-2](https://openstrongman.org/roadmap.html#EPI-2): How have records and winning performances progressed over time? (answerable with OpenStrongman data)
+- [EPI-3](https://openstrongman.org/roadmap.html#EPI-3): How has participation grown by sex, division, nation, and federation? (answerable with OpenStrongman data)
+- [EPI-4](https://openstrongman.org/roadmap.html#EPI-4): What are normative performance standards for amateur competitors by weight class and age? (answerable with OpenStrongman data)
+
+### POP: Women, masters, adaptive, and lightweight athletes (strongman-specific evidence: minimal)
+
+- [POP-1](https://openstrongman.org/roadmap.html#POP-1): Are women's implement weights scaled fairly relative to men's? (answerable with OpenStrongman data)
+- [POP-2](https://openstrongman.org/roadmap.html#POP-2): How do injury patterns and physiology differ in female strongman athletes? (needs outside lab, clinical, or survey research)
+- [POP-3](https://openstrongman.org/roadmap.html#POP-3): How does performance decline with age in masters strongman? (needs a new OpenStrongman data field)
+- [POP-4](https://openstrongman.org/roadmap.html#POP-4): What does adaptive strongman look like, and what are its injury and classification needs? (answerable with OpenStrongman data; needs outside lab, clinical, or survey research)
+
+### DATA: Measurement and data integrity (strongman-specific evidence: none)
+
+- [DATA-1](https://openstrongman.org/roadmap.html#DATA-1): How reliable are competition times and distances? (needs a new OpenStrongman data field; needs outside lab, clinical, or survey research)
+- [DATA-2](https://openstrongman.org/roadmap.html#DATA-2): Are points systems across federations comparable? (answerable with OpenStrongman data)
+- [DATA-3](https://openstrongman.org/roadmap.html#DATA-3): How often are published results wrong or corrected? (needs a new OpenStrongman data field)

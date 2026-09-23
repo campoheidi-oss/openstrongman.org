@@ -336,40 +336,6 @@ These rows break the rules above. **Do not copy their patterns.** Each entry dis
 
 | File | Row | Athlete, event | Problem |
 |---|---|---|---|
-| wsm_results.csv | 101 | Brian Shaw, Overall | MeetDate not YYYY-MM-DD: 2011 |
-| wsm_results.csv | 102 | Zydrunas Savickas, Overall | MeetDate not YYYY-MM-DD: 2011 |
-| wsm_results.csv | 103 | Terry Hollands, Overall | MeetDate not YYYY-MM-DD: 2011 |
-| wsm_results.csv | 104 | Zydrunas Savickas, Overall | MeetDate not YYYY-MM-DD: 2012 |
-| wsm_results.csv | 105 | Vytautas Lalas, Overall | MeetDate not YYYY-MM-DD: 2012 |
-| wsm_results.csv | 106 | Hafthor Julius Bjornsson, Overall | MeetDate not YYYY-MM-DD: 2012 |
-| wsm_results.csv | 107 | Brian Shaw, Overall | MeetDate not YYYY-MM-DD: 2013 |
-| wsm_results.csv | 108 | Zydrunas Savickas, Overall | MeetDate not YYYY-MM-DD: 2013 |
-| wsm_results.csv | 109 | Hafthor Julius Bjornsson, Overall | MeetDate not YYYY-MM-DD: 2013 |
-| wsm_results.csv | 110 | Zydrunas Savickas, Overall | MeetDate not YYYY-MM-DD: 2014 |
-| wsm_results.csv | 111 | Hafthor Julius Bjornsson, Overall | MeetDate not YYYY-MM-DD: 2014 |
-| wsm_results.csv | 112 | Brian Shaw, Overall | MeetDate not YYYY-MM-DD: 2014 |
-| wsm_results.csv | 113 | Brian Shaw, Overall | MeetDate not YYYY-MM-DD: 2015 |
-| wsm_results.csv | 114 | Zydrunas Savickas, Overall | MeetDate not YYYY-MM-DD: 2015 |
-| wsm_results.csv | 115 | Hafthor Julius Bjornsson, Overall | MeetDate not YYYY-MM-DD: 2015 |
-| wsm_results.csv | 116 | Brian Shaw, Overall | MeetDate not YYYY-MM-DD: 2016 |
-| wsm_results.csv | 117 | Hafthor Julius Bjornsson, Overall | MeetDate not YYYY-MM-DD: 2016 |
-| wsm_results.csv | 118 | Eddie Hall, Overall | MeetDate not YYYY-MM-DD: 2016 |
-| wsm_results.csv | 119 | Eddie Hall, Overall | MeetDate not YYYY-MM-DD: 2017 |
-| wsm_results.csv | 120 | Hafthor Julius Bjornsson, Overall | MeetDate not YYYY-MM-DD: 2017 |
-| wsm_results.csv | 121 | Brian Shaw, Overall | MeetDate not YYYY-MM-DD: 2017 |
-| wsm_results.csv | 122 | Hafthor Julius Bjornsson, Overall | MeetDate not YYYY-MM-DD: 2018 |
-| wsm_results.csv | 123 | Mateusz Kieliszkowski, Overall | MeetDate not YYYY-MM-DD: 2018 |
-| wsm_results.csv | 124 | Brian Shaw, Overall | MeetDate not YYYY-MM-DD: 2018 |
-| wsm_results.csv | 125 | Martins Licis, Overall | MeetDate not YYYY-MM-DD: 2019 |
-| wsm_results.csv | 126 | Mateusz Kieliszkowski, Overall | MeetDate not YYYY-MM-DD: 2019 |
-| wsm_results.csv | 127 | Hafthor Julius Bjornsson, Overall | MeetDate not YYYY-MM-DD: 2019 |
-| wsm_2022_finals.csv | 45 | Brian Shaw, Reign Total Body Fuel Power Stairs | ScoredBy "reps" does not match ResultUnit "sec" (see section 5) |
-| wsm_2022_finals.csv | 46 | Mitchell Hooper, Reign Total Body Fuel Power Stairs | ScoredBy "reps" does not match ResultUnit "sec" (see section 5) |
-| wsm_2022_finals.csv | 47 | Luke Stoltman, Reign Total Body Fuel Power Stairs | ScoredBy "reps" does not match ResultUnit "sec" (see section 5) |
-| wsm_2022_finals.csv | 48 | Oleksii Novikov, Reign Total Body Fuel Power Stairs | ScoredBy "reps" does not match ResultUnit "sec" (see section 5) |
-| wsm_2022_finals.csv | 49 | Eythor Ingolfsson Melsted, Reign Total Body Fuel Power Stairs | ScoredBy "reps" does not match ResultUnit "sec" (see section 5) |
-| wsm_2022_finals.csv | 50 | Trey Mitchell, Reign Total Body Fuel Power Stairs | ScoredBy "reps" does not match ResultUnit "sec" (see section 5) |
-| wsm_2022_finals.csv | 51 | Gabriel Rheaume, Reign Total Body Fuel Power Stairs | ScoredBy "reps" does not match ResultUnit "sec" (see section 5) |
 | rogue_2024_finals.csv | 19 | Pavlo Kordiyaka, Grip and Press | Scored by distance but the unit is seconds. Needs the official results: per section 5, a DNF records the distance reached in m |
 | rogue_2024_finals.csv | 21 | Tristain Hoath, Grip and Press | Scored by distance but the unit is seconds. Needs the official results: per section 5, a DNF records the distance reached in m |
 <!-- /BUILD:reference-values -->

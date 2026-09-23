@@ -4,7 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>OpenStrongman - Open Strongman Competition Database</title>
-<meta name="description" content="An open database of strongman competition results across all major US federations. Searchable, filterable, and free to download.">
+<meta name="description" content="An open, public-domain database of strongman competition results, recorded event by event. Free CSV data for fans, coaches, and researchers, plus a research roadmap of open questions in strongman science.">
+<link rel="canonical" href="https://openstrongman.org/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="OpenStrongman">
+<meta property="og:title" content="OpenStrongman - Open Strongman Competition Database">
+<meta property="og:description" content="An open, public-domain database of strongman competition results, recorded event by event. Free CSV data for fans, coaches, and researchers, plus a research roadmap of open questions in strongman science.">
+<meta property="og:url" content="https://openstrongman.org/">
+<meta name="twitter:card" content="summary">
 <link rel="stylesheet" href="style.css">
 <style>
   .hero {
@@ -186,6 +193,176 @@
     .section { padding: 2rem 1rem; }
   }
 </style>
+<!-- BUILD:jsonld -->
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "name": "OpenStrongman: An Open Database of Strongman Competition Results",
+    "alternateName": "OpenStrongman",
+    "description": "OpenStrongman is an open, public-domain (CC0) database of strongman competition results. Results are recorded event by event exactly as contested (weights, times, distances, repetitions), with a consistent biomechanical event category system that makes results comparable across federations and implements. Current coverage includes 707 event-level results from 34 competitions (Giants Live, Rogue, and WSM), plus overall placings back to 1977, covering 100 athletes from 24 nations through 2026. The dataset is built for research on strength sport performance, including athlete career trajectories, record progression, and cross-federation comparisons. It is actively growing to include qualifiers, more federations, and historical results. A companion Research Roadmap lists open questions in strongman science that the data can help answer: https://openstrongman.org/roadmap.html",
+    "url": "https://openstrongman.org/",
+    "sameAs": "https://github.com/campoheidi-oss/openstrongman.org",
+    "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "isAccessibleForFree": true,
+    "creator": {
+      "@type": "Organization",
+      "name": "OpenStrongman Project",
+      "url": "https://openstrongman.org"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "OpenStrongman Project",
+      "url": "https://openstrongman.org"
+    },
+    "keywords": [
+      "strongman",
+      "strength sports",
+      "strongman competition results",
+      "World's Strongest Man",
+      "sports science",
+      "exercise science",
+      "kinesiology",
+      "athletic performance",
+      "open data",
+      "sports statistics",
+      "thesis dataset",
+      "strength and conditioning research"
+    ],
+    "temporalCoverage": "1977/2026",
+    "spatialCoverage": {
+      "@type": "Place",
+      "name": "Worldwide"
+    },
+    "variableMeasured": [
+      "MeetName",
+      "MeetFederation",
+      "MeetDate",
+      "MeetLocation",
+      "Division",
+      "Sex",
+      "BodyweightKg",
+      "WeightClassKg",
+      "AthleteName",
+      "AthleteNationality",
+      "Event",
+      "EventCategory",
+      "Implement",
+      "ResultValue",
+      "ResultUnit",
+      "Place",
+      "OverallPlace",
+      "Points",
+      "Notes",
+      "StonesCompleted",
+      "ImplementWeightKg",
+      "CourseDistanceM",
+      "TimeLimitSec",
+      "ScoredBy",
+      "WorldRecord"
+    ],
+    "measurementTechnique": "Manual entry from official competition results, federation publications, and record event reports, following a published schema",
+    "distribution": [
+      {
+        "@type": "DataDownload",
+        "name": "World's Strongest Man Results",
+        "encodingFormat": "text/csv",
+        "contentUrl": "https://openstrongman.org/data/wsm_results.csv"
+      },
+      {
+        "@type": "DataDownload",
+        "name": "World's Strongest Man 2020 Finals",
+        "encodingFormat": "text/csv",
+        "contentUrl": "https://openstrongman.org/data/wsm_2020_finals.csv"
+      },
+      {
+        "@type": "DataDownload",
+        "name": "World's Strongest Man 2021 Finals",
+        "encodingFormat": "text/csv",
+        "contentUrl": "https://openstrongman.org/data/wsm_2021_finals.csv"
+      },
+      {
+        "@type": "DataDownload",
+        "name": "World's Strongest Man 2022 Finals",
+        "encodingFormat": "text/csv",
+        "contentUrl": "https://openstrongman.org/data/wsm_2022_finals.csv"
+      },
+      {
+        "@type": "DataDownload",
+        "name": "World's Strongest Man 2023 Finals",
+        "encodingFormat": "text/csv",
+        "contentUrl": "https://openstrongman.org/data/wsm_2023_finals.csv"
+      },
+      {
+        "@type": "DataDownload",
+        "name": "World's Strongest Man 2024 Finals",
+        "encodingFormat": "text/csv",
+        "contentUrl": "https://openstrongman.org/data/wsm_2024_finals.csv"
+      },
+      {
+        "@type": "DataDownload",
+        "name": "World's Strongest Man 2025 Finals",
+        "encodingFormat": "text/csv",
+        "contentUrl": "https://openstrongman.org/data/wsm_2025_finals.csv"
+      },
+      {
+        "@type": "DataDownload",
+        "name": "World's Strongest Man 2026 Finals",
+        "encodingFormat": "text/csv",
+        "contentUrl": "https://openstrongman.org/data/wsm_2026_finals.csv"
+      },
+      {
+        "@type": "DataDownload",
+        "name": "Rogue Invitational Overall",
+        "encodingFormat": "text/csv",
+        "contentUrl": "https://openstrongman.org/data/rogue_invitational_overall.csv"
+      },
+      {
+        "@type": "DataDownload",
+        "name": "Rogue 2021 Finals",
+        "encodingFormat": "text/csv",
+        "contentUrl": "https://openstrongman.org/data/rogue_2021_finals.csv"
+      },
+      {
+        "@type": "DataDownload",
+        "name": "Rogue 2022 Finals",
+        "encodingFormat": "text/csv",
+        "contentUrl": "https://openstrongman.org/data/rogue_2022_finals.csv"
+      },
+      {
+        "@type": "DataDownload",
+        "name": "Rogue 2023 Finals",
+        "encodingFormat": "text/csv",
+        "contentUrl": "https://openstrongman.org/data/rogue_2023_finals.csv"
+      },
+      {
+        "@type": "DataDownload",
+        "name": "Rogue 2024 Finals",
+        "encodingFormat": "text/csv",
+        "contentUrl": "https://openstrongman.org/data/rogue_2024_finals.csv"
+      },
+      {
+        "@type": "DataDownload",
+        "name": "World Record Events",
+        "encodingFormat": "text/csv",
+        "contentUrl": "https://openstrongman.org/data/world_record_events.csv"
+      }
+    ],
+    "citation": "https://openstrongman.org/CITATION.cff",
+    "version": "2026.09",
+    "dateModified": "2026-09-18"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "OpenStrongman",
+    "url": "https://openstrongman.org/",
+    "description": "Open database of strongman competition results, built for fans and researchers."
+  }
+]
+</script>
+<!-- /BUILD:jsonld -->
 </head>
 <body>
 

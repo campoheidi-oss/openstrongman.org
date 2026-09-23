@@ -3,8 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OpenStrongman — Explore the Data</title>
-<meta name="description" content="Build your own chart from the OpenStrongman database. Pick a question, pick fields and filters, and see the data — no spreadsheet or code required.">
+<title>OpenStrongman - Explore the Data</title>
+<meta name="description" content="Build your own chart from the OpenStrongman database. Pick a question, pick fields and filters, and see the data. No spreadsheet or code required.">
+<link rel="canonical" href="https://openstrongman.org/explore.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="OpenStrongman">
+<meta property="og:title" content="OpenStrongman - Explore the Data">
+<meta property="og:description" content="Build your own chart from the OpenStrongman database. Pick a question, pick fields and filters, and see the data. No spreadsheet or code required.">
+<meta property="og:url" content="https://openstrongman.org/explore.html">
+<meta name="twitter:card" content="summary">
 <link rel="stylesheet" href="style.css">
 <style>
 
@@ -272,7 +279,7 @@
     <div class="explore-header-inner">
       <p class="eyebrow" style="font-family:var(--mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--red);margin-bottom:0.5rem;">OpenStrongman</p>
       <h1>Explore the Data</h1>
-      <p>Build your own chart — pick a starting question or choose your own fields and filters below. Nothing here requires a spreadsheet, R, or Python. Every chart can be viewed as a plain table too.</p>
+      <p>Build your own chart. Pick a starting question or choose your own fields and filters below. Nothing here requires a spreadsheet, R, or Python. Every chart can be viewed as a plain table too.</p>
     </div>
   </div>
 
@@ -291,9 +298,9 @@
     </button>
     <dl class="glossary-panel" id="glossary-panel">
       <dt>Line chart</dt>
-      <dd>Shows how a number changes across years. Use it for trends — like a world record climbing over decades.</dd>
+      <dd>Shows how a number changes across years. Use it for trends, like a world record climbing over decades.</dd>
       <dt>Bar chart</dt>
-      <dd>Compares a number across categories side by side — like average finishing place by federation, or how many world records each event has produced.</dd>
+      <dd>Compares a number across categories side by side, like average finishing place by federation, or how many world records each event has produced.</dd>
       <dt>Scatter plot</dt>
       <dd>Shows every individual result as its own dot, instead of averaging them away. Best when you want to see the full spread, not just the summary.</dd>
     </dl>
@@ -399,7 +406,7 @@
 
 <script>
 /* ══════════════════════════════════════════════════════════════
-   OpenStrongman · Explore — self-serve chart builder
+   OpenStrongman · Explore - self-serve chart builder
    No build step, no external chart library. Loads CSVs listed in
    manifest.json (same pattern as rankings.html), unifies them into
    one row set, and lets the visitor pick fields/filters/chart type.
@@ -432,7 +439,7 @@ const FIELDS = {
 const CATEGORICAL_FIELDS = Object.keys(FIELDS).filter(k => FIELDS[k].kind === 'categorical');
 const NUMERIC_FIELDS = Object.keys(FIELDS).filter(k => FIELDS[k].kind === 'numeric');
 
-// ── PALETTE (validated categorical order — see dataviz skill) ──
+// ── PALETTE (validated categorical order - see dataviz skill) ──
 const PALETTE = ['#2a78d6', '#eb6834', '#1baf7a', '#eda100', '#e87ba4', '#008300', '#4a3aa7', '#e34948'];
 const OTHER_COLOR = '#9b9b97';
 const colorAssignments = new Map(); // entity value -> hex, assigned once, kept for the session
@@ -615,7 +622,7 @@ function suggestAgg() {
 function applyPreset(name, silent) {
   state.athletes.clear();
   if (name === 'wr') {
-    // World-record-setting lifts only (WorldRecord = Y) for one event, men's —
+    // World-record-setting lifts only (WorldRecord = Y) for one event, men's -
     // isolates the handful of rows that actually moved the record, instead of
     // every "Deadlift"-category result (which includes one-off event variants
     // like "18-Inch Deadlift" or "Flintstone Barbell") across every meet.
@@ -630,7 +637,7 @@ function applyPreset(name, silent) {
     // pre-seed two well-known athletes if present in the data
     ['Mitchell Hooper', 'Tom Stoltman'].forEach(n => { if (allRows.some(r => r.AthleteName === n)) state.athletes.add(n); });
   } else if (name === 'meet') {
-    // One meet, one bar per athlete — "compare magnitude across a category"
+    // One meet, one bar per athlete - "compare magnitude across a category"
     // is a bar chart's job, not a scatter's; scatter degenerates to a single
     // vertical strip of points when every row shares one X value (one meet).
     const years = [...new Set(allRows.filter(r => r.MeetFederation === 'WSM').map(r => r.Year))].sort();
@@ -695,7 +702,7 @@ function aggregate(rows, xField, groupField, yField, agg) {
   rows.forEach(r => {
     const xv = rawValue(r, xField);
     if (xv === '' || xv == null) return;
-    const gv = groupField ? (r[groupField] || '—') : '__single__';
+    const gv = groupField ? (r[groupField] || '-') : '__single__';
     const key = xv + '||' + gv;
     if (!buckets.has(key)) buckets.set(key, { x: xv, group: gv, rows: [] });
     buckets.get(key).rows.push(r);
@@ -724,11 +731,11 @@ function scatterPoints(rows, xField, groupField, yField) {
     const xv = xField === 'Year' ? r.YearNum : numValue(r, xField);
     const yv = numValue(r, yField);
     if (xv == null || isNaN(xv) || yv == null || isNaN(yv)) return null;
-    return { x: xv, y: yv, group: groupField ? (r[groupField] || '—') : '__single__', rep: r };
+    return { x: xv, y: yv, group: groupField ? (r[groupField] || '-') : '__single__', rep: r };
   }).filter(Boolean);
 }
 
-// fold long tails into "Other" — cap depends on chart form (all-pairs vs adjacent)
+// fold long tails into "Other" - cap depends on chart form (all-pairs vs adjacent)
 function foldOther(points, cap, key) {
   const counts = new Map();
   points.forEach(p => counts.set(p[key], (counts.get(p[key])||0) + 1));
@@ -806,7 +813,7 @@ function render() {
   }
 
   if (!chartData.length) {
-    wrap.innerHTML = '<div class="chart-empty">Nothing numeric to plot for this combination — try a different Y-axis field.</div>';
+    wrap.innerHTML = '<div class="chart-empty">Nothing numeric to plot for this combination. Try a different Y-axis field.</div>';
     return;
   }
 
@@ -832,8 +839,8 @@ function setCaption(n) {
   const x = FIELDS[state.xField].label;
   const aggLabel = { best_max:'best', best_min:'best (lowest)', avg:'average', count:'count' }[state.agg];
   let text;
-  if (state.chartType === 'scatter') text = `<strong>${esc(y)}</strong> vs <strong>${esc(x)}</strong> — every matching result (${n.toLocaleString()} rows)`;
-  else text = `${state.chartType === 'line' ? 'Trend' : 'Comparison'} of <strong>${esc(aggLabel)} ${esc(y)}</strong> by <strong>${esc(x)}</strong>${state.groupBy ? ', grouped by ' + esc(FIELDS[state.groupBy].label) : ''} — ${n.toLocaleString()} matching rows`;
+  if (state.chartType === 'scatter') text = `<strong>${esc(y)}</strong> vs <strong>${esc(x)}</strong>: every matching result (${n.toLocaleString()} rows)`;
+  else text = `${state.chartType === 'line' ? 'Trend' : 'Comparison'} of <strong>${esc(aggLabel)} ${esc(y)}</strong> by <strong>${esc(x)}</strong>${state.groupBy ? ', grouped by ' + esc(FIELDS[state.groupBy].label) : ''} (${n.toLocaleString()} matching rows)`;
   document.getElementById('chart-caption').innerHTML = text;
 }
 
@@ -842,7 +849,7 @@ function updateAdvisory() {
   const rows = filteredRows();
   const scoredSet = new Set(rows.map(r => r.ScoredBy).filter(Boolean));
   if (state.yField === 'ResultValue' && scoredSet.size > 1) {
-    box.textContent = `Heads up: your current filter mixes different scoring types (${[...scoredSet].join(', ')}) on the Result Value axis — times, weights, and rep counts aren't directly comparable. Narrow to one Event or Category for a fair comparison.`;
+    box.textContent = `Heads up: your current filter mixes different scoring types (${[...scoredSet].join(', ')}) on the Result Value axis. Times, weights, and rep counts aren't directly comparable. Narrow to one Event or Category for a fair comparison.`;
     box.classList.add('show');
   } else {
     box.classList.remove('show'); box.textContent = '';
@@ -890,7 +897,7 @@ function drawLine(wrap, data, groups, isSingle) {
     svg += `<line x1="${m.left}" y1="${y}" x2="${w-m.right}" y2="${y}" stroke="#e1e0d9" stroke-width="1"/>`;
     svg += `<text x="${m.left-8}" y="${y+4}" text-anchor="end" font-size="11" fill="#898781">${fmtNum(t)}</text>`;
   });
-  // x ticks — thin to avoid crowding
+  // x ticks - thin to avoid crowding
   const xTickEvery = Math.max(1, Math.ceil(xs.length / 10));
   xs.forEach((xv, i) => {
     if (i % xTickEvery !== 0 && i !== xs.length-1) return;
@@ -909,7 +916,7 @@ function drawLine(wrap, data, groups, isSingle) {
     s.pts.forEach(p => {
       svg += `<circle cx="${X(+p.x)}" cy="${Y(p.y)}" r="4" fill="${color}" stroke="#fff" stroke-width="2" data-x="${p.x}" data-y="${p.y}" data-g="${esc(s.g)}"/>`;
     });
-    // direct end label — skip past ~4 series to avoid label collisions;
+    // direct end label - skip past ~4 series to avoid label collisions;
     // the legend + tooltip still carry every series' identity in that case.
     if (s.pts.length && (isSingle || groups.length <= 4)) {
       const last = s.pts[s.pts.length-1];

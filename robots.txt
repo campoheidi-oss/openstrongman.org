@@ -1,0 +1,7 @@
+# OpenStrongman is open data. All crawlers are welcome, including
+# search engines and AI assistants (for example GPTBot, OAI-SearchBot,
+# ClaudeBot, Claude-SearchBot, PerplexityBot, Google-Extended, CCBot).
+User-agent: *
+Allow: /
+
+Sitemap: https://openstrongman.org/sitemap.xml

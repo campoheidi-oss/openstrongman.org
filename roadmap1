@@ -1,0 +1,398 @@
+{
+  "lastReviewed": "2026-09-23",
+  "searchNote": "Evidence summaries are based on a PubMed search of every record with \"strongman\" in the title or abstract (47 records as of September 2026, 8 of which use the word in an unrelated sense), plus targeted searches of neighboring strength sports. SPORTDiscus, theses, and conference abstracts have not yet been searched.",
+  "risks": [
+    {
+      "id": "INJ",
+      "title": "Musculoskeletal injury",
+      "statement": "Risk that strongman training and competition cause injuries at rates, body sites, or severities that have not been measured well enough to prevent them.",
+      "evidence": "limited",
+      "summary": "The only strongman-specific injury rates come from one retrospective survey of 213 athletes. In it, 82% reported an injury in the previous year, at 5.5 training injuries per 1,000 hours. The lower back (24%), shoulder (21%), biceps (11%), and knee (11%) were injured most often, and athletes were 1.9 times more likely to be hurt during implement training than during traditional lifting once exposure was accounted for {winwood2014}. A systematic review of the weight-training sports placed strongman (4.5 to 6.1 injuries per 1,000 hours) at the top of the range with Highland Games, and noted that only 4 of 20 studies used a prospective design {keogh2017}. Spine modeling found that the yoke carry produced the highest spinal loads of seven events tested, and that the atlas stone makes a neutral spine impossible {mcgill2009}. Beyond that, the evidence is case reports of biceps, rotator cuff, and triceps injuries {george2010} {lorenz2022} {hall2017}.",
+      "gaps": [
+        {
+          "id": "INJ-1",
+          "question": "What is the true incidence of injury in strongman when it is measured prospectively rather than recalled?",
+          "status": "open",
+          "tasks": [
+            { "text": "Follow a cohort of competitive athletes through one or more seasons using a consensus injury definition and hours-based exposure.", "path": "external" }
+          ]
+        },
+        {
+          "id": "INJ-2",
+          "question": "Which competition events carry the highest injury risk?",
+          "status": "open",
+          "tasks": [
+            { "text": "Add a result status field (for example Completed, Zero, Withdrew, Injured) so the number of athletes who contested each event can serve as the exposure denominator.", "path": "field", "field": "ResultStatus" },
+            { "text": "Compare withdrawal and injury rates by event category and implement across federations.", "path": "field", "field": "ResultStatus" }
+          ]
+        },
+        {
+          "id": "INJ-3",
+          "question": "How do upper-limb tendon ruptures happen, and how long does it take to return to competition?",
+          "status": "open",
+          "tasks": [
+            { "text": "Build a case series of distal biceps and pectoral ruptures that records the event, implement, and mechanism of injury.", "path": "external" },
+            { "text": "Use OpenStrongman result histories to measure time from the last result before a documented injury to the next competition.", "path": "osm" }
+          ]
+        },
+        {
+          "id": "INJ-4",
+          "question": "Do the spinal loads measured in the yoke and atlas stone translate into lower back injury?",
+          "status": "open",
+          "tasks": [
+            { "text": "Measure spinal kinematics in experienced athletes with 3D motion capture or inertial sensors, then link loading patterns to injury history.", "path": "external" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CARD",
+      "title": "Cardiovascular health",
+      "statement": "Risk that extreme body mass, maximal straining efforts, and drug use produce cardiovascular disease or early death in strongman athletes.",
+      "evidence": "none",
+      "summary": "We found no study of heart structure, blood pressure, or cardiovascular outcomes in strongman athletes. The closest evidence comes from neighboring sports. Elite competitors in a five-year screening program averaged 152.9 kg and a BMI of 43.5, which puts them at the far edge of human body size {kraemer2020}. Powerlifters have thicker heart walls and higher blood pressure than distance runners, although the difference disappeared once heart mass was scaled to body size {silva2018}. Among 62 top Finnish powerlifters suspected of steroid use, the risk of death over 12 years was 4.6 times that of the general population, and heart attack was one of the leading causes {parssinen2000}. Long-term steroid users show weaker heart function and more coronary plaque than non-users {baggish2017}.",
+      "gaps": [
+        {
+          "id": "CARD-1",
+          "question": "What do the hearts of elite strongman competitors look like, structurally and functionally?",
+          "status": "open",
+          "tasks": [
+            { "text": "Add echocardiography or cardiac MRI to the kind of competition health screening already used to collect body composition data.", "path": "external" }
+          ]
+        },
+        {
+          "id": "CARD-2",
+          "question": "What are the long-term mortality and illness rates of former strongman competitors?",
+          "status": "open",
+          "tasks": [
+            { "text": "Build a verified historical roster of competitors with dates of birth, which makes a retrospective cohort study like the Finnish powerlifting study possible.", "path": "field", "field": "DateOfBirth" },
+            { "text": "Link that roster to public death records to calculate a standardized mortality ratio.", "path": "external" }
+          ]
+        },
+        {
+          "id": "CARD-3",
+          "question": "What blood pressure and cardiac loads occur during maximal holds, carries, and overhead events?",
+          "status": "open",
+          "tasks": [
+            { "text": "Record continuous blood pressure during simulated events in competitive athletes.", "path": "external" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PED",
+      "title": "Performance-enhancing drugs",
+      "statement": "Risk that drug use in a largely untested sport harms athlete health and distorts the record book.",
+      "evidence": "none",
+      "summary": "No study has measured drug use among strongman competitors, and most strongman competition is not drug tested. A meta-analysis of 187 studies estimated lifetime anabolic steroid use at 3.3% worldwide and 6.4% in men, and being an athlete was one of the factors linked to higher rates {sagoe2014}. In a 1999 survey, 10 of 15 responding US Powerlifting Team members admitted to steroid use {curry1999}. The health consequences summarized under Cardiovascular health apply here as well {parssinen2000} {baggish2017}.",
+      "gaps": [
+        {
+          "id": "PED-1",
+          "question": "How common is drug use among strongman athletes, and does it differ by competitive level and division?",
+          "status": "open",
+          "tasks": [
+            { "text": "Run an anonymous survey using methods designed for sensitive questions, such as the randomized response technique.", "path": "external" }
+          ]
+        },
+        {
+          "id": "PED-2",
+          "question": "How do results differ between drug-tested and untested competition?",
+          "status": "open",
+          "tasks": [
+            { "text": "Add a competition-level Tested flag so results and records can be separated, the way OpenPowerlifting does.", "path": "field", "field": "Tested" },
+            { "text": "Compare performance distributions in tested and untested competitions for the same events.", "path": "field", "field": "Tested" }
+          ]
+        },
+        {
+          "id": "PED-3",
+          "question": "What medical monitoring and harm-reduction practices do users actually follow?",
+          "status": "open",
+          "tasks": [
+            { "text": "Interview and survey athletes and clinicians about bloodwork, cardiology visits, and cycling practices.", "path": "external" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "NUT",
+      "title": "Nutrition and body mass",
+      "statement": "Risk that the eating, weight-making, and body mass demands of the sport harm health or performance in ways nobody has measured.",
+      "evidence": "minimal",
+      "summary": "Body composition has been described in 18 elite competitors, who averaged 118 kg of lean mass and 18.7% body fat {kraemer2020}. Surveys show that athletes change their nutrition during a taper and use electrolyte drinks, caffeine, and pre-workout supplements on competition day {winwood2018taper} {winwood2019comp}. We found no study of energy or protein intake, weight cutting, or the metabolic health of carrying very high body mass for years.",
+      "gaps": [
+        {
+          "id": "NUT-1",
+          "question": "What do strongman athletes actually eat, and how does it differ across weight classes?",
+          "status": "open",
+          "tasks": [
+            { "text": "Collect weighed food records or validated dietary recalls from athletes in each weight class.", "path": "external" }
+          ]
+        },
+        {
+          "id": "NUT-2",
+          "question": "How common is acute weight cutting in weight-class strongman, and does it affect results?",
+          "status": "open",
+          "tasks": [
+            { "text": "Record whether weigh-ins happened the same day or the day before competition.", "path": "field", "field": "WeighInTiming" },
+            { "text": "Compare results by how close each athlete's official body mass sat to the class limit.", "path": "osm" }
+          ]
+        },
+        {
+          "id": "NUT-3",
+          "question": "What happens to metabolic health when heavyweight competitors lose mass after retiring?",
+          "status": "open",
+          "tasks": [
+            { "text": "Follow retiring heavyweight athletes with DXA, blood lipids, glucose, and blood pressure.", "path": "external" }
+          ]
+        },
+        {
+          "id": "NUT-4",
+          "question": "Which competition-day fueling and supplement strategies improve multi-event performance?",
+          "status": "partial",
+          "tasks": [
+            { "text": "Test common competition-day strategies, such as caffeine timing and carbohydrate intake between events, in controlled trials.", "path": "external" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PERF",
+      "title": "Performance determinants and biomechanics",
+      "statement": "Risk that coaches and athletes rely on guesswork because the mechanics and physiology of strongman events are only partly described.",
+      "evidence": "developing",
+      "summary": "Biomechanics is the best-studied area of the sport. A 2019 systematic review found 11 studies and called out missing data for the yoke walk, atlas stone, tire flip, vehicle pull, and log lift {hindle2019}. Since then, the stone lift and yoke walk have been described in both men and women {hindle2021stone} {hindle2021yoke}, log diameter has been shown to change force output in the push press {renals2018}, and shoulder muscle activity has been recorded before and after a real competition {studnicki2026}. MRI of one World's Strongest Man and deadlift champion found leg muscle volume roughly double that of untrained men, with tendon size not keeping pace {balshaw2024}. Most studies still use small groups of resistance-trained men rather than competitive strongman athletes, and 2D video rather than 3D motion capture {hindle2019methods}.",
+      "gaps": [
+        {
+          "id": "PERF-1",
+          "question": "What separates elite from sub-elite performance in each event?",
+          "status": "partial",
+          "tasks": [
+            { "text": "Capture 3D or inertial sensor data from competitive athletes across skill levels.", "path": "external" },
+            { "text": "Relate official body mass to event results across many competitions.", "path": "osm" }
+          ]
+        },
+        {
+          "id": "PERF-2",
+          "question": "How much do implement specifications change results?",
+          "status": "open",
+          "tasks": [
+            { "text": "Record implement specifications (log diameter, stone diameter, handle type, tire dimensions) next to ImplementWeightKg.", "path": "field", "field": "ImplementSpec" },
+            { "text": "Compare results for the same event contested with different implement specifications.", "path": "field", "field": "ImplementSpec" }
+          ]
+        },
+        {
+          "id": "PERF-3",
+          "question": "How can difficulty be compared across different events, formats, and scoring units?",
+          "status": "open",
+          "tasks": [
+            { "text": "Develop normalized scores, such as percent of the winning result or percent of the world record, for every event.", "path": "osm" }
+          ]
+        },
+        {
+          "id": "PERF-4",
+          "question": "What are the metabolic and physiological demands of competition events?",
+          "status": "partial",
+          "tasks": [
+            { "text": "Measure oxygen uptake, heart rate, and blood lactate during simulated competition in competitive athletes. Existing data come from recreationally trained men {harris2016} {keogh2010tire}.", "path": "external" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "TRAIN",
+      "title": "Training and competition preparation",
+      "statement": "Risk that training, tapering, and preparation practices are passed on by tradition rather than tested.",
+      "evidence": "developing",
+      "summary": "Surveys describe how strongman athletes train {winwood2011}, taper {winwood2018taper}, and warm up on competition day {winwood2019comp}. In the taper survey, 87% of 454 athletes used a taper, which lasted 8.6 days on average and cut training volume by about 45%. A 2026 systematic review found similar patterns across the weight-lifting sports {winwood2026}. Psyching-up strategies have been mapped and tested in strength athletes, including strongwomen {cusimano2025} {cusimano2026}, and one study compared conditioning methods in powerlifting and strongman athletes {androulakis2018}. What is missing are controlled training trials in strongman athletes themselves. The strongman training studies that exist mostly recruited rugby players {winwood2015} {winwood2012}.",
+      "gaps": [
+        {
+          "id": "TRAIN-1",
+          "question": "Which training and tapering strategies actually improve strongman competition results?",
+          "status": "partial",
+          "tasks": [
+            { "text": "Run controlled training and tapering trials in competitive strongman athletes.", "path": "external" }
+          ]
+        },
+        {
+          "id": "TRAIN-2",
+          "question": "How does competition frequency affect performance and career length?",
+          "status": "open",
+          "tasks": [
+            { "text": "Relate competitions per year to placing and to performance at the next competition.", "path": "osm" }
+          ]
+        },
+        {
+          "id": "TRAIN-3",
+          "question": "Does event order within a competition affect results?",
+          "status": "open",
+          "tasks": [
+            { "text": "Record the order in which events were contested, then test whether later events show fatigue effects.", "path": "field", "field": "EventOrder" }
+          ]
+        },
+        {
+          "id": "TRAIN-4",
+          "question": "How should conditioning work be balanced against maximal strength training?",
+          "status": "partial",
+          "tasks": [
+            { "text": "Compare conditioning approaches over a full training block in competitive athletes, measuring both strength and medley or carry performance.", "path": "external" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "EPI",
+      "title": "Participation, careers, and performance trends",
+      "statement": "Risk that the sport cannot answer basic questions about who competes, how careers unfold, and how performance is changing, because no structured dataset has existed.",
+      "evidence": "none",
+      "summary": "No peer-reviewed study describes strongman participation, career length, or age of peak performance. Open competition data changed this for powerlifting. OpenPowerlifting has supported studies of career trajectories in 6,524 lifters, who peaked around age 27 after 4 to 6 years of competing {renner2026}, trends in normative strength across 850,972 entries from 2000 to 2024 {vandenhoek2025}, medal standards in para powerlifting {latella2026}, and body-mass normalization of scores {fahey2026}. OpenStrongman exists to make the same kind of work possible for strongman.",
+      "gaps": [
+        {
+          "id": "EPI-1",
+          "question": "At what age do strongman athletes peak, and how long do careers last?",
+          "status": "open",
+          "tasks": [
+            { "text": "Collect dates of birth for athletes.", "path": "field", "field": "DateOfBirth" },
+            { "text": "Model age-performance curves by event category and division.", "path": "field", "field": "DateOfBirth" }
+          ]
+        },
+        {
+          "id": "EPI-2",
+          "question": "How have records and winning performances progressed over time?",
+          "status": "open",
+          "tasks": [
+            { "text": "Chart world record and winning result progression by event. The Explore page already supports this for the data on file.", "path": "osm" }
+          ]
+        },
+        {
+          "id": "EPI-3",
+          "question": "How has participation grown by sex, division, nation, and federation?",
+          "status": "open",
+          "tasks": [
+            { "text": "Count unique athletes per year across federations. This needs amateur and qualifier coverage, not just finals.", "path": "osm" }
+          ]
+        },
+        {
+          "id": "EPI-4",
+          "question": "What are normative performance standards for amateur competitors by weight class and age?",
+          "status": "open",
+          "tasks": [
+            { "text": "Publish percentile tables by event, sex, weight class, and age group once amateur and masters data are loaded.", "path": "osm" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "POP",
+      "title": "Women, masters, adaptive, and lightweight athletes",
+      "statement": "Risk that guidance built on research in heavyweight men is applied to athletes it was never tested on.",
+      "evidence": "minimal",
+      "summary": "Most strongman research studies men. The atlas stone and yoke studies found technique differences between male and female athletes {hindle2021stone} {hindle2021yoke}, the taper survey analyzed results by sex {winwood2018taper}, and a 2019 methods review called for more female and experienced athletes in future studies {hindle2019methods}. We found no strongman research on masters, adaptive, or lightweight athletes.",
+      "gaps": [
+        {
+          "id": "POP-1",
+          "question": "Are women's implement weights scaled fairly relative to men's?",
+          "status": "open",
+          "tasks": [
+            { "text": "Compare women's and men's results as a percent of the relevant world record or winning result for matched events.", "path": "osm" }
+          ]
+        },
+        {
+          "id": "POP-2",
+          "question": "How do injury patterns and physiology differ in female strongman athletes?",
+          "status": "open",
+          "tasks": [
+            { "text": "Include enough female athletes in injury, biomechanics, and physiology studies to analyze them separately.", "path": "external" }
+          ]
+        },
+        {
+          "id": "POP-3",
+          "question": "How does performance decline with age in masters strongman?",
+          "status": "open",
+          "tasks": [
+            { "text": "Model masters performance by age once dates of birth and masters results are on file.", "path": "field", "field": "DateOfBirth" }
+          ]
+        },
+        {
+          "id": "POP-4",
+          "question": "What does adaptive strongman look like, and what are its injury and classification needs?",
+          "status": "open",
+          "tasks": [
+            { "text": "Add adaptive divisions and their results to the database.", "path": "osm" },
+            { "text": "Describe classification systems and injury patterns in adaptive athletes.", "path": "external" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "DATA",
+      "title": "Measurement and data integrity",
+      "statement": "Risk that differences in implements, timing, scoring, and officiating make results impossible to compare or records impossible to verify.",
+      "evidence": "none",
+      "summary": "We found no published research on measurement reliability in strongman competition, such as hand timing compared with electronic timing, checking implement weights, or consistency between judges. OpenStrongman applies a written world record standard (a sanctioned competition or officially organized record event with at least three judges), but the sport has no shared standard across federations.",
+      "gaps": [
+        {
+          "id": "DATA-1",
+          "question": "How reliable are competition times and distances?",
+          "status": "open",
+          "tasks": [
+            { "text": "Record how each timed event was measured (hand, electronic, or video).", "path": "field", "field": "TimingMethod" },
+            { "text": "Compare hand timing with video timing for the same runs.", "path": "external" }
+          ]
+        },
+        {
+          "id": "DATA-2",
+          "question": "Are points systems across federations comparable?",
+          "status": "open",
+          "tasks": [
+            { "text": "Recalculate standings under one common points system and measure how often placings change.", "path": "osm" }
+          ]
+        },
+        {
+          "id": "DATA-3",
+          "question": "How often are published results wrong or corrected?",
+          "status": "open",
+          "tasks": [
+            { "text": "Track manual verification and user-reported corrections for each result.", "path": "field", "field": "Verified" }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    { "key": "nasa", "text": "NASA Human Research Program. Human Research Roadmap: Introduction.", "url": "https://humanresearchroadmap.nasa.gov/intro/" },
+    { "key": "winwood2014", "text": "Winwood PW, et al. Retrospective injury epidemiology of strongman athletes. J Strength Cond Res. 2014;28(1):28-42.", "doi": "10.1519/JSC.0b013e3182986c0c", "pmid": "23669816" },
+    { "key": "keogh2017", "text": "Keogh JW, Winwood PW. The epidemiology of injuries across the weight-training sports. Sports Med. 2017;47(3):479-501.", "doi": "10.1007/s40279-016-0575-0", "pmid": "27328853" },
+    { "key": "mcgill2009", "text": "McGill SM, McDermott A, Fenwick CM. Comparison of different strongman events: trunk muscle activation and lumbar spine motion, load, and stiffness. J Strength Cond Res. 2009;23(4):1148-61.", "doi": "10.1519/JSC.0b013e318198f8f7", "pmid": "19528856" },
+    { "key": "george2010", "text": "George MS. Simultaneous acute rotator cuff tear and distal biceps rupture in a strongman competitor. Orthopedics. 2010;33(4).", "doi": "10.3928/01477447-20100225-28", "pmid": "20415310" },
+    { "key": "lorenz2022", "text": "Lorenz D. Progressive loading in a strongman following distal biceps repair: re-thinking load progression. A case report. Int J Sports Phys Ther. 2022;17(7):1430-1441.", "doi": "10.26603/001c.39796", "pmid": "36518828" },
+    { "key": "hall2017", "text": "Hall MM, Woodroffe L. Ultrasonic percutaneous tenotomy for recalcitrant calcific triceps tendinosis in a competitive strongman: a case report. Curr Sports Med Rep. 2017;16(3):150-152.", "doi": "10.1249/JSR.0000000000000353", "pmid": "28498222" },
+    { "key": "kraemer2020", "text": "Kraemer WJ, et al. Body composition in elite strongman competitors. J Strength Cond Res. 2020;34(12):3326-3330.", "doi": "10.1519/JSC.0000000000003763", "pmid": "33235016" },
+    { "key": "silva2018", "text": "Silva DV, et al. Comparison of cardiac and vascular parameters in powerlifters and long-distance runners: comparative cross-sectional study. Arq Bras Cardiol. 2018;111(6):772-781.", "doi": "10.5935/abc.20180167", "pmid": "30281689" },
+    { "key": "parssinen2000", "text": "Parssinen M, et al. Increased premature mortality of competitive powerlifters suspected to have used anabolic agents. Int J Sports Med. 2000;21(3):225-7.", "doi": "10.1055/s-2000-304", "pmid": "10834358" },
+    { "key": "baggish2017", "text": "Baggish AL, et al. Cardiovascular toxicity of illicit anabolic-androgenic steroid use. Circulation. 2017;135(21):1991-2002.", "doi": "10.1161/CIRCULATIONAHA.116.026945", "pmid": "28533317" },
+    { "key": "sagoe2014", "text": "Sagoe D, et al. The global epidemiology of anabolic-androgenic steroid use: a meta-analysis and meta-regression analysis. Ann Epidemiol. 2014;24(5):383-98.", "doi": "10.1016/j.annepidem.2014.01.009", "pmid": "24582699" },
+    { "key": "curry1999", "text": "Curry LA, Wagman DF. Qualitative description of the prevalence and use of anabolic androgenic steroids by United States powerlifters. Percept Mot Skills. 1999;88(1):224-33.", "doi": "10.2466/pms.1999.88.1.224", "pmid": "10214647" },
+    { "key": "winwood2018taper", "text": "Winwood PW, et al. Tapering practices of strongman athletes. J Strength Cond Res. 2018;32(5):1181-1196.", "doi": "10.1519/JSC.0000000000002453", "pmid": "29373426" },
+    { "key": "winwood2019comp", "text": "Winwood PW, et al. The competition-day preparation strategies of strongman athletes. J Strength Cond Res. 2019;33(9):2308-2320.", "doi": "10.1519/JSC.0000000000003267", "pmid": "31343547" },
+    { "key": "hindle2019", "text": "Hindle BR, et al. The biomechanics and applications of strongman exercises: a systematic review. Sports Med Open. 2019;5(1):49.", "doi": "10.1186/s40798-019-0222-z", "pmid": "31820223" },
+    { "key": "hindle2021stone", "text": "Hindle B, et al. The biomechanical characteristics of the strongman atlas stone lift. PeerJ. 2021;9:e12066.", "doi": "10.7717/peerj.12066", "pmid": "34557349" },
+    { "key": "hindle2021yoke", "text": "Hindle BR, et al. The biomechanical characteristics of the strongman yoke walk. Front Sports Act Living. 2021;3:670297.", "doi": "10.3389/fspor.2021.670297", "pmid": "33981993" },
+    { "key": "renals2018", "text": "Renals L, et al. Strongman log push press: the effect log diameter has on force-time characteristics. J Strength Cond Res. 2018;32(10):2693-2700.", "doi": "10.1519/JSC.0000000000002764", "pmid": "30052599" },
+    { "key": "studnicki2026", "text": "Studnicki R, et al. The effects of an acute strongman competition on electromyographic responses of the shoulder girdle complex. Life (Basel). 2026;16(3).", "doi": "10.3390/life16030477", "pmid": "41900995" },
+    { "key": "balshaw2024", "text": "Balshaw TG, et al. Muscle and tendon morphology of a world strongman and deadlift champion. J Appl Physiol. 2024;137(4):789-799.", "doi": "10.1152/japplphysiol.00342.2024", "pmid": "39143902" },
+    { "key": "hindle2019methods", "text": "Hindle BR, et al. A systematic review of the biomechanical research methods used in strongman studies. Sports Biomech. 2020;19(1):90-119.", "doi": "10.1080/14763141.2019.1598480", "pmid": "31132028" },
+    { "key": "harris2016", "text": "Harris NK, et al. Acute physiological responses to strongman training compared to traditional strength training. J Strength Cond Res. 2016;30(5):1397-408.", "doi": "10.1519/JSC.0000000000001217", "pmid": "26439778" },
+    { "key": "keogh2010tire", "text": "Keogh JW, et al. A brief description of the biomechanics and physiology of a strongman event: the tire flip. J Strength Cond Res. 2010;24(5):1223-8.", "doi": "10.1519/JSC.0b013e3181cc61cd", "pmid": "20386131" },
+    { "key": "winwood2011", "text": "Winwood PW, Keogh JW, Harris NK. The strength and conditioning practices of strongman competitors. J Strength Cond Res. 2011;25(11):3118-28.", "doi": "10.1519/JSC.0b013e318212daea", "pmid": "21993033" },
+    { "key": "winwood2026", "text": "Winwood PW, et al. Tapering and peaking in the weight lifting sports: a systematic review of athletes' self-reported strategies. Sports Med. 2026.", "doi": "10.1007/s40279-026-02500-w", "pmid": "42611173" },
+    { "key": "cusimano2025", "text": "Cusimano K, Freeman P, Moran J. Identifying the psyching-up strategies used in strength sports: a concept mapping approach. J Strength Cond Res. 2025;39(5):553-561.", "doi": "10.1519/JSC.0000000000005057", "pmid": "40030080" },
+    { "key": "cusimano2026", "text": "Cusimano K, et al. The effects of psyching-up on deadlift performance in competitive strongmen, strongwomen, and powerlifters. J Strength Cond Res. 2026;40(5):576-584.", "doi": "10.1519/JSC.0000000000005361", "pmid": "41628393" },
+    { "key": "androulakis2018", "text": "Androulakis-Korakakis P, et al. Effects of exercise modality during additional high-intensity interval training on aerobic fitness and strength in powerlifting and strongman athletes. J Strength Cond Res. 2018;32(2):450-457.", "doi": "10.1519/JSC.0000000000001809", "pmid": "28431408" },
+    { "key": "winwood2015", "text": "Winwood PW, et al. Strongman vs. traditional resistance training effects on muscular function and performance. J Strength Cond Res. 2015;29(2):429-39.", "doi": "10.1519/JSC.0000000000000629", "pmid": "25627449" },
+    { "key": "winwood2012", "text": "Winwood PW, Keogh JW, Harris NK. Interrelationships between strength, anthropometrics, and strongman performance in novice strongman athletes. J Strength Cond Res. 2012;26(2):513-22.", "doi": "10.1519/JSC.0b013e318220db1a", "pmid": "22233785" },
+    { "key": "renner2026", "text": "Renner A, van den Hoek D, Csapo R. Long-term performance trajectories in classic powerlifting: an exploratory analysis of 6,524 lifters with sustained competitive engagement. BMC Sports Sci Med Rehabil. 2026;18(1).", "doi": "10.1186/s13102-026-01775-w", "pmid": "42210287" },
+    { "key": "vandenhoek2025", "text": "van den Hoek DJ, et al. The evolution of normative strength values in powerlifting from 2000 to 2024: a retrospective, cross-sectional analysis. J Strength Cond Res. 2026;40(2):e147-e154.", "doi": "10.1519/JSC.0000000000005294", "pmid": "41259664" },
+    { "key": "latella2026", "text": "Latella C, et al. Rethinking the minimum standards for medaling in national, regional, and international para powerlifting competitions. Int J Sports Physiol Perform. 2026:1-7.", "doi": "10.1123/ijspp.2026-0062", "pmid": "42632638" },
+    { "key": "fahey2026", "text": "Fahey TD. Body-mass normalization of powerlifting performance: development and independent validation of sex- and age-specific regression-residual scores. Eur J Appl Physiol. 2026.", "doi": "10.1007/s00421-026-06427-y", "pmid": "42742700" }
+  ]
+}

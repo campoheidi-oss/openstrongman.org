@@ -14,7 +14,7 @@ abstract: >-
   covering sanctioned federation events, qualifiers, and standalone world
   record attempts. Modeled structurally on OpenPowerlifting. Data is
   released under CC0-1.0 (public domain); site code is released under
-  AGPL-3.0-or-later.
+  MIT (see LICENSE and DATA-LICENSE).
 authors:
   - name: "OpenStrongman Project"
     website: "https://openstrongman.org"

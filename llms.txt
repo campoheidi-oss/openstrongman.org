@@ -39,7 +39,7 @@ Columns: MeetName, MeetFederation, MeetDate, MeetLocation, Division, Sex, Bodywe
 
 ## License and citation
 
-Data: CC0-1.0 (public domain). Code: AGPL-3.0-or-later. Please cite as: OpenStrongman Project. OpenStrongman: An Open Database of Strongman Competition Results (version 2026.09). https://openstrongman.org. Citation metadata: https://openstrongman.org/CITATION.cff
+Data: CC0-1.0 (public domain). Code: MIT. Full texts: LICENSE (code) and DATA-LICENSE (data) in the repository. Please cite as: OpenStrongman Project. OpenStrongman: An Open Database of Strongman Competition Results (version 2026.09). https://openstrongman.org. Citation metadata: https://openstrongman.org/CITATION.cff
 
 ## Open research questions (from the Research Roadmap)
 

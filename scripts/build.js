@@ -261,7 +261,7 @@ let llms = '# OpenStrongman\n\n' +
   '## Schema\n\n' +
   'Columns: ' + [...columns].join(', ') + '. Events are grouped into biomechanical categories (Overhead Press, Deadlift, Carry, Load, Pull, Hold, Flip, Toss, Medley, Other); the implement is a separate attribute. Dates are YYYY-MM-DD with 00 for unknown month or day.\n\n' +
   '## License and citation\n\n' +
-  'Data: CC0-1.0 (public domain). Code: AGPL-3.0-or-later. Please cite as: OpenStrongman Project. OpenStrongman: An Open Database of Strongman Competition Results' +
+  'Data: CC0-1.0 (public domain). Code: MIT. Full texts: LICENSE (code) and DATA-LICENSE (data) in the repository. Please cite as: OpenStrongman Project. OpenStrongman: An Open Database of Strongman Competition Results' +
   (version ? ' (version ' + version + ')' : '') + '. ' + (doi ? 'https://doi.org/' + doi : SITE) + '. Citation metadata: ' + SITE + '/CITATION.cff\n\n' +
   '## Open research questions (from the Research Roadmap)\n\n' +
   'Each gap below is an open question suitable for a thesis, dissertation, or research project. Full evidence summaries and references: ' + SITE + '/roadmap.html\n\n' +

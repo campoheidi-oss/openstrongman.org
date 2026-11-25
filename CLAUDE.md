@@ -8,7 +8,7 @@ names, affiliations, outreach, strategy, or unpublished ideas.
 
 An open, downloadable database of strongman competition results, modeled on
 OpenPowerlifting. The audience is researchers first, fans second. Data is
-CC0 (public domain); site code is AGPL-3.0-or-later. The project is credited
+CC0 (public domain); site code is MIT. Full texts are in `DATA-LICENSE` (data) and `LICENSE` (code). The project is credited
 as "OpenStrongman" everywhere, never as an individual.
 
 ## How the site works
